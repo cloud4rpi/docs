@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>FAQ - Cloud4Rpi Documentation</title>
+
+        <link href="../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../connecting-device/">Cloud4Rpi Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../connecting-device/">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../typical-scenarios/">Typical Scenarios</a>
+                </li>
+            
+            
+            
+                <li class="active">
+                    <a href="./">FAQ</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../api/">API</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a rel="next" href="../typical-scenarios/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../api/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#faq">FAQ</a></li>
+        
+            <li><a href="#insecureplatformwarning">InsecurePlatformWarning</a></li>
+        
+            <li><a href="#type-error-during-setup-requirements">Type Error during setup requirements</a></li>
+        
+            <li><a href="#where-can-i-find-log-file-for-service">Where can I find .log file for service?</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h1 id="faq">FAQ</h1>
+<p>Frequently Asked Questions when working with Cloud4Rpi</p>
+<h2 id="insecureplatformwarning">InsecurePlatformWarning</h2>
+<p>Error <code>"InsecurePlatformWarning: A true SSLContext object is not available..."</code></p>
+<p>You need Python version 2.7.9 or higher installed. Please check it with</p>
+<pre><code class="bash">$ python --version
+</code></pre>
+
+<p>and update if necessary.</p>
+<pre><code class="bash">$ wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz
+$ gunzip Python-2.7.9.tgz
+$ tar -xvf Python-2.7.9.tar
+$ cd Python-2.7.9/
+$ ./configure
+$ make
+$ sudo make install
+</code></pre>
+
+<h2 id="type-error-during-setup-requirements">Type Error during setup requirements</h2>
+<pre><code class="bash">$ sudo pip install -r requirements.txt
+Downloading/unpacking axel (from -r requirements.txt (line 1))
+Cleaning up...
+Exception:
+Traceback (most recent call last):
+  File &quot;/usr/lib/python2.7/dist-packages/pip/basecommand.py&quot;, line 122, in main
+    status = self.run(options, args)
+  File &quot;/usr/lib/python2.7/dist-packages/pip/commands/install.py&quot;, line 290, in run
+    requirement_set.prepare_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
+  File &quot;/usr/lib/python2.7/dist-packages/pip/req.py&quot;, line 1178, in prepare_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File &quot;/usr/lib/python2.7/dist-packages/pip/index.py&quot;, line 194, in find_requirement
+    page = self._get_page(main_index_url, req)
+  File &quot;/usr/lib/python2.7/dist-packages/pip/index.py&quot;, line 568, in _get_page
+    session=self.session,
+  File &quot;/usr/lib/python2.7/dist-packages/pip/index.py&quot;, line 694, in get_page
+    req, link, &quot;connection error: %s&quot; % exc, url,
+TypeError: __str__ returned non-string (type Error)
+</code></pre>
+
+<p>Set correct date and time on your RaspberryPi device.</p>
+<h2 id="where-can-i-find-log-file-for-service">Where can I find .log file for service?</h2>
+<p>Default path for log file is <em>'/var/log/cloud4rpi.log'</em></p>
+<p>You can configure the logging parameters in the <strong>app.py</strong>.</p>
+<p>To specify .log file location change path constant to required path:</p>
+<p><code>LOG_FILE_PATH = '/var/log/cloud4rpi.log'</code></p>
+<p>To get more detailed log information uncomment line below to set DEBUG logger level:</p>
+<p><code># c4r.set_logger_level(logging.DEBUG)  # uncomment to show debug messages</code></p></div>
+        </div>
+
+	<footer class="col-md-12">
+		<hr>
+		
+		<p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+	</footer>
+
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script src="../js/base.js"></script>
+    </body>
+</html>

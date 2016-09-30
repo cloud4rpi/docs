@@ -1,67 +1,67 @@
 {
     "docs": [
         {
-            "location": "/connecting-device/", 
+            "location": "/", 
             "text": "Connecting a New Device\n\n\nDo the following instructions to connect your device to Cloud4RPI.\n\n\nPrerequisites\n\n\nCheck \npython\n version\n\n\n$ python --version\n Python 2.7.9\n\n\n\n\nCloud4rpi requires version 2.7.9 or higher. Update your python installation if necessary.\n\n\nCheck if \npip\n installed\n\n\n$ pip --version\npip 1.1 from /usr/lib/python2.7/dist-packages (python 2.7)\n\n\n\n\nIf you see message \n-bash: pip: command not found\n you need to install it (see below).\n\n\nInstall necessary packages\n\n\nIt is always a good idea to upgrade your system before installing. Note that it may take some time.\n\n\n$ sudo apt-get update \n sudo apt-get upgrade\n\n\n\n\ninstall \ngit\n\n\n$ sudo apt-get install git\n\n\n\n\ninstall \npip\n if necessary\n\n\n$ sudo apt-get install python-pip\n\n\n\n\nOr use alternative methods to \ninstall pip\n.\n\n\nCheck installation\n\n\n$ pip --version\npip 1.5.6 from /usr/lib/python2.7/dist-packages (python 2.7)\n$ git --version\ngit version 2.1.4\n\n\n\n\nOptional: enable I2C, 1-wire etc. interfaces\n\n\n\n\nrun \nsudo raspi-config\n\n\nopen \n9 Advanced Options\n\n\nenable necessary interfaces\n\n\nchoose \nfinish\n and reboot device\n\n\n\n\nSetup Client\n\n\nGet packages\n\n\n$ git clone https://github.com/cloud4rpi/cloud4rpi.git\n$ cd cloud4rpi\n$ sudo pip install -r requirements.txt\n\n\n\n\nInsert Device Token and write your code\n\n\nFor example, using nano: \nnano app.py\n.\n\n\nReplace \nYOUR_DEVICE_TOKEN\n with the token displayed at the device page.\n\n\nTo exit from nano press ```Ctrl+X```, then ```Y``` to save changes.\n\n\n\nRun\n\n\n$ sudo python app.py\n\n\n\n\nInstall as a service\n\n\ncheck init manager type of your OS\n\n\n$ ps -p 1\n\n\n\n\n\n\nIf you see output like \n1 ?   00:00:36 systemd\n your OS have modern systemd\n\n\n\n\n$ sudo bash install.sh\n$ sudo systemctl start cloud4rpi.service\n\n\n\n\n\n\nIf you see output like \n1 ?   00:00:36 init\n your OS have legacy System V init\n\n\n\n\n$ sudo bash install_sysv.sh\n$ sudo service cloud4rpi start", 
             "title": "Home"
         }, 
         {
-            "location": "/connecting-device/#connecting-a-new-device", 
+            "location": "/#connecting-a-new-device", 
             "text": "Do the following instructions to connect your device to Cloud4RPI.", 
             "title": "Connecting a New Device"
         }, 
         {
-            "location": "/connecting-device/#prerequisites", 
+            "location": "/#prerequisites", 
             "text": "", 
             "title": "Prerequisites"
         }, 
         {
-            "location": "/connecting-device/#check-python-version", 
+            "location": "/#check-python-version", 
             "text": "$ python --version\n Python 2.7.9  Cloud4rpi requires version 2.7.9 or higher. Update your python installation if necessary.", 
             "title": "Check python version"
         }, 
         {
-            "location": "/connecting-device/#check-if-pip-installed", 
+            "location": "/#check-if-pip-installed", 
             "text": "$ pip --version\npip 1.1 from /usr/lib/python2.7/dist-packages (python 2.7)  If you see message  -bash: pip: command not found  you need to install it (see below).", 
             "title": "Check if pip installed"
         }, 
         {
-            "location": "/connecting-device/#install-necessary-packages", 
+            "location": "/#install-necessary-packages", 
             "text": "It is always a good idea to upgrade your system before installing. Note that it may take some time.  $ sudo apt-get update   sudo apt-get upgrade  install  git  $ sudo apt-get install git  install  pip  if necessary  $ sudo apt-get install python-pip  Or use alternative methods to  install pip .", 
             "title": "Install necessary packages"
         }, 
         {
-            "location": "/connecting-device/#check-installation", 
+            "location": "/#check-installation", 
             "text": "$ pip --version\npip 1.5.6 from /usr/lib/python2.7/dist-packages (python 2.7)\n$ git --version\ngit version 2.1.4", 
             "title": "Check installation"
         }, 
         {
-            "location": "/connecting-device/#optional-enable-i2c-1-wire-etc-interfaces", 
+            "location": "/#optional-enable-i2c-1-wire-etc-interfaces", 
             "text": "run  sudo raspi-config  open  9 Advanced Options  enable necessary interfaces  choose  finish  and reboot device", 
             "title": "Optional: enable I2C, 1-wire etc. interfaces"
         }, 
         {
-            "location": "/connecting-device/#setup-client", 
+            "location": "/#setup-client", 
             "text": "", 
             "title": "Setup Client"
         }, 
         {
-            "location": "/connecting-device/#get-packages", 
+            "location": "/#get-packages", 
             "text": "$ git clone https://github.com/cloud4rpi/cloud4rpi.git\n$ cd cloud4rpi\n$ sudo pip install -r requirements.txt", 
             "title": "Get packages"
         }, 
         {
-            "location": "/connecting-device/#insert-device-token-and-write-your-code", 
+            "location": "/#insert-device-token-and-write-your-code", 
             "text": "For example, using nano:  nano app.py .  Replace  YOUR_DEVICE_TOKEN  with the token displayed at the device page.  To exit from nano press ```Ctrl+X```, then ```Y``` to save changes.", 
             "title": "Insert Device Token and write your code"
         }, 
         {
-            "location": "/connecting-device/#run", 
+            "location": "/#run", 
             "text": "$ sudo python app.py", 
             "title": "Run"
         }, 
         {
-            "location": "/connecting-device/#install-as-a-service", 
+            "location": "/#install-as-a-service", 
             "text": "check init manager type of your OS  $ ps -p 1   If you see output like  1 ?   00:00:36 systemd  your OS have modern systemd   $ sudo bash install.sh\n$ sudo systemctl start cloud4rpi.service   If you see output like  1 ?   00:00:36 init  your OS have legacy System V init   $ sudo bash install_sysv.sh\n$ sudo service cloud4rpi start", 
             "title": "Install as a service"
         }, 

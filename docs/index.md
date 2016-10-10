@@ -1,13 +1,98 @@
-# Welcome to Cloud4Rpi Docs
+# Connecting a New Device
 
-## Lorem ipsum
+Do the following instructions to connect your device to Cloud4RPI.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce suscipit a justo sed fringilla. Nam nec blandit nibh, id tempus urna. Nullam tristique rutrum tellus, nec egestas quam malesuada at. Aliquam ac nunc ullamcorper ante convallis semper. Donec facilisis libero nec est suscipit laoreet. Ut eu auctor elit. Donec rhoncus iaculis purus quis congue. Ut volutpat massa non dolor porta fringilla. Mauris vulputate mi felis, nec fermentum dolor placerat sed. Donec blandit mattis ante, id ultrices diam venenatis ac. Donec molestie purus et ultricies egestas. Aliquam commodo ultricies vestibulum. Nullam consequat elit sit amet elementum fermentum.
+## Prerequisites
 
-Nullam finibus a lorem vitae egestas. Aliquam erat volutpat. Praesent eu diam sit amet felis vehicula pretium. Fusce posuere molestie tempor. Sed porta dolor et interdum accumsan. Nulla malesuada nibh eget risus mattis ultrices. Sed ullamcorper ex eget tortor euismod, at tempus sapien euismod. In commodo mauris non vestibulum aliquet. Nam iaculis iaculis porta.
+### Check **python** version
 
-Nam neque risus, facilisis sed hendrerit sit amet, sodales nec tortor. Quisque luctus enim a eros molestie, sed tempor eros facilisis. Sed risus odio, ullamcorper a efficitur a, sodales et justo. In pharetra ligula eu commodo bibendum. Cras vestibulum vel erat ut condimentum. Quisque id massa id nunc ullamcorper malesuada. Phasellus non maximus elit, id facilisis velit. Suspendisse non felis ornare, ullamcorper leo ut, congue diam. Mauris ullamcorper velit vel diam bibendum volutpat. Vestibulum luctus, diam et luctus volutpat, nibh lectus tincidunt lectus, tempor scelerisque nisl lectus ac nibh. Etiam facilisis tellus sit amet risus dapibus dapibus. Sed blandit odio id lorem venenatis dignissim. Curabitur bibendum ante nec risus sagittis pharetra. Nam purus tortor, ultricies auctor laoreet eu, congue eu nisl. Mauris vitae aliquam nunc.
+``` bash
+$ python --version
+ Python 2.7.9
+```
+Cloud4rpi requires version 2.7.9 or higher. Update your python installation if necessary.
 
-Aliquam pellentesque arcu id dolor dictum dapibus. Sed auctor ex eget nulla placerat aliquet. Curabitur varius luctus nulla congue lobortis. Nulla facilisi. Nulla dignissim faucibus blandit. Cras malesuada aliquam malesuada. Phasellus sit amet sollicitudin elit. Aenean tincidunt elementum mauris, id bibendum nibh mattis sed. Suspendisse eros tortor, lacinia non sodales sed, vehicula sit amet orci. Nulla faucibus justo felis, vel maximus augue volutpat vel. Sed ut ornare tortor, id pulvinar arcu. Nulla facilisi. Quisque eleifend sodales enim, nec sodales quam eleifend pulvinar. Proin condimentum non quam tincidunt ultrices.
+### Check if **pip** installed
 
-Nam quis eros quam. Aenean at eleifend lorem. Mauris ligula massa, ultrices eget risus non, imperdiet viverra felis. Nulla varius tortor et pellentesque congue. Praesent lacinia urna finibus neque volutpat porta. Suspendisse potenti. Praesent varius porttitor suscipit. Duis mattis eros sed faucibus molestie. Mauris mollis, eros vitae elementum pharetra, massa elit convallis dui, ut consequat ante sapien in neque. Donec nec egestas felis. Nullam justo orci, lobortis a neque tristique, vestibulum viverra nisi. Vivamus commodo mauris ipsum, sit amet dictum sapien efficitur at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam porta dui neque, in faucibus justo imperdiet cursus. Donec ut erat laoreet, semper risus a, gravida odio.
+``` bash
+$ pip --version
+pip 1.1 from /usr/lib/python2.7/dist-packages (python 2.7)
+```
+If you see message `-bash: pip: command not found` you need to install it (see below).
+
+### Install necessary packages
+
+It is always a good idea to upgrade your system before installing. Note that it may take some time.
+``` bash
+$ sudo apt-get update && sudo apt-get upgrade
+```
+
+install **git**
+``` bash
+$ sudo apt-get install git
+```
+
+install **pip** if necessary
+``` bash
+$ sudo apt-get install python-pip
+```
+
+Or use alternative methods to [install pip](https://pip.pypa.io/en/stable/installing.html).
+
+### Check installation
+
+``` bash
+$ pip --version
+pip 1.5.6 from /usr/lib/python2.7/dist-packages (python 2.7)
+$ git --version
+git version 2.1.4
+```
+
+### Optional: enable I2C, 1-wire etc. interfaces
+- run `sudo raspi-config`
+- open `9 Advanced Options`
+- enable necessary interfaces
+- choose `finish` and reboot device
+
+## Setup Client
+
+### Get packages
+
+``` bash
+$ git clone https://github.com/cloud4rpi/cloud4rpi.git
+$ cd cloud4rpi
+$ sudo pip install -r requirements.txt
+```
+
+### Insert Device Token and write your code
+
+For example, using nano: `nano app.py`.
+
+Replace **YOUR_DEVICE_TOKEN** with the token displayed at the device page.
+
+    To exit from nano press ```Ctrl+X```, then ```Y``` to save changes.
+
+### Run
+
+``` bash
+$ sudo python app.py
+```
+
+### Install as a service
+
+check init manager type of your OS
+```
+$ ps -p 1
+```
+
+- If you see output like `1 ?   00:00:36 systemd` your OS have modern systemd
+``` bash
+$ sudo bash install.sh
+$ sudo systemctl start cloud4rpi.service
+```
+
+- If you see output like `1 ?   00:00:36 init` your OS have legacy System V init
+``` bash
+$ sudo bash install_sysv.sh
+$ sudo service cloud4rpi start
+```

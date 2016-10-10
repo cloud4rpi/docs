@@ -1,7 +1,7 @@
 site_name: Cloud4Rpi Documentation
 theme: bootstrap
 pages:
-- Home: connecting-device.md
+- Home: index.md
 - Typical Scenarios: typical-scenarios.md
 - FAQ: faq.md
 - API: api.md

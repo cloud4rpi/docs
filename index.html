@@ -101,6 +101,10 @@
         
             <li><a href="#prerequisites">Prerequisites</a></li>
         
+            <li><a href="#check-installation">Check installation</a></li>
+        
+            <li><a href="#optional-enable-i2c-1-wire-etc-interfaces">Optional: enable I2C, 1-wire etc. interfaces</a></li>
+        
             <li><a href="#setup-client">Setup Client</a></li>
         
     
@@ -110,33 +114,16 @@
 
 <h1 id="connecting-a-new-device">Connecting a New Device</h1>
 <p>Do the following instructions to connect your device to Cloud4RPI.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<h3 id="check-python-version">Check <strong>python</strong> version</h3>
-<pre><code class="bash">$ python --version
- Python 2.7.9
-</code></pre>
-
-<p>Cloud4rpi requires version 2.7.9 or higher. Update your python installation if necessary.</p>
-<h3 id="check-if-pip-installed">Check if <strong>pip</strong> installed</h3>
-<pre><code class="bash">$ pip --version
-pip 1.1 from /usr/lib/python2.7/dist-packages (python 2.7)
-</code></pre>
-
-<p>If you see message <code>-bash: pip: command not found</code> you need to install it (see below).</p>
-<h3 id="install-necessary-packages">Install necessary packages</h3>
+<h3 id="prerequisites">Prerequisites</h3>
 <p>It is always a good idea to upgrade your system before installing. Note that it may take some time.</p>
 <pre><code class="bash">$ sudo apt-get update &amp;&amp; sudo apt-get upgrade
 </code></pre>
 
-<p>install <strong>git</strong></p>
-<pre><code class="bash">$ sudo apt-get install git
+<p>Install the required packages.</p>
+<pre><code class="bash">$ sudo apt-get install git python python-pip
 </code></pre>
 
-<p>install <strong>pip</strong> if necessary</p>
-<pre><code class="bash">$ sudo apt-get install python-pip
-</code></pre>
-
-<p>Or use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
+<p>NOTE: You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
 <h3 id="check-installation">Check installation</h3>
 <pre><code class="bash">$ pip --version
 pip 1.5.6 from /usr/lib/python2.7/dist-packages (python 2.7)
@@ -153,8 +140,7 @@ git version 2.1.4
 </ul>
 <h2 id="setup-client">Setup Client</h2>
 <h3 id="get-packages">Get packages</h3>
-<pre><code class="bash">$ git clone https://github.com/cloud4rpi/cloud4rpi.git
-$ cd cloud4rpi
+<pre><code class="bash">$ git clone https://github.com/cloud4rpi/cloud4rpi.git &amp;&amp; cd cloud4rpi
 $ sudo pip install -r requirements.txt
 </code></pre>
 

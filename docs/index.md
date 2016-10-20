@@ -2,42 +2,18 @@
 
 Do the following instructions to connect your device to Cloud4RPI.
 
-## Prerequisites
-
-### Check **python** version
-
-``` bash
-$ python --version
- Python 2.7.9
-```
-Cloud4rpi requires version 2.7.9 or higher. Update your python installation if necessary.
-
-### Check if **pip** installed
-
-``` bash
-$ pip --version
-pip 1.1 from /usr/lib/python2.7/dist-packages (python 2.7)
-```
-If you see message `-bash: pip: command not found` you need to install it (see below).
-
-### Install necessary packages
+### Prerequisites
 
 It is always a good idea to upgrade your system before installing. Note that it may take some time.
 ``` bash
 $ sudo apt-get update && sudo apt-get upgrade
 ```
 
-install **git**
+Install the required packages.
 ``` bash
-$ sudo apt-get install git
+$ sudo apt-get install git python python-pip
 ```
-
-install **pip** if necessary
-``` bash
-$ sudo apt-get install python-pip
-```
-
-Or use alternative methods to [install pip](https://pip.pypa.io/en/stable/installing.html).
+NOTE: You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/installing.html).
 
 ### Check installation
 
@@ -59,8 +35,7 @@ git version 2.1.4
 ### Get packages
 
 ``` bash
-$ git clone https://github.com/cloud4rpi/cloud4rpi.git
-$ cd cloud4rpi
+$ git clone https://github.com/cloud4rpi/cloud4rpi.git && cd cloud4rpi
 $ sudo pip install -r requirements.txt
 ```
 

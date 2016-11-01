@@ -139,34 +139,42 @@ git version 2.1.4
 <li>choose <code>finish</code> and reboot device</li>
 </ul>
 <h2 id="setup-client">Setup Client</h2>
-<h3 id="get-packages">Get packages</h3>
-<pre><code class="bash">$ git clone https://github.com/cloud4rpi/cloud4rpi.git &amp;&amp; cd cloud4rpi
-$ sudo pip install -r requirements.txt
+<h3 id="get-cloud4rpi-client-library">Get cloud4rpi client library</h3>
+<pre><code class="bash">$ sudo pip install cloud4rpi
 </code></pre>
 
-<h3 id="insert-device-token-and-write-your-code">Insert Device Token and write your code</h3>
-<p>For example, using nano: <code>nano app.py</code>.</p>
-<p>Replace <strong>YOUR_DEVICE_TOKEN</strong> with the token displayed at the device page.</p>
-<pre><code>To exit from nano press ```Ctrl+X```, then ```Y``` to save changes.
+<h3 id="time-to-hack-together-some-code">Time to hack together some code</h3>
+<p>You can see several examples at the <em>examples</em> directory of https://github.com/cloud4rpi/cloud4rpi.
+Don't forget to insert your device token where prompted, e.g. in rpi_ds18b20_and_gpio.py there is a line</p>
+<pre><code> DEVICE_TOKEN = '!!! put your device token here !!!'
 </code></pre>
+
+<p>Using your editor of choice, replace <strong>&lt;!!! put your device token here !!!&gt;</strong>
+with the token displayed at the top of the device page.</p>
 <h3 id="run">Run</h3>
-<pre><code class="bash">$ sudo python app.py
+<pre><code class="bash">$ sudo python rpi_ds18b20_and_gpio.py
 </code></pre>
 
 <h3 id="install-as-a-service">Install as a service</h3>
-<p>check init manager type of your OS</p>
+<p>You can use our service templates to facilitate service installation.</p>
+<ol>
+<li>Download the content of the <em>services</em> directory of https://github.com/cloud4rpi/cloud4rpi somewhere on your device where you can access it.</li>
+<li>Check the init manager of your OS</li>
+</ol>
 <pre><code>$ ps -p 1
 </code></pre>
 
 <ul>
-<li>If you see output like <code>1 ?   00:00:36 systemd</code> your OS have modern systemd</li>
+<li>If you see output like <code>1 ?   00:00:36 systemd</code> your OS is running systemd, use the <code>install.sh</code> script together with <code>service.tmpl</code></li>
 </ul>
 <pre><code class="bash">$ sudo bash install.sh
 $ sudo systemctl start cloud4rpi.service
+# You can also enable the service to be started on bootup
+$ sudo systemctl enable cloud4rpi.service
 </code></pre>
 
 <ul>
-<li>If you see output like <code>1 ?   00:00:36 init</code> your OS have legacy System V init</li>
+<li>If you see output like <code>1 ?   00:00:36 init</code> your OS have legacy System V init, use the <code>install_sysv.sh</code> script together with <code>service_sysv.tmpl</code></li>
 </ul>
 <pre><code class="bash">$ sudo bash install_sysv.sh
 $ sudo service cloud4rpi start

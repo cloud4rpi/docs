@@ -5,3 +5,8 @@ Docs are built using the mkdocs tool: [mkdocs](http://www.mkdocs.org/), install 
 ```
 make
 ```
+
+## To publish to GitHub Pages
+```
+make publish
+```

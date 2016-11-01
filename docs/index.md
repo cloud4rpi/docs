@@ -79,5 +79,3 @@ $ sudo systemctl enable cloud4rpi.service
 $ sudo bash install_sysv.sh
 $ sudo service cloud4rpi start
 ```
-
-test

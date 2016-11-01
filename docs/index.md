@@ -32,41 +32,49 @@ git version 2.1.4
 
 ## Setup Client
 
-### Get packages
+### Get cloud4rpi client library
 
 ``` bash
-$ git clone https://github.com/cloud4rpi/cloud4rpi.git && cd cloud4rpi
-$ sudo pip install -r requirements.txt
+$ sudo pip install cloud4rpi
 ```
 
-### Insert Device Token and write your code
+### Time to hack together some code
 
-For example, using nano: `nano app.py`.
+You can see several examples at the _examples_ directory of https://github.com/cloud4rpi/cloud4rpi.
+Don't forget to insert your device token where prompted, e.g. in rpi_ds18b20_and_gpio.py there is a line
 
-Replace **YOUR_DEVICE_TOKEN** with the token displayed at the device page.
+```
+ DEVICE_TOKEN = '!!! put your device token here !!!'
+```
 
-    To exit from nano press ```Ctrl+X```, then ```Y``` to save changes.
+Using your editor of choice, replace **<!!! put your device token here !!!>**
+with the token displayed at the top of the device page.
 
 ### Run
 
 ``` bash
-$ sudo python app.py
+$ sudo python rpi_ds18b20_and_gpio.py
 ```
 
 ### Install as a service
+You can use our service templates to facilitate service installation.
 
-check init manager type of your OS
+1. Download the content of the *services* directory of https://github.com/cloud4rpi/cloud4rpi somewhere on your device where you can access it.
+2. Check the init manager of your OS
+
 ```
 $ ps -p 1
 ```
 
-- If you see output like `1 ?   00:00:36 systemd` your OS have modern systemd
+- If you see output like `1 ?   00:00:36 systemd` your OS is running systemd, use the `install.sh` script together with `service.tmpl`
 ``` bash
 $ sudo bash install.sh
 $ sudo systemctl start cloud4rpi.service
+# You can also enable the service to be started on bootup
+$ sudo systemctl enable cloud4rpi.service
 ```
 
-- If you see output like `1 ?   00:00:36 init` your OS have legacy System V init
+- If you see output like `1 ?   00:00:36 init` your OS have legacy System V init, use the `install_sysv.sh` script together with `service_sysv.tmpl`
 ``` bash
 $ sudo bash install_sysv.sh
 $ sudo service cloud4rpi start

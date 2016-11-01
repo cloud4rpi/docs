@@ -1,4 +1,4 @@
-.PHONY: clean publish
+.PHONY: build clean publish
 
 build:
 	mkdocs build --clean

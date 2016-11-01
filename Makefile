@@ -5,3 +5,6 @@ build:
 
 clean:
 	rm -rf site/*
+
+publish:
+	mkdocs gh-deploy --clean

@@ -40,7 +40,7 @@ $ sudo pip install cloud4rpi
 
 ### Time to hack together some code
 
-You can see several examples at the _examples_ directory of https://github.com/cloud4rpi/cloud4rpi.
+You can see several examples at the _examples_ directory of [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi).
 Don't forget to insert your device token where prompted, e.g. in rpi_ds18b20_and_gpio.py there is a line
 
 ```
@@ -59,7 +59,7 @@ $ sudo python rpi_ds18b20_and_gpio.py
 ### Install as a service
 You can use our service templates to facilitate service installation.
 
-1. Download the content of the *services* directory of https://github.com/cloud4rpi/cloud4rpi somewhere on your device where you can access it.
+1. Download the content of the *services* directory of [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi) somewhere on your device where you can access it.
 2. Check the init manager of your OS
 
 ```

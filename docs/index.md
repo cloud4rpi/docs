@@ -68,14 +68,14 @@ $ ps -p 1
 
 - If you see output like `1 ?   00:00:36 systemd` your OS is running systemd, use the `install.sh` script together with `service.tmpl`
 ``` bash
-$ sudo bash install.sh
+$ sudo bash install.sh /absolute/path/to/your/script
 $ sudo systemctl start cloud4rpi.service
 # You can also enable the service to be started on bootup
 $ sudo systemctl enable cloud4rpi.service
 ```
 
-- If you see output like `1 ?   00:00:36 init` your OS have legacy System V init, use the `install_sysv.sh` script together with `service_sysv.tmpl`
+- If you see output like `1 ?   00:00:36 init` your OS is running SysV-style init, use the `install_sysv.sh` script together with `service_sysv.tmpl`
 ``` bash
-$ sudo bash install_sysv.sh
+$ sudo bash install_sysv.sh /absolute/path/to/your/script
 $ sudo service cloud4rpi start
 ```

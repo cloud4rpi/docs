@@ -41,7 +41,7 @@ $ sudo pip install cloud4rpi
 ### Time to hack together some code
 
 You can see several examples at the _examples_ directory of [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi).
-Don't forget to insert your device token where prompted, e.g. in rpi_ds18b20_and_gpio.py there is a line
+Don't forget to insert your device token where prompted, e.g. in io_sensors.py there is a line
 
 ```
  DEVICE_TOKEN = '!!! put your device token here !!!'
@@ -53,7 +53,7 @@ with the token displayed at the top of the device page.
 ### Run
 
 ``` bash
-$ sudo python rpi_ds18b20_and_gpio.py
+$ sudo python io_sensors.py
 ```
 
 ### Install as a service

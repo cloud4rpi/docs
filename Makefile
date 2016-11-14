@@ -1,6 +1,6 @@
 .PHONY: build clean publish
 
-install:
+init:
 	pip install mkdocs
 
 build:

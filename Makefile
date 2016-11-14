@@ -1,5 +1,8 @@
 .PHONY: build clean publish
 
+install:
+	pip install mkdocs
+
 build:
 	mkdocs build --clean
 

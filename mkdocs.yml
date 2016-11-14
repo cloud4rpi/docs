@@ -1,5 +1,4 @@
 site_name: Cloud4Rpi Documentation
-theme: bootstrap
 pages:
 - Home: index.md
 - Typical Scenarios: typical-scenarios.md

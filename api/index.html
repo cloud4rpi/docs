@@ -11,10 +11,10 @@
 
 	<title>API - Cloud4Rpi Documentation</title>
 
-        <link href="../css/bootstrap-3.0.3.min.css" rel="stylesheet">
-        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -32,6 +32,7 @@
 
         <!-- Collapsed navigation -->
         <div class="navbar-header">
+            
             <!-- Expander button -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -39,6 +40,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            
 
             <!-- Main title -->
             <a class="navbar-brand" href="..">Cloud4Rpi Documentation</a>
@@ -46,47 +48,55 @@
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
             
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../typical-scenarios/">Typical Scenarios</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../faq/">FAQ</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">API</a>
+                    </li>
+                
+                
+                </ul>
             
-                <li >
-                    <a href="..">Home</a>
-                </li>
-            
-            
-            
-                <li >
-                    <a href="../typical-scenarios/">Typical Scenarios</a>
-                </li>
-            
-            
-            
-                <li >
-                    <a href="../faq/">FAQ</a>
-                </li>
-            
-            
-            
-                <li class="active">
-                    <a href="./">API</a>
-                </li>
-            
-            
-            </ul>
 
-            <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
-                <li >
-                    <a rel="next" href="../faq/">
-                        <i class="fa fa-arrow-left"></i> Previous
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="prev" >
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
+                
+                    <li >
+                        <a rel="next" href="../faq/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
                 
             </ul>
         </div>
@@ -94,30 +104,176 @@
 </div>
 
         <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
         <li class="main active"><a href="#api">API</a></li>
         
+            <li><a href="#http">HTTP</a></li>
+        
+            <li><a href="#mqtt">MQTT</a></li>
+        
     
     </ul>
 </div></div>
-            <div class="col-md-9" role="main">
+                <div class="col-md-9" role="main">
 
 <h1 id="api">API</h1>
+<h2 id="http">HTTP</h2>
+<h3 id="update-devices-config">Update device's config</h3>
+<p>Updates device's config.</p>
+<pre><code>POST /api/devices/{token}/config/update
+HTTP/1.1
+Host: cloud4rpi.io
+Accept: application/json
+Content-Type: application/json
+</code></pre>
+
+<h4 id="path-parameters">Path parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>The token of the device</td>
+</tr>
+</tbody>
+</table>
+<p>The following example creates two variables on the device. Temperature of the numeric type and LEDOn of the bool type.</p>
+<pre><code class="bash">export DEVICE_TOKEN=device_token
+
+curl -X POST \
+     -H &quot;Content-Type: application/json&quot; \
+     -d '[{&quot;name&quot;:&quot;Temperature&quot;,&quot;type&quot;:&quot;numeric&quot;},{&quot;name&quot;:&quot;LEDOn&quot;,&quot;type&quot;:&quot;bool&quot;}]' \
+     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config/update
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You have to replace device_token with your device token displayed on the device page.</p>
+</div>
+<h3 id="send-data">Send data</h3>
+<p>Sends device data.</p>
+<pre><code>POST /api/devices/{token}/stream/data
+HTTP/1.1
+Host: cloud4rpi.io
+Accept: application/json
+Content-Type: application/json
+</code></pre>
+
+<h4 id="path-parameters_1">Path parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>The token of the device</td>
+</tr>
+</tbody>
+</table>
+<p>The following example sends Temperature and LEDOn values to the cloud4rpi.</p>
+<pre><code class="bash">export DEVICE_TOKEN=device_token
+
+curl -X POST \
+     -H &quot;Content-Type: application/json&quot; \
+     -d '{&quot;ts&quot;:&quot;2016-11-14T09:59:28.214Z&quot;,&quot;payload&quot;:{&quot;Temperature&quot;:24,&quot;LEDOn&quot;:false}}' \
+     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/stream/data
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You have to replace device_token with your device token displayed on the device page.</p>
+</div>
+<h3 id="send-diagnostic-data">Send diagnostic data</h3>
+<p>Sends diagnostic data.</p>
+<pre><code>POST /api/devices/{token}/stream/system
+HTTP/1.1
+Host: cloud4rpi.io
+Accept: application/json
+Content-Type: application/json
+</code></pre>
+
+<h4 id="path-parameters_2">Path parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td>The token of the device</td>
+</tr>
+</tbody>
+</table>
+<p>The following example sends CPU Temperature and IP Address diagnostic values to the cloud4rpi.</p>
+<pre><code class="bash">export DEVICE_TOKEN=device_token
+
+curl -X POST \
+     -H &quot;Content-Type: application/json&quot; \
+     -d '{&quot;ts&quot;:&quot;2016-11-14T09:59:28.214Z&quot;,&quot;payload&quot;:{&quot;CPU Temperature&quot;:51,&quot;IP Address&quot;:&quot;8.8.8.8&quot;}}' \
+     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/stream/system
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You have to replace device_token with your device token displayed on the device page.</p>
+</div>
+<h2 id="mqtt">MQTT</h2>
 <p>To be added</p></div>
+            
         </div>
 
-	<footer class="col-md-12">
-		<hr>
-		
-		<p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-	</footer>
-
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
 
         <script src="../js/jquery-1.10.2.min.js"></script>
         <script src="../js/bootstrap-3.0.3.min.js"></script>
         <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
         <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>

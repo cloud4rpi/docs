@@ -117,13 +117,53 @@
         }, 
         {
             "location": "/api/", 
-            "text": "API\n\n\nTo be added", 
+            "text": "API\n\n\nHTTP\n\n\nUpdate device's config\n\n\nUpdates device's config.\n\n\nPOST /api/devices/{token}/config/update\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json\n\n\n\n\nPath parameters\n\n\n\n\n\n\n\n\nParameter\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe token of the device\n\n\n\n\n\n\n\n\nThe following example creates two variables on the device. Temperature of the numeric type and LEDOn of the bool type.\n\n\nexport DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '[{\nname\n:\nTemperature\n,\ntype\n:\nnumeric\n},{\nname\n:\nLEDOn\n,\ntype\n:\nbool\n}]' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config/update\n\n\n\n\n\n\nNote\n\n\nYou have to replace device_token with your device token displayed on the device page.\n\n\n\n\nSend data\n\n\nSends device data.\n\n\nPOST /api/devices/{token}/stream/data\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json\n\n\n\n\nPath parameters\n\n\n\n\n\n\n\n\nParameter\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe token of the device\n\n\n\n\n\n\n\n\nThe following example sends Temperature and LEDOn values to the cloud4rpi.\n\n\nexport DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n2016-11-14T09:59:28.214Z\n,\npayload\n:{\nTemperature\n:24,\nLEDOn\n:false}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/stream/data\n\n\n\n\n\n\nNote\n\n\nYou have to replace device_token with your device token displayed on the device page.\n\n\n\n\nSend diagnostic data\n\n\nSends diagnostic data.\n\n\nPOST /api/devices/{token}/stream/system\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json\n\n\n\n\nPath parameters\n\n\n\n\n\n\n\n\nParameter\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe token of the device\n\n\n\n\n\n\n\n\nThe following example sends CPU Temperature and IP Address diagnostic values to the cloud4rpi.\n\n\nexport DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n2016-11-14T09:59:28.214Z\n,\npayload\n:{\nCPU Temperature\n:51,\nIP Address\n:\n8.8.8.8\n}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/stream/system\n\n\n\n\n\n\nNote\n\n\nYou have to replace device_token with your device token displayed on the device page.\n\n\n\n\nMQTT\n\n\nTo be added", 
             "title": "API"
         }, 
         {
             "location": "/api/#api", 
-            "text": "To be added", 
+            "text": "", 
             "title": "API"
+        }, 
+        {
+            "location": "/api/#http", 
+            "text": "", 
+            "title": "HTTP"
+        }, 
+        {
+            "location": "/api/#update-devices-config", 
+            "text": "Updates device's config.  POST /api/devices/{token}/config/update\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json", 
+            "title": "Update device's config"
+        }, 
+        {
+            "location": "/api/#path-parameters", 
+            "text": "Parameter  Description      token  The token of the device     The following example creates two variables on the device. Temperature of the numeric type and LEDOn of the bool type.  export DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '[{ name : Temperature , type : numeric },{ name : LEDOn , type : bool }]' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config/update   Note  You have to replace device_token with your device token displayed on the device page.", 
+            "title": "Path parameters"
+        }, 
+        {
+            "location": "/api/#send-data", 
+            "text": "Sends device data.  POST /api/devices/{token}/stream/data\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json", 
+            "title": "Send data"
+        }, 
+        {
+            "location": "/api/#path-parameters_1", 
+            "text": "Parameter  Description      token  The token of the device     The following example sends Temperature and LEDOn values to the cloud4rpi.  export DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '{ ts : 2016-11-14T09:59:28.214Z , payload :{ Temperature :24, LEDOn :false}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/stream/data   Note  You have to replace device_token with your device token displayed on the device page.", 
+            "title": "Path parameters"
+        }, 
+        {
+            "location": "/api/#send-diagnostic-data", 
+            "text": "Sends diagnostic data.  POST /api/devices/{token}/stream/system\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json", 
+            "title": "Send diagnostic data"
+        }, 
+        {
+            "location": "/api/#path-parameters_2", 
+            "text": "Parameter  Description      token  The token of the device     The following example sends CPU Temperature and IP Address diagnostic values to the cloud4rpi.  export DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '{ ts : 2016-11-14T09:59:28.214Z , payload :{ CPU Temperature :51, IP Address : 8.8.8.8 }}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/stream/system   Note  You have to replace device_token with your device token displayed on the device page.", 
+            "title": "Path parameters"
+        }, 
+        {
+            "location": "/api/#mqtt", 
+            "text": "To be added", 
+            "title": "MQTT"
         }
     ]
 }

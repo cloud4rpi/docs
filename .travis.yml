@@ -6,6 +6,8 @@ install: make init
 
 script: make build
 
+after_success: make publish
+
 notifications:
   slack:
     on_success: change

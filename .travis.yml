@@ -1,20 +1,15 @@
 language: python
-
 python: '2.7'
-
 install: make init
-
 script: make build
-
 after_success:
-  - |
-       $(npm bin)/set-up-ssh --key "$encrypted_2dbed6352b90_key" \
-                             --iv "$encrypted_2dbed6352b90_iv" \
-                             --path-encrypted-key ".travis/github_deploy_key.enc"
-  - make publish
-
+- |
+  $(npm bin)/set-up-ssh --key "$encrypted_2dbed6352b90_key" \
+                        --iv "$encrypted_2dbed6352b90_iv" \
+                        --path-encrypted-key ".travis/github_deploy_key.enc"
+- make publish
 notifications:
   slack:
     on_success: always
     on_failure: always
-    secure: CihmRTrUE2UMZJoUa33P876+dYOAlP7qhdczqt+Bjikq+B/QmiWdQ5BDVqnlNfwc4nXE1kT5nyd31UEzltMTRqX6pOl8guuk3pkV/eTyPjKnZjkqyHlEQApMeYjslpnaCmmMt+4daRFnKA/4reEzGgmaRYUko7QDmHVQpEoHfl2l+yE1huCEtuyPbKhVUuA/ZDpv32R56jsB4ZwNi6GG0+FGSg0KKEDMaTnUGGtpUUzw1KbP+tVuuvjBtSIPRYKNWMw0xzHYPSesrdMhU+GyZ1LvGlhaJcXS4A/kd1aiZ62WRPmV2RezESk8ZAC6bIH8p61eJqk+xBibwFP5SFHGcK1tTqgF7FzNn+jujXidFcvMugzjxlenGoD+RSE9PAUNiiIq2/yr8d3sGPYJwNxfKKFdElMTB9a2CJRN7gB8ZclE+TfX5XEGkRXrl5DypaUo9/ub7DDFreDJpoPrniTF5o6gMuqYvkkCF28m/yg65d+eANpO1zcmNPD1xfWO0kvoayRwt4gLqPsWEQnftpXP8Ajnr2ZdCxTE0caOglKKB339duSgcPdpjWInt+hrI9F1wEYYDPk/0ar8YRjU/T0jcG9lRGaWrReOOzREzeLFi8D+Tvt7w2LDk68OziR80DKfgu/cMH7QZqXCHvH3qZLopGCV9hWUwbKuK9nkJGw0OVw=
+    secure: OuoX9d5Cztvl7vimVrtAh/N0PQ0+x+y8s84cY6E0vei6ArIBlrcNJe1tftQW6a88RXi0VKbpFC8toTMCuz9FJHWlAy9YdaonsLF/06tXng9U3Ihj35VZ30MHTNpSsdbRx6DzzPYFHOjIzqCbFyYQZqKT6hEsk/v0fOCrM4tmtkIvuZcsmMDBg8WZCx53LDkUHx48RSHpqI699m0C1NMoaYTe+v9bmWkShVd8rFGiD20VH8aCVwddEaosqsm4wfCK38s+3jkYwF2ptoLLzrHSE5nQZIVRo5sg4euZCch9+I8+LG1Wzol2k6haWM4lhf+ia0Re4+rxee+FehqKCj4E4TexvaKSEG8pfSNJwJuP6krBesfZ3rmMSK1uTMQZdHwX8hIalzQjCnmxO1dR1Iu2WAtZ0wl7JOWkWh5vaxixwdK79jt/AZXCbZ9HvaGMlpDlisW0yn1Ob0YfqX1xZ6FZhC76qtFgzIJLgCd4ctTFCoo+Ks8EP1A9bKl6DkjmCM/19v+d2UGs6iax7KOzL4BAZxGfYDAIZdi3XAQDgf5+KUZV/82EqifYI2OH8LXHi4eiFB3RKgEVG33rzPg8rBZLAoJNlScvE78/urRDaBywZxiABj3VOQQ9VqBiaRrJt63ioTVRywJMhByKC/gLWG75xRIEGeXvMo0bEAkQWyrG3rA=

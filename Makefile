@@ -13,4 +13,4 @@ publish:
 	mkdocs gh-deploy --clean
 
 build_deploy:
-    bash ./deploy.sh
+	bash deploy.sh

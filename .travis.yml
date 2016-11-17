@@ -1,13 +1,17 @@
 language: python
+
 python: '2.7'
+
 install: make init
-script: make build
-after_success:
-- |
-  $(npm bin)/set-up-ssh --key "$encrypted_2dbed6352b90_key" \
-                        --iv "$encrypted_2dbed6352b90_iv" \
-                        --path-encrypted-key ".travis/github_deploy_key.enc"
-- make publish
+
+script: make build_deploy
+
+env:
+  global:
+  - ENCRYPTION_LABEL: 2dbed6352b90
+  - COMMIT_AUTHOR_EMAIL: "cloud4rpi@gmail.com"
+
+
 notifications:
   slack:
     on_success: always

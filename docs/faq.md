@@ -2,7 +2,7 @@
 
 Frequently Asked Questions when working with Cloud4Rpi
 
-## InsecurePlatformWarning
+## Insecure Platform Warning
 
 Error `"InsecurePlatformWarning: A true SSLContext object is not available..."`
 

@@ -44,10 +44,10 @@ You can see several examples at the _examples_ directory of [https://github.com/
 Don't forget to insert your device token where prompted, e.g. in io_sensors.py there is a line
 
 ```
- DEVICE_TOKEN = '!!! put your device token here !!!'
+ DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 ```
 
-Using your editor of choice, replace **<!!! put your device token here !!!>**
+Using your editor of choice, replace **\_\_YOUR_DEVICE_TOKEN\_\_**
 with the token displayed at the top of the device page.
 
 ### Run

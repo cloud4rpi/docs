@@ -79,3 +79,8 @@ $ sudo systemctl enable cloud4rpi.service
 $ sudo bash install_sysv.sh path/to/your/script
 $ sudo service cloud4rpi start
 ```
+
+!!! Note
+
+    You have to replace path/to/your/script with actual service script location.
+

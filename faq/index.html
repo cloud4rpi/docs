@@ -85,7 +85,6 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#faq">FAQ</a></li>
             <li><a href="#insecure-platform-warning">Insecure Platform Warning</a></li>
-            <li><a href="#type-error-during-setup-requirements">Type Error during setup requirements</a></li>
             <li><a href="#where-can-i-find-log-file-for-service">Where can I find .log file for service?</a></li>
     </ul>
 </div></div>
@@ -109,35 +108,12 @@ $ make
 $ sudo make install
 </code></pre>
 
-<h2 id="type-error-during-setup-requirements">Type Error during setup requirements</h2>
-<pre><code class="bash">$ sudo pip install -r requirements.txt
-Downloading/unpacking axel (from -r requirements.txt (line 1))
-Cleaning up...
-Exception:
-Traceback (most recent call last):
-  File &quot;/usr/lib/python2.7/dist-packages/pip/basecommand.py&quot;, line 122, in main
-    status = self.run(options, args)
-  File &quot;/usr/lib/python2.7/dist-packages/pip/commands/install.py&quot;, line 290, in run
-    requirement_set.prepare_files(finder, force_root_egg_info=self.bundle, bundle=self.bundle)
-  File &quot;/usr/lib/python2.7/dist-packages/pip/req.py&quot;, line 1178, in prepare_files
-    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
-  File &quot;/usr/lib/python2.7/dist-packages/pip/index.py&quot;, line 194, in find_requirement
-    page = self._get_page(main_index_url, req)
-  File &quot;/usr/lib/python2.7/dist-packages/pip/index.py&quot;, line 568, in _get_page
-    session=self.session,
-  File &quot;/usr/lib/python2.7/dist-packages/pip/index.py&quot;, line 694, in get_page
-    req, link, &quot;connection error: %s&quot; % exc, url,
-TypeError: __str__ returned non-string (type Error)
-</code></pre>
-
-<p>Set correct date and time on your RaspberryPi device.</p>
 <h2 id="where-can-i-find-log-file-for-service">Where can I find .log file for service?</h2>
-<p>Default path for log file is <em>'/var/log/cloud4rpi.log'</em></p>
-<p>You can configure the logging parameters in the <strong>app.py</strong>.</p>
-<p>To specify .log file location change path constant to required path:</p>
+<p>If you use <code>.../examples/raspberrypi/control.py</code> as a service the default path for log-file is <em>'/var/log/cloud4rpi.log'</em></p>
+<p>But you can specify your log file location via LOG_FILE_PATH variable:</p>
 <p><code>LOG_FILE_PATH = '/var/log/cloud4rpi.log'</code></p>
-<p>To get more detailed log information uncomment line below to set DEBUG logger level:</p>
-<p><code># c4r.set_logger_level(logging.DEBUG)  # uncomment to show debug messages</code></p></div>
+<p>The following code is required to activate logging to file:</p>
+<p><code>cloud4rpi.set_logging_to_file(LOG_FILE_PATH)</code></p></div>
         </div>
 
         <footer class="col-md-12">

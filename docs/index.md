@@ -16,9 +16,8 @@ $ sudo apt-get install git python python-pip
 NOTE: You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/installing.html).
 
 !!! Note
- 
-Cloud4rpi library works correctly with Python 2.7.9+ and Python 3.2+ versions 
 
+    Cloud4rpi library works correctly with Python 2.7.9+ and Python 3.2+ versions.
 
 ### Check installation
 

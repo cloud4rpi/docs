@@ -99,7 +99,7 @@ curl -X POST \
 
 !!! Note
 
-    You have to replace device_token with your device token displayed on the device page.
+    You need to replace 'device_token' with your device token displayed on the device page.
 
 ## MQTT
 

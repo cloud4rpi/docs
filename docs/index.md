@@ -82,5 +82,5 @@ $ sudo service cloud4rpi start
 
 !!! Note
 
-    You have to replace path/to/your/script with actual service script location.
+    You need to replace 'path/to/your/script' with the actual service script location.
 

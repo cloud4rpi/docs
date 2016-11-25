@@ -9,11 +9,16 @@ It is always a good idea to upgrade your system before installing. Note that it 
 $ sudo apt-get update && sudo apt-get upgrade
 ```
 
-Install the required packages.
+ Install the required packages.
 ``` bash
 $ sudo apt-get install git python python-pip
 ```
 NOTE: You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/installing.html).
+
+!!! Note
+ 
+Cloud4rpi library works correctly with Python 2.7.9+ and Python 3.2+ versions 
+
 
 ### Check installation
 
@@ -23,6 +28,8 @@ pip 1.5.6 from /usr/lib/python2.7/dist-packages (python 2.7)
 $ git --version
 git version 2.1.4
 ```
+
+
 
 ### Optional: enable I2C, 1-wire etc. interfaces
 - run `sudo raspi-config`
@@ -36,6 +43,12 @@ git version 2.1.4
 
 ``` bash
 $ sudo pip install cloud4rpi
+```
+
+To install lib using python3 
+
+```
+sudo python3 -m pip install cloud4rpi
 ```
 
 ### Time to hack together some code

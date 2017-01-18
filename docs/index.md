@@ -1,6 +1,6 @@
 # Connecting a New Device
 
-Do the following instructions to connect your device to [Cloud4RPI]('https://cloud4rpi.io') cloud control panel.
+Do the following instructions to connect your device to [Cloud4RPI](https://cloud4rpi.io) cloud control panel.
 
 ### Prerequisites
 

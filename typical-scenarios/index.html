@@ -86,11 +86,16 @@
         <li class="main active"><a href="#typical-scenarios">Typical Scenarios</a></li>
             <li><a href="#ds18b20-temperature-sensor">DS18B20 Temperature Sensor</a></li>
             <li><a href="#control-led-from-web">Control LED from WEB</a></li>
+            <li><a href="#monitor-device-events-using-colored-status">Monitor Device Events using colored status</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="typical-scenarios">Typical Scenarios</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don't forget to replace '<strong>YOUR_DEVICE_TOKEN</strong>' on sample with the personal device token.</p>
+</div>
 <h2 id="ds18b20-temperature-sensor">DS18B20 Temperature Sensor</h2>
 <h3 id="prerequisites">Prerequisites</h3>
 <p>You need</p>
@@ -100,24 +105,29 @@
 <li>Breadboard, connecting wires, 4.7K Ω resistor</li>
 </ul>
 <h3 id="code">Code</h3>
-<pre><code class="python">'CurrentTemp_1': {
+<pre><code class="python">'RoomTemp': {
     'type': 'numeric',
-    'bind': bind_sensor(ds_sensors, DS_SENSOR_1_INDEX)
+    'bind': ds_sensors[0]
 },
-
-'CurrentTemp_2': {
+# 'OutsideTemp': {
+#     'type': 'numeric',
+#     'bind': ds_sensors[1]
+# },
+'CPUTemp': {
     'type': 'numeric',
-    'bind': bind_sensor(ds_sensors, DS_SENSOR_2_INDEX)
-},
+    'bind': rpi.cpu_temp
+}
 </code></pre>
 
-<ul>
-<li>Uncomment code in <code>app.py</code>
-if you have only 1 or more than 2 ds18b20 sensors - make necessary changes.</li>
-<li>Run <code>app.py</code> or restart <code>cloud4rpi</code> service. New variables
-named <code>CurrentTemp_1</code> and <code>CurrentTemp_2</code> should appear on such device
-page.</li>
-</ul>
+<p>Open <code>sensors.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi">examples</a> folder
+- Make necessary changes in <code>sensors.py</code> if you have another sensor configuration. 
+- Run <code>sensors</code> or restart <code>cloud4rpi</code> service. New variables 
+named <code>RoomTemp</code> and <code>CPUTemp</code> should appear on such device
+page.
+- Open <code>Control Panels</code> page and add new control panel or open existing one.
+- Add new widget of type <code>Chart</code> and choose newly added <code>RoomTemp</code> variable.
+- Add new widget of type <code>Gauge</code> and choose newly added <code>CPUTemp</code> variable.
+- Now you can monitor cpu and room temperature sing these widgets.</p>
 <h2 id="control-led-from-web">Control LED from WEB</h2>
 <h3 id="prerequisites_1">Prerequisites</h3>
 <p>You need</p>
@@ -137,14 +147,56 @@ Cloud4rpi uses physical pins numbering (<a href="https://www.raspberrypi.org/doc
 },
 </code></pre>
 
+<p>Open <code>actuator.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi">examples</a> folder</p>
 <ul>
-<li>Uncomment code in <code>app.py</code>. If you connected led to another GPIO pin
+<li>Uncomment code in <code>actuator.py</code>. If you connected led to another GPIO pin
 then set correct value to variable <code>LED_PIN</code>.</li>
-<li>Run <code>app.py</code> or restart <code>cloud4rpi</code> service. New variable
-named <code>LEDOn_1</code> should appear on such device page.</li>
+<li>Run <code>actuator.py</code> or restart <code>cloud4rpi</code> service. New variable
+named <code>LEDOn</code> should appear on such device page.</li>
 <li>Open <code>Control Panels</code> page and add new control panel or open existing one.</li>
-<li>Add new widget of type <code>Switch</code> and choose newly added <code>LEDOn_1</code> variable.</li>
+<li>Add new widget of type <code>Switch</code> and choose newly added <code>LEDOn</code> variable.</li>
 <li>Now you can switch LED state using this widget.</li>
+</ul>
+<h2 id="monitor-device-events-using-colored-status">Monitor Device Events using colored status</h2>
+<h3 id="prerequisites_2">Prerequisites</h3>
+<p>You need</p>
+<ul>
+<li>Сonfigured and <a href="#connecting-a-new-device">connected</a> Raspberry Pi device</li>
+</ul>
+<h3 id="code_2">Code</h3>
+<pre><code class="python">'STATUS': {
+    'type': 'string',
+    'bind': listen_for_events
+}
+</code></pre>
+
+<p>Open <code>status.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi">examples</a> folder</p>
+<h3 id="code_3">Code</h3>
+<pre><code class="python">def listen_for_events():
+    # write your own logic here
+    result = random.randint(1, 5)
+    if result == 1:
+        return 'RING'
+
+    if result == 5:
+        return 'BOOM!'
+
+    return 'IDLE'
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Feel free to re-write an event generation logic based with your specific conditions:</p>
+</div>
+<ul>
+<li>Run <code>status.py</code></li>
+<li>Go to <a href="https://cloud4rpi.io">cloud4rpi</a> website. New variable <code>STATUS</code> should appear on such device page.</li>
+<li>Open <code>Control Panels</code> page and add new control panel or open existing one.</li>
+<li>Add new widget of type <code>Text</code> and choose newly added <code>STATUS</code> variable.</li>
+<li>Manage pre-defined status color items according with the event names from a code above.</li>
+<li>In result, you should have the three items like the following:
+<code>{ IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}</code></li>
+<li>Now you can monitor colorized incoming status using this widget.</li>
 </ul></div>
         </div>
 

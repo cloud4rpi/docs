@@ -52,8 +52,8 @@ sudo python3 -m pip install cloud4rpi
 
 ### Time to hack together some code
 
-You can see several examples at the _examples_ directory of [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi).
-Don't forget to insert your device token where prompted, e.g. in io_sensors.py there is a line
+You can see several examples at the `examples/raspberrypi` directory of [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi).
+Don't forget to insert your device token where prompted, e.g. in control.py there is a line
 
 ```
  DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'

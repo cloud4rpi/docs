@@ -2,7 +2,7 @@
 
 !!! Note
 
-    Don't forget to replace '__YOUR_DEVICE_TOKEN__' on sample with the personal device token.
+    Don't forget to replace '__YOUR_DEVICE_TOKEN__' in the samples with the personal device token.
 
 ## DS18B20 Temperature Sensor
 
@@ -30,15 +30,16 @@ You need
     'bind': rpi.cpu_temp
 }
 ```
-Open `sensors.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi`) folder
+Open the `sensors.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi`) folder
+
 - Make necessary changes in `sensors.py` if you have another sensor configuration. 
 - Run `sensors` or restart `cloud4rpi` service. New variables 
 named `RoomTemp` and `CPUTemp` should appear on such device
 page.
-- Open `Control Panels` page and add new control panel or open existing one.
-- Add new widget of type `Chart` and choose newly added `RoomTemp` variable.
-- Add new widget of type `Gauge` and choose newly added `CPUTemp` variable.
-- Now you can monitor cpu and room temperature sing these widgets.
+- Open the `Control Panels` page and add a new control panel or open an existing one.
+- Add a new `Chart` widget and choose the newly added `RoomTemp` variable.
+- Add a new `Gauge` widget and choose the newly added `CPUTemp` variable.
+- Now you can monitor CPU and room temperature using these widgets.
 
 ## Control LED from WEB
 
@@ -50,7 +51,8 @@ You need
 - Breadboard, connecting wires, 270-330 Ω resistor
 
 
-    **Note:**
+!!! Note
+
     Cloud4rpi uses physical pins numbering ([learn more](https://www.raspberrypi.org/documentation/usage/gpio/)).
 
 ### Code
@@ -63,14 +65,12 @@ You need
 },
 ```
 
-Open `actuator.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi`) folder
+Open the `actuator.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi`) folder
 
-- Uncomment code in `actuator.py`. If you connected led to another GPIO pin
-then set correct value to variable `LED_PIN`.
-- Run `actuator.py` or restart `cloud4rpi` service. New variable
-named `LEDOn` should appear on such device page.
-- Open `Control Panels` page and add new control panel or open existing one.
-- Add new widget of type `Switch` and choose newly added `LEDOn` variable.
+- Uncomment code in `actuator.py`. If you connected an LED to a differed GPIO pin, set the correct value to variable `LED_PIN`.
+- Run `actuator.py` or restart `cloud4rpi` service. A new variable named `LEDOn` should appear on the device page.
+- Open the `Control Panels` page and add a new control panel or open an existing one.
+- Add a new `Switch` widget and choose the newly added `LEDOn` variable.
 - Now you can switch LED state using this widget.
 
 
@@ -89,7 +89,7 @@ You need
     'bind': listen_for_events
 }
 ```
- Open `status.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi`) folder
+ Open the `status.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi`) folder
  
 ### Code
 ``` python
@@ -106,17 +106,16 @@ def listen_for_events():
 ```
 !!! Note
  
-    Feel free to re-write an event generation logic based with your specific conditions:
+    Feel free to re-write event generation logic based on your specific conditions:
 
 
-- Run `status.py`
-- Go to [cloud4rpi](`https://cloud4rpi.io`) website. New variable `STATUS` should appear on such device page.
-- Open `Control Panels` page and add new control panel or open existing one.
-- Add new widget of type `Text` and choose newly added `STATUS` variable.
-- Manage pre-defined status color items according with the event names from a code above.
-- In result, you should have the three items like the following:
+- Run `status.py` or restart `cloud4rpi` service. A new variable named `STATUS` should appear on the device page.
+- Open `Control Panels` page and add a new control panel or open an existing one.
+- Add a new `Text` widget and choose the newly added `STATUS` variable.
+- Change the pre-defined status color items according to the event names from the code above.
+- As a result, you should have three items like the following:
 `{ IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}`
-- Now you can monitor colorized incoming status using this widget.
+- Now this widget displays incoming status with color.
 
 
 

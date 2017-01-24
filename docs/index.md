@@ -1,6 +1,6 @@
 # Connecting a New Device
 
-Do the following instructions to connect your device to [Cloud4RPI](https://cloud4rpi.io) cloud control panel.
+Follow the instructions to connect your device to [Cloud4RPI](https://cloud4rpi.io) cloud control panel.
 
 ### Prerequisites
 
@@ -13,7 +13,7 @@ $ sudo apt-get update && sudo apt-get upgrade
 ``` bash
 $ sudo apt-get install git python python-pip
 ```
-NOTE: You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/installing.html).
+You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/installing.html).
 
 !!! Note
 
@@ -52,8 +52,8 @@ sudo python3 -m pip install cloud4rpi
 
 ### Time to hack together some code
 
-You can see several examples at the `examples/raspberrypi` directory of [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi).
-Don't forget to insert your device token where prompted, e.g. in control.py there is a line
+You can find several examples int the `examples/raspberrypi` directory at [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi).
+Don't forget to insert your device token where prompted, e.g. in `control.py` there is a line
 
 ```
  DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
@@ -71,7 +71,7 @@ $ sudo python io_sensors.py
 ### Install as a service
 You can use our service templates to facilitate service installation.
 
-1. Download the content of the *services* directory of [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi) somewhere on your device where you can access it.
+1. Download the content of the *services* directory from [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi) and save it somewhere on your device where you can access it.
 2. Check the init manager of your OS
 
 ```

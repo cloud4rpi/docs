@@ -26,13 +26,13 @@ $ sudo make install
 
 ## Where can I find .log file for service?
 
-If you use ```.../examples/raspberrypi/control.py``` as a service the default path for log-file is *'/var/log/cloud4rpi.log'*
+If you use ```.../examples/raspberrypi/control.py``` as a service, the default path for the log-file is *'/var/log/cloud4rpi.log'*
 
-But you can specify your log file location via LOG_FILE_PATH variable:
+However, you can specify a different log file location via the LOG_FILE_PATH variable:
 
 ```LOG_FILE_PATH = '/var/log/cloud4rpi.log'```
 
 
-The following code is required to activate logging to file:
+The following code is required to activate logging to a file:
 
 ```cloud4rpi.set_logging_to_file(LOG_FILE_PATH)```

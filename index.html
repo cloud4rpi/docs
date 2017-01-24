@@ -93,7 +93,7 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="connecting-a-new-device">Connecting a New Device</h1>
-<p>Do the following instructions to connect your device to <a href="https://cloud4rpi.io">Cloud4RPI</a> cloud control panel.</p>
+<p>Follow the instructions to connect your device to <a href="https://cloud4rpi.io">Cloud4RPI</a> cloud control panel.</p>
 <h3 id="prerequisites">Prerequisites</h3>
 <p>It is always a good idea to upgrade your system before installing. Note that it may take some time.</p>
 <pre><code class="bash">$ sudo apt-get update &amp;&amp; sudo apt-get upgrade
@@ -103,7 +103,7 @@
 <pre><code class="bash">$ sudo apt-get install git python python-pip
 </code></pre>
 
-<p>NOTE: You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
+<p>You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Cloud4rpi library works correctly with Python 2.7.9+ and Python 3.2+ versions.</p>
@@ -132,8 +132,8 @@ git version 2.1.4
 </code></pre>
 
 <h3 id="time-to-hack-together-some-code">Time to hack together some code</h3>
-<p>You can see several examples at the <code>examples/raspberrypi</code> directory of <a href="https://github.com/cloud4rpi/cloud4rpi">https://github.com/cloud4rpi/cloud4rpi</a>.
-Don't forget to insert your device token where prompted, e.g. in control.py there is a line</p>
+<p>You can find several examples int the <code>examples/raspberrypi</code> directory at <a href="https://github.com/cloud4rpi/cloud4rpi">https://github.com/cloud4rpi/cloud4rpi</a>.
+Don't forget to insert your device token where prompted, e.g. in <code>control.py</code> there is a line</p>
 <pre><code> DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 </code></pre>
 
@@ -146,7 +146,7 @@ with the token displayed at the top of the device page.</p>
 <h3 id="install-as-a-service">Install as a service</h3>
 <p>You can use our service templates to facilitate service installation.</p>
 <ol>
-<li>Download the content of the <em>services</em> directory of <a href="https://github.com/cloud4rpi/cloud4rpi">https://github.com/cloud4rpi/cloud4rpi</a> somewhere on your device where you can access it.</li>
+<li>Download the content of the <em>services</em> directory from <a href="https://github.com/cloud4rpi/cloud4rpi">https://github.com/cloud4rpi/cloud4rpi</a> and save it somewhere on your device where you can access it.</li>
 <li>Check the init manager of your OS</li>
 </ol>
 <pre><code>$ ps -p 1
@@ -210,5 +210,5 @@ $ sudo service cloud4rpi start
 
 <!--
 MkDocs version : 0.16.1
-Build Date UTC : 2017-01-23 07:34:39
+Build Date UTC : 2017-01-24 09:24:39
 -->

@@ -94,7 +94,7 @@
 <h1 id="typical-scenarios">Typical Scenarios</h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Don't forget to replace '<strong>YOUR_DEVICE_TOKEN</strong>' on sample with the personal device token.</p>
+<p>Don't forget to replace '<strong>YOUR_DEVICE_TOKEN</strong>' in the samples with the personal device token.</p>
 </div>
 <h2 id="ds18b20-temperature-sensor">DS18B20 Temperature Sensor</h2>
 <h3 id="prerequisites">Prerequisites</h3>
@@ -119,26 +119,28 @@
 }
 </code></pre>
 
-<p>Open <code>sensors.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi">examples</a> folder
-- Make necessary changes in <code>sensors.py</code> if you have another sensor configuration. 
-- Run <code>sensors</code> or restart <code>cloud4rpi</code> service. New variables 
+<p>Open the <code>sensors.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi">examples</a> folder</p>
+<ul>
+<li>Make necessary changes in <code>sensors.py</code> if you have another sensor configuration. </li>
+<li>Run <code>sensors</code> or restart <code>cloud4rpi</code> service. New variables 
 named <code>RoomTemp</code> and <code>CPUTemp</code> should appear on such device
-page.
-- Open <code>Control Panels</code> page and add new control panel or open existing one.
-- Add new widget of type <code>Chart</code> and choose newly added <code>RoomTemp</code> variable.
-- Add new widget of type <code>Gauge</code> and choose newly added <code>CPUTemp</code> variable.
-- Now you can monitor cpu and room temperature sing these widgets.</p>
+page.</li>
+<li>Open the <code>Control Panels</code> page and add a new control panel or open an existing one.</li>
+<li>Add a new <code>Chart</code> widget and choose the newly added <code>RoomTemp</code> variable.</li>
+<li>Add a new <code>Gauge</code> widget and choose the newly added <code>CPUTemp</code> variable.</li>
+<li>Now you can monitor CPU and room temperature using these widgets.</li>
+</ul>
 <h2 id="control-led-from-web">Control LED from WEB</h2>
 <h3 id="prerequisites_1">Prerequisites</h3>
 <p>You need</p>
 <ul>
 <li>Сonfigured and <a href="#connecting-a-new-device">connected</a> Raspberry Pi device</li>
-<li>
-<p>Breadboard, connecting wires, 270-330 Ω resistor</p>
-<p><strong>Note:</strong>
-Cloud4rpi uses physical pins numbering (<a href="https://www.raspberrypi.org/documentation/usage/gpio/">learn more</a>).</p>
-</li>
+<li>Breadboard, connecting wires, 270-330 Ω resistor</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cloud4rpi uses physical pins numbering (<a href="https://www.raspberrypi.org/documentation/usage/gpio/">learn more</a>).</p>
+</div>
 <h3 id="code_1">Code</h3>
 <pre><code class="python">'LEDOn': {
     'type': 'bool',
@@ -147,14 +149,12 @@ Cloud4rpi uses physical pins numbering (<a href="https://www.raspberrypi.org/doc
 },
 </code></pre>
 
-<p>Open <code>actuator.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi">examples</a> folder</p>
+<p>Open the <code>actuator.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi">examples</a> folder</p>
 <ul>
-<li>Uncomment code in <code>actuator.py</code>. If you connected led to another GPIO pin
-then set correct value to variable <code>LED_PIN</code>.</li>
-<li>Run <code>actuator.py</code> or restart <code>cloud4rpi</code> service. New variable
-named <code>LEDOn</code> should appear on such device page.</li>
-<li>Open <code>Control Panels</code> page and add new control panel or open existing one.</li>
-<li>Add new widget of type <code>Switch</code> and choose newly added <code>LEDOn</code> variable.</li>
+<li>Uncomment code in <code>actuator.py</code>. If you connected an LED to a differed GPIO pin, set the correct value to variable <code>LED_PIN</code>.</li>
+<li>Run <code>actuator.py</code> or restart <code>cloud4rpi</code> service. A new variable named <code>LEDOn</code> should appear on the device page.</li>
+<li>Open the <code>Control Panels</code> page and add a new control panel or open an existing one.</li>
+<li>Add a new <code>Switch</code> widget and choose the newly added <code>LEDOn</code> variable.</li>
 <li>Now you can switch LED state using this widget.</li>
 </ul>
 <h2 id="monitor-device-events-using-colored-status">Monitor Device Events using colored status</h2>
@@ -170,7 +170,7 @@ named <code>LEDOn</code> should appear on such device page.</li>
 }
 </code></pre>
 
-<p>Open <code>status.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi">examples</a> folder</p>
+<p>Open the <code>status.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi">examples</a> folder</p>
 <h3 id="code_3">Code</h3>
 <pre><code class="python">def listen_for_events():
     # write your own logic here
@@ -186,17 +186,16 @@ named <code>LEDOn</code> should appear on such device page.</li>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Feel free to re-write an event generation logic based with your specific conditions:</p>
+<p>Feel free to re-write event generation logic based on your specific conditions:</p>
 </div>
 <ul>
-<li>Run <code>status.py</code></li>
-<li>Go to <a href="https://cloud4rpi.io">cloud4rpi</a> website. New variable <code>STATUS</code> should appear on such device page.</li>
-<li>Open <code>Control Panels</code> page and add new control panel or open existing one.</li>
-<li>Add new widget of type <code>Text</code> and choose newly added <code>STATUS</code> variable.</li>
-<li>Manage pre-defined status color items according with the event names from a code above.</li>
-<li>In result, you should have the three items like the following:
+<li>Run <code>status.py</code> or restart <code>cloud4rpi</code> service. A new variable named <code>STATUS</code> should appear on the device page.</li>
+<li>Open <code>Control Panels</code> page and add a new control panel or open an existing one.</li>
+<li>Add a new <code>Text</code> widget and choose the newly added <code>STATUS</code> variable.</li>
+<li>Change the pre-defined status color items according to the event names from the code above.</li>
+<li>As a result, you should have three items like the following:
 <code>{ IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}</code></li>
-<li>Now you can monitor colorized incoming status using this widget.</li>
+<li>Now this widget displays incoming status with color.</li>
 </ul></div>
         </div>
 

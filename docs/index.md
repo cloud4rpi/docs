@@ -21,6 +21,8 @@ You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/i
 
 ### Check installation
 
+Make sure that you have git and pip installed. 
+
 ``` bash
 $ pip --version
 pip 1.5.6 from /usr/lib/python2.7/dist-packages (python 2.7)
@@ -32,7 +34,7 @@ git version 2.1.4
 
 ### Optional: enable I2C, 1-wire etc. interfaces
 - run `sudo raspi-config`
-- open `9 Advanced Options`
+- open a section where you can configure additional interfaces. The required section is named `Advanced Options` or `Interfacing Options | Configure connections to peripherals` depending on the version.
 - enable necessary interfaces
 - choose `finish` and reboot device
 
@@ -52,7 +54,7 @@ sudo python3 -m pip install cloud4rpi
 
 ### Time to hack together some code
 
-You can find several examples int the `examples/raspberrypi` directory at [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi).
+You can find several examples in the `examples` directory at [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi).
 Don't forget to insert your device token where prompted, e.g. in `control.py` there is a line
 
 ```

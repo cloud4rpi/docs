@@ -30,7 +30,7 @@ You need
     'bind': rpi.cpu_temp
 }
 ```
-Open the `sensors.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi`) folder
+Open the `sensors.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples`) folder
 
 - Make necessary changes in `sensors.py` if you have another sensor configuration. 
 - Run `sensors` or restart `cloud4rpi` service. New variables 
@@ -65,7 +65,7 @@ You need
 },
 ```
 
-Open the `actuator.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi`) folder
+Open the `actuator.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples`) folder
 
 - Uncomment code in `actuator.py`. If you connected an LED to a differed GPIO pin, set the correct value to variable `LED_PIN`.
 - Run `actuator.py` or restart `cloud4rpi` service. A new variable named `LEDOn` should appear on the device page.
@@ -89,7 +89,7 @@ You need
     'bind': listen_for_events
 }
 ```
- Open the `status.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples/raspberrypi`) folder
+ Open the `status.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples`) folder
  
 ### Code
 ``` python

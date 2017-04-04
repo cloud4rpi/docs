@@ -17,7 +17,7 @@ You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/i
 
 !!! Note
 
-   The Cloud4rpi library works correctly with the Python 2.7.9+ and Python 3.2+ versions.
+    The Cloud4rpi library works correctly with the Python 2.7.9+ and Python 3.2+ versions.
 
 ### Check installation
 
@@ -54,7 +54,7 @@ sudo python3 -m pip install cloud4rpi
 
 ### Time to hack together some code
 
-You can find several examples in the [examples](https://github.com/cloud4rpi/cloud4rpi/tree/master/examples) directory.
+You can find several samples in the [examples](https://github.com/cloud4rpi/cloud4rpi/tree/master/examples) directory.
 Don't forget to insert your device token where you are prompted, e.g. in `control.py` there is a line
 
 ```

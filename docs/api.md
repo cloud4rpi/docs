@@ -53,7 +53,7 @@ Parameter | Description
 --------- | -----------------------
 token     | The token of the device
 
-The following example sends Temperature and LEDOn values to the cloud4rpi.
+The following example sends the Temperature and LEDOn values to cloud4rpi.
 
 ```bash
 export DEVICE_TOKEN=device_token
@@ -86,7 +86,7 @@ Parameter | Description
 --------- | -----------------------
 token     | The token of the device
 
-The following example sends CPU Temperature and IP Address diagnostic values to the cloud4rpi.
+The following example sends the CPU Temperature and IP Address diagnostic values to cloud4rpi.
 
 ```bash
 export DEVICE_TOKEN=device_token

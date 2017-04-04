@@ -1,6 +1,6 @@
 # Connecting a New Device
 
-Follow the instructions to connect your device to [Cloud4RPI](https://cloud4rpi.io) cloud control panel.
+Follow the instructions below to connect your device to the [Cloud4RPI](https://cloud4rpi.io) cloud control panel.
 
 ### Prerequisites
 
@@ -17,7 +17,7 @@ You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/i
 
 !!! Note
 
-    Cloud4rpi library works correctly with Python 2.7.9+ and Python 3.2+ versions.
+   The Cloud4rpi library works correctly with the Python 2.7.9+ and Python 3.2+ versions.
 
 ### Check installation
 
@@ -32,7 +32,7 @@ git version 2.1.4
 
 
 
-### Optional: enable I2C, 1-wire etc. interfaces
+### Optional: enable the I2C, 1-wire, etc. interfaces
 - run `sudo raspi-config`
 - open a section where you can configure additional interfaces. The required section is named `Advanced Options` or `Interfacing Options | Configure connections to peripherals` depending on the version.
 - enable necessary interfaces
@@ -40,13 +40,13 @@ git version 2.1.4
 
 ## Setup Client
 
-### Get cloud4rpi client library
+### Get the cloud4rpi client library
 
 ``` bash
 $ sudo pip install cloud4rpi
 ```
 
-To install lib using python3 
+Install the lib using the available Python version. For example, the following command installs cloud4rpi using Python 3. For information on how to work with other versions of Python installed, see https://docs.python.org/3/installing/. 
 
 ```
 sudo python3 -m pip install cloud4rpi
@@ -54,8 +54,8 @@ sudo python3 -m pip install cloud4rpi
 
 ### Time to hack together some code
 
-You can find several examples in the `examples` directory at [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi).
-Don't forget to insert your device token where prompted, e.g. in `control.py` there is a line
+You can find several examples in the [examples](https://github.com/cloud4rpi/cloud4rpi/tree/master/examples) directory.
+Don't forget to insert your device token where you are prompted, e.g. in `control.py` there is a line
 
 ```
  DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
@@ -73,7 +73,7 @@ $ sudo python io_sensors.py
 ### Install as a service
 You can use our service templates to facilitate service installation.
 
-1. Download the content of the *services* directory from [https://github.com/cloud4rpi/cloud4rpi](https://github.com/cloud4rpi/cloud4rpi) and save it somewhere on your device where you can access it.
+1. Download the content of the [services](https://github.com/cloud4rpi/cloud4rpi/tree/master/services) directory and save it somewhere on your device where you can access it.
 2. Check the init manager of your OS
 
 ```
@@ -97,4 +97,4 @@ $ sudo service cloud4rpi start
 !!! Note
 
     You need to replace 'path/to/your/script' with the actual service script location.
-
+    

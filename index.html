@@ -86,14 +86,14 @@
         <li class="main active"><a href="#connecting-a-new-device">Connecting a New Device</a></li>
             <li><a href="#prerequisites">Prerequisites</a></li>
             <li><a href="#check-installation">Check installation</a></li>
-            <li><a href="#optional-enable-i2c-1-wire-etc-interfaces">Optional: enable I2C, 1-wire etc. interfaces</a></li>
+            <li><a href="#optional-enable-the-i2c-1-wire-etc-interfaces">Optional: enable the I2C, 1-wire, etc. interfaces</a></li>
             <li><a href="#setup-client">Setup Client</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="connecting-a-new-device">Connecting a New Device</h1>
-<p>Follow the instructions to connect your device to <a href="https://cloud4rpi.io">Cloud4RPI</a> cloud control panel.</p>
+<p>Follow the instructions below to connect your device to the <a href="https://cloud4rpi.io">Cloud4RPI</a> cloud control panel.</p>
 <h3 id="prerequisites">Prerequisites</h3>
 <p>It is always a good idea to upgrade your system before installing. Note that it may take some time.</p>
 <pre><code class="bash">$ sudo apt-get update &amp;&amp; sudo apt-get upgrade
@@ -106,8 +106,8 @@
 <p>You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Cloud4rpi library works correctly with Python 2.7.9+ and Python 3.2+ versions.</p>
 </div>
+<p>The Cloud4rpi library works correctly with the Python 2.7.9+ and Python 3.2+ versions.</p>
 <h3 id="check-installation">Check installation</h3>
 <p>Make sure that you have git and pip installed. </p>
 <pre><code class="bash">$ pip --version
@@ -116,7 +116,7 @@ $ git --version
 git version 2.1.4
 </code></pre>
 
-<h3 id="optional-enable-i2c-1-wire-etc-interfaces">Optional: enable I2C, 1-wire etc. interfaces</h3>
+<h3 id="optional-enable-the-i2c-1-wire-etc-interfaces">Optional: enable the I2C, 1-wire, etc. interfaces</h3>
 <ul>
 <li>run <code>sudo raspi-config</code></li>
 <li>open a section where you can configure additional interfaces. The required section is named <code>Advanced Options</code> or <code>Interfacing Options | Configure connections to peripherals</code> depending on the version.</li>
@@ -124,17 +124,17 @@ git version 2.1.4
 <li>choose <code>finish</code> and reboot device</li>
 </ul>
 <h2 id="setup-client">Setup Client</h2>
-<h3 id="get-cloud4rpi-client-library">Get cloud4rpi client library</h3>
+<h3 id="get-the-cloud4rpi-client-library">Get the cloud4rpi client library</h3>
 <pre><code class="bash">$ sudo pip install cloud4rpi
 </code></pre>
 
-<p>To install lib using python3 </p>
+<p>Install the lib using the available Python version. For example, the following command installs cloud4rpi using Python 3. For information on how to work with other versions of Python installed, see https://docs.python.org/3/installing/. </p>
 <pre><code>sudo python3 -m pip install cloud4rpi
 </code></pre>
 
 <h3 id="time-to-hack-together-some-code">Time to hack together some code</h3>
-<p>You can find several examples in the <code>examples</code> directory at <a href="https://github.com/cloud4rpi/cloud4rpi">https://github.com/cloud4rpi/cloud4rpi</a>.
-Don't forget to insert your device token where prompted, e.g. in <code>control.py</code> there is a line</p>
+<p>You can find several examples in the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples">examples</a> directory.
+Don't forget to insert your device token where you are prompted, e.g. in <code>control.py</code> there is a line</p>
 <pre><code> DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 </code></pre>
 
@@ -147,7 +147,7 @@ with the token displayed at the top of the device page.</p>
 <h3 id="install-as-a-service">Install as a service</h3>
 <p>You can use our service templates to facilitate service installation.</p>
 <ol>
-<li>Download the content of the <em>services</em> directory from <a href="https://github.com/cloud4rpi/cloud4rpi">https://github.com/cloud4rpi/cloud4rpi</a> and save it somewhere on your device where you can access it.</li>
+<li>Download the content of the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/services">services</a> directory and save it somewhere on your device where you can access it.</li>
 <li>Check the init manager of your OS</li>
 </ol>
 <pre><code>$ ps -p 1
@@ -210,6 +210,6 @@ $ sudo service cloud4rpi start
 </html>
 
 <!--
-MkDocs version : 0.16.1
-Build Date UTC : 2017-01-25 13:56:35
+MkDocs version : 0.16.2
+Build Date UTC : 2017-04-04 12:16:21
 -->

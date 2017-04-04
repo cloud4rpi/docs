@@ -122,7 +122,7 @@
 <p>Open the <code>sensors.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples">examples</a> folder</p>
 <ul>
 <li>Make necessary changes in <code>sensors.py</code> if you have another sensor configuration. </li>
-<li>Run <code>sensors</code> or restart <code>cloud4rpi</code> service. New variables 
+<li>Run <code>sensors</code> or restart the <code>cloud4rpi</code> service. New variables 
 named <code>RoomTemp</code> and <code>CPUTemp</code> should appear on such device
 page.</li>
 <li>Open the <code>Control Panels</code> page and add a new control panel or open an existing one.</li>
@@ -151,8 +151,8 @@ page.</li>
 
 <p>Open the <code>actuator.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples">examples</a> folder</p>
 <ul>
-<li>Uncomment code in <code>actuator.py</code>. If you connected an LED to a differed GPIO pin, set the correct value to variable <code>LED_PIN</code>.</li>
-<li>Run <code>actuator.py</code> or restart <code>cloud4rpi</code> service. A new variable named <code>LEDOn</code> should appear on the device page.</li>
+<li>Uncomment code in <code>actuator.py</code>. If you connected an LED to a differed GPIO pin, set the correct value to the <code>LED_PIN</code> variable.</li>
+<li>Run <code>actuator.py</code> or restart the <code>cloud4rpi</code> service. A new variable named <code>LEDOn</code> should appear on the device page.</li>
 <li>Open the <code>Control Panels</code> page and add a new control panel or open an existing one.</li>
 <li>Add a new <code>Switch</code> widget and choose the newly added <code>LEDOn</code> variable.</li>
 <li>Now you can switch LED state using this widget.</li>
@@ -189,8 +189,8 @@ page.</li>
 <p>Feel free to re-write event generation logic based on your specific conditions:</p>
 </div>
 <ul>
-<li>Run <code>status.py</code> or restart <code>cloud4rpi</code> service. A new variable named <code>STATUS</code> should appear on the device page.</li>
-<li>Open <code>Control Panels</code> page and add a new control panel or open an existing one.</li>
+<li>Run <code>status.py</code> or restart the <code>cloud4rpi</code> service. A new variable named <code>STATUS</code> should appear on the device page.</li>
+<li>Open the <code>Control Panels</code> page and add a new control panel or open an existing one.</li>
 <li>Add a new <code>Text</code> widget and choose the newly added <code>STATUS</code> variable.</li>
 <li>Change the pre-defined status color items according to the event names from the code above.</li>
 <li>As a result, you should have three items like the following:

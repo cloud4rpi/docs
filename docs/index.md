@@ -68,8 +68,7 @@ Before running a sample, don't forget to insert your device token to the line li
  DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 ```
 
-Using your favorite editor (for instance, `nano`) to, replace `__YOUR_DEVICE_TOKEN__`
-with the token displayed at the top of the [Devices](https://cloud4rpi.io/devices) page.
+Using your favorite editor (for instance, `nano`) to, replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page. Your devices are listed on the [Devices](https://cloud4rpi.io/devices) page.
 
 
 ## Running

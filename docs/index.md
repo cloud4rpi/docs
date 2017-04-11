@@ -68,20 +68,22 @@ Before running a sample, don't forget to insert your device token to the line li
  DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 ```
 
-Using your favorite editor (for instance, `nano`) to, replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page. Your devices are listed on the [Devices](https://cloud4rpi.io/devices) page.
+Use your favorite editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page. Your devices are listed on the [Devices](https://cloud4rpi.io/devices) page.
 
 
 ## Running
 
-Simply start the script with the Python.
+Just start the script with the Python. For example, let's start the simplest one.
 
 ``` bash
-$ sudo python io_sensors.py
+$ sudo python minimal.py
 ```
 
 !!! Note
 
     If you have installed Cloud4RPI to a non-default Python, use the correct Python version that has Cloud4RPI library installed.
+
+If the script output looks good, open the [Devices](https://cloud4rpi.io/devices) page and notice the device status has changed.
 
 ## Installing as a service
 

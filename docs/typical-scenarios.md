@@ -2,17 +2,17 @@
 
 !!! Note
 
-    Don't forget to replace '__YOUR_DEVICE_TOKEN__' in the samples with the personal device token.
+    Don't forget to replace `__YOUR_DEVICE_TOKEN__` in the samples with the personal device token.
 
 ## DS18B20 Temperature Sensor
 
 ### Prerequisites
 
-You need
+You need:
 
-- Сonfigured and [connected](#connecting-a-new-device) Raspberry Pi device
-- 1-wire interface should be [enabled](#prerequisites)
-- Breadboard, connecting wires, 4.7K Ω resistor
+- Сonfigured and [connected](/#connecting-a-new-device) Raspberry Pi device.
+- [Enabled](/#prerequisites) 1-wire interface.
+- Breadboard, connecting wires, 4.7KΩ resistor.
 
 ### Code
 
@@ -32,8 +32,8 @@ You need
 ```
 Open the `sensors.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples`) folder
 
-- Make necessary changes in `sensors.py` if you have another sensor configuration. 
-- Run `sensors` or restart the `cloud4rpi` service. New variables 
+- Make necessary changes in `sensors.py` if you have another sensor configuration.
+- Run `sensors` or restart the `cloud4rpi` service. New variables
 named `RoomTemp` and `CPUTemp` should appear on such device
 page.
 - Open the `Control Panels` page and add a new control panel or open an existing one.
@@ -74,7 +74,7 @@ Open the `actuator.py` sample file from the [examples](`https://github.com/cloud
 - Now you can switch LED state using this widget.
 
 
-## Monitor Device Events using colored status 
+## Monitor Device Events using colored status
 
 ### Prerequisites
 
@@ -90,7 +90,7 @@ You need
 }
 ```
  Open the `status.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples`) folder
- 
+
 ### Code
 ``` python
 def listen_for_events():
@@ -105,7 +105,7 @@ def listen_for_events():
     return 'IDLE'
 ```
 !!! Note
- 
+
     Feel free to re-write event generation logic based on your specific conditions:
 
 

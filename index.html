@@ -85,7 +85,7 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#connecting-a-new-device">Connecting a New Device</a></li>
             <li><a href="#prerequisites">Prerequisites</a></li>
-            <li><a href="#cloud4rpi-installation">Cloud4RPI Installation</a></li>
+            <li><a href="#getting-the-cloud4rpi-client-library">Getting the Cloud4RPI Client Library</a></li>
             <li><a href="#hacking-together-some-code">Hacking Together some Code</a></li>
             <li><a href="#running">Running</a></li>
             <li><a href="#installing-as-a-service">Installing as a service</a></li>
@@ -112,14 +112,13 @@
 <h3 id="optional-enable-interfaces">[Optional] Enable interfaces</h3>
 <p>If your OS is <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a>, follow the steps below:</p>
 <ul>
-<li>Run <code>sudo raspi-config</code></li>
+<li>Run <code>sudo raspi-config</code>.</li>
 <li>Open a section where you can configure additional interfaces. The required section is named <code>Advanced Options</code> or <code>Interfacing Options | Configure connections to peripherals</code> depending on the version.</li>
-<li>Enable I2C, 1-wire and other necessary interfaces</li>
-<li>Choose <code>&lt;Finish&gt;</code></li>
-<li>Reboot the device with the <code>sudo reboot</code> command</li>
+<li>Enable I2C, 1-wire and other necessary interfaces.</li>
+<li>Choose <code>&lt;Finish&gt;</code>.</li>
+<li>Reboot the device with the <code>sudo reboot</code> command.</li>
 </ul>
-<h2 id="cloud4rpi-installation">Cloud4RPI Installation</h2>
-<h3 id="get-the-client-library">Get the client library</h3>
+<h2 id="getting-the-cloud4rpi-client-library">Getting the Cloud4RPI Client Library</h2>
 <p>Install the library using your preferred Python version. The following command will install Cloud4RPI to the system default python (usually Python 2).</p>
 <pre><code class="bash">$ sudo pip install cloud4rpi
 </code></pre>
@@ -133,7 +132,7 @@
 <p>For information on how to work with several versions of Python installed, see <a href="https://docs.python.org/3/installing/">Python Documentation</a>.</p>
 </div>
 <h2 id="hacking-together-some-code">Hacking Together some Code</h2>
-<p>Not it's time to tune Cloud4RPI for your task! We have prepared several samples in the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples">examples</a> directory to help you get started.</p>
+<p>Not it's time to send some data to the Cloud! We have prepared several samples in the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples">examples</a> directory to help you get started.</p>
 <p>Clone the Cloud4RPI repository to get the <strong>examples</strong> directory on your device.</p>
 <pre><code class="bash">git clone https://github.com/cloud4rpi/docs.git
 </code></pre>
@@ -142,9 +141,9 @@
 <pre><code class="python">DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 </code></pre>
 
-<p>Use your favorite editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page. Your devices are listed on the <a href="https://cloud4rpi.io/devices">Devices</a> page.</p>
+<p>Use your favorite editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page. Your devices are listed on the <a href="https://cloud4rpi.io/devices">Devices</a> page. If you see no devices there, create one using the <strong>New Device</strong> button on the top right corner, and use its token.</p>
 <h2 id="running">Running</h2>
-<p>Just start the script with the Python. For example, let's start the simplest one.</p>
+<p>Execute the script with the Python interpreter. For example, let's run the simplest one.</p>
 <pre><code class="bash">$ sudo python minimal.py
 </code></pre>
 
@@ -200,5 +199,5 @@
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-04-13 12:49:50
+Build Date UTC : 2017-04-13 14:11:06
 -->

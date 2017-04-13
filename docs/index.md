@@ -84,11 +84,29 @@ If the script output looks good, open the [Devices](https://cloud4rpi.io/devices
 
 ## Installing as a service
 
-You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPI-enabled Python script to the [service_install.sh](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh) script as a parameter. You can use the piped script technique to do this in a single line.
+You can use our service templates to facilitate service installation.
+
+1. Find the  [services](https://github.com/cloud4rpi/cloud4rpi/tree/master/services) directory in the [cloned repository](#hacking-together-some-code).
+2. Check the init manager of your OS.
 
 ``` bash
-curl -sS https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
+$ ps -p 1
+```
+
+- If you see output like `1 ?   00:00:36 systemd` your OS is running systemd, use the `install.sh` script together with `service.tmpl`
+
+``` bash
+$ sudo bash install.sh path/to/your/script
+$ sudo systemctl start cloud4rpi.service
+# You can also enable the service to be started on bootup
+$ sudo systemctl enable cloud4rpi.service
+```
+
+- If you see output like `1 ?   00:00:36 init` your OS is running SysV-style init, use the `install_sysv.sh` script together with `service_sysv.tmpl`
+``` bash
+$ sudo bash install_sysv.sh path/to/your/script
+$ sudo service cloud4rpi start
 ```
 
 !!! Note
-    You need to replace 'your_script.py' with the actual service script location.
+    You need to replace 'path/to/your/script' with the actual service script location.

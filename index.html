@@ -85,21 +85,22 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#connecting-a-new-device">Connecting a New Device</a></li>
             <li><a href="#prerequisites">Prerequisites</a></li>
-            <li><a href="#check-installation">Check installation</a></li>
-            <li><a href="#optional-enable-the-i2c-1-wire-etc-interfaces">Optional: enable the I2C, 1-wire, etc. interfaces</a></li>
-            <li><a href="#setup-client">Setup Client</a></li>
+            <li><a href="#cloud4rpi-installation">Cloud4RPI Installation</a></li>
+            <li><a href="#hacking-together-some-code">Hacking Together some Code</a></li>
+            <li><a href="#running">Running</a></li>
+            <li><a href="#installing-as-a-service">Installing as a service</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="connecting-a-new-device">Connecting a New Device</h1>
 <p>Follow the instructions below to connect your device to the <a href="https://cloud4rpi.io">Cloud4RPI</a> cloud control panel.</p>
-<h3 id="prerequisites">Prerequisites</h3>
+<h2 id="prerequisites">Prerequisites</h2>
 <p>It is always a good idea to upgrade your system before installing. Note that it may take some time.</p>
 <pre><code class="bash">$ sudo apt-get update &amp;&amp; sudo apt-get upgrade
 </code></pre>
 
-<p>Install the required packages.</p>
+<p>Install/update the required packages.</p>
 <pre><code class="bash">$ sudo apt-get install git python python-pip
 </code></pre>
 
@@ -108,70 +109,58 @@
 <p class="admonition-title">Note</p>
 <p>The Cloud4rpi library works correctly with the Python 2.7.9+ and Python 3.2+ versions.</p>
 </div>
-<h3 id="check-installation">Check installation</h3>
-<p>Make sure that you have git and pip installed. </p>
-<pre><code class="bash">$ pip --version
-pip 1.5.6 from /usr/lib/python2.7/dist-packages (python 2.7)
-$ git --version
-git version 2.1.4
-</code></pre>
-
-<h3 id="optional-enable-the-i2c-1-wire-etc-interfaces">Optional: enable the I2C, 1-wire, etc. interfaces</h3>
+<h3 id="optional-enable-interfaces">[Optional] Enable interfaces</h3>
+<p>If your OS is <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a>, follow the steps below:</p>
 <ul>
-<li>run <code>sudo raspi-config</code></li>
-<li>open a section where you can configure additional interfaces. The required section is named <code>Advanced Options</code> or <code>Interfacing Options | Configure connections to peripherals</code> depending on the version.</li>
-<li>enable necessary interfaces</li>
-<li>choose <code>finish</code> and reboot device</li>
+<li>Run <code>sudo raspi-config</code></li>
+<li>Open a section where you can configure additional interfaces. The required section is named <code>Advanced Options</code> or <code>Interfacing Options | Configure connections to peripherals</code> depending on the version.</li>
+<li>Enable I2C, 1-wire and other necessary interfaces</li>
+<li>Choose <code>&lt;Finish&gt;</code></li>
+<li>Reboot the device with the <code>sudo reboot</code> command</li>
 </ul>
-<h2 id="setup-client">Setup Client</h2>
-<h3 id="get-the-cloud4rpi-client-library">Get the cloud4rpi client library</h3>
+<h2 id="cloud4rpi-installation">Cloud4RPI Installation</h2>
+<h3 id="get-the-client-library">Get the client library</h3>
+<p>Install the library using your preferred Python version. The following command will install Cloud4RPI to the system default python (usually Python 2).</p>
 <pre><code class="bash">$ sudo pip install cloud4rpi
 </code></pre>
 
-<p>Install the lib using the available Python version. For example, the following command installs cloud4rpi using Python 3. For information on how to work with other versions of Python installed, see https://docs.python.org/3/installing/. </p>
-<pre><code>sudo python3 -m pip install cloud4rpi
-</code></pre>
-
-<h3 id="time-to-hack-together-some-code">Time to hack together some code</h3>
-<p>You can find several samples in the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples">examples</a> directory.
-Don't forget to insert your device token where you are prompted, e.g. in <code>control.py</code> there is a line</p>
-<pre><code> DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
-</code></pre>
-
-<p>Using your editor of choice, replace <strong>__YOUR_DEVICE_TOKEN__</strong>
-with the token displayed at the top of the device page.</p>
-<h3 id="run">Run</h3>
-<pre><code class="bash">$ sudo python io_sensors.py
-</code></pre>
-
-<h3 id="install-as-a-service">Install as a service</h3>
-<p>You can use our service templates to facilitate service installation.</p>
-<ol>
-<li>Download the content of the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/services">services</a> directory and save it somewhere on your device where you can access it.</li>
-<li>Check the init manager of your OS</li>
-</ol>
-<pre><code>$ ps -p 1
-</code></pre>
-
-<ul>
-<li>If you see output like <code>1 ?   00:00:36 systemd</code> your OS is running systemd, use the <code>install.sh</code> script together with <code>service.tmpl</code></li>
-</ul>
-<pre><code class="bash">$ sudo bash install.sh path/to/your/script
-$ sudo systemctl start cloud4rpi.service
-# You can also enable the service to be started on bootup
-$ sudo systemctl enable cloud4rpi.service
-</code></pre>
-
-<ul>
-<li>If you see output like <code>1 ?   00:00:36 init</code> your OS is running SysV-style init, use the <code>install_sysv.sh</code> script together with <code>service_sysv.tmpl</code></li>
-</ul>
-<pre><code class="bash">$ sudo bash install_sysv.sh path/to/your/script
-$ sudo service cloud4rpi start
+<p>If you need to use Cloud4RPI with non-default Python, the command will look like this.</p>
+<pre><code class="bash">sudo python3 -m pip install cloud4rpi
 </code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You need to replace 'path/to/your/script' with the actual service script location.</p>
+<p>For information on how to work with several versions of Python installed, see <a href="https://docs.python.org/3/installing/">Python Documentation</a>.</p>
+</div>
+<h2 id="hacking-together-some-code">Hacking Together some Code</h2>
+<p>Not it's time to tune Cloud4RPI for your task! We have prepared several samples in the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples">examples</a> directory to help you get started.</p>
+<p>Clone the Cloud4RPI repository to get the <strong>examples</strong> directory on your device.</p>
+<pre><code class="bash">git clone https://github.com/cloud4rpi/docs.git
+</code></pre>
+
+<p>Before running a sample, don't forget to insert your device token to the line like this.</p>
+<pre><code class="python">DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
+</code></pre>
+
+<p>Use your favorite editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page. Your devices are listed on the <a href="https://cloud4rpi.io/devices">Devices</a> page.</p>
+<h2 id="running">Running</h2>
+<p>Just start the script with the Python. For example, let's start the simplest one.</p>
+<pre><code class="bash">$ sudo python minimal.py
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have installed Cloud4RPI to a non-default Python, use the correct Python version that has Cloud4RPI library installed.</p>
+</div>
+<p>If the script output looks good, open the <a href="https://cloud4rpi.io/devices">Devices</a> page and see the device status has changed.</p>
+<h2 id="installing-as-a-service">Installing as a service</h2>
+<p>You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPI-enabled Python script to the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh">service_install.sh</a> script as a parameter. You can use the piped script technique to do this in a single line.</p>
+<pre><code class="bash">curl -sS https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to replace 'your_script.py' with the actual service script location.</p>
 </div></div>
         </div>
 
@@ -210,6 +199,6 @@ $ sudo service cloud4rpi start
 </html>
 
 <!--
-MkDocs version : 0.16.2
-Build Date UTC : 2017-04-04 13:07:36
+MkDocs version : 0.16.3
+Build Date UTC : 2017-04-13 12:49:50
 -->

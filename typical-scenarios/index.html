@@ -94,15 +94,15 @@
 <h1 id="typical-scenarios">Typical Scenarios</h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Don't forget to replace '<strong>YOUR_DEVICE_TOKEN</strong>' in the samples with the personal device token.</p>
+<p>Don't forget to replace <code>__YOUR_DEVICE_TOKEN__</code> in the samples with the personal device token.</p>
 </div>
 <h2 id="ds18b20-temperature-sensor">DS18B20 Temperature Sensor</h2>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>You need</p>
+<p>You need:</p>
 <ul>
-<li>Сonfigured and <a href="#connecting-a-new-device">connected</a> Raspberry Pi device</li>
-<li>1-wire interface should be <a href="#prerequisites">enabled</a></li>
-<li>Breadboard, connecting wires, 4.7K Ω resistor</li>
+<li>Сonfigured and <a href="../#connecting-a-new-device">connected</a> Raspberry Pi device.</li>
+<li><a href="../#prerequisites">Enabled</a> 1-wire interface.</li>
+<li>Breadboard, connecting wires, 4.7KΩ resistor.</li>
 </ul>
 <h3 id="code">Code</h3>
 <pre><code class="python">'RoomTemp': {
@@ -121,8 +121,8 @@
 
 <p>Open the <code>sensors.py</code> sample file from the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples">examples</a> folder</p>
 <ul>
-<li>Make necessary changes in <code>sensors.py</code> if you have another sensor configuration. </li>
-<li>Run <code>sensors</code> or restart the <code>cloud4rpi</code> service. New variables 
+<li>Make necessary changes in <code>sensors.py</code> if you have another sensor configuration.</li>
+<li>Run <code>sensors</code> or restart the <code>cloud4rpi</code> service. New variables
 named <code>RoomTemp</code> and <code>CPUTemp</code> should appear on such device
 page.</li>
 <li>Open the <code>Control Panels</code> page and add a new control panel or open an existing one.</li>

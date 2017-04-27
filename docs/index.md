@@ -92,7 +92,7 @@ chmod +x service_install.sh
 sudo ./service_install.sh your_script.py
 ```
 
-If you have a stable internet connection, you can use the piped script technique to do this in a single line.
+If you have a stable internet connection, you can use the piped script technique to do this in a single line. However, use this technique at your own risk, because a script download failure may cause unpredictable behavior.
 
 ``` bash
 wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py

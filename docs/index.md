@@ -56,7 +56,7 @@ We have prepared several samples in the [examples](https://github.com/cloud4rpi/
 Clone the Cloud4RPI repository to get the **examples** directory on your device.
 
 ``` bash
-git clone https://github.com/cloud4rpi/docs.git
+git clone https://github.com/cloud4rpi/cloud4rpi.git
 ```
 
 Before running a sample, remember to insert your device token to the line like this:

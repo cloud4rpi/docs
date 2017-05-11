@@ -1,29 +1,39 @@
-# API
+# HTTP API
 
-## HTTP
+## Update Config
 
-### Update device's config
-
-Updates device's config.
+Updates the device's configuration.
 
 ```
-POST /api/devices/{token}/config/update
-HTTP/1.1
-Host: cloud4rpi.io
-Accept: application/json
+Request URL: https://cloud4rpi.io/api/devices/{token}/config/update
+Request Method: POST
 Content-Type: application/json
+Returns: application/json
 ```
 
-#### Path parameters
+### Request URL Parameters
 
 Parameter | Description
 --------- | -----------------------
-token     | The token of the device
+token     | The [device](https://cloud4rpi.io/devices) token
 
-The following example creates two variables on the device. Temperature of the numeric type and LEDOn of the bool type.
+### Request Data Format
+
+```json
+["TODO"]
+```
+
+### Example
+
+The following example creates two variables on the device:
+
+* **Temperature** of the numeric type.
+* **LEDOn** of the boolean type.
+
+#### Request
 
 ```bash
-export DEVICE_TOKEN=device_token
+export DEVICE_TOKEN=your_device_token
 
 curl -X POST \
      -H "Content-Type: application/json" \
@@ -33,9 +43,17 @@ curl -X POST \
 
 !!! Note
 
-    You need to replace 'device_token' with your device token displayed on the device page.
+    You need to replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
-### Send data
+#### Response
+
+```json
+["TODO"]
+```
+
+<!-- TODO: Process other methods -->
+
+## Send data
 
 Sends device data.
 
@@ -47,7 +65,7 @@ Accept: application/json
 Content-Type: application/json
 ```
 
-#### Path parameters
+### Path parameters
 
 Parameter | Description
 --------- | -----------------------
@@ -68,7 +86,7 @@ curl -X POST \
 
     You need to replace 'device_token' with your device token displayed on the device page.
 
-### Send diagnostic data
+## Send diagnostic data
 
 Sends diagnostic data.
 
@@ -80,7 +98,7 @@ Accept: application/json
 Content-Type: application/json
 ```
 
-#### Path parameters
+### Path parameters
 
 Parameter | Description
 --------- | -----------------------
@@ -100,7 +118,3 @@ curl -X POST \
 !!! Note
 
     You need to replace 'device_token' with your device token displayed on the device page.
-
-## MQTT
-
-To be supplied

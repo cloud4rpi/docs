@@ -26,7 +26,7 @@ You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/i
 If your OS is [Raspbian](https://www.raspberrypi.org/downloads/raspbian/), follow the steps below:
 
 - Run `sudo raspi-config`
-- Open a section for configuring additional interfaces. The required section is named `Advanced Options` or `Interfacing Options | Configure connections to peripherals` depending on the version.
+- Open a section for configuring additional interfaces (`Advanced Options` or `Interfacing Options | Configure connections to peripherals` depending on the version).
 - Enable I2C, 1-wire and other necessary interfaces.
 - Choose `<Finish>`.
 - Reboot the device with the `sudo reboot` command.
@@ -65,7 +65,7 @@ Before running a sample, remember to insert your device token to the line like t
 DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 ```
 
-Use any text editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page. If it does not display anything on the [Devices](https://cloud4rpi.io/devices) page, you can create a device using the **New Device** button in the top right corner, and use its token.
+Use a text editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page. If it does not display anything on the [Devices](https://cloud4rpi.io/devices) page, you can create a device using the **New Device** button in the top right corner, and use its token.
 
 
 ## Running

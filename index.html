@@ -113,7 +113,7 @@
 <p>If your OS is <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a>, follow the steps below:</p>
 <ul>
 <li>Run <code>sudo raspi-config</code></li>
-<li>Open a section for configuring additional interfaces. The required section is named <code>Advanced Options</code> or <code>Interfacing Options | Configure connections to peripherals</code> depending on the version.</li>
+<li>Open a section for configuring additional interfaces (<code>Advanced Options</code> or <code>Interfacing Options | Configure connections to peripherals</code> depending on the version).</li>
 <li>Enable I2C, 1-wire and other necessary interfaces.</li>
 <li>Choose <code>&lt;Finish&gt;</code>.</li>
 <li>Reboot the device with the <code>sudo reboot</code> command.</li>
@@ -141,7 +141,7 @@
 <pre><code class="python">DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 </code></pre>
 
-<p>Use any text editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page. If it does not display anything on the <a href="https://cloud4rpi.io/devices">Devices</a> page, you can create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
+<p>Use a text editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page. If it does not display anything on the <a href="https://cloud4rpi.io/devices">Devices</a> page, you can create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
 <h2 id="running">Running</h2>
 <p>Execute the script with the Python interpreter, for example:</p>
 <pre><code class="bash">$ sudo python minimal.py
@@ -153,14 +153,15 @@
 </div>
 <p>If the script output looks right, open the <a href="https://cloud4rpi.io/devices">Devices</a> page to see if the device status has changed.</p>
 <h2 id="installing-as-a-service">Installing as a service</h2>
-<p>You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPI-enabled Python script to the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh">service_install.sh</a> script as a parameter. </p>
+<p>You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPI-enabled Python script to the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh">service_install.sh</a> script as a parameter.</p>
+<p>You can use the piped script technique to do this in a single line.</p>
+<pre><code class="bash">wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
+</code></pre>
+
+<p>If you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.</p>
 <pre><code class="bash">wget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh
 chmod +x service_install.sh
 sudo ./service_install.sh your_script.py
-</code></pre>
-
-<p>If you have a stable internet connection, you can use the piped script technique to do this in a single line. However, use this technique at your own risk, because a script download failure may cause unpredictable behavior.</p>
-<pre><code class="bash">wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
 </code></pre>
 
 <div class="admonition note">
@@ -205,5 +206,5 @@ sudo ./service_install.sh your_script.py
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-05-11 11:42:04
+Build Date UTC : 2017-05-17 14:03:38
 -->

@@ -268,7 +268,7 @@ curl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
 [
     {var_name: var_new_value},
     {var_name: var_new_value},
-    //...
+    // ...
     {var_name: var_new_value}
 ]
 ```

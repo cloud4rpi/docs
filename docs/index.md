@@ -26,7 +26,7 @@ You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/i
 If your OS is [Raspbian](https://www.raspberrypi.org/downloads/raspbian/), follow the steps below:
 
 - Run `sudo raspi-config`
-- Open a section for configuring additional interfaces. The required section is named `Advanced Options` or `Interfacing Options | Configure connections to peripherals` depending on the version.
+- Open a section for configuring additional interfaces (`Advanced Options` or `Interfacing Options | Configure connections to peripherals` depending on the version).
 - Enable I2C, 1-wire and other necessary interfaces.
 - Choose `<Finish>`.
 - Reboot the device with the `sudo reboot` command.
@@ -65,7 +65,7 @@ Before running a sample, remember to insert your device token to the line like t
 DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 ```
 
-Use any text editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page. If it does not display anything on the [Devices](https://cloud4rpi.io/devices) page, you can create a device using the **New Device** button in the top right corner, and use its token.
+Use a text editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page. If it does not display anything on the [Devices](https://cloud4rpi.io/devices) page, you can create a device using the **New Device** button in the top right corner, and use its token.
 
 
 ## Running
@@ -84,18 +84,20 @@ If the script output looks right, open the [Devices](https://cloud4rpi.io/device
 
 ## Installing as a service
 
-You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPI-enabled Python script to the [service_install.sh](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh) script as a parameter. 
+You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPI-enabled Python script to the [service_install.sh](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh) script as a parameter.
+
+You can use the piped script technique to do this in a single line.
+
+``` bash
+wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
+```
+
+If you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.
 
 ``` bash
 wget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh
 chmod +x service_install.sh
 sudo ./service_install.sh your_script.py
-```
-
-If you have a stable internet connection, you can use the piped script technique to do this in a single line. However, use this technique at your own risk, because a script download failure may cause unpredictable behavior.
-
-``` bash
-wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
 ```
 
 !!! Note

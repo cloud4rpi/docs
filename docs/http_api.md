@@ -1,36 +1,65 @@
-# HTTP API
-
-## Update Config
+# Update Config
 
 Updates the device's configuration.
 
-```
-Request URL: https://cloud4rpi.io/api/devices/{token}/config/update
-Request Method: POST
-Content-Type: application/json
-Returns: application/json
-```
+## Request Destination
 
-### Request URL Parameters
+* **Method**: POST
+* **URL**: `https://cloud4rpi.io/api/devices/{token}/config`
+
+### URL Parameters
 
 Parameter | Description
 --------- | -----------------------
 token     | The [device](https://cloud4rpi.io/devices) token
 
-### Request Data Format
+### Headers
 
-```json
-["TODO"]
+```
+Content-Type: application/json
 ```
 
-### Example
+## Request Body
+
+```json
+{
+    "ts": datetime_isoformat,
+    "payload": {
+        [
+            {"name": name, "type": type},
+            {"name": name, "type": type},
+            // ...
+            {"name": name, "type": type}
+        ]
+    }
+}
+```
+or
+```json
+[
+    {"name": name, "type": type},
+    {"name": name, "type": type},
+    // ...
+    {"name": name, "type": type}
+]
+```
+
+### Variables
+
+Variable | Description | Type | Possible Values
+-------- | ----------- | ---- | ---------------
+datetime_isoformat | Timestamp | string | Time in **ISO 8601** format.
+name | Variable name | string | Any string
+type | Variable type | string | "bool", "numeric" or "string"
+
+
+## Example
 
 The following example creates two variables on the device:
 
 * **Temperature** of the numeric type.
 * **LEDOn** of the boolean type.
 
-#### Request
 
 ```bash
 export DEVICE_TOKEN=your_device_token
@@ -38,22 +67,27 @@ export DEVICE_TOKEN=your_device_token
 curl -X POST \
      -H "Content-Type: application/json" \
      -d '[{"name":"Temperature","type":"numeric"},{"name":"LEDOn","type":"bool"}]' \
-     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config/update
+     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config
 ```
 
 !!! Note
 
     You need to replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
-#### Response
+## Response Body
 
 ```json
-["TODO"]
+{ "message": "OK" }
 ```
+or
+```json
+{ "error": error_text }
+```
+
 
 <!-- TODO: Process other methods -->
 
-## Send data
+# Send Data
 
 Sends device data.
 

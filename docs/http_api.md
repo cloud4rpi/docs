@@ -9,7 +9,7 @@ Updates the device's configuration.
 
 ### URL Parameters
 
-Parameter | Description
+Name      | Description
 --------- | -----------------------
 token     | The [device](https://cloud4rpi.io/devices) token
 
@@ -44,9 +44,9 @@ or
 ]
 ```
 
-### Variables
+### Parameters
 
-Variable           | Description   | Type   | Possible Values
+Name               | Description   | Type   | Possible Values
 ------------------ | ------------- | ------ | ----------------------------
 datetime_isoformat | Timestamp     | string | Time in **ISO 8601** format.
 name               | Variable name | string | Any string
@@ -98,7 +98,7 @@ Sends variable values.
 
 ### URL Parameters
 
-Parameter | Description
+Name      | Description
 --------- | -----------------------
 token     | The [device](https://cloud4rpi.io/devices) token
 
@@ -122,9 +122,9 @@ Content-Type: application/json
 }
 ```
 
-### Variables
+### Parameters
 
-Variable           | Description    | Type          | Possible Values
+Name               | Description    | Type          | Possible Values
 ------------------ | -------------  | ------------- | ----------------------------
 datetime_isoformat | Timestamp      | string        | Time in **ISO 8601** format.
 var_name           | Variable name  | string        | One of the variables
@@ -173,7 +173,7 @@ Sends diagnostic data.
 
 ### URL Parameters
 
-Parameter | Description
+Name      | Description
 --------- | -----------------------
 token     | The [device](https://cloud4rpi.io/devices) token
 
@@ -197,9 +197,9 @@ Content-Type: application/json
 }
 ```
 
-### Variables
+### Parameters
 
-Variable           | Description    | Type   | Possible Values
+Name               | Description    | Type   | Possible Values
 ------------------ | -------------  | ------ | ----------------------------
 datetime_isoformat | Timestamp      | string | Time in **ISO 8601** format.
 var_name           | Variable name  | string | Any
@@ -248,7 +248,7 @@ Acquires the recent commands sent from the Control Panel.
 
 ### URL Parameters
 
-Parameter | Description
+Name      | Description
 --------- | -----------------------
 token     | The [device](https://cloud4rpi.io/devices) token
 
@@ -273,9 +273,9 @@ curl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
 ]
 ```
 
-### Variables
+### Parameters
 
-Variable           | Description        | Type             | Possible Values
+Name               | Description        | Type             | Possible Values
 ------------------ | ------------------ | ---------------- | ----------------
 var_name           | Variable name      | string           | Any
 var_new_value      | New variable value | corresponding    | Any

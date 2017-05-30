@@ -57,8 +57,8 @@ type               | Variable type | string | "bool", "numeric" or "string"
 
 The following example creates two variables on the device:
 
-* **Temperature** of the numeric type.
-* **LEDOn** of the boolean type.
+* **Temperature** (numeric)
+* **LEDOn** (boolean)
 
 
 ```bash
@@ -208,7 +208,7 @@ var_value          | Variable value | any    | Any
 
 ## Example
 
-The following example sends the following diagnostic values to Cloud4RPI.
+The following example sends the following diagnostic values to Cloud4RPI:
 
 * **CPU Temperature**: *41*
 * **IP Address**: *192.168.1.50*
@@ -281,4 +281,4 @@ var_name           | Variable name      | string           | Any
 var_new_value      | New variable value | corresponding    | Any
 
 
-The commands are ordered chronologically.
+The commands are in chronological order.

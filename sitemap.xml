@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-05-17</lastmod>
+     <lastmod>2017-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/typical-scenarios/</loc>
-     <lastmod>2017-05-17</lastmod>
+     <lastmod>2017-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,15 +20,15 @@
     
     <url>
      <loc>/faq/</loc>
-     <lastmod>2017-05-17</lastmod>
+     <lastmod>2017-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>/api/</loc>
-     <lastmod>2017-05-17</lastmod>
+     <loc>/http_api/</loc>
+     <lastmod>2017-05-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

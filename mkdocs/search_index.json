@@ -121,54 +121,159 @@
             "title": "Where can I find .log file for service?"
         }, 
         {
-            "location": "/api/", 
-            "text": "API\n\n\nHTTP\n\n\nUpdate device's config\n\n\nUpdates device's config.\n\n\nPOST /api/devices/{token}/config/update\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json\n\n\n\n\nPath parameters\n\n\n\n\n\n\n\n\nParameter\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe token of the device\n\n\n\n\n\n\n\n\nThe following example creates two variables on the device. Temperature of the numeric type and LEDOn of the bool type.\n\n\nexport DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '[{\nname\n:\nTemperature\n,\ntype\n:\nnumeric\n},{\nname\n:\nLEDOn\n,\ntype\n:\nbool\n}]' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config/update\n\n\n\n\n\n\nNote\n\n\nYou need to replace 'device_token' with your device token displayed on the device page.\n\n\n\n\nSend data\n\n\nSends device data.\n\n\nPOST /api/devices/{token}/stream/data\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json\n\n\n\n\nPath parameters\n\n\n\n\n\n\n\n\nParameter\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe token of the device\n\n\n\n\n\n\n\n\nThe following example sends the Temperature and LEDOn values to cloud4rpi.\n\n\nexport DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n2016-11-14T09:59:28.214Z\n,\npayload\n:{\nTemperature\n:24,\nLEDOn\n:false}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/stream/data\n\n\n\n\n\n\nNote\n\n\nYou need to replace 'device_token' with your device token displayed on the device page.\n\n\n\n\nSend diagnostic data\n\n\nSends diagnostic data.\n\n\nPOST /api/devices/{token}/stream/system\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json\n\n\n\n\nPath parameters\n\n\n\n\n\n\n\n\nParameter\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe token of the device\n\n\n\n\n\n\n\n\nThe following example sends the CPU Temperature and IP Address diagnostic values to cloud4rpi.\n\n\nexport DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n2016-11-14T09:59:28.214Z\n,\npayload\n:{\nCPU Temperature\n:51,\nIP Address\n:\n8.8.8.8\n}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/stream/system\n\n\n\n\n\n\nNote\n\n\nYou need to replace 'device_token' with your device token displayed on the device page.\n\n\n\n\nMQTT\n\n\nTo be supplied", 
-            "title": "API"
+            "location": "/http_api/", 
+            "text": "Update Config\n\n\nUpdates the device's configuration.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/config\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        [\n            {\nname\n: name, \ntype\n: type},\n            {\nname\n: name, \ntype\n: type},\n            // ...\n            {\nname\n: name, \ntype\n: type}\n        ]\n    }\n}\n\n\n\n\nor\n\n\n[\n    {\nname\n: name, \ntype\n: type},\n    {\nname\n: name, \ntype\n: type},\n    // ...\n    {\nname\n: name, \ntype\n: type}\n]\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in \nISO 8601\n format.\n\n\n\n\n\n\nname\n\n\nVariable name\n\n\nstring\n\n\nAny string\n\n\n\n\n\n\ntype\n\n\nVariable type\n\n\nstring\n\n\n\"bool\", \"numeric\" or \"string\"\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example creates two variables on the device:\n\n\n\n\nTemperature\n (numeric)\n\n\nLEDOn\n (boolean)\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '[{\nname\n:\nTemperature\n,\ntype\n:\nnumeric\n},{\nname\n:\nLEDOn\n,\ntype\n:\nbool\n}]' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\n\n\n\nSend Data\n\n\nSends variable values.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/data\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in \nISO 8601\n format.\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nOne of the variables\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\ncorresponding\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the values of two variables:\n\n\n\n\nTemperature\n: \n24\n.\n\n\nLEDOn\n: \ntrue\n.\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n$(date +%Y-%m-%dT%H:%M:%S%z)\n,\npayload\n:{\nTemperature\n:24,\nLEDOn\n:true}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\nSend Diagnostic Data\n\n\nSends diagnostic data.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/system\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in \nISO 8601\n format.\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\nany\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the following diagnostic values to Cloud4RPI:\n\n\n\n\nCPU Temperature\n: \n41\n\n\nIP Address\n: \n192.168.1.50\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n$(date +%Y-%m-%dT%H:%M:%S%z)\n,\npayload\n:{\nCPU Temperature\n:41,\nIP Address\n:\n192.168.1.50\n}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/system\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\nGet Commands Queue\n\n\nAcquires the recent commands sent from the Control Panel.\n\n\nRequest Destination\n\n\n\n\nMethod\n: GET\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/commands/latest\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nExample\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest\n\n\n\n\nResponse Body\n\n\n[\n    {var_name: var_new_value},\n    {var_name: var_new_value},\n    // ...\n    {var_name: var_new_value}\n]\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_new_value\n\n\nNew variable value\n\n\ncorresponding\n\n\nAny\n\n\n\n\n\n\n\n\nThe commands are in chronological order.", 
+            "title": "HTTP API"
         }, 
         {
-            "location": "/api/#api", 
-            "text": "", 
-            "title": "API"
+            "location": "/http_api/#update-config", 
+            "text": "Updates the device's configuration.", 
+            "title": "Update Config"
         }, 
         {
-            "location": "/api/#http", 
-            "text": "", 
-            "title": "HTTP"
+            "location": "/http_api/#request-destination", 
+            "text": "Method : POST  URL :  https://cloud4rpi.io/api/devices/{token}/config", 
+            "title": "Request Destination"
         }, 
         {
-            "location": "/api/#update-devices-config", 
-            "text": "Updates device's config.  POST /api/devices/{token}/config/update\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json", 
-            "title": "Update device's config"
+            "location": "/http_api/#url-parameters", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "URL Parameters"
         }, 
         {
-            "location": "/api/#path-parameters", 
-            "text": "Parameter  Description      token  The token of the device     The following example creates two variables on the device. Temperature of the numeric type and LEDOn of the bool type.  export DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '[{ name : Temperature , type : numeric },{ name : LEDOn , type : bool }]' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config/update   Note  You need to replace 'device_token' with your device token displayed on the device page.", 
-            "title": "Path parameters"
+            "location": "/http_api/#headers", 
+            "text": "Content-Type: application/json", 
+            "title": "Headers"
         }, 
         {
-            "location": "/api/#send-data", 
-            "text": "Sends device data.  POST /api/devices/{token}/stream/data\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json", 
-            "title": "Send data"
+            "location": "/http_api/#request-body", 
+            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        [\n            { name : name,  type : type},\n            { name : name,  type : type},\n            // ...\n            { name : name,  type : type}\n        ]\n    }\n}  or  [\n    { name : name,  type : type},\n    { name : name,  type : type},\n    // ...\n    { name : name,  type : type}\n]", 
+            "title": "Request Body"
         }, 
         {
-            "location": "/api/#path-parameters_1", 
-            "text": "Parameter  Description      token  The token of the device     The following example sends the Temperature and LEDOn values to cloud4rpi.  export DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '{ ts : 2016-11-14T09:59:28.214Z , payload :{ Temperature :24, LEDOn :false}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/stream/data   Note  You need to replace 'device_token' with your device token displayed on the device page.", 
-            "title": "Path parameters"
+            "location": "/http_api/#parameters", 
+            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in  ISO 8601  format.    name  Variable name  string  Any string    type  Variable type  string  \"bool\", \"numeric\" or \"string\"", 
+            "title": "Parameters"
         }, 
         {
-            "location": "/api/#send-diagnostic-data", 
-            "text": "Sends diagnostic data.  POST /api/devices/{token}/stream/system\nHTTP/1.1\nHost: cloud4rpi.io\nAccept: application/json\nContent-Type: application/json", 
-            "title": "Send diagnostic data"
+            "location": "/http_api/#example", 
+            "text": "The following example creates two variables on the device:   Temperature  (numeric)  LEDOn  (boolean)   export DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '[{ name : Temperature , type : numeric },{ name : LEDOn , type : bool }]' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
+            "title": "Example"
         }, 
         {
-            "location": "/api/#path-parameters_2", 
-            "text": "Parameter  Description      token  The token of the device     The following example sends the CPU Temperature and IP Address diagnostic values to cloud4rpi.  export DEVICE_TOKEN=device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '{ ts : 2016-11-14T09:59:28.214Z , payload :{ CPU Temperature :51, IP Address : 8.8.8.8 }}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/stream/system   Note  You need to replace 'device_token' with your device token displayed on the device page.", 
-            "title": "Path parameters"
+            "location": "/http_api/#response-body", 
+            "text": "{  message :  OK  }  or  {  error : error_text }", 
+            "title": "Response Body"
         }, 
         {
-            "location": "/api/#mqtt", 
-            "text": "To be supplied", 
-            "title": "MQTT"
+            "location": "/http_api/#send-data", 
+            "text": "Sends variable values.", 
+            "title": "Send Data"
+        }, 
+        {
+            "location": "/http_api/#request-destination_1", 
+            "text": "Method : POST  URL :  https://cloud4rpi.io/api/devices/{token}/data", 
+            "title": "Request Destination"
+        }, 
+        {
+            "location": "/http_api/#url-parameters_1", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "URL Parameters"
+        }, 
+        {
+            "location": "/http_api/#headers_1", 
+            "text": "Content-Type: application/json", 
+            "title": "Headers"
+        }, 
+        {
+            "location": "/http_api/#request-body_1", 
+            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}", 
+            "title": "Request Body"
+        }, 
+        {
+            "location": "/http_api/#parameters_1", 
+            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in  ISO 8601  format.    var_name  Variable name  string  One of the variables    var_value  Variable value  corresponding  Any", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/http_api/#example_1", 
+            "text": "The following example sends the values of two variables:   Temperature :  24 .  LEDOn :  true .   export DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '{ ts : $(date +%Y-%m-%dT%H:%M:%S%z) , payload :{ Temperature :24, LEDOn :true}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/http_api/#response-body_1", 
+            "text": "{  message :  OK  }  or  {  error : error_text }", 
+            "title": "Response Body"
+        }, 
+        {
+            "location": "/http_api/#send-diagnostic-data", 
+            "text": "Sends diagnostic data.", 
+            "title": "Send Diagnostic Data"
+        }, 
+        {
+            "location": "/http_api/#request-destination_2", 
+            "text": "Method : POST  URL :  https://cloud4rpi.io/api/devices/{token}/system", 
+            "title": "Request Destination"
+        }, 
+        {
+            "location": "/http_api/#url-parameters_2", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "URL Parameters"
+        }, 
+        {
+            "location": "/http_api/#headers_2", 
+            "text": "Content-Type: application/json", 
+            "title": "Headers"
+        }, 
+        {
+            "location": "/http_api/#request-body_2", 
+            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}", 
+            "title": "Request Body"
+        }, 
+        {
+            "location": "/http_api/#parameters_2", 
+            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in  ISO 8601  format.    var_name  Variable name  string  Any    var_value  Variable value  any  Any", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/http_api/#example_2", 
+            "text": "The following example sends the following diagnostic values to Cloud4RPI:   CPU Temperature :  41  IP Address :  192.168.1.50   export DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '{ ts : $(date +%Y-%m-%dT%H:%M:%S%z) , payload :{ CPU Temperature :41, IP Address : 192.168.1.50 }}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/system   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/http_api/#response-body_2", 
+            "text": "{  message :  OK  }  or  {  error : error_text }", 
+            "title": "Response Body"
+        }, 
+        {
+            "location": "/http_api/#get-commands-queue", 
+            "text": "Acquires the recent commands sent from the Control Panel.", 
+            "title": "Get Commands Queue"
+        }, 
+        {
+            "location": "/http_api/#request-destination_3", 
+            "text": "Method : GET  URL :  https://cloud4rpi.io/api/devices/{token}/commands/latest", 
+            "title": "Request Destination"
+        }, 
+        {
+            "location": "/http_api/#url-parameters_3", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "URL Parameters"
+        }, 
+        {
+            "location": "/http_api/#example_3", 
+            "text": "export DEVICE_TOKEN=your_device_token\n\ncurl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/http_api/#response-body_3", 
+            "text": "[\n    {var_name: var_new_value},\n    {var_name: var_new_value},\n    // ...\n    {var_name: var_new_value}\n]", 
+            "title": "Response Body"
+        }, 
+        {
+            "location": "/http_api/#parameters_3", 
+            "text": "Name  Description  Type  Possible Values      var_name  Variable name  string  Any    var_new_value  New variable value  corresponding  Any     The commands are in chronological order.", 
+            "title": "Parameters"
         }
     ]
 }

@@ -4,7 +4,7 @@ pages:
 - Home: index.md
 - Typical Scenarios: typical-scenarios.md
 - FAQ: faq.md
-- API: api.md
+- HTTP API: http_api.md
 
 markdown_extensions:
     - admonition:

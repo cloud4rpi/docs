@@ -139,7 +139,7 @@ The following example sends the values of two variables:
 * **LEDOn**: *true*.
 
 ```bash
-export DEVICE_TOKEN=device_token
+export DEVICE_TOKEN=your_device_token
 
 curl -X POST \
      -H "Content-Type: application/json" \
@@ -214,7 +214,7 @@ The following example sends the following diagnostic values to Cloud4RPI.
 * **IP Address**: *192.168.1.50*
 
 ```bash
-export DEVICE_TOKEN=device_token
+export DEVICE_TOKEN=your_device_token
 
 curl -X POST \
      -H "Content-Type: application/json" \
@@ -257,7 +257,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 ## Example
 
 ```bash
-export DEVICE_TOKEN=device_token
+export DEVICE_TOKEN=your_device_token
 
 curl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
 ```

@@ -1,0 +1,15 @@
+/* theme: mkdocs */
+
+.bs-sidenav>li {
+    margin-left: 1.5em;
+}
+ul.nav .main {
+    margin-left: 0px;
+}
+
+/* theme: readthedocs*/
+
+.toctree-l3 {
+    font-style: italic;
+    margin-left: 2em;
+}

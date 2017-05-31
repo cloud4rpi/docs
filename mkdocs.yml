@@ -8,3 +8,6 @@ pages:
 
 markdown_extensions:
     - admonition:
+
+extra_css: [extra.css]
+theme: mkdocs

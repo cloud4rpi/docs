@@ -314,7 +314,7 @@ curl -X POST \
 <h2 id="request-destination_2">Request Destination</h2>
 <ul>
 <li><strong>Method</strong>: POST</li>
-<li><strong>URL</strong>: <code>https://cloud4rpi.io/api/devices/{token}/system</code></li>
+<li><strong>URL</strong>: <code>https://cloud4rpi.io/api/devices/{token}/diagnostics</code></li>
 </ul>
 <h3 id="url-parameters_2">URL Parameters</h3>
 <table>
@@ -389,7 +389,7 @@ curl -X POST \
 curl -X POST \
      -H &quot;Content-Type: application/json&quot; \
      -d '{&quot;ts&quot;:&quot;$(date +%Y-%m-%dT%H:%M:%S%z)&quot;,&quot;payload&quot;:{&quot;CPU Temperature&quot;:41,&quot;IP Address&quot;:&quot;192.168.1.50&quot;}}' \
-     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/system
+     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics
 </code></pre>
 
 <div class="admonition note">

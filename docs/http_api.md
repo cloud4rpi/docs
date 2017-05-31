@@ -169,7 +169,7 @@ Sends diagnostic data.
 ## Request Destination
 
 * **Method**: POST
-* **URL**: `https://cloud4rpi.io/api/devices/{token}/system`
+* **URL**: `https://cloud4rpi.io/api/devices/{token}/diagnostics`
 
 ### URL Parameters
 
@@ -219,7 +219,7 @@ export DEVICE_TOKEN=your_device_token
 curl -X POST \
      -H "Content-Type: application/json" \
      -d '{"ts":"$(date +%Y-%m-%dT%H:%M:%S%z)","payload":{"CPU Temperature":41,"IP Address":"192.168.1.50"}}' \
-     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/system
+     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics
 ```
 
 !!! Note

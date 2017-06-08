@@ -84,9 +84,6 @@ or
 { "error": error_text }
 ```
 
-
-<!-- TODO: Process other methods -->
-
 # Send Data
 
 Sends variable values.

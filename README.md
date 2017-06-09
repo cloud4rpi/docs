@@ -17,4 +17,11 @@ make
 make publish
 ```
 
+## To watch locally
+```
+mkdocs serve
+
+# then open http://127.0.0.1:8000
+```
+
 Check it out at https://cloud4rpi.github.io/docs/

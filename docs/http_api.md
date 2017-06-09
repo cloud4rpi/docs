@@ -143,7 +143,7 @@ export DEVICE_TOKEN=your_device_token
 
 curl -X POST \
      -H "Content-Type: application/json" \
-     -d '{"ts":"$(date +%Y-%m-%dT%H:%M:%S%z)","payload":{"Temperature":24,"LEDOn":true}}' \
+     -d '{"ts":"$(date -Iseconds)","payload":{"Temperature":24,"LEDOn":true}}' \
      http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data
 ```
 
@@ -218,7 +218,7 @@ export DEVICE_TOKEN=your_device_token
 
 curl -X POST \
      -H "Content-Type: application/json" \
-     -d '{"ts":"$(date +%Y-%m-%dT%H:%M:%S%z)","payload":{"CPU Temperature":41,"IP Address":"192.168.1.50"}}' \
+     -d '{"ts":"$(date -Iseconds)","payload":{"CPU Temperature":41,"IP Address":"192.168.1.50"}}' \
      http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics
 ```
 

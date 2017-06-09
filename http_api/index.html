@@ -294,7 +294,7 @@ curl -X POST \
 
 curl -X POST \
      -H &quot;Content-Type: application/json&quot; \
-     -d '{&quot;ts&quot;:&quot;$(date -uIseconds)&quot;,&quot;payload&quot;:{&quot;Temperature&quot;:24,&quot;LEDOn&quot;:true}}' \
+     -d '{&quot;ts&quot;:&quot;$(date -uIseconds)Z&quot;,&quot;payload&quot;:{&quot;Temperature&quot;:24,&quot;LEDOn&quot;:true}}' \
      http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data
 </code></pre>
 
@@ -389,7 +389,7 @@ curl -X POST \
 
 curl -X POST \
      -H &quot;Content-Type: application/json&quot; \
-     -d '{&quot;ts&quot;:&quot;$(date -uIseconds)&quot;,&quot;payload&quot;:{&quot;CPU Temperature&quot;:41,&quot;IP Address&quot;:&quot;192.168.1.50&quot;}}' \
+     -d '{&quot;ts&quot;:&quot;$(date -uIseconds)Z&quot;,&quot;payload&quot;:{&quot;CPU Temperature&quot;:41,&quot;IP Address&quot;:&quot;192.168.1.50&quot;}}' \
      http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics
 </code></pre>
 

@@ -171,7 +171,7 @@
 <td>datetime_isoformat</td>
 <td>Timestamp</td>
 <td>string</td>
-<td>Time in <strong>ISO 8601</strong> format.</td>
+<td>Time in <strong>ISO 8601</strong> format with the <a href="https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators">time zone designator</a> specified explicitly.</td>
 </tr>
 <tr>
 <td>name</td>
@@ -268,7 +268,7 @@ curl -X POST \
 <td>datetime_isoformat</td>
 <td>Timestamp</td>
 <td>string</td>
-<td>Time in <strong>ISO 8601</strong> format.</td>
+<td>Time in <strong>ISO 8601</strong> format with the <a href="https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators">time zone designator</a> specified explicitly</td>
 </tr>
 <tr>
 <td>var_name</td>
@@ -294,7 +294,7 @@ curl -X POST \
 
 curl -X POST \
      -H &quot;Content-Type: application/json&quot; \
-     -d '{&quot;ts&quot;:&quot;$(date -uIs)&quot;,&quot;payload&quot;:{&quot;Temperature&quot;:24,&quot;LEDOn&quot;:true}}' \
+     -d '{&quot;ts&quot;:&quot;$(date -Is)&quot;,&quot;payload&quot;:{&quot;Temperature&quot;:24,&quot;LEDOn&quot;:true}}' \
      http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data
 </code></pre>
 
@@ -363,7 +363,7 @@ curl -X POST \
 <td>datetime_isoformat</td>
 <td>Timestamp</td>
 <td>string</td>
-<td>Time in <strong>ISO 8601</strong> format.</td>
+<td>Time in <strong>ISO 8601</strong> format with the <a href="https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators">time zone designator</a> specified explicitly</td>
 </tr>
 <tr>
 <td>var_name</td>
@@ -389,7 +389,7 @@ curl -X POST \
 
 curl -X POST \
      -H &quot;Content-Type: application/json&quot; \
-     -d '{&quot;ts&quot;:&quot;$(date -uIs)&quot;,&quot;payload&quot;:{&quot;CPU Temperature&quot;:41,&quot;IP Address&quot;:&quot;192.168.1.50&quot;}}' \
+     -d '{&quot;ts&quot;:&quot;$(date -Is)&quot;,&quot;payload&quot;:{&quot;CPU Temperature&quot;:41,&quot;IP Address&quot;:&quot;192.168.1.50&quot;}}' \
      http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics
 </code></pre>
 

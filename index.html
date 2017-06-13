@@ -102,7 +102,7 @@
 </code></pre>
 
 <p>Install/update the required packages.</p>
-<pre><code class="bash">$ sudo apt-get install git python python-pip
+<pre><code class="bash">$ sudo apt-get install wget unzip python python-pip
 </code></pre>
 
 <p>You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
@@ -133,9 +133,9 @@
 <p>For information on how to work with several versions of Python installed, see <a href="https://docs.python.org/3/installing/">Python Documentation</a>.</p>
 </div>
 <h2 id="hacking-together-some-code">Hacking Together some Code</h2>
-<p>We have prepared several samples in the <a href="https://github.com/cloud4rpi/cloud4rpi/tree/master/examples">examples</a> directory to demonstrate sending data to the Cloud.</p>
-<p>Clone the Cloud4RPI repository to get the <strong>examples</strong> directory on your device.</p>
-<pre><code class="bash">git clone https://github.com/cloud4rpi/cloud4rpi.git
+<p>We have prepared several samples in the <a href="https://github.com/cloud4rpi/cloud4rpi-examples">examples</a> repository to demonstrate sending data to the Cloud.</p>
+<p>Get the <strong>cloud4rpi-examples-master</strong> directory on your device.</p>
+<pre><code class="bash">wget https://github.com/cloud4rpi/cloud4rpi-examples/archive/master.zip &amp;&amp; unzip master.zip &amp;&amp; rm master.zip
 </code></pre>
 
 <p>Before running a sample, remember to insert your device token to the line like this:</p>
@@ -207,5 +207,5 @@ sudo ./service_install.sh your_script.py
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-06-09 13:05:05
+Build Date UTC : 2017-06-13 12:54:34
 -->

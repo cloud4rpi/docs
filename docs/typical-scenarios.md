@@ -30,8 +30,8 @@ You need:
     'bind': rpi.cpu_temp
 }
 ```
-Open the `sensors.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples`) folder
 
+- Open the [sensors.py](https://github.com/cloud4rpi/cloud4rpi-examples/blob/master/raspberrypi/sensors.py) sample file.
 - Make necessary changes in `sensors.py` if you have another sensor configuration.
 - Run `sensors` or restart the `cloud4rpi` service. New variables
 named `RoomTemp` and `CPUTemp` should appear on such device
@@ -65,8 +65,7 @@ You need
 },
 ```
 
-Open the `actuator.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples`) folder
-
+- Open the [actuator.py](https://github.com/cloud4rpi/cloud4rpi-examples/blob/master/raspberrypi/actuator.py) sample file.
 - Uncomment code in `actuator.py`. If you connected an LED to a differed GPIO pin, set the correct value to the `LED_PIN` variable.
 - Run `actuator.py` or restart the `cloud4rpi` service. A new variable named `LEDOn` should appear on the device page.
 - Open the `Control Panels` page and add a new control panel or open an existing one.
@@ -89,7 +88,8 @@ You need
     'bind': listen_for_events
 }
 ```
- Open the `status.py` sample file from the [examples](`https://github.com/cloud4rpi/cloud4rpi/tree/master/examples`) folder
+
+Open the [status.py](https://github.com/cloud4rpi/cloud4rpi-examples/blob/master/raspberrypi/status.py) sample file
 
 ### Code
 ``` python
@@ -109,7 +109,7 @@ def listen_for_events():
     Feel free to re-write event generation logic based on your specific conditions:
 
 
-- Run `status.py` or restart the `cloud4rpi` service. A new variable named `STATUS` should appear on the device page.
+- Run [status.py](https://github.com/cloud4rpi/cloud4rpi-examples/blob/master/raspberrypi/status.py) or restart the `cloud4rpi` service. A new variable named `STATUS` should appear on the device page.
 - Open the `Control Panels` page and add a new control panel or open an existing one.
 - Add a new `Text` widget and choose the newly added `STATUS` variable.
 - Change the pre-defined status color items according to the event names from the code above.

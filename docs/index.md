@@ -13,7 +13,7 @@ $ sudo apt-get update && sudo apt-get upgrade
 Install/update the required packages.
 
 ``` bash
-$ sudo apt-get install git python python-pip
+$ sudo apt-get install wget unzip python python-pip
 ```
 
 You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/installing.html).
@@ -51,12 +51,12 @@ sudo python3 -m pip install cloud4rpi
 
 ## Hacking Together some Code
 
-We have prepared several samples in the [examples](https://github.com/cloud4rpi/cloud4rpi/tree/master/examples) directory to demonstrate sending data to the Cloud.
+We have prepared several samples in the [examples](https://github.com/cloud4rpi/cloud4rpi-examples) repository to demonstrate sending data to the Cloud.
 
-Clone the Cloud4RPI repository to get the **examples** directory on your device.
+Get the **cloud4rpi-examples-master** directory on your device.
 
 ``` bash
-git clone https://github.com/cloud4rpi/cloud4rpi.git
+wget https://github.com/cloud4rpi/cloud4rpi-examples/archive/master.zip && unzip master.zip && rm master.zip
 ```
 
 Before running a sample, remember to insert your device token to the line like this:

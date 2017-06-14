@@ -102,7 +102,7 @@
         }, 
         {
             "location": "/faq/", 
-            "text": "FAQ\n\n\nFrequently Asked Questions when working with Cloud4Rpi\n\n\nInsecure Platform Warning\n\n\nError \n\"InsecurePlatformWarning: A true SSLContext object is not available...\"\n\n\nYou need Python version 2.7.9 or higher installed. Please check it with\n\n\n$ python --version\n\n\n\n\nand update if necessary.\n\n\n$ wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz\n$ gunzip Python-2.7.9.tgz\n$ tar -xvf Python-2.7.9.tar\n$ cd Python-2.7.9/\n$ ./configure\n$ make\n$ sudo make install\n\n\n\n\nWhere can I find .log file for service?\n\n\nIf you use \n.../examples/control.py\n as a service, the default path for the log-file is \n'/var/log/cloud4rpi.log'\n\n\nHowever, you can specify a different log file location via the LOG_FILE_PATH variable:\n\n\nLOG_FILE_PATH = '/var/log/cloud4rpi.log'\n\n\nThe following code is required to activate logging to a file:\n\n\ncloud4rpi.set_logging_to_file(LOG_FILE_PATH)", 
+            "text": "FAQ\n\n\nFrequently Asked Questions when working with Cloud4Rpi\n\n\nInsecure Platform Warning\n\n\nError \n\"InsecurePlatformWarning: A true SSLContext object is not available...\"\n\n\nYou need Python version 2.7.9 or higher installed. Please check it with\n\n\n$ python --version\n\n\n\n\nand update if necessary.\n\n\n$ wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz\n$ gunzip Python-2.7.9.tgz\n$ tar -xvf Python-2.7.9.tar\n$ cd Python-2.7.9/\n$ ./configure\n$ make\n$ sudo make install\n\n\n\n\nWhere can I find .log file for service?\n\n\nIf you use \ncontrol.py\n  as a service, the default path for the log-file is \n'/var/log/cloud4rpi.log'\n\n\nHowever, you can specify a different log file location via the LOG_FILE_PATH variable:\n\n\nLOG_FILE_PATH = '/var/log/cloud4rpi.log'\n\n\nThe following code is required to activate logging to a file:\n\n\ncloud4rpi.set_logging_to_file(LOG_FILE_PATH)", 
             "title": "FAQ"
         }, 
         {
@@ -117,7 +117,7 @@
         }, 
         {
             "location": "/faq/#where-can-i-find-log-file-for-service", 
-            "text": "If you use  .../examples/control.py  as a service, the default path for the log-file is  '/var/log/cloud4rpi.log'  However, you can specify a different log file location via the LOG_FILE_PATH variable:  LOG_FILE_PATH = '/var/log/cloud4rpi.log'  The following code is required to activate logging to a file:  cloud4rpi.set_logging_to_file(LOG_FILE_PATH)", 
+            "text": "If you use  control.py   as a service, the default path for the log-file is  '/var/log/cloud4rpi.log'  However, you can specify a different log file location via the LOG_FILE_PATH variable:  LOG_FILE_PATH = '/var/log/cloud4rpi.log'  The following code is required to activate logging to a file:  cloud4rpi.set_logging_to_file(LOG_FILE_PATH)", 
             "title": "Where can I find .log file for service?"
         }, 
         {

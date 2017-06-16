@@ -1,4 +1,4 @@
-# cloud4rpi docs
+# Cloud4RPI docs
 
 [![Build Status](https://travis-ci.org/cloud4rpi/docs.svg?branch=master)](https://travis-ci.org/cloud4rpi/docs)
 

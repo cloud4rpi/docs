@@ -1,6 +1,6 @@
 # FAQ
 
-Frequently Asked Questions when working with Cloud4Rpi
+Frequently Asked Questions when working with Cloud4RPI
 
 ## Insecure Platform Warning
 

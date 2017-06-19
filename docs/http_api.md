@@ -48,7 +48,7 @@ or
 
 Name               | Description   | Type   | Possible Values
 ------------------ | ------------- | ------ | ----------------------------
-datetime_isoformat | Timestamp     | string | Time in **ISO 8601** format.
+datetime_isoformat | Timestamp     | string | Time in **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly.
 name               | Variable name | string | Any string
 type               | Variable type | string | "bool", "numeric" or "string"
 
@@ -123,7 +123,7 @@ Content-Type: application/json
 
 Name               | Description    | Type          | Possible Values
 ------------------ | -------------  | ------------- | ----------------------------
-datetime_isoformat | Timestamp      | string        | Time in **ISO 8601** format.
+datetime_isoformat | Timestamp      | string        | Time in **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
 var_name           | Variable name  | string        | One of the variables
 var_value          | Variable value | corresponding | Any
 
@@ -140,7 +140,7 @@ export DEVICE_TOKEN=your_device_token
 
 curl -X POST \
      -H "Content-Type: application/json" \
-     -d '{"ts":"$(date +%Y-%m-%dT%H:%M:%S%z)","payload":{"Temperature":24,"LEDOn":true}}' \
+     -d '{"ts":"$(date -Is)","payload":{"Temperature":24,"LEDOn":true}}' \
      http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data
 ```
 
@@ -198,7 +198,7 @@ Content-Type: application/json
 
 Name               | Description    | Type   | Possible Values
 ------------------ | -------------  | ------ | ----------------------------
-datetime_isoformat | Timestamp      | string | Time in **ISO 8601** format.
+datetime_isoformat | Timestamp      | string | Time in **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
 var_name           | Variable name  | string | Any
 var_value          | Variable value | any    | Any
 
@@ -215,7 +215,7 @@ export DEVICE_TOKEN=your_device_token
 
 curl -X POST \
      -H "Content-Type: application/json" \
-     -d '{"ts":"$(date +%Y-%m-%dT%H:%M:%S%z)","payload":{"CPU Temperature":41,"IP Address":"192.168.1.50"}}' \
+     -d '{"ts":"$(date -Is)","payload":{"CPU Temperature":41,"IP Address":"192.168.1.50"}}' \
      http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics
 ```
 

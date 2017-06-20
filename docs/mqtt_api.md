@@ -23,11 +23,7 @@ Use the following data to connect to the MQTT broker:
 
 # Variables Configuration
 
-Update the device's configuration by sending messagges to the following topic.
-
-## Topic
-
-Send messagges to the following topic:
+Update the device's configuration by sending messagges to the following topic:
 
 ```gradle
 devices/{token}/config
@@ -84,11 +80,7 @@ mosquitto_pub -d -t "devices/$TOKEN/config" -h mq.cloud4rpi.io -i "$TOKEN" \
 
 # Variable Values
 
-Send the data from the device in massages to the following topic.
-
-## Topic
-
-Send messagges to the following topic:
+Send the data from the device in messagges to the following topic:
 
 ```gradle
 devices/{token}/data
@@ -144,11 +136,7 @@ mosquitto_pub -d -t "devices/$TOKEN/data" -h mq.cloud4rpi.io -i "$TOKEN" \
 
 # Diagnostic Data
 
-Send diagnostic data from the device in messagges to the following topic.
-
-## Topic
-
-Send messagges to the following topic:
+Send diagnostic data from the device in messagges to the following topic:
 
 ```gradle
 devices/{token}/diagnostics
@@ -202,11 +190,7 @@ mosquitto_pub -d -t "devices/$TOKEN/diagnostics" -h mq.cloud4rpi.io -i "$TOKEN" 
 
 # Commands Stream
 
-Receive commangs from the [Control Panels](https://cloud4rpi.io/control-panels) in real time by subscribing to the following topic.
-
-## Topic
-
-Subscribe to the following topic to receive commands:
+Receive commangs from the [Control Panels](https://cloud4rpi.io/control-panels) in real time by subscribing to the following topic:
 
 ```gradle
 devices/{token}/commands

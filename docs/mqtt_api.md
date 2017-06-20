@@ -21,6 +21,7 @@ Use the following data to connect to the MQTT broker:
 !!! Note
     **Login** and **Password** are not used, you can leave them empty.
 
+
 # Variables Configuration
 
 Update the device's configuration by sending messagges to the following topic:
@@ -69,8 +70,8 @@ The following example creates two variables on the device:
 
 
 ```bash
-export TOKEN=your_device_token
-mosquitto_pub -d -t "devices/$TOKEN/config" -h mq.cloud4rpi.io -i "$TOKEN" \
+export DEVICE_TOKEN=your_device_token
+mosquitto_pub -d -t "devices/$DEVICE_TOKEN/config" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
               -m '{"ts":"$(date -Is)","payload":[{"name":"Temperature","type":"numeric"},{"name":"LEDOn","type":"bool"}]}'
 ```
 
@@ -126,7 +127,7 @@ The following example sends the values of two variables:
 
 ```bash
 export DEVICE_TOKEN=your_device_token
-mosquitto_pub -d -t "devices/$TOKEN/data" -h mq.cloud4rpi.io -i "$TOKEN" \
+mosquitto_pub -d -t "devices/$DEVICE_TOKEN/data" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
               -m '{"ts":"$(date -Is)","payload":{"Temperature":24,"LEDOn":true}}'
 ```
 
@@ -181,7 +182,7 @@ The following example sends the following diagnostic values to Cloud4RPI:
 
 ```bash
 export DEVICE_TOKEN=your_device_token
-mosquitto_pub -d -t "devices/$TOKEN/diagnostics" -h mq.cloud4rpi.io -i "$TOKEN" \
+mosquitto_pub -d -t "devices/$DEVICE_TOKEN/diagnostics" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
               -m '{"ts":"$(date -Is)","payload":{"CPU Temperature":41,"IP Address":"192.168.1.50"}}'
 ```
 
@@ -209,7 +210,7 @@ Execute the following command to subscribe.
 
 ```bash
 export DEVICE_TOKEN=your_device_token
-mosquitto_sub -d -t "devices/$TOKEN/commands" -h mq.cloud4rpi.io -i "$TOKEN"
+mosquitto_sub -d -t "devices/$DEVICE_TOKEN/commands" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN"
 ```
 
 This program will not return unless the connection to the broker is lost. You will instantly get commands sent from the UI in the following format:

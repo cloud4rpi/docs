@@ -23,7 +23,7 @@ Use the following data to connect to the MQTT broker:
 
 # Variables Configuration
 
-Used to update the device's configuration.
+Update the device's configuration by sending messagges to the following topic.
 
 ## Topic
 
@@ -84,7 +84,7 @@ mosquitto_pub -d -t "devices/$TOKEN/config" -h mq.cloud4rpi.io -i "$TOKEN" \
 
 # Variable Values
 
-Used to send the data from the device.
+Send the data from the device in massages to the following topic.
 
 ## Topic
 
@@ -144,7 +144,7 @@ mosquitto_pub -d -t "devices/$TOKEN/data" -h mq.cloud4rpi.io -i "$TOKEN" \
 
 # Diagnostic Data
 
-Used to send diagnostic data from the device.
+Send diagnostic data from the device in messagges to the following topic.
 
 ## Topic
 
@@ -202,7 +202,7 @@ mosquitto_pub -d -t "devices/$TOKEN/diagnostics" -h mq.cloud4rpi.io -i "$TOKEN" 
 
 # Commands Stream
 
-Used to receive commangs from the [Control Panels](https://cloud4rpi.io/control-panels) in real time.
+Receive commangs from the [Control Panels](https://cloud4rpi.io/control-panels) in real time by subscribing to the following topic.
 
 ## Topic
 

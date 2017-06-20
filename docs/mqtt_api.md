@@ -4,11 +4,11 @@ Use the following data to connect to the MQTT broker:
 
 * **Address:** `mq.cloud4rpi.io`
 * **Port:** `1883`
-* **Cluent ID**: Your [Device](https://cloud4rpi.io/devices/) Token
+* **Client ID**: Your [Device](https://cloud4rpi.io/devices/) Token
 
 
 !!! Warning
-    Since the **Cluent ID** is used for authentication, you should not open more then one connections to MQTT broker at the same time.
+    Since the **Client ID** is used for authentication, you should not open more then one connections to MQTT broker at the same time.
 
 !!! Note
     **Login** and **Password** are not used, you can leave them empty.
@@ -190,7 +190,6 @@ mosquitto_pub -d -t "devices/$TOKEN/diagnostics" -h mq.cloud4rpi.io -i "$TOKEN" 
 ```
 
 !!! Note
-
     You need to replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
 # Commands Stream

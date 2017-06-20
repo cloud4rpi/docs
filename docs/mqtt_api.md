@@ -1,3 +1,11 @@
+# Prerequisites
+
+The examples in this section are presented for the [Eclipse Mosquitto™](https://mosquitto.org/) MQTT client. Execute the following command to install it if you intent to execute the examples:
+
+```bash
+sudo apt-get install mosquitto-clients
+```
+
 # Cloud4RPI MQTT Broker
 
 Use the following data to connect to the MQTT broker:

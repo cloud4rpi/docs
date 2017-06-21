@@ -1,9 +1,9 @@
-# Cloud4RPI docs
+# Cloud4RPi docs
 
 [![Build Status](https://travis-ci.org/cloud4rpi/docs.svg?branch=master)](https://travis-ci.org/cloud4rpi/docs)
 
 
-The documentation for [Cloud4RPI](https://cloud4rpi.io/) service.
+The documentation for [Cloud4RPi](https://cloud4rpi.io/) service.
 
 Docs are built using the mkdocs tool: [mkdocs](http://www.mkdocs.org/), install it with `pip install mkdocs`
 

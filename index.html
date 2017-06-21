@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="./img/favicon.ico">
-        <title>Cloud4RPI Documentation</title>
+        <title>Cloud4RPi Documentation</title>
         <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="./css/base.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href=".">Cloud4RPI Documentation</a>
+            <a class="navbar-brand" href=".">Cloud4RPi Documentation</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -86,7 +86,7 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#connecting-a-new-device">Connecting a New Device</a></li>
             <li><a href="#prerequisites">Prerequisites</a></li>
-            <li><a href="#getting-the-cloud4rpi-client-library">Getting the Cloud4RPI Client Library</a></li>
+            <li><a href="#getting-the-cloud4rpi-client-library">Getting the Cloud4RPi Client Library</a></li>
             <li><a href="#hacking-together-some-code">Hacking Together some Code</a></li>
             <li><a href="#running">Running</a></li>
             <li><a href="#installing-as-a-service">Installing as a service</a></li>
@@ -95,7 +95,7 @@
                 <div class="col-md-9" role="main">
 
 <h1 id="connecting-a-new-device">Connecting a New Device</h1>
-<p>Follow the instructions below to connect your device to the <a href="https://cloud4rpi.io">Cloud4RPI</a> control panel.</p>
+<p>Follow the instructions below to connect your device to the <a href="https://cloud4rpi.io">Cloud4RPi</a> control panel.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>It is advisable to update your system before installing.</p>
 <pre><code class="bash">$ sudo apt-get update &amp;&amp; sudo apt-get upgrade
@@ -119,8 +119,8 @@
 <li>Choose <code>&lt;Finish&gt;</code>.</li>
 <li>Reboot the device with the <code>sudo reboot</code> command.</li>
 </ul>
-<h2 id="getting-the-cloud4rpi-client-library">Getting the Cloud4RPI Client Library</h2>
-<p>Install the library using your preferred Python version. The following command installs and integrates Cloud4RPI with your OS's default Python interpreter (usually Python 2):</p>
+<h2 id="getting-the-cloud4rpi-client-library">Getting the Cloud4RPi Client Library</h2>
+<p>Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):</p>
 <pre><code class="bash">$ sudo pip install cloud4rpi
 </code></pre>
 
@@ -150,11 +150,11 @@
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you have installed Cloud4RPI to a non-default Python, use the version with the Cloud4RPI library.</p>
+<p>If you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.</p>
 </div>
 <p>If the script output looks right, open the <a href="https://cloud4rpi.io/devices">Devices</a> page to see if the device status has changed.</p>
 <h2 id="installing-as-a-service">Installing as a service</h2>
-<p>You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPI-enabled Python script to the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh">service_install.sh</a> script as a parameter.</p>
+<p>You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh">service_install.sh</a> script as a parameter.</p>
 <p>You can use the piped script technique to do this in a single line.</p>
 <pre><code class="bash">wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
 </code></pre>
@@ -207,5 +207,5 @@ sudo ./service_install.sh your_script.py
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-06-16 07:01:02
+Build Date UTC : 2017-06-21 11:09:17
 -->

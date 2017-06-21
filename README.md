@@ -1,4 +1,4 @@
-[Cloud4RPi](https://cloud4rpi.io/) Documentation
+Cloud4RPi Documentation
 =======
 
 This repository contains documentation for [Cloud4RPi](https://cloud4rpi.io/) service.

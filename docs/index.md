@@ -1,6 +1,6 @@
 # Connecting a New Device
 
-Follow the instructions below to connect your device to the [Cloud4RPI](https://cloud4rpi.io) control panel.
+Follow the instructions below to connect your device to the [Cloud4RPi](https://cloud4rpi.io) control panel.
 
 ## Prerequisites
 
@@ -32,9 +32,9 @@ If your OS is [Raspbian](https://www.raspberrypi.org/downloads/raspbian/), follo
 - Reboot the device with the `sudo reboot` command.
 
 
-## Getting the Cloud4RPI Client Library
+## Getting the Cloud4RPi Client Library
 
-Install the library using your preferred Python version. The following command installs and integrates Cloud4RPI with your OS's default Python interpreter (usually Python 2):
+Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):
 
 ``` bash
 $ sudo pip install cloud4rpi
@@ -77,14 +77,14 @@ $ sudo python minimal.py
 ```
 
 !!! Note
-    If you have installed Cloud4RPI to a non-default Python, use the version with the Cloud4RPI library.
+    If you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.
 
 If the script output looks right, open the [Devices](https://cloud4rpi.io/devices) page to see if the device status has changed.
 
 
 ## Installing as a service
 
-You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPI-enabled Python script to the [service_install.sh](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh) script as a parameter.
+You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the [service_install.sh](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh) script as a parameter.
 
 You can use the piped script technique to do this in a single line.
 

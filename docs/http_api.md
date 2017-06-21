@@ -208,7 +208,7 @@ var_value          | Variable value | any    | Any
 
 ## Example
 
-The following example sends the following diagnostic values to Cloud4RPI:
+The following example sends the following diagnostic values to Cloud4RPi:
 
 * **CPU Temperature**: *41*
 * **IP Address**: *192.168.1.50*

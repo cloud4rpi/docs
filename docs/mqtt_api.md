@@ -6,7 +6,7 @@ The examples in this section are presented for the [Eclipse Mosquitto™](https:
 sudo apt-get install mosquitto-clients
 ```
 
-# Cloud4RPI MQTT Broker
+# Cloud4RPi MQTT Broker
 
 Use the following data to connect to the MQTT broker:
 

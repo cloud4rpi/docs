@@ -7,13 +7,13 @@ Follow the instructions below to connect your device to the [Cloud4RPi](https://
 It is advisable to update your system before installing.
 
 ``` bash
-$ sudo apt-get update && sudo apt-get upgrade
+$ sudo apt update && sudo apt upgrade -y
 ```
 
 Install/update the required packages.
 
 ``` bash
-$ sudo apt-get install wget unzip python python-pip
+$ sudo apt install wget unzip python python-pip -y
 ```
 
 You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/installing.html).

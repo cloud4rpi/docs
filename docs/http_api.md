@@ -48,7 +48,7 @@ or
 
 Name               | Description   | Type   | Possible Values
 ------------------ | ------------- | ------ | ----------------------------
-datetime_isoformat | Timestamp     | string | Time in **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly.
+datetime_isoformat | Timestamp     | string | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly.
 name               | Variable name | string | Any string
 type               | Variable type | string | "bool", "numeric" or "string"
 
@@ -83,9 +83,6 @@ or
 ```json
 { "error": error_text }
 ```
-
-
-<!-- TODO: Process other methods -->
 
 # Send Data
 
@@ -126,7 +123,7 @@ Content-Type: application/json
 
 Name               | Description    | Type          | Possible Values
 ------------------ | -------------  | ------------- | ----------------------------
-datetime_isoformat | Timestamp      | string        | Time in **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
+datetime_isoformat | Timestamp      | string        | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
 var_name           | Variable name  | string        | One of the variables
 var_value          | Variable value | corresponding | Any
 
@@ -201,7 +198,7 @@ Content-Type: application/json
 
 Name               | Description    | Type   | Possible Values
 ------------------ | -------------  | ------ | ----------------------------
-datetime_isoformat | Timestamp      | string | Time in **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
+datetime_isoformat | Timestamp      | string | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
 var_name           | Variable name  | string | Any
 var_value          | Variable value | any    | Any
 

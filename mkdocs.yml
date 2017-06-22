@@ -5,6 +5,7 @@ pages:
 - Typical Scenarios: typical-scenarios.md
 - FAQ: faq.md
 - HTTP API: http_api.md
+- MQTT API: mqtt_api.md
 
 markdown_extensions:
     - admonition:

@@ -1,6 +1,6 @@
 # Prerequisites
 
-The examples in this section are presented for the [Eclipse Mosquitto™](https://mosquitto.org/) MQTT client. Execute the following command to install it if you intent to execute the examples:
+The examples in this section are presented for the [Eclipse Mosquitto™](https://mosquitto.org/) MQTT client. Execute the following command to run them:
 
 ```bash
 sudo apt-get install mosquitto-clients
@@ -16,7 +16,7 @@ Use the following data to connect to the MQTT broker:
 
 
 !!! Warning
-    Since the **Client ID** is used for authentication, you should not open more then one connections to MQTT broker at the same time.
+    Since the **Client ID** is used for authentication, you should not open more than one connection to the MQTT broker at the same time.
 
 !!! Note
     **Login** and **Password** are not used, you can leave them empty.
@@ -24,7 +24,7 @@ Use the following data to connect to the MQTT broker:
 
 # Variables Configuration
 
-Update the device's configuration by sending messagges to the following topic:
+Update the device's configuration by sending messages to the following topic:
 
 ```gradle
 devices/{token}/config
@@ -56,7 +56,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 Name               | Description   | Type   | Possible Values
 ------------------ | ------------- | ------ | ----------------------------
-datetime_isoformat | Timestamp     | string | Time in **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly.
+datetime_isoformat | Timestamp     | string | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly.
 name               | Variable name | string | Any string
 type               | Variable type | string | "bool", "numeric" or "string"
 
@@ -81,7 +81,7 @@ mosquitto_pub -d -t "devices/$DEVICE_TOKEN/config" -h mq.cloud4rpi.io -i "$DEVIC
 
 # Variable Values
 
-Send the data from the device in messagges to the following topic:
+Send messages with your variable values to the following topic:
 
 ```gradle
 devices/{token}/data
@@ -113,7 +113,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 Name               | Description    | Type          | Possible Values
 ------------------ | -------------  | ------------- | ----------------------------
-datetime_isoformat | Timestamp      | string        | Time in **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
+datetime_isoformat | Timestamp      | string        | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
 var_name           | Variable name  | string        | One of the variables
 var_value          | Variable value | corresponding | Any
 
@@ -137,7 +137,7 @@ mosquitto_pub -d -t "devices/$DEVICE_TOKEN/data" -h mq.cloud4rpi.io -i "$DEVICE_
 
 # Diagnostic Data
 
-Send diagnostic data from the device in messagges to the following topic:
+Send messages with your device's diagnostic data to the following topic:
 
 ```gradle
 devices/{token}/diagnostics
@@ -168,7 +168,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 Name               | Description    | Type   | Possible Values
 ------------------ | -------------  | ------ | ----------------------------
-datetime_isoformat | Timestamp      | string | Time in **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
+datetime_isoformat | Timestamp      | string | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
 var_name           | Variable name  | string | Any
 var_value          | Variable value | any    | Any
 
@@ -191,7 +191,7 @@ mosquitto_pub -d -t "devices/$DEVICE_TOKEN/diagnostics" -h mq.cloud4rpi.io -i "$
 
 # Commands Stream
 
-Receive commangs from the [Control Panels](https://cloud4rpi.io/control-panels) in real time by subscribing to the following topic:
+Receive commands sent from the [Control Panels](https://cloud4rpi.io/control-panels) in real time by subscribing to the following topic:
 
 ```gradle
 devices/{token}/commands
@@ -206,14 +206,14 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 ## Example
 
-Execute the following command to subscribe.
+Execute the following command to subscribe:
 
 ```bash
 export DEVICE_TOKEN=your_device_token
 mosquitto_sub -d -t "devices/$DEVICE_TOKEN/commands" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN"
 ```
 
-This program will not return unless the connection to the broker is lost. You will instantly get commands sent from the UI in the following format:
+This program works in the foreground and blocks the input while the connection to the broker persists. So, you instantly get commands sent from the UI in the following format:
 
 
 ## Message Structure

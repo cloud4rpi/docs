@@ -58,6 +58,9 @@
                     <li >
                         <a href="http_api/">HTTP API</a>
                     </li>
+                    <li >
+                        <a href="mqtt_api/">MQTT API</a>
+                    </li>
                 </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -98,11 +101,11 @@
 <p>Follow the instructions below to connect your device to the <a href="https://cloud4rpi.io">Cloud4RPi</a> control panel.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>It is advisable to update your system before installing.</p>
-<pre><code class="bash">$ sudo apt-get update &amp;&amp; sudo apt-get upgrade
+<pre><code class="bash">$ sudo apt update &amp;&amp; sudo apt upgrade -y
 </code></pre>
 
 <p>Install/update the required packages.</p>
-<pre><code class="bash">$ sudo apt-get install wget unzip python python-pip
+<pre><code class="bash">$ sudo apt install wget unzip python python-pip -y
 </code></pre>
 
 <p>You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
@@ -207,5 +210,5 @@ sudo ./service_install.sh your_script.py
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-06-21 11:09:17
+Build Date UTC : 2017-06-22 15:02:53
 -->

@@ -1,4 +1,4 @@
-# Update Config
+# Variables Configuration
 
 Updates the device's configuration.
 
@@ -84,7 +84,7 @@ or
 { "error": error_text }
 ```
 
-# Send Data
+# Variable Values
 
 Sends variable values.
 
@@ -159,9 +159,9 @@ or
 ```
 
 
-# Send Diagnostic Data
+# Diagnostic Data
 
-Sends diagnostic data.
+Sends device's diagnostic data.
 
 ## Request Destination
 
@@ -234,7 +234,7 @@ or
 ```
 
 
-# Get Commands Queue
+# Commands Queue
 
 Acquires the recent commands sent from the Control Panel.
 

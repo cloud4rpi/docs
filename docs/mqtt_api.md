@@ -1,6 +1,6 @@
 # Prerequisites
 
-The examples in this section are presented for the [Eclipse Mosquitto™](https://mosquitto.org/) MQTT client. Execute the following command to install the client if you are going to run the examples:
+The examples in this section are presented for the [Eclipse Mosquitto™](https://mosquitto.org/) MQTT client. Install the client if you are going to run the examples:
 
 ```bash
 sudo apt-get install mosquitto-clients

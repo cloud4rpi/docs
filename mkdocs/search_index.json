@@ -41,86 +41,6 @@
             "title": "Installing as a service"
         }, 
         {
-            "location": "/typical-scenarios/", 
-            "text": "Typical Scenarios\n\n\n\n\nNote\n\n\nDon't forget to replace \n__YOUR_DEVICE_TOKEN__\n in the samples with the personal device token.\n\n\n\n\nDS18B20 Temperature Sensor\n\n\nPrerequisites\n\n\nYou need:\n\n\n\n\n\u0421onfigured and \nconnected\n Raspberry Pi device.\n\n\nEnabled\n 1-wire interface.\n\n\nBreadboard, connecting wires, 4.7K\u03a9 resistor.\n\n\n\n\nCode\n\n\n'RoomTemp': {\n    'type': 'numeric',\n    'bind': ds_sensors[0]\n},\n# 'OutsideTemp': {\n#     'type': 'numeric',\n#     'bind': ds_sensors[1]\n# },\n'CPUTemp': {\n    'type': 'numeric',\n    'bind': rpi.cpu_temp\n}\n\n\n\n\n\n\nOpen the \nsensors.py\n sample file.\n\n\nMake necessary changes in \nsensors.py\n if you have another sensor configuration.\n\n\nRun \nsensors\n or restart the \ncloud4rpi\n service. New variables\nnamed \nRoomTemp\n and \nCPUTemp\n should appear on such device\npage.\n\n\nOpen the \nControl Panels\n page and add a new control panel or open an existing one.\n\n\nAdd a new \nChart\n widget and choose the newly added \nRoomTemp\n variable.\n\n\nAdd a new \nGauge\n widget and choose the newly added \nCPUTemp\n variable.\n\n\nNow you can monitor CPU and room temperature using these widgets.\n\n\n\n\nControl LED from WEB\n\n\nPrerequisites\n\n\nYou need\n\n\n\n\n\u0421onfigured and \nconnected\n Raspberry Pi device\n\n\nBreadboard, connecting wires, 270-330 \u03a9 resistor\n\n\n\n\n\n\nNote\n\n\nCloud4rpi uses physical pins numbering (\nlearn more\n).\n\n\n\n\nCode\n\n\n'LEDOn': {\n    'type': 'bool',\n    'value': False,\n    'bind': led_control\n},\n\n\n\n\n\n\nOpen the \nactuator.py\n sample file.\n\n\nUncomment code in \nactuator.py\n. If you connected an LED to a differed GPIO pin, set the correct value to the \nLED_PIN\n variable.\n\n\nRun \nactuator.py\n or restart the \ncloud4rpi\n service. A new variable named \nLEDOn\n should appear on the device page.\n\n\nOpen the \nControl Panels\n page and add a new control panel or open an existing one.\n\n\nAdd a new \nSwitch\n widget and choose the newly added \nLEDOn\n variable.\n\n\nNow you can switch LED state using this widget.\n\n\n\n\nMonitor Device Events using colored status\n\n\nPrerequisites\n\n\nYou need\n\n\n\n\n\u0421onfigured and \nconnected\n Raspberry Pi device\n\n\n\n\nCode\n\n\n'STATUS': {\n    'type': 'string',\n    'bind': listen_for_events\n}\n\n\n\n\nOpen the \nstatus.py\n sample file\n\n\nCode\n\n\ndef listen_for_events():\n    # write your own logic here\n    result = random.randint(1, 5)\n    if result == 1:\n        return 'RING'\n\n    if result == 5:\n        return 'BOOM!'\n\n    return 'IDLE'\n\n\n\n\n\n\nNote\n\n\nFeel free to re-write event generation logic based on your specific conditions:\n\n\n\n\n\n\nRun \nstatus.py\n or restart the \ncloud4rpi\n service. A new variable named \nSTATUS\n should appear on the device page.\n\n\nOpen the \nControl Panels\n page and add a new control panel or open an existing one.\n\n\nAdd a new \nText\n widget and choose the newly added \nSTATUS\n variable.\n\n\nChange the pre-defined status color items according to the event names from the code above.\n\n\nAs a result, you should have three items like the following:\n\n{ IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}\n\n\nNow this widget displays incoming status with color.", 
-            "title": "Typical Scenarios"
-        }, 
-        {
-            "location": "/typical-scenarios/#typical-scenarios", 
-            "text": "Note  Don't forget to replace  __YOUR_DEVICE_TOKEN__  in the samples with the personal device token.", 
-            "title": "Typical Scenarios"
-        }, 
-        {
-            "location": "/typical-scenarios/#ds18b20-temperature-sensor", 
-            "text": "", 
-            "title": "DS18B20 Temperature Sensor"
-        }, 
-        {
-            "location": "/typical-scenarios/#prerequisites", 
-            "text": "You need:   \u0421onfigured and  connected  Raspberry Pi device.  Enabled  1-wire interface.  Breadboard, connecting wires, 4.7K\u03a9 resistor.", 
-            "title": "Prerequisites"
-        }, 
-        {
-            "location": "/typical-scenarios/#code", 
-            "text": "'RoomTemp': {\n    'type': 'numeric',\n    'bind': ds_sensors[0]\n},\n# 'OutsideTemp': {\n#     'type': 'numeric',\n#     'bind': ds_sensors[1]\n# },\n'CPUTemp': {\n    'type': 'numeric',\n    'bind': rpi.cpu_temp\n}   Open the  sensors.py  sample file.  Make necessary changes in  sensors.py  if you have another sensor configuration.  Run  sensors  or restart the  cloud4rpi  service. New variables\nnamed  RoomTemp  and  CPUTemp  should appear on such device\npage.  Open the  Control Panels  page and add a new control panel or open an existing one.  Add a new  Chart  widget and choose the newly added  RoomTemp  variable.  Add a new  Gauge  widget and choose the newly added  CPUTemp  variable.  Now you can monitor CPU and room temperature using these widgets.", 
-            "title": "Code"
-        }, 
-        {
-            "location": "/typical-scenarios/#control-led-from-web", 
-            "text": "", 
-            "title": "Control LED from WEB"
-        }, 
-        {
-            "location": "/typical-scenarios/#prerequisites_1", 
-            "text": "You need   \u0421onfigured and  connected  Raspberry Pi device  Breadboard, connecting wires, 270-330 \u03a9 resistor    Note  Cloud4rpi uses physical pins numbering ( learn more ).", 
-            "title": "Prerequisites"
-        }, 
-        {
-            "location": "/typical-scenarios/#code_1", 
-            "text": "'LEDOn': {\n    'type': 'bool',\n    'value': False,\n    'bind': led_control\n},   Open the  actuator.py  sample file.  Uncomment code in  actuator.py . If you connected an LED to a differed GPIO pin, set the correct value to the  LED_PIN  variable.  Run  actuator.py  or restart the  cloud4rpi  service. A new variable named  LEDOn  should appear on the device page.  Open the  Control Panels  page and add a new control panel or open an existing one.  Add a new  Switch  widget and choose the newly added  LEDOn  variable.  Now you can switch LED state using this widget.", 
-            "title": "Code"
-        }, 
-        {
-            "location": "/typical-scenarios/#monitor-device-events-using-colored-status", 
-            "text": "", 
-            "title": "Monitor Device Events using colored status"
-        }, 
-        {
-            "location": "/typical-scenarios/#prerequisites_2", 
-            "text": "You need   \u0421onfigured and  connected  Raspberry Pi device", 
-            "title": "Prerequisites"
-        }, 
-        {
-            "location": "/typical-scenarios/#code_2", 
-            "text": "'STATUS': {\n    'type': 'string',\n    'bind': listen_for_events\n}  Open the  status.py  sample file", 
-            "title": "Code"
-        }, 
-        {
-            "location": "/typical-scenarios/#code_3", 
-            "text": "def listen_for_events():\n    # write your own logic here\n    result = random.randint(1, 5)\n    if result == 1:\n        return 'RING'\n\n    if result == 5:\n        return 'BOOM!'\n\n    return 'IDLE'   Note  Feel free to re-write event generation logic based on your specific conditions:    Run  status.py  or restart the  cloud4rpi  service. A new variable named  STATUS  should appear on the device page.  Open the  Control Panels  page and add a new control panel or open an existing one.  Add a new  Text  widget and choose the newly added  STATUS  variable.  Change the pre-defined status color items according to the event names from the code above.  As a result, you should have three items like the following: { IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}  Now this widget displays incoming status with color.", 
-            "title": "Code"
-        }, 
-        {
-            "location": "/faq/", 
-            "text": "FAQ\n\n\nFrequently Asked Questions when working with \nCloud4RPi\n\n\nInsecure Platform Warning\n\n\nError \n\"InsecurePlatformWarning: A true SSLContext object is not available...\"\n\n\nYou need Python version 2.7.9 or higher installed. Please check it with\n\n\n$ python --version\n\n\n\n\nand update if necessary.\n\n\n$ wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz\n$ gunzip Python-2.7.9.tgz\n$ tar -xvf Python-2.7.9.tar\n$ cd Python-2.7.9/\n$ ./configure\n$ make\n$ sudo make install\n\n\n\n\nWhere can I find .log file for service?\n\n\nIf you use \ncontrol.py\n  as a service, the default path for the log-file is \n'/var/log/cloud4rpi.log'\n\n\nHowever, you can specify a different log file location via the LOG_FILE_PATH variable:\n\n\nLOG_FILE_PATH = '/var/log/cloud4rpi.log'\n\n\nThe following code is required to activate logging to a file:\n\n\ncloud4rpi.set_logging_to_file(LOG_FILE_PATH)", 
-            "title": "FAQ"
-        }, 
-        {
-            "location": "/faq/#faq", 
-            "text": "Frequently Asked Questions when working with  Cloud4RPi", 
-            "title": "FAQ"
-        }, 
-        {
-            "location": "/faq/#insecure-platform-warning", 
-            "text": "Error  \"InsecurePlatformWarning: A true SSLContext object is not available...\"  You need Python version 2.7.9 or higher installed. Please check it with  $ python --version  and update if necessary.  $ wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz\n$ gunzip Python-2.7.9.tgz\n$ tar -xvf Python-2.7.9.tar\n$ cd Python-2.7.9/\n$ ./configure\n$ make\n$ sudo make install", 
-            "title": "Insecure Platform Warning"
-        }, 
-        {
-            "location": "/faq/#where-can-i-find-log-file-for-service", 
-            "text": "If you use  control.py   as a service, the default path for the log-file is  '/var/log/cloud4rpi.log'  However, you can specify a different log file location via the LOG_FILE_PATH variable:  LOG_FILE_PATH = '/var/log/cloud4rpi.log'  The following code is required to activate logging to a file:  cloud4rpi.set_logging_to_file(LOG_FILE_PATH)", 
-            "title": "Where can I find .log file for service?"
-        }, 
-        {
             "location": "/http_api/", 
             "text": "Variables Configuration\n\n\nUpdates the device's configuration.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/config\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        [\n            {\nname\n: name, \ntype\n: type},\n            {\nname\n: name, \ntype\n: type},\n            // ...\n            {\nname\n: name, \ntype\n: type}\n        ]\n    }\n}\n\n\n\n\nor\n\n\n[\n    {\nname\n: name, \ntype\n: type},\n    {\nname\n: name, \ntype\n: type},\n    // ...\n    {\nname\n: name, \ntype\n: type}\n]\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly.\n\n\n\n\n\n\nname\n\n\nVariable name\n\n\nstring\n\n\nAny string\n\n\n\n\n\n\ntype\n\n\nVariable type\n\n\nstring\n\n\n\"bool\", \"numeric\" or \"string\"\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example creates two variables on the device:\n\n\n\n\nTemperature\n (numeric)\n\n\nLEDOn\n (boolean)\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '[{\nname\n:\nTemperature\n,\ntype\n:\nnumeric\n},{\nname\n:\nLEDOn\n,\ntype\n:\nbool\n}]' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\nVariable Values\n\n\nSends variable values.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/data\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nOne of the variables\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\ncorresponding\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the values of two variables:\n\n\n\n\nTemperature\n: \n24\n.\n\n\nLEDOn\n: \ntrue\n.\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n$(date -Is)\n,\npayload\n:{\nTemperature\n:24,\nLEDOn\n:true}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\nDiagnostic Data\n\n\nSends device's diagnostic data.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/diagnostics\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\nany\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the following diagnostic values to Cloud4RPi:\n\n\n\n\nCPU Temperature\n: \n41\n\n\nIP Address\n: \n192.168.1.50\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n$(date -Is)\n,\npayload\n:{\nCPU Temperature\n:41,\nIP Address\n:\n192.168.1.50\n}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\nCommands Queue\n\n\nAcquires the recent commands sent from the Control Panel.\n\n\nRequest Destination\n\n\n\n\nMethod\n: GET\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/commands/latest\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nExample\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest\n\n\n\n\nResponse Body\n\n\n[\n    {var_name: var_new_value},\n    {var_name: var_new_value},\n    // ...\n    {var_name: var_new_value}\n]\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_new_value\n\n\nNew variable value\n\n\ncorresponding\n\n\nAny\n\n\n\n\n\n\n\n\nThe commands are in chronological order.", 
             "title": "HTTP API"
@@ -389,6 +309,86 @@
             "location": "/mqtt_api/#parameters_3", 
             "text": "Name  Description  Type  Possible Values      var_name  Variable name  string  Any    var_new_value  New variable value  corresponding  Any", 
             "title": "Parameters"
+        }, 
+        {
+            "location": "/typical-scenarios/", 
+            "text": "Typical Scenarios\n\n\n\n\nNote\n\n\nDon't forget to replace \n__YOUR_DEVICE_TOKEN__\n in the samples with the personal device token.\n\n\n\n\nDS18B20 Temperature Sensor\n\n\nPrerequisites\n\n\nYou need:\n\n\n\n\n\u0421onfigured and \nconnected\n Raspberry Pi device.\n\n\nEnabled\n 1-wire interface.\n\n\nBreadboard, connecting wires, 4.7K\u03a9 resistor.\n\n\n\n\nCode\n\n\n'RoomTemp': {\n    'type': 'numeric',\n    'bind': ds_sensors[0]\n},\n# 'OutsideTemp': {\n#     'type': 'numeric',\n#     'bind': ds_sensors[1]\n# },\n'CPUTemp': {\n    'type': 'numeric',\n    'bind': rpi.cpu_temp\n}\n\n\n\n\n\n\nOpen the \nsensors.py\n sample file.\n\n\nMake necessary changes in \nsensors.py\n if you have another sensor configuration.\n\n\nRun \nsensors\n or restart the \ncloud4rpi\n service. New variables\nnamed \nRoomTemp\n and \nCPUTemp\n should appear on such device\npage.\n\n\nOpen the \nControl Panels\n page and add a new control panel or open an existing one.\n\n\nAdd a new \nChart\n widget and choose the newly added \nRoomTemp\n variable.\n\n\nAdd a new \nGauge\n widget and choose the newly added \nCPUTemp\n variable.\n\n\nNow you can monitor CPU and room temperature using these widgets.\n\n\n\n\nControl LED from WEB\n\n\nPrerequisites\n\n\nYou need\n\n\n\n\n\u0421onfigured and \nconnected\n Raspberry Pi device\n\n\nBreadboard, connecting wires, 270-330 \u03a9 resistor\n\n\n\n\n\n\nNote\n\n\nCloud4rpi uses physical pins numbering (\nlearn more\n).\n\n\n\n\nCode\n\n\n'LEDOn': {\n    'type': 'bool',\n    'value': False,\n    'bind': led_control\n},\n\n\n\n\n\n\nOpen the \nactuator.py\n sample file.\n\n\nUncomment code in \nactuator.py\n. If you connected an LED to a differed GPIO pin, set the correct value to the \nLED_PIN\n variable.\n\n\nRun \nactuator.py\n or restart the \ncloud4rpi\n service. A new variable named \nLEDOn\n should appear on the device page.\n\n\nOpen the \nControl Panels\n page and add a new control panel or open an existing one.\n\n\nAdd a new \nSwitch\n widget and choose the newly added \nLEDOn\n variable.\n\n\nNow you can switch LED state using this widget.\n\n\n\n\nMonitor Device Events using colored status\n\n\nPrerequisites\n\n\nYou need\n\n\n\n\n\u0421onfigured and \nconnected\n Raspberry Pi device\n\n\n\n\nCode\n\n\n'STATUS': {\n    'type': 'string',\n    'bind': listen_for_events\n}\n\n\n\n\nOpen the \nstatus.py\n sample file\n\n\nCode\n\n\ndef listen_for_events():\n    # write your own logic here\n    result = random.randint(1, 5)\n    if result == 1:\n        return 'RING'\n\n    if result == 5:\n        return 'BOOM!'\n\n    return 'IDLE'\n\n\n\n\n\n\nNote\n\n\nFeel free to re-write event generation logic based on your specific conditions:\n\n\n\n\n\n\nRun \nstatus.py\n or restart the \ncloud4rpi\n service. A new variable named \nSTATUS\n should appear on the device page.\n\n\nOpen the \nControl Panels\n page and add a new control panel or open an existing one.\n\n\nAdd a new \nText\n widget and choose the newly added \nSTATUS\n variable.\n\n\nChange the pre-defined status color items according to the event names from the code above.\n\n\nAs a result, you should have three items like the following:\n\n{ IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}\n\n\nNow this widget displays incoming status with color.", 
+            "title": "Typical Scenarios"
+        }, 
+        {
+            "location": "/typical-scenarios/#typical-scenarios", 
+            "text": "Note  Don't forget to replace  __YOUR_DEVICE_TOKEN__  in the samples with the personal device token.", 
+            "title": "Typical Scenarios"
+        }, 
+        {
+            "location": "/typical-scenarios/#ds18b20-temperature-sensor", 
+            "text": "", 
+            "title": "DS18B20 Temperature Sensor"
+        }, 
+        {
+            "location": "/typical-scenarios/#prerequisites", 
+            "text": "You need:   \u0421onfigured and  connected  Raspberry Pi device.  Enabled  1-wire interface.  Breadboard, connecting wires, 4.7K\u03a9 resistor.", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/typical-scenarios/#code", 
+            "text": "'RoomTemp': {\n    'type': 'numeric',\n    'bind': ds_sensors[0]\n},\n# 'OutsideTemp': {\n#     'type': 'numeric',\n#     'bind': ds_sensors[1]\n# },\n'CPUTemp': {\n    'type': 'numeric',\n    'bind': rpi.cpu_temp\n}   Open the  sensors.py  sample file.  Make necessary changes in  sensors.py  if you have another sensor configuration.  Run  sensors  or restart the  cloud4rpi  service. New variables\nnamed  RoomTemp  and  CPUTemp  should appear on such device\npage.  Open the  Control Panels  page and add a new control panel or open an existing one.  Add a new  Chart  widget and choose the newly added  RoomTemp  variable.  Add a new  Gauge  widget and choose the newly added  CPUTemp  variable.  Now you can monitor CPU and room temperature using these widgets.", 
+            "title": "Code"
+        }, 
+        {
+            "location": "/typical-scenarios/#control-led-from-web", 
+            "text": "", 
+            "title": "Control LED from WEB"
+        }, 
+        {
+            "location": "/typical-scenarios/#prerequisites_1", 
+            "text": "You need   \u0421onfigured and  connected  Raspberry Pi device  Breadboard, connecting wires, 270-330 \u03a9 resistor    Note  Cloud4rpi uses physical pins numbering ( learn more ).", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/typical-scenarios/#code_1", 
+            "text": "'LEDOn': {\n    'type': 'bool',\n    'value': False,\n    'bind': led_control\n},   Open the  actuator.py  sample file.  Uncomment code in  actuator.py . If you connected an LED to a differed GPIO pin, set the correct value to the  LED_PIN  variable.  Run  actuator.py  or restart the  cloud4rpi  service. A new variable named  LEDOn  should appear on the device page.  Open the  Control Panels  page and add a new control panel or open an existing one.  Add a new  Switch  widget and choose the newly added  LEDOn  variable.  Now you can switch LED state using this widget.", 
+            "title": "Code"
+        }, 
+        {
+            "location": "/typical-scenarios/#monitor-device-events-using-colored-status", 
+            "text": "", 
+            "title": "Monitor Device Events using colored status"
+        }, 
+        {
+            "location": "/typical-scenarios/#prerequisites_2", 
+            "text": "You need   \u0421onfigured and  connected  Raspberry Pi device", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/typical-scenarios/#code_2", 
+            "text": "'STATUS': {\n    'type': 'string',\n    'bind': listen_for_events\n}  Open the  status.py  sample file", 
+            "title": "Code"
+        }, 
+        {
+            "location": "/typical-scenarios/#code_3", 
+            "text": "def listen_for_events():\n    # write your own logic here\n    result = random.randint(1, 5)\n    if result == 1:\n        return 'RING'\n\n    if result == 5:\n        return 'BOOM!'\n\n    return 'IDLE'   Note  Feel free to re-write event generation logic based on your specific conditions:    Run  status.py  or restart the  cloud4rpi  service. A new variable named  STATUS  should appear on the device page.  Open the  Control Panels  page and add a new control panel or open an existing one.  Add a new  Text  widget and choose the newly added  STATUS  variable.  Change the pre-defined status color items according to the event names from the code above.  As a result, you should have three items like the following: { IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}  Now this widget displays incoming status with color.", 
+            "title": "Code"
+        }, 
+        {
+            "location": "/faq/", 
+            "text": "FAQ\n\n\nFrequently Asked Questions when working with \nCloud4RPi\n\n\nInsecure Platform Warning\n\n\nError \n\"InsecurePlatformWarning: A true SSLContext object is not available...\"\n\n\nYou need Python version 2.7.9 or higher installed. Please check it with\n\n\n$ python --version\n\n\n\n\nand update if necessary.\n\n\n$ wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz\n$ gunzip Python-2.7.9.tgz\n$ tar -xvf Python-2.7.9.tar\n$ cd Python-2.7.9/\n$ ./configure\n$ make\n$ sudo make install\n\n\n\n\nWhere can I find .log file for service?\n\n\nIf you use \ncontrol.py\n  as a service, the default path for the log-file is \n'/var/log/cloud4rpi.log'\n\n\nHowever, you can specify a different log file location via the LOG_FILE_PATH variable:\n\n\nLOG_FILE_PATH = '/var/log/cloud4rpi.log'\n\n\nThe following code is required to activate logging to a file:\n\n\ncloud4rpi.set_logging_to_file(LOG_FILE_PATH)", 
+            "title": "FAQ"
+        }, 
+        {
+            "location": "/faq/#faq", 
+            "text": "Frequently Asked Questions when working with  Cloud4RPi", 
+            "title": "FAQ"
+        }, 
+        {
+            "location": "/faq/#insecure-platform-warning", 
+            "text": "Error  \"InsecurePlatformWarning: A true SSLContext object is not available...\"  You need Python version 2.7.9 or higher installed. Please check it with  $ python --version  and update if necessary.  $ wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz\n$ gunzip Python-2.7.9.tgz\n$ tar -xvf Python-2.7.9.tar\n$ cd Python-2.7.9/\n$ ./configure\n$ make\n$ sudo make install", 
+            "title": "Insecure Platform Warning"
+        }, 
+        {
+            "location": "/faq/#where-can-i-find-log-file-for-service", 
+            "text": "If you use  control.py   as a service, the default path for the log-file is  '/var/log/cloud4rpi.log'  However, you can specify a different log file location via the LOG_FILE_PATH variable:  LOG_FILE_PATH = '/var/log/cloud4rpi.log'  The following code is required to activate logging to a file:  cloud4rpi.set_logging_to_file(LOG_FILE_PATH)", 
+            "title": "Where can I find .log file for service?"
         }
     ]
 }

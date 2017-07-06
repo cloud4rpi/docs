@@ -2,7 +2,7 @@
 
 The examples in this section are presented for the [Eclipse Mosquitto™](https://mosquitto.org/) MQTT client. Install the client if you are going to run the examples:
 
-```bash
+```sh
 sudo apt-get install mosquitto-clients
 ```
 
@@ -38,7 +38,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 ## Message Structure
 
-```json
+```javascript
 {
     "ts": datetime_isoformat,
     "payload": {
@@ -69,7 +69,7 @@ The following example creates two variables on the device:
 * **LEDOn** (boolean)
 
 
-```bash
+```sh
 export DEVICE_TOKEN=your_device_token
 mosquitto_pub -d -t "devices/$DEVICE_TOKEN/config" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
               -m '{"ts":"$(date -Is)","payload":[{"name":"Temperature","type":"numeric"},{"name":"LEDOn","type":"bool"}]}'
@@ -97,7 +97,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 ## Message Structure
 
-```json
+```javascript
 {
     "ts": datetime_isoformat,
     "payload": {
@@ -125,7 +125,7 @@ The following example sends the values of two variables:
 * **Temperature**: *24*
 * **LEDOn**: *true*
 
-```bash
+```sh
 export DEVICE_TOKEN=your_device_token
 mosquitto_pub -d -t "devices/$DEVICE_TOKEN/data" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
               -m '{"ts":"$(date -Is)","payload":{"Temperature":24,"LEDOn":true}}'
@@ -152,7 +152,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 ## Message Structure
 
-```json
+```javascript
 {
     "ts": datetime_isoformat,
     "payload": {
@@ -180,7 +180,7 @@ The following example sends the following diagnostic values to Cloud4RPI:
 * **CPU Temperature**: *41*
 * **IP Address**: *192.168.1.50*
 
-```bash
+```sh
 export DEVICE_TOKEN=your_device_token
 mosquitto_pub -d -t "devices/$DEVICE_TOKEN/diagnostics" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
               -m '{"ts":"$(date -Is)","payload":{"CPU Temperature":41,"IP Address":"192.168.1.50"}}'
@@ -208,7 +208,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 Execute the following command to subscribe:
 
-```bash
+```sh
 export DEVICE_TOKEN=your_device_token
 mosquitto_sub -d -t "devices/$DEVICE_TOKEN/commands" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN"
 ```
@@ -218,7 +218,7 @@ This program works in the foreground and blocks the input while the connection t
 
 ## Message Structure
 
-```json
+```javascript
 {var_name:var_new_value}
 ```
 

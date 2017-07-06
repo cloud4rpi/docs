@@ -8,13 +8,13 @@ Error `"InsecurePlatformWarning: A true SSLContext object is not available..."`
 
 You need Python version 2.7.9 or higher installed. Please check it with
 
-``` bash
+``` sh
 $ python --version
 ```
 
 and update if necessary.
 
-``` bash
+``` sh
 $ wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz
 $ gunzip Python-2.7.9.tgz
 $ tar -xvf Python-2.7.9.tar

@@ -72,7 +72,7 @@ Use a text editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with
 
 Execute the script with the Python interpreter, for example:
 
-``` bash
+```sh
 $ sudo python minimal.py
 ```
 
@@ -88,13 +88,13 @@ You can use our service templates to facilitate service installation. Pass the p
 
 You can use the piped script technique to do this in a single line.
 
-``` bash
+```sh
 wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
 ```
 
 If you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.
 
-``` bash
+```sh
 wget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh
 chmod +x service_install.sh
 sudo ./service_install.sh your_script.py

@@ -101,17 +101,17 @@
 <p>Follow the instructions below to connect your device to the <a href="https://cloud4rpi.io">Cloud4RPi</a> control panel.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>It is advisable to update your system before installing.</p>
-<pre><code class="bash">$ sudo apt update &amp;&amp; sudo apt upgrade -y
+<pre><code class="sh">sudo apt update &amp;&amp; sudo apt upgrade -y
 </code></pre>
 
 <p>Install/update the required packages.</p>
-<pre><code class="bash">$ sudo apt install wget unzip python python-pip -y
+<pre><code class="sh">sudo apt install wget unzip python python-pip -y
 </code></pre>
 
 <p>You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Cloud4rpi library is compatible with Python 2.7.9+ and Python 3.2+ versions.</p>
+<p>The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.</p>
 </div>
 <h3 id="optional-enable-interfaces">[Optional] Enable interfaces</h3>
 <p>If your OS is <a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian</a>, follow the steps below:</p>
@@ -124,21 +124,25 @@
 </ul>
 <h2 id="getting-the-cloud4rpi-client-library">Getting the Cloud4RPi Client Library</h2>
 <p>Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):</p>
-<pre><code class="bash">$ sudo pip install cloud4rpi
+<pre><code class="sh">sudo pip install cloud4rpi
 </code></pre>
 
 <p>If you are using Python 3, use the following command:</p>
-<pre><code class="bash">sudo python3 -m pip install cloud4rpi
+<pre><code class="sh">sudo python3 -m pip install cloud4rpi
 </code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For information on how to work with several versions of Python installed, see <a href="https://docs.python.org/3/installing/">Python Documentation</a>.</p>
 </div>
+<p>If you get an error while using <strong>pip</strong>, try to update the <code>setuptools</code> package.</p>
+<pre><code class="sh">sudo pip install --upgrade setuptools
+</code></pre>
+
 <h2 id="hacking-together-some-code">Hacking Together some Code</h2>
 <p>We have prepared several samples in the <a href="https://github.com/cloud4rpi/cloud4rpi-examples">examples</a> repository to demonstrate sending data to the Cloud.</p>
 <p>Get the <strong>cloud4rpi-examples-master</strong> directory on your device.</p>
-<pre><code class="bash">wget https://github.com/cloud4rpi/cloud4rpi-examples/archive/master.zip &amp;&amp; unzip master.zip &amp;&amp; rm master.zip
+<pre><code class="sh">wget https://github.com/cloud4rpi/cloud4rpi-examples/archive/master.zip &amp;&amp; unzip master.zip &amp;&amp; rm master.zip
 </code></pre>
 
 <p>Before running a sample, remember to insert your device token to the line like this:</p>
@@ -148,7 +152,7 @@
 <p>Use a text editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page. If it does not display anything on the <a href="https://cloud4rpi.io/devices">Devices</a> page, you can create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
 <h2 id="running">Running</h2>
 <p>Execute the script with the Python interpreter, for example:</p>
-<pre><code class="bash">$ sudo python minimal.py
+<pre><code class="sh">sudo python minimal.py
 </code></pre>
 
 <div class="admonition note">
@@ -159,11 +163,11 @@
 <h2 id="installing-as-a-service">Installing as a service</h2>
 <p>You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh">service_install.sh</a> script as a parameter.</p>
 <p>You can use the piped script technique to do this in a single line.</p>
-<pre><code class="bash">wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
+<pre><code class="sh">wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
 </code></pre>
 
 <p>If you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.</p>
-<pre><code class="bash">wget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh
+<pre><code class="sh">wget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh
 chmod +x service_install.sh
 sudo ./service_install.sh your_script.py
 </code></pre>
@@ -210,5 +214,5 @@ sudo ./service_install.sh your_script.py
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-06-23 08:12:56
+Build Date UTC : 2017-07-06 13:14:18
 -->

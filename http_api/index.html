@@ -137,7 +137,7 @@
 </code></pre>
 
 <h2 id="request-body">Request Body</h2>
-<pre><code class="json">{
+<pre><code class="javascript">{
     &quot;ts&quot;: datetime_isoformat,
     &quot;payload&quot;: {
         [
@@ -151,7 +151,7 @@
 </code></pre>
 
 <p>or</p>
-<pre><code class="json">[
+<pre><code class="javascript">[
     {&quot;name&quot;: name, &quot;type&quot;: type},
     {&quot;name&quot;: name, &quot;type&quot;: type},
     // ...
@@ -196,7 +196,7 @@
 <li><strong>Temperature</strong> (numeric)</li>
 <li><strong>LEDOn</strong> (boolean)</li>
 </ul>
-<pre><code class="bash">export DEVICE_TOKEN=your_device_token
+<pre><code class="sh">export DEVICE_TOKEN=your_device_token
 
 curl -X POST \
      -H &quot;Content-Type: application/json&quot; \
@@ -209,11 +209,11 @@ curl -X POST \
 <p>You need to replace <strong>your_device_token</strong> with your device token displayed on the <a href="https://cloud4rpi.io/devices">device page</a>.</p>
 </div>
 <h2 id="response-body">Response Body</h2>
-<pre><code class="json">{ &quot;message&quot;: &quot;OK&quot; }
+<pre><code class="javascript">{ &quot;message&quot;: &quot;OK&quot; }
 </code></pre>
 
 <p>or</p>
-<pre><code class="json">{ &quot;error&quot;: error_text }
+<pre><code class="javascript">{ &quot;error&quot;: error_text }
 </code></pre>
 
 <h1 id="variable-values">Variable Values</h1>
@@ -243,7 +243,7 @@ curl -X POST \
 </code></pre>
 
 <h2 id="request-body_1">Request Body</h2>
-<pre><code class="json">{
+<pre><code class="javascript">{
     &quot;ts&quot;: datetime_isoformat,
     &quot;payload&quot;: {
         var_name: var_value,
@@ -304,11 +304,11 @@ curl -X POST \
 <p>You need to replace <strong>your_device_token</strong> with your device token displayed on the <a href="https://cloud4rpi.io/devices">device page</a>.</p>
 </div>
 <h2 id="response-body_1">Response Body</h2>
-<pre><code class="json">{ &quot;message&quot;: &quot;OK&quot; }
+<pre><code class="javascript">{ &quot;message&quot;: &quot;OK&quot; }
 </code></pre>
 
 <p>or</p>
-<pre><code class="json">{ &quot;error&quot;: error_text }
+<pre><code class="javascript">{ &quot;error&quot;: error_text }
 </code></pre>
 
 <h1 id="diagnostic-data">Diagnostic Data</h1>
@@ -338,7 +338,7 @@ curl -X POST \
 </code></pre>
 
 <h2 id="request-body_2">Request Body</h2>
-<pre><code class="json">{
+<pre><code class="javascript">{
     &quot;ts&quot;: datetime_isoformat,
     &quot;payload&quot;: {
         var_name: var_value,
@@ -386,7 +386,7 @@ curl -X POST \
 <li><strong>CPU Temperature</strong>: <em>41</em></li>
 <li><strong>IP Address</strong>: <em>192.168.1.50</em></li>
 </ul>
-<pre><code class="bash">export DEVICE_TOKEN=your_device_token
+<pre><code class="sh">export DEVICE_TOKEN=your_device_token
 
 curl -X POST \
      -H &quot;Content-Type: application/json&quot; \
@@ -399,11 +399,11 @@ curl -X POST \
 <p>You need to replace <strong>your_device_token</strong> with your device token displayed on the <a href="https://cloud4rpi.io/devices">device page</a>.</p>
 </div>
 <h2 id="response-body_2">Response Body</h2>
-<pre><code class="json">{ &quot;message&quot;: &quot;OK&quot; }
+<pre><code class="javascript">{ &quot;message&quot;: &quot;OK&quot; }
 </code></pre>
 
 <p>or</p>
-<pre><code class="json">{ &quot;error&quot;: error_text }
+<pre><code class="javascript">{ &quot;error&quot;: error_text }
 </code></pre>
 
 <h1 id="commands-queue">Commands Queue</h1>
@@ -429,13 +429,13 @@ curl -X POST \
 </tbody>
 </table>
 <h2 id="example_3">Example</h2>
-<pre><code class="bash">export DEVICE_TOKEN=your_device_token
+<pre><code class="sh">export DEVICE_TOKEN=your_device_token
 
 curl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
 </code></pre>
 
 <h2 id="response-body_3">Response Body</h2>
-<pre><code class="json">[
+<pre><code class="javascript">[
     {var_name: var_new_value},
     {var_name: var_new_value},
     // ...

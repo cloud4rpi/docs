@@ -111,7 +111,7 @@
 
 <h1 id="prerequisites">Prerequisites</h1>
 <p>The examples in this section are presented for the <a href="https://mosquitto.org/">Eclipse Mosquitto™</a> MQTT client. Install the client if you are going to run the examples:</p>
-<pre><code class="bash">sudo apt-get install mosquitto-clients
+<pre><code class="sh">sudo apt-get install mosquitto-clients
 </code></pre>
 
 <h1 id="cloud4rpi-mqtt-broker">Cloud4RPi MQTT Broker</h1>
@@ -150,7 +150,7 @@
 </tbody>
 </table>
 <h2 id="message-structure">Message Structure</h2>
-<pre><code class="json">{
+<pre><code class="javascript">{
     &quot;ts&quot;: datetime_isoformat,
     &quot;payload&quot;: {
         [
@@ -200,7 +200,7 @@
 <li><strong>Temperature</strong> (numeric)</li>
 <li><strong>LEDOn</strong> (boolean)</li>
 </ul>
-<pre><code class="bash">export DEVICE_TOKEN=your_device_token
+<pre><code class="sh">export DEVICE_TOKEN=your_device_token
 mosquitto_pub -d -t &quot;devices/$DEVICE_TOKEN/config&quot; -h mq.cloud4rpi.io -i &quot;$DEVICE_TOKEN&quot; \
               -m '{&quot;ts&quot;:&quot;$(date -Is)&quot;,&quot;payload&quot;:[{&quot;name&quot;:&quot;Temperature&quot;,&quot;type&quot;:&quot;numeric&quot;},{&quot;name&quot;:&quot;LEDOn&quot;,&quot;type&quot;:&quot;bool&quot;}]}'
 </code></pre>
@@ -230,7 +230,7 @@ mosquitto_pub -d -t &quot;devices/$DEVICE_TOKEN/config&quot; -h mq.cloud4rpi.io 
 </tbody>
 </table>
 <h2 id="message-structure_1">Message Structure</h2>
-<pre><code class="json">{
+<pre><code class="javascript">{
     &quot;ts&quot;: datetime_isoformat,
     &quot;payload&quot;: {
         var_name: var_value,
@@ -278,7 +278,7 @@ mosquitto_pub -d -t &quot;devices/$DEVICE_TOKEN/config&quot; -h mq.cloud4rpi.io 
 <li><strong>Temperature</strong>: <em>24</em></li>
 <li><strong>LEDOn</strong>: <em>true</em></li>
 </ul>
-<pre><code class="bash">export DEVICE_TOKEN=your_device_token
+<pre><code class="sh">export DEVICE_TOKEN=your_device_token
 mosquitto_pub -d -t &quot;devices/$DEVICE_TOKEN/data&quot; -h mq.cloud4rpi.io -i &quot;$DEVICE_TOKEN&quot; \
               -m '{&quot;ts&quot;:&quot;$(date -Is)&quot;,&quot;payload&quot;:{&quot;Temperature&quot;:24,&quot;LEDOn&quot;:true}}'
 </code></pre>
@@ -308,7 +308,7 @@ mosquitto_pub -d -t &quot;devices/$DEVICE_TOKEN/data&quot; -h mq.cloud4rpi.io -i
 </tbody>
 </table>
 <h2 id="message-structure_2">Message Structure</h2>
-<pre><code class="json">{
+<pre><code class="javascript">{
     &quot;ts&quot;: datetime_isoformat,
     &quot;payload&quot;: {
         var_name: var_value,
@@ -356,7 +356,7 @@ mosquitto_pub -d -t &quot;devices/$DEVICE_TOKEN/data&quot; -h mq.cloud4rpi.io -i
 <li><strong>CPU Temperature</strong>: <em>41</em></li>
 <li><strong>IP Address</strong>: <em>192.168.1.50</em></li>
 </ul>
-<pre><code class="bash">export DEVICE_TOKEN=your_device_token
+<pre><code class="sh">export DEVICE_TOKEN=your_device_token
 mosquitto_pub -d -t &quot;devices/$DEVICE_TOKEN/diagnostics&quot; -h mq.cloud4rpi.io -i &quot;$DEVICE_TOKEN&quot; \
               -m '{&quot;ts&quot;:&quot;$(date -Is)&quot;,&quot;payload&quot;:{&quot;CPU Temperature&quot;:41,&quot;IP Address&quot;:&quot;192.168.1.50&quot;}}'
 </code></pre>
@@ -387,13 +387,13 @@ mosquitto_pub -d -t &quot;devices/$DEVICE_TOKEN/diagnostics&quot; -h mq.cloud4rp
 </table>
 <h2 id="example_3">Example</h2>
 <p>Execute the following command to subscribe:</p>
-<pre><code class="bash">export DEVICE_TOKEN=your_device_token
+<pre><code class="sh">export DEVICE_TOKEN=your_device_token
 mosquitto_sub -d -t &quot;devices/$DEVICE_TOKEN/commands&quot; -h mq.cloud4rpi.io -i &quot;$DEVICE_TOKEN&quot;
 </code></pre>
 
 <p>This program works in the foreground and blocks the input while the connection to the broker persists. So, you instantly get commands sent from the UI in the following format:</p>
 <h2 id="message-structure_3">Message Structure</h2>
-<pre><code class="json">{var_name:var_new_value}
+<pre><code class="javascript">{var_name:var_new_value}
 </code></pre>
 
 <h3 id="parameters_3">Parameters</h3>

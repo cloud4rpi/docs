@@ -21,7 +21,7 @@ Content-Type: application/json
 
 ## Request Body
 
-```json
+```javascript
 {
     "ts": datetime_isoformat,
     "payload": {
@@ -35,7 +35,7 @@ Content-Type: application/json
 }
 ```
 or
-```json
+```javascript
 [
     {"name": name, "type": type},
     {"name": name, "type": type},
@@ -61,7 +61,7 @@ The following example creates two variables on the device:
 * **LEDOn** (boolean)
 
 
-```bash
+```sh
 export DEVICE_TOKEN=your_device_token
 
 curl -X POST \
@@ -76,11 +76,11 @@ curl -X POST \
 
 ## Response Body
 
-```json
+```javascript
 { "message": "OK" }
 ```
 or
-```json
+```javascript
 { "error": error_text }
 ```
 
@@ -107,7 +107,7 @@ Content-Type: application/json
 
 ## Request Body
 
-```json
+```javascript
 {
     "ts": datetime_isoformat,
     "payload": {
@@ -150,11 +150,11 @@ curl -X POST \
 
 ## Response Body
 
-```json
+```javascript
 { "message": "OK" }
 ```
 or
-```json
+```javascript
 { "error": error_text }
 ```
 
@@ -182,7 +182,7 @@ Content-Type: application/json
 
 ## Request Body
 
-```json
+```javascript
 {
     "ts": datetime_isoformat,
     "payload": {
@@ -210,7 +210,7 @@ The following example sends the following diagnostic values to Cloud4RPi:
 * **CPU Temperature**: *41*
 * **IP Address**: *192.168.1.50*
 
-```bash
+```sh
 export DEVICE_TOKEN=your_device_token
 
 curl -X POST \
@@ -225,11 +225,11 @@ curl -X POST \
 
 ## Response Body
 
-```json
+```javascript
 { "message": "OK" }
 ```
 or
-```json
+```javascript
 { "error": error_text }
 ```
 
@@ -253,7 +253,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 ## Example
 
-```bash
+```sh
 export DEVICE_TOKEN=your_device_token
 
 curl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
@@ -261,7 +261,7 @@ curl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
 
 ## Response Body
 
-```json
+```javascript
 [
     {var_name: var_new_value},
     {var_name: var_new_value},

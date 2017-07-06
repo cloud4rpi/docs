@@ -6,20 +6,20 @@ Follow the instructions below to connect your device to the [Cloud4RPi](https://
 
 It is advisable to update your system before installing.
 
-``` bash
-$ sudo apt update && sudo apt upgrade -y
+```sh
+sudo apt update && sudo apt upgrade -y
 ```
 
 Install/update the required packages.
 
-``` bash
-$ sudo apt install wget unzip python python-pip -y
+```sh
+sudo apt install wget unzip python python-pip -y
 ```
 
 You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/installing.html).
 
 !!! Note
-    The Cloud4rpi library is compatible with Python 2.7.9+ and Python 3.2+ versions.
+    The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.
 
 
 ### [Optional] Enable interfaces
@@ -36,18 +36,24 @@ If your OS is [Raspbian](https://www.raspberrypi.org/downloads/raspbian/), follo
 
 Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):
 
-``` bash
-$ sudo pip install cloud4rpi
+```sh
+sudo pip install cloud4rpi
 ```
 
 If you are using Python 3, use the following command:
 
-``` bash
+```sh
 sudo python3 -m pip install cloud4rpi
 ```
 
 !!! Note
     For information on how to work with several versions of Python installed, see [Python Documentation](https://docs.python.org/3/installing/).
+
+If you get an error while using **pip**, try to update the `setuptools` package.
+
+```sh
+sudo pip install --upgrade setuptools
+```
 
 ## Hacking Together some Code
 
@@ -55,7 +61,7 @@ We have prepared several samples in the [examples](https://github.com/cloud4rpi/
 
 Get the **cloud4rpi-examples-master** directory on your device.
 
-``` bash
+```sh
 wget https://github.com/cloud4rpi/cloud4rpi-examples/archive/master.zip && unzip master.zip && rm master.zip
 ```
 
@@ -73,7 +79,7 @@ Use a text editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with
 Execute the script with the Python interpreter, for example:
 
 ```sh
-$ sudo python minimal.py
+sudo python minimal.py
 ```
 
 !!! Note

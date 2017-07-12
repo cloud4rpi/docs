@@ -1,6 +1,6 @@
 Frequently Asked Questions and common issues that that you may face when working with [Cloud4RPi](https://cloud4rpi.io):
 
-# Failure on package installing using pip
+# Failure when installing Cloud4RPi using pip
 
 On some platforms, you can get the following error when running the `sudo pip install cloud4rpi` command:
 

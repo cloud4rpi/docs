@@ -23,16 +23,7 @@ If you get the `InsecurePlatformWarning: A true SSLContext object is not availab
 python --version
 ```
 
-If your Python version is lower than 2.7.9 and the package manager of your OS does not provide 2.7.9, compile the newest Python 2 from the source code. It is easier than it seems, but may take time:
-
-```sh
-wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz
-gzip -dc Python-2.7.9.tgz | tar -xvf -
-cd Python-2.7.9/
-./configure
-make -j4
-sudo checkinstall
-```
+If your Python version is lower than 2.7.9 setup the new python using one of the [official ways](https://docs.python.org/2/using/index.html).
 
 # Where are the log files?
 
@@ -40,11 +31,3 @@ If you have your script installed as a service using our [service_install.sh](ht
 
 * `less /var/log/cloud4rpi.log` — if your init manager is `init` and you have left the [log path](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L54) unchanged;
 * `sudo journalctl -u cloud4rpi` — if your init manager is `systemd`.
-
-If you need additional logging, you can output the Cloud4RPi internal log to file by adding the following statement to your script:
-
-```python
-cloud4rpi.set_logging_to_file(LOG_FILE_PATH)
-```
-
-The example of such logging can be found in the [control.py](https://github.com/cloud4rpi/cloud4rpi-examples/blob/master/raspberrypi/control.py#L46) file.

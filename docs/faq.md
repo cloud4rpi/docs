@@ -23,7 +23,7 @@ If you get the `InsecurePlatformWarning: A true SSLContext object is not availab
 python --version
 ```
 
-If your Python version is lower than 2.7.9 setup the new python using one of the [official ways](https://docs.python.org/2/using/index.html).
+If your Python version is lower than 2.7.9, setup the new python using one of the [official ways](https://docs.python.org/2/using/index.html).
 
 # Where are the log files?
 

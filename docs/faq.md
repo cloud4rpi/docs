@@ -37,3 +37,11 @@ If you don't run your Cloud4RPi-enabled script as a service and need to have the
 ```python
 cloud4rpi.set_logging_to_file(LOG_FILE_PATH)
 ```
+
+# How to update Cloud4RPi client library?
+
+Cloud4RPi client library is a [PyPI package](https://pypi.python.org/pypi/cloud4rpi), which is managed using the [pip utility](https://pip.pypa.io/en/stable/). Execute the following command to update Cloud4RPi client library:
+
+```sh
+sudo pip install --upgrade cloud4rpi
+```

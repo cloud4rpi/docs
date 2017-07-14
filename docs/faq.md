@@ -8,7 +8,7 @@ On some platforms, you can get the following error when running the `sudo pip in
 InstallationError: Command "python setup.py egg_info" failed with error code 1
 ```
 
-This happens because the `setuptools` package your Python interpreter uses is outdated. Update it with the following command and reinstall **cloud4rpi**:
+This happens because the `setuptools` package your Python interpreter uses is outdated. Update it with the following command and start the **cloud4rpi** installation again:
 
 ```sh
 sudo pip install --upgrade setuptools
@@ -27,7 +27,13 @@ If your Python version is lower than 2.7.9, install the new version using one of
 
 # Where are the log files?
 
-You can read the logs with the service's output and errors using one of the following commands if you have your script uses our [service_install.sh](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh) script:
+You can read the logs containing the service's output and errors using one of the following commands:
 
 * `less /var/log/cloud4rpi.log` — if your init manager is `init` and you have not changed the [log path](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L54);
 * `sudo journalctl -u cloud4rpi` — if your init manager is `systemd`.
+
+If you don't run your Cloud4RPi-enabled script as a service and need to have the script output logged to file, call the following function at the beginning of your script:
+
+```python
+cloud4rpi.set_logging_to_file(LOG_FILE_PATH)
+```

@@ -17,7 +17,7 @@ sudo pip install cloud4rpi
 
 # Insecure platform warning
 
-You need to have Python version 2.7.9 or higher installed if you get the `InsecurePlatformWarning: A true SSLContext object is not available...` error. Check your current Python version using the following command:
+You need to have Python version 2.7.9 or higher installed to avoid getting the `InsecurePlatformWarning: A true SSLContext object is not available...` error. Check your current Python version using the following command:
 
 ```sh
 python --version

@@ -8,7 +8,7 @@ On some platforms, you can get the following error when running the `sudo pip in
 InstallationError: Command "python setup.py egg_info" failed with error code 1
 ```
 
-This happens because the `setuptools` package your Python interpreter uses is outdated. Update it with the following command and try reinstalling **cloud4rpi**:
+This happens because the `setuptools` package your Python interpreter uses is outdated. Update it with the following command and reinstall **cloud4rpi**:
 
 ```sh
 sudo pip install --upgrade setuptools

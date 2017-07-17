@@ -34,7 +34,7 @@ You can read the logs containing the service's output and errors using one of th
 
 
 !!! Note
-Use the `ps -p 1` command to see the init manager of your operating system. If it differs from `init` and `systemd`, refer to the documentation for your init manager to learn about its logging capabilities.
+    Use the `ps -p 1` command to see the init manager of your operating system. If it differs from `init` and `systemd`, refer to the documentation for your init manager to learn about its logging capabilities.
 
 You can also call the following function at the beginning of your script to have the script output saved to file. It is useful if you do not run your Cloud4RPi-enabled script as a service:
 

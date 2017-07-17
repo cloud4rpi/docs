@@ -30,9 +30,13 @@ If your Python version is lower than 2.7.9, install the new version using one of
 You can read the logs containing the service's output and errors using one of the following commands:
 
 * `less /var/log/cloud4rpi.log` — if your init manager is `init` and you have not changed the [log path](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L54);
-* `sudo journalctl -u cloud4rpi` — if your init manager is `systemd`.
+* `sudo journalctl -u cloud4rpi` — if your init manager is `systemd` and you have not changed the [service name](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L151).
 
-Call the following function at the beginning of your script if you do not run your Cloud4RPi-enabled script as a service and need to have the script output logged to file:
+
+!!! Note
+Use the `ps -p 1` command to see the init manager of your operating system. If it differs from `init` and `systemd`, refer to the documentation for your init manager to learn about its logging capabilities.
+
+You can also call the following function at the beginning of your script to have the script output saved to file. It is useful if you do not run your Cloud4RPi-enabled script as a service:
 
 ```python
 cloud4rpi.set_logging_to_file(LOG_FILE_PATH)

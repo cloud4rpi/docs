@@ -87,37 +87,45 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#faq">FAQ</a></li>
-            <li><a href="#insecure-platform-warning">Insecure Platform Warning</a></li>
-            <li><a href="#where-can-i-find-log-file-for-service">Where can I find .log file for service?</a></li>
+        <li class="main active"><a href="#cloud4rpi-installation-failure-when-using-pip">Cloud4RPi installation failure when using pip</a></li>
+        <li class="main "><a href="#insecure-platform-warning">Insecure platform warning</a></li>
+        <li class="main "><a href="#where-are-the-log-files">Where are the log files?</a></li>
+        <li class="main "><a href="#how-to-update-cloud4rpi-client-library">How to update Cloud4RPi client library?</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="faq">FAQ</h1>
-<p>Frequently Asked Questions when working with <a href="https://cloud4rpi.io">Cloud4RPi</a></p>
-<h2 id="insecure-platform-warning">Insecure Platform Warning</h2>
-<p>Error <code>"InsecurePlatformWarning: A true SSLContext object is not available..."</code></p>
-<p>You need Python version 2.7.9 or higher installed. Please check it with</p>
-<pre><code class="sh">$ python --version
+<p>Frequently Asked Questions and possible issues you may face when working with <a href="https://cloud4rpi.io">Cloud4RPi</a>:</p>
+<h1 id="cloud4rpi-installation-failure-when-using-pip">Cloud4RPi installation failure when using pip</h1>
+<p>On some platforms, you can get the following error when running the <code>sudo pip install cloud4rpi</code> command:</p>
+<pre><code>InstallationError: Command &quot;python setup.py egg_info&quot; failed with error code 1
 </code></pre>
 
-<p>and update if necessary.</p>
-<pre><code class="sh">$ wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tgz
-$ gunzip Python-2.7.9.tgz
-$ tar -xvf Python-2.7.9.tar
-$ cd Python-2.7.9/
-$ ./configure
-$ make
-$ sudo make install
+<p>This happens because the <code>setuptools</code> package your Python interpreter uses is outdated. Update it with the following command and restart the <strong>cloud4rpi</strong> installation:</p>
+<pre><code class="sh">sudo pip install --upgrade setuptools
+sudo pip install cloud4rpi
 </code></pre>
 
-<h2 id="where-can-i-find-log-file-for-service">Where can I find .log file for service?</h2>
-<p>If you use <a href="https://github.com/cloud4rpi/cloud4rpi-examples/blob/master/raspberrypi/control.py">control.py</a>  as a service, the default path for the log-file is <em>'/var/log/cloud4rpi.log'</em></p>
-<p>However, you can specify a different log file location via the LOG_FILE_PATH variable:</p>
-<p><code>LOG_FILE_PATH = '/var/log/cloud4rpi.log'</code></p>
-<p>The following code is required to activate logging to a file:</p>
-<p><code>cloud4rpi.set_logging_to_file(LOG_FILE_PATH)</code></p></div>
+<h1 id="insecure-platform-warning">Insecure platform warning</h1>
+<p>You need to have Python version 2.7.9 or higher installed to avoid getting the <code>InsecurePlatformWarning: A true SSLContext object is not available...</code> error. Check your current Python version using the following command:</p>
+<pre><code class="sh">python --version
+</code></pre>
+
+<p>If your Python version is lower than 2.7.9, install the new version using one of the <a href="https://docs.python.org/2/using/index.html">following ways</a>.</p>
+<h1 id="where-are-the-log-files">Where are the log files?</h1>
+<p>You can read the logs containing the service's output and errors using one of the following commands:</p>
+<ul>
+<li><code>less /var/log/cloud4rpi.log</code> — if your init manager is <code>init</code> and you have not changed the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L54">log path</a>;</li>
+<li><code>sudo journalctl -u cloud4rpi</code> — if your init manager is <code>systemd</code>.</li>
+</ul>
+<p>Call the following function at the beginning of your script if you do not run your Cloud4RPi-enabled script as a service and need to have the script output logged to file:</p>
+<pre><code class="python">cloud4rpi.set_logging_to_file(LOG_FILE_PATH)
+</code></pre>
+
+<h1 id="how-to-update-cloud4rpi-client-library">How to update Cloud4RPi client library?</h1>
+<p>The Cloud4RPi client library is a <a href="https://pypi.python.org/pypi/cloud4rpi">PyPI package</a>, which is managed using the <a href="https://pip.pypa.io/en/stable/">pip utility</a>. Execute the following command to update the Cloud4RPi client library:</p>
+<pre><code class="sh">sudo pip install --upgrade cloud4rpi
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

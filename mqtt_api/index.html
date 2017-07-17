@@ -117,8 +117,16 @@
 <h1 id="cloud4rpi-mqtt-broker">Cloud4RPi MQTT Broker</h1>
 <p>Use the following data to connect to the MQTT broker:</p>
 <ul>
-<li><strong>Address:</strong> <code>mq.cloud4rpi.io</code></li>
-<li><strong>Port:</strong> <code>1883</code></li>
+<li><strong>Host:</strong> <ul>
+<li>With SSL encryption: <code>mqtts://mq.cloud4rpi.io</code></li>
+<li>Without SSL encryption: <code>mqtt://mq.cloud4rpi.io</code></li>
+</ul>
+</li>
+<li><strong>Port:</strong> <ul>
+<li>With SSL encryption: <code>8883</code></li>
+<li>Without SSL encryption: <code>1883</code></li>
+</ul>
+</li>
 <li><strong>Client ID</strong>: Your <a href="https://cloud4rpi.io/devices/">Device</a> Token</li>
 </ul>
 <div class="admonition warning">

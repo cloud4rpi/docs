@@ -37,7 +37,7 @@ git config user.name "Travis CI"
 git config user.email "cloud4rpi@gmail.com"
 
 # If there are no changes (e.g. this is a README update) then just bail.
-if [ -z `git diff --exit-code` ]; then
+if [[ -z `git diff --exit-code` ]]; then
     echo "No changes to the spec on this push; exiting."
     exit 0
 fi

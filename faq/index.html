@@ -120,8 +120,8 @@ sudo pip install cloud4rpi
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>Use the <code>ps -p 1</code> command to see the init manager of your operating system. If it differs from <code>init</code> and <code>systemd</code>, refer to the documentation for your init manager to learn about its logging capabilities.</p>
+</div>
 <p>You can also call the following function at the beginning of your script to have the script output saved to file. It is useful if you do not run your Cloud4RPi-enabled script as a service:</p>
 <pre><code class="python">cloud4rpi.set_logging_to_file(LOG_FILE_PATH)
 </code></pre>

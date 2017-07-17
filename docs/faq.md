@@ -8,7 +8,7 @@ On some platforms, you can get the following error when running the `sudo pip in
 InstallationError: Command "python setup.py egg_info" failed with error code 1
 ```
 
-This happens because the `setuptools` package your Python interpreter uses is outdated. Update it with the following command and start the **cloud4rpi** installation again:
+This happens because the `setuptools` package your Python interpreter uses is outdated. Update it with the following command and restart the **cloud4rpi** installation:
 
 ```sh
 sudo pip install --upgrade setuptools
@@ -32,7 +32,7 @@ You can read the logs containing the service's output and errors using one of th
 * `less /var/log/cloud4rpi.log` — if your init manager is `init` and you have not changed the [log path](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L54);
 * `sudo journalctl -u cloud4rpi` — if your init manager is `systemd`.
 
-If you don't run your Cloud4RPi-enabled script as a service and need to have the script output logged to file, call the following function at the beginning of your script:
+Call the following function at the beginning of your script if you do not run your Cloud4RPi-enabled script as a service and need to have the script output logged to file:
 
 ```python
 cloud4rpi.set_logging_to_file(LOG_FILE_PATH)
@@ -40,7 +40,7 @@ cloud4rpi.set_logging_to_file(LOG_FILE_PATH)
 
 # How to update Cloud4RPi client library?
 
-Cloud4RPi client library is a [PyPI package](https://pypi.python.org/pypi/cloud4rpi), which is managed using the [pip utility](https://pip.pypa.io/en/stable/). Execute the following command to update Cloud4RPi client library:
+The Cloud4RPi client library is a [PyPI package](https://pypi.python.org/pypi/cloud4rpi), which is managed using the [pip utility](https://pip.pypa.io/en/stable/). Execute the following command to update the Cloud4RPi client library:
 
 ```sh
 sudo pip install --upgrade cloud4rpi

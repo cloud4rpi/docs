@@ -37,7 +37,7 @@ git config user.name "Travis CI"
 git config user.email "cloud4rpi@gmail.com"
 
 # If there are no changes (e.g. this is a README update) then just bail.
-if [[ -z `git diff -G"^([^B]|B[^u]|Bu[^i]|Bui[^l]|Buil[^d]|Build[^ ]|Build [^D]|Build D[^a]|Build Da[^t]|Build Dat[^e]|Build Date[^ ]|Build Date [^U])" --exit-code` ]]; then
+if [[ -z `git difftool --trust-exit-code -y -x "diff -I '^Build Date UTC : ' -I '<lastmod>'"` ]]; then
     echo "No changes to the spec on this push; exiting."
     exit 0
 fi

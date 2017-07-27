@@ -11,5 +11,5 @@ The documentation is created with [MkDocs](http://www.mkdocs.org/), if you need 
 
 ## See Also
 
-* [Cloud4RPi Repository](https://github.com/cloud4rpi/cloud4rpi)
-* [Usage Examples](https://github.com/cloud4rpi/cloud4rpi-examples)
+* [Client Library](https://github.com/cloud4rpi/cloud4rpi)
+* [Usage Examples for Raspberry Pi](https://github.com/cloud4rpi/raspberrypi-examples)

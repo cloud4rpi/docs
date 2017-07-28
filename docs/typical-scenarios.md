@@ -1,49 +1,44 @@
-# Typical Scenarios
 
-!!! Note
+# DS18B20 Temperature Sensor
 
-    Don't forget to replace `__YOUR_DEVICE_TOKEN__` in the samples with the personal device token.
+## Prerequisites
 
-## DS18B20 Temperature Sensor
+- Configured and [connected](/#connecting-a-new-device) device with 1-wire support.
+- [Enabled](/#prerequisites) 1-wire interface (in case of Raspberry Pi).
+- Breadboard, connecting wires, pull-up resistor (4.7KΩ).
 
-### Prerequisites
+## Schematics
 
-You need:
+![](DS18B20-pinout.png)
 
-- Сonfigured and [connected](/#connecting-a-new-device) Raspberry Pi device.
-- [Enabled](/#prerequisites) 1-wire interface.
-- Breadboard, connecting wires, 4.7KΩ resistor.
+- Connect the **GND** pin to any GND output of your board.
+- Connect the **Vdd** pin to 5V or 3.3V output of your board.
+- Connect the **DQ** pin to the pull-up resistor and the resistor to **Vdd**.
+- Connect the **DQ** pin to the 1-wire pin of your board:
+    - Raspberry Pi: The default pin is **BCM 4** (Pin 7)
+    - C.H.I.P.: **LCD-D2**
+    - Omega2: **GPIO 19**
 
-### Code
+<!-- scheme -->
 
-``` python
-'RoomTemp': {
-    'type': 'numeric',
-    'bind': ds_sensors[0]
-},
-# 'OutsideTemp': {
-#     'type': 'numeric',
-#     'bind': ds_sensors[1]
-# },
-'CPUTemp': {
-    'type': 'numeric',
-    'bind': rpi.cpu_temp
-}
-```
+## Code
 
-- Open the [sensors.py](https://github.com/cloud4rpi/cloud4rpi-examples/blob/master/raspberrypi/sensors.py) sample file.
-- Make necessary changes in `sensors.py` if you have another sensor configuration.
-- Run `sensors` or restart the `cloud4rpi` service. New variables
-named `RoomTemp` and `CPUTemp` should appear on such device
-page.
+- Open the **control.py** sample file ([Raspberry Pi](https://github.com/cloud4rpi/raspberrypi-examples/blob/master/control.py), [C.H.I.P.](https://github.com/cloud4rpi/chip-examples/blob/master/control.py)).
+- Replace `__YOUR_DEVICE_TOKEN__` with your personal device token from the [Device](https://cloud4rpi.io/devices) page.
+
+- Run `python control.py`. New variables named `Room Temp` and `CPU Temp` should appear on the device page.
 - Open the `Control Panels` page and add a new control panel or open an existing one.
 - Add a new `Chart` widget and choose the newly added `RoomTemp` variable.
 - Add a new `Gauge` widget and choose the newly added `CPUTemp` variable.
 - Now you can monitor CPU and room temperature using these widgets.
 
-## Control LED from WEB
+!!! Note
+    If you need the temperature monitoring to start automatically on system load, install the **control.py** script as a service using our [service_install.sh](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh) script.
 
-### Prerequisites
+
+# Control LED from WEB
+
+## Prerequisites
 
 You need
 
@@ -55,7 +50,7 @@ You need
 
     Cloud4rpi uses physical pins numbering ([learn more](https://www.raspberrypi.org/documentation/usage/gpio/)).
 
-### Code
+## Code
 
 ``` python
 'LEDOn': {
@@ -73,15 +68,15 @@ You need
 - Now you can switch LED state using this widget.
 
 
-## Monitor Device Events using colored status
+# Monitor Device Events using colored status
 
-### Prerequisites
+## Prerequisites
 
 You need
 
 - Сonfigured and [connected](#connecting-a-new-device) Raspberry Pi device
 
-### Code
+## Code
 ``` python
 'STATUS': {
     'type': 'string',
@@ -91,7 +86,8 @@ You need
 
 Open the [status.py](https://github.com/cloud4rpi/cloud4rpi-examples/blob/master/raspberrypi/status.py) sample file
 
-### Code
+## Code
+
 ``` python
 def listen_for_events():
     # write your own logic here

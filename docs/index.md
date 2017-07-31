@@ -88,7 +88,7 @@ sudo python minimal.py
 If the script output looks right, open the [Devices](https://cloud4rpi.io/devices) page to see if the device status has changed.
 
 
-## Installing as a service
+## Installing as a Service
 
 You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the [service_install.sh](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh) script as a parameter.
 

@@ -4,7 +4,7 @@ pages:
 - Home: index.md
 - HTTP API: http_api.md
 - MQTT API: mqtt_api.md
-- Typical Scenarios: typical-scenarios.md
+- How To: howto.md
 - FAQ: faq.md
 
 markdown_extensions:

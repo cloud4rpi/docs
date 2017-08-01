@@ -12,7 +12,7 @@
 
 - Open the **control.py** sample file ([Raspberry Pi](https://github.com/cloud4rpi/raspberrypi-examples/blob/master/control.py), [C.H.I.P.](https://github.com/cloud4rpi/chip-examples/blob/master/control.py)).
 - Replace `__YOUR_DEVICE_TOKEN__` with your personal device token from the [Device](https://cloud4rpi.io/devices) page.
-- Connect an LED to a GPIO pin and set the correct value to the `LED_PIN` variable. The default pin is **GPIO18** (Pin 12).
+- Connect an LED to a GPIO pin and set the correct value to the `LED_PIN` variable. The default pin is **GPIO18** (Pin 12) on Raspberry Pi and **XIO-P0** on C.H.I.P.
 - Run `sudo python control.py`. A new variable named `LED On` should appear on the [Device](https://cloud4rpi.io/devices) page.
 - Open the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.
 - Add a new **Switch** widget and choose the newly added `LED On` variable.

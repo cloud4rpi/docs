@@ -48,7 +48,7 @@ You can now switch the onboard LED state using this widget.
 - Open the **control.py** sample file ([Raspberry Pi](https://github.com/cloud4rpi/raspberrypi-examples/blob/master/control.py), [C.H.I.P.](https://github.com/cloud4rpi/chip-examples/blob/master/control.py)).
 - Replace `__YOUR_DEVICE_TOKEN__` with your personal device token from the [Device](https://cloud4rpi.io/devices) page.
 - Run `sudo python control.py`. A new variable named `STATUS` should appear on the [Device](https://cloud4rpi.io/devices) page.
-- Open the `Control Panels` page and add a new control panel or open an existing one.
+- Open the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel or open an existing one.
 - Add a new `Text` widget and choose the newly added `STATUS` variable.
 - Change the pre-defined status color items according to the event names from the code above.
 - As a result, you should have three items like the following:

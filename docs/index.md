@@ -49,7 +49,7 @@ sudo python3 -m pip install cloud4rpi
 !!! Note
     For information on how to work with several versions of Python installed, see [Python Documentation](https://docs.python.org/3/installing/).
 
-If you get an error while using **pip**, try to update the `setuptools` package.
+If you get an error while using **pip**, try to update the **setuptools** package.
 
 ```sh
 sudo pip install --upgrade setuptools
@@ -59,21 +59,20 @@ sudo pip install --upgrade setuptools
 
 We have prepared sample code for several platforms in [our repositories](https://github.com/cloud4rpi) to demonstrate sending data to the Cloud.
 
-Get **Cloud4RPi examples** for your device. You can use `git`, or `wget` with `unzip` for this. 
+Get Cloud4RPi examples for your device. You can use **git**, or **wget** with **unzip** for this. 
 
 !!! Note
-    If you decide to use `git`, install it using the `sudo apt install git -y` command.
+    If you decide to use **git**, install it using the `sudo apt install git -y` command.
 
-Execute the command that suites your needs from the list below:
+Execute the command that suites your needs from the table below:
 
-- Getting examples using `git`:
-    - Raspberry Pi: `git clone https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python.git && cd cloud4rpi-raspberrypi-python`
-    - C.H.I.P.: `git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git && cd cloud4rpi-chip-python`
-    - Omega2: `git clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git && cd cloud4rpi-omega2-python`
-- Getting examples using `wget` and `unzip`:
-    - Raspberry Pi: `wget https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-raspberrypi-python-master`
-    - C.H.I.P.: `wget https://github.com/cloud4rpi/cloud4rpi-chip-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-chip-python-master`
-    - Omega2: `wget https://github.com/cloud4rpi/cloud4rpi-omega2-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-omega2-python-master`
+
+Platform | Using *git* | Using *wget* and *unzip*
+: ----- :| ----------- | -----------------
+Raspberry&nbsp;Pi | `git clone https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python.git && cd cloud4rpi-raspberrypi-python` | `wget https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-raspberrypi-python-master`
+C.H.I.P. | `git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git && cd cloud4rpi-chip-python` | `wget https://github.com/cloud4rpi/cloud4rpi-chip-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-chip-python-master`
+Omega2 | `git clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git && cd cloud4rpi-omega2-python` | `wget https://github.com/cloud4rpi/cloud4rpi-omega2-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-omega2-python-master`
+
 
 Before running a sample, remember to insert your device token to the line like this:
 

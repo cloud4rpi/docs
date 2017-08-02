@@ -71,9 +71,9 @@ Execute the command that suites your needs from the list below:
     - C.H.I.P.: `git clone https://github.com/cloud4rpi/chip-examples.git && cd chip-examples`
     - Omega2: `git clone https://github.com/cloud4rpi/omega2-examples.git && cd omega2-examples`
 - Getting examples using `wget` and `unzip`:
-    - Raspberry Pi: `wget https://github.com/cloud4rpi/raspberrypi-examples/archive/master.zip && unzip master.zip && rm master.zip && cd master`
-    - C.H.I.P.: `wget https://github.com/cloud4rpi/chip-examples/archive/master.zip && unzip master.zip && rm master.zip && cd master`
-    - Omega2: `wget https://github.com/cloud4rpi/omega2-examples/archive/master.zip && unzip master.zip && rm master.zip && cd master`
+    - Raspberry Pi: `wget https://github.com/cloud4rpi/raspberrypi-examples/archive/master.zip && unzip master.zip && rm master.zip && cd raspberrypi-examples-master`
+    - C.H.I.P.: `wget https://github.com/cloud4rpi/chip-examples/archive/master.zip && unzip master.zip && rm master.zip && cd chip-examples-master`
+    - Omega2: `wget https://github.com/cloud4rpi/omega2-examples/archive/master.zip && unzip master.zip && rm master.zip && cd omega2-examples-master`
 
 Before running a sample, remember to insert your device token to the line like this:
 

@@ -87,8 +87,8 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#cloud4rpi-installation-failure-when-using-pip">Cloud4RPi installation failure when using pip</a></li>
-        <li class="main "><a href="#insecure-platform-warning">"Insecure Platform" warning</a></li>
+        <li class="main active"><a href="#how-to-avoid-installation-error">How to avoid Installation Error?</a></li>
+        <li class="main "><a href="#how-to-avoid-insecure-platform-warning">How to avoid "Insecure Platform" warning?</a></li>
         <li class="main "><a href="#where-are-log-files">Where are log files?</a></li>
         <li class="main "><a href="#how-to-update-cloud4rpi-client-installation">How to update Cloud4RPi client installation?</a></li>
     </ul>
@@ -96,7 +96,7 @@
                 <div class="col-md-9" role="main">
 
 <p>Frequently asked questions and possible issues you may face when working with <a href="https://cloud4rpi.io">Cloud4RPi</a>:</p>
-<h1 id="cloud4rpi-installation-failure-when-using-pip">Cloud4RPi installation failure when using pip</h1>
+<h2 id="how-to-avoid-installation-error">How to avoid Installation Error?</h2>
 <p>You can get the following error while installing the Cloud4RPi client library using the <code>sudo pip install cloud4rpi</code> command:</p>
 <pre><code>InstallationError: Command &quot;python setup.py egg_info&quot; failed with error code 1
 </code></pre>
@@ -109,13 +109,13 @@
 <pre><code class="sh">sudo pip install cloud4rpi
 </code></pre>
 
-<h1 id="insecure-platform-warning">"Insecure Platform" warning</h1>
+<h2 id="how-to-avoid-insecure-platform-warning">How to avoid "Insecure Platform" warning?</h2>
 <p>The <code>InsecurePlatformWarning: A true SSLContext object is not available...</code> notification appears when you run Cloud4RPi on Python version lower than 2.7.9. Check your current Python version using the following command:</p>
 <pre><code class="sh">python --version
 </code></pre>
 
 <p>If the version of Python is lower than 2.7.9, install the latest version using one of the <a href="https://docs.python.org/2/using/index.html">following ways</a>.</p>
-<h1 id="where-are-log-files">Where are log files?</h1>
+<h2 id="where-are-log-files">Where are log files?</h2>
 <p>You can read the logs containing the service's output and errors using one of the following commands:</p>
 <ul>
 <li><code>less /var/log/cloud4rpi.log</code> — if your init manager is <code>init</code> and you have not changed the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L54">log path</a>;</li>
@@ -129,7 +129,7 @@
 <pre><code class="python">cloud4rpi.set_logging_to_file(YOUR_LOGFILE_PATH)
 </code></pre>
 
-<h1 id="how-to-update-cloud4rpi-client-installation">How to update Cloud4RPi client installation?</h1>
+<h2 id="how-to-update-cloud4rpi-client-installation">How to update Cloud4RPi client installation?</h2>
 <p>The Cloud4RPi client library is a <a href="https://pypi.python.org/pypi/cloud4rpi">PyPI package</a>, managed by the <a href="https://pip.pypa.io/en/stable/">pip utility</a>. Execute the following command to update the Cloud4RPi client library:</p>
 <pre><code class="sh">sudo pip install --upgrade cloud4rpi
 </code></pre></div>

@@ -12,4 +12,4 @@ The documentation is created with [MkDocs](http://www.mkdocs.org/), if you need 
 ## See Also
 
 * [Client Library](https://github.com/cloud4rpi/cloud4rpi)
-* [Usage Examples for Raspberry Pi](https://github.com/cloud4rpi/raspberrypi-examples)
+* [Usage Examples for Raspberry Pi](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python)

@@ -57,7 +57,7 @@ sudo pip install --upgrade setuptools
 
 ## Hacking Together some Code
 
-We have prepared sample code for several platforms in the [-examples](https://github.com/cloud4rpi) repositories to demonstrate sending data to the Cloud.
+We have prepared sample code for several platforms in [our repositories](https://github.com/cloud4rpi) to demonstrate sending data to the Cloud.
 
 Get **Cloud4RPi examples** for your device. You can use `git`, or `wget` with `unzip` for this. 
 
@@ -67,13 +67,13 @@ Get **Cloud4RPi examples** for your device. You can use `git`, or `wget` with `u
 Execute the command that suites your needs from the list below:
 
 - Getting examples using `git`:
-    - Raspberry Pi: `git clone https://github.com/cloud4rpi/raspberrypi-examples.git && cd raspberrypi-examples`
-    - C.H.I.P.: `git clone https://github.com/cloud4rpi/chip-examples.git && cd chip-examples`
-    - Omega2: `git clone https://github.com/cloud4rpi/omega2-examples.git && cd omega2-examples`
+    - Raspberry Pi: `git clone https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python.git && cd cloud4rpi-raspberrypi-python`
+    - C.H.I.P.: `git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git && cd cloud4rpi-chip-python`
+    - Omega2: `git clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git && cd cloud4rpi-omega2-python`
 - Getting examples using `wget` and `unzip`:
-    - Raspberry Pi: `wget https://github.com/cloud4rpi/raspberrypi-examples/archive/master.zip && unzip master.zip && rm master.zip && cd raspberrypi-examples-master`
-    - C.H.I.P.: `wget https://github.com/cloud4rpi/chip-examples/archive/master.zip && unzip master.zip && rm master.zip && cd chip-examples-master`
-    - Omega2: `wget https://github.com/cloud4rpi/omega2-examples/archive/master.zip && unzip master.zip && rm master.zip && cd omega2-examples-master`
+    - Raspberry Pi: `wget https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-raspberrypi-python-master`
+    - C.H.I.P.: `wget https://github.com/cloud4rpi/cloud4rpi-chip-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-chip-python-master`
+    - Omega2: `wget https://github.com/cloud4rpi/cloud4rpi-omega2-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-omega2-python-master`
 
 Before running a sample, remember to insert your device token to the line like this:
 

@@ -10,7 +10,7 @@
 
 ### Code
 
-- Open the **control.py** sample file ([Raspberry Pi](https://github.com/cloud4rpi/raspberrypi-examples/blob/master/control.py), [C.H.I.P.](https://github.com/cloud4rpi/chip-examples/blob/master/control.py)).
+- Open the **control.py** sample file ([Raspberry Pi](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py), [C.H.I.P.](https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/control.py)).
 - Replace `__YOUR_DEVICE_TOKEN__` with your personal device token from the [Device](https://cloud4rpi.io/devices) page.
 - Connect an LED to a GPIO pin and set the correct value to the `LED_PIN` variable. The default pin is **GPIO18** (Pin 12) on Raspberry Pi and **XIO-P0** on C.H.I.P.
 - Run `sudo python control.py`. A new variable named `LED On` should appear on the [Device](https://cloud4rpi.io/devices) page.
@@ -28,7 +28,7 @@ You can now switch the LED state using this widget.
 
 ### Code
 
-- Open the [led.py](https://github.com/cloud4rpi/omega2-examples/blob/master/led.py) sample file.
+- Open the [led.py](https://github.com/cloud4rpi/cloud4rpi-omega2-python/blob/master/led.py) sample file.
 - Replace `__YOUR_DEVICE_TOKEN__` with your personal device token from the [Device](https://cloud4rpi.io/devices) page.
 - Run `python led.py`. A new variable named `Omega LED` should appear on the [Device](https://cloud4rpi.io/devices) page.
 - Open the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.
@@ -45,7 +45,7 @@ You can now switch the onboard LED state using this widget.
 
 ## Code
 
-- Open the **control.py** sample file ([Raspberry Pi](https://github.com/cloud4rpi/raspberrypi-examples/blob/master/control.py), [C.H.I.P.](https://github.com/cloud4rpi/chip-examples/blob/master/control.py)).
+- Open the **control.py** sample file ([Raspberry Pi](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py), [C.H.I.P.](https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/control.py)).
 - Replace `__YOUR_DEVICE_TOKEN__` with your personal device token from the [Device](https://cloud4rpi.io/devices) page.
 - Run `sudo python control.py`. A new variable named `STATUS` should appear on the [Device](https://cloud4rpi.io/devices) page.
 - Open the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel or open an existing one.
@@ -84,7 +84,7 @@ If you need to connect several 1-Wire devices, connect them to the bus without a
 
 ## Code
 
-- Open the **control.py** sample file ([Raspberry Pi](https://github.com/cloud4rpi/raspberrypi-examples/blob/master/control.py), [C.H.I.P.](https://github.com/cloud4rpi/chip-examples/blob/master/control.py)).
+- Open the **control.py** sample file ([Raspberry Pi](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py), [C.H.I.P.](https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/control.py)).
 - Replace `__YOUR_DEVICE_TOKEN__` with your personal device token from the [Device](https://cloud4rpi.io/devices) page.
 
 - Run `sudo python control.py`. New variables named `Room Temp` and `CPU Temp` should appear on the [Device](https://cloud4rpi.io/devices) page.

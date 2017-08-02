@@ -1,7 +1,6 @@
 Frequently asked questions and possible issues you may face when working with [Cloud4RPi](https://cloud4rpi.io):
 
-# Cloud4RPi installation failure when using pip
-
+## How to avoid Installation Error?
 
 You can get the following error while installing the Cloud4RPi client library using the `sudo pip install cloud4rpi` command:
 
@@ -21,7 +20,7 @@ After updating, restart the **cloud4rpi** package installation:
 sudo pip install cloud4rpi
 ```
 
-# "Insecure Platform" warning
+## How to avoid "Insecure Platform" warning?
 
 The `InsecurePlatformWarning: A true SSLContext object is not available...` notification appears when you run Cloud4RPi on Python version lower than 2.7.9. Check your current Python version using the following command:
 
@@ -31,7 +30,7 @@ python --version
 
 If the version of Python is lower than 2.7.9, install the latest version using one of the [following ways](https://docs.python.org/2/using/index.html).
 
-# Where are log files?
+## Where are log files?
 
 You can read the logs containing the service's output and errors using one of the following commands:
 
@@ -48,7 +47,7 @@ You can also call the following function at the beginning of your script to have
 cloud4rpi.set_logging_to_file(YOUR_LOGFILE_PATH)
 ```
 
-# How to update Cloud4RPi client installation?
+## How to update Cloud4RPi client installation?
 
 The Cloud4RPi client library is a [PyPI package](https://pypi.python.org/pypi/cloud4rpi), managed by the [pip utility](https://pip.pypa.io/en/stable/). Execute the following command to update the Cloud4RPi client library:
 

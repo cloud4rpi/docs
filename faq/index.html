@@ -89,7 +89,7 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#cloud4rpi-installation-failure-when-using-pip">Cloud4RPi installation failure when using pip</a></li>
         <li class="main "><a href="#insecure-platform-warning">"Insecure Platform" warning</a></li>
-        <li class="main "><a href="#where-are-the-log-files">Where are the log files?</a></li>
+        <li class="main "><a href="#where-are-log-files">Where are log files?</a></li>
         <li class="main "><a href="#how-to-update-cloud4rpi-client-library">How to update Cloud4RPi client library?</a></li>
     </ul>
 </div></div>
@@ -114,8 +114,8 @@
 <pre><code class="sh">python --version
 </code></pre>
 
-<p>If the version of Python is lower than 2.7.9, install the updated version using one of the <a href="https://docs.python.org/2/using/index.html">following ways</a>.</p>
-<h1 id="where-are-the-log-files">Where are the log files?</h1>
+<p>If the version of Python is lower than 2.7.9, install the latest version using one of the <a href="https://docs.python.org/2/using/index.html">following ways</a>.</p>
+<h1 id="where-are-log-files">Where are log files?</h1>
 <p>You can read the logs containing the service's output and errors using one of the following commands:</p>
 <ul>
 <li><code>less /var/log/cloud4rpi.log</code> — if your init manager is <code>init</code> and you have not changed the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L54">log path</a>;</li>
@@ -126,7 +126,7 @@
 <p>Use the <code>ps -p 1</code> command to see the init manager of your operating system. If it differs from <code>init</code> and <code>systemd</code>, refer to the documentation for your init manager to learn about its logging capabilities.</p>
 </div>
 <p>You can also call the following function at the beginning of your script to have the script output saved to file. It is useful if you do not run your Cloud4RPi-enabled script as a service:</p>
-<pre><code class="python">cloud4rpi.set_logging_to_file(LOG_FILE_PATH)
+<pre><code class="python">cloud4rpi.set_logging_to_file(YOUR_LOGFILE_PATH)
 </code></pre>
 
 <h1 id="how-to-update-cloud4rpi-client-library">How to update Cloud4RPi client library?</h1>

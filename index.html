@@ -140,11 +140,27 @@
 </code></pre>
 
 <h2 id="hacking-together-some-code">Hacking Together some Code</h2>
-<p>We have prepared several samples in the <a href="https://github.com/cloud4rpi/cloud4rpi-examples">examples</a> repository to demonstrate sending data to the Cloud.</p>
-<p>Get the <strong>cloud4rpi-examples-master</strong> directory on your device.</p>
-<pre><code class="sh">wget https://github.com/cloud4rpi/cloud4rpi-examples/archive/master.zip &amp;&amp; unzip master.zip &amp;&amp; rm master.zip
-</code></pre>
-
+<p>We have prepared sample code for several platforms in the <a href="https://github.com/cloud4rpi">-examples</a> repositories to demonstrate sending data to the Cloud.</p>
+<p>Get <strong>Cloud4RPi examples</strong> for your device. You can use <code>git</code> or <code>wget</code> with <code>unzip</code> for this. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you decide to use <code>git</code>, install it using the <code>sudo apt install git -y</code> command.</p>
+</div>
+<p>Execute the command that suites your needs from the list below:</p>
+<ul>
+<li>Getting examples using <code>git</code>:<ul>
+<li>Raspberry Pi: <code>git clone https://github.com/cloud4rpi/raspberrypi-examples.git &amp;&amp; cd raspberrypi-examples</code></li>
+<li>C.H.I.P.: <code>git clone https://github.com/cloud4rpi/chip-examples.git &amp;&amp; cd chip-examples</code></li>
+<li>Omega2: <code>git clone https://github.com/cloud4rpi/omega2-examples.git &amp;&amp; cd omega2-examples</code></li>
+</ul>
+</li>
+<li>Getting examples using <code>wget</code> and <code>unzip</code>:<ul>
+<li>Raspberry Pi: <code>wget https://github.com/cloud4rpi/raspberrypi-examples/archive/master.zip &amp;&amp; unzip master.zip &amp;&amp; rm master.zip &amp;&amp; cd master</code></li>
+<li>C.H.I.P.: <code>wget https://github.com/cloud4rpi/chip-examples/archive/master.zip &amp;&amp; unzip master.zip &amp;&amp; rm master.zip &amp;&amp; cd master</code></li>
+<li>Omega2: <code>wget https://github.com/cloud4rpi/omega2-examples/archive/master.zip &amp;&amp; unzip master.zip &amp;&amp; rm master.zip &amp;&amp; cd master</code></li>
+</ul>
+</li>
+</ul>
 <p>Before running a sample, remember to insert your device token to the line like this:</p>
 <pre><code class="python">DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 </code></pre>
@@ -152,7 +168,7 @@
 <p>Use a text editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page. If it does not display anything on the <a href="https://cloud4rpi.io/devices">Devices</a> page, you can create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
 <h2 id="running">Running</h2>
 <p>Execute the script with the Python interpreter, for example:</p>
-<pre><code class="sh">sudo python minimal.py
+<pre><code class="sh">sudo python control.py
 </code></pre>
 
 <div class="admonition note">
@@ -214,5 +230,5 @@ sudo ./service_install.sh your_script.py
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-08-01 18:16:54
+Build Date UTC : 2017-08-02 11:42:42
 -->

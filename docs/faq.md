@@ -29,9 +29,9 @@ The `InsecurePlatformWarning: A true SSLContext object is not available...` noti
 python --version
 ```
 
-If the version of Python is lower than 2.7.9, install the updated version using one of the [following ways](https://docs.python.org/2/using/index.html).
+If the version of Python is lower than 2.7.9, install the latest version using one of the [following ways](https://docs.python.org/2/using/index.html).
 
-# Where are the log files?
+# Where are log files?
 
 You can read the logs containing the service's output and errors using one of the following commands:
 
@@ -45,7 +45,7 @@ You can read the logs containing the service's output and errors using one of th
 You can also call the following function at the beginning of your script to have the script output saved to file. It is useful if you do not run your Cloud4RPi-enabled script as a service:
 
 ```python
-cloud4rpi.set_logging_to_file(LOG_FILE_PATH)
+cloud4rpi.set_logging_to_file(YOUR_LOGFILE_PATH)
 ```
 
 # How to update Cloud4RPi client library?

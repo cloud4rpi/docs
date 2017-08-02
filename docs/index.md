@@ -59,7 +59,7 @@ sudo pip install --upgrade setuptools
 
 We have prepared sample code for several platforms in the [-examples](https://github.com/cloud4rpi) repositories to demonstrate sending data to the Cloud.
 
-Get **Cloud4RPi examples** for your device. You can use `git` or `wget` with `unzip` for this. 
+Get **Cloud4RPi examples** for your device. You can use `git`, or `wget` with `unzip` for this. 
 
 !!! Note
     If you decide to use `git`, install it using the `sudo apt install git -y` command.

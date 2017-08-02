@@ -48,7 +48,7 @@ You can also call the following function at the beginning of your script to have
 cloud4rpi.set_logging_to_file(YOUR_LOGFILE_PATH)
 ```
 
-# How to update Cloud4RPi client library?
+# How to update Cloud4RPi client installation?
 
 The Cloud4RPi client library is a [PyPI package](https://pypi.python.org/pypi/cloud4rpi), managed by the [pip utility](https://pip.pypa.io/en/stable/). Execute the following command to update the Cloud4RPi client library:
 

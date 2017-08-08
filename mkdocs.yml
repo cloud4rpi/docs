@@ -1,18 +1,27 @@
 site_name: Cloud4RPi Documentation
+site_description: Cloud4RPi - Cloud control panel for your IoT projects.
+site_author: Cloud4RPi Team
+repo_url: https://github.com/cloud4rpi/docs
 
 pages:
 - Home: index.md
 - Getting Started: 
-    - Raspberry Pi: start-rpi.md
-    - C.H.I.P.: start-chip.md
-    - Omega2: start-o2.md
-- HTTP API: http_api.md
-- MQTT API: mqtt_api.md
-- How To: howto.md
+    - Raspberry Pi: start/rpi.md
+    - C.H.I.P.: start/chip.md
+    - Omega2: start/o2.md
+- How To: 
+    - Raspberry Pi: howto/rpi.md
+    - C.H.I.P.: howto/chip.md
+    - Omega2: howto/o2.md
+- API:
+    - HTTP Protocol: api/http.md
+    - MQTT Protocol: api/mqtt.md
 - FAQ: faq.md
 
 markdown_extensions:
     - admonition:
 
-extra_css: [extra.css]
+extra_css: [res/extra.css]
 theme: mkdocs
+
+copyright: © 2016-2017 Devsoft Baltic OÜ. All rights reserved.

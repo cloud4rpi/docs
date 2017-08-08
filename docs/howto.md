@@ -37,7 +37,7 @@ You can now switch the LED state using this widget.
 You can now switch the onboard LED state using this widget.
 
 
-# Monitor Device Events using colored status
+# Monitor Device Events using Colored Status
 
 ## Prerequisites
 

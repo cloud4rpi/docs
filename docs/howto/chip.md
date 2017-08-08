@@ -48,7 +48,7 @@ This example shows how to use the [DS18B20](https://datasheets.maximintegrated.c
 
 ## Schematics
 
-![](res/ds18b20.png)
+![](/res/ds18b20.png)
 
 - Connect the **GND** pin to any GND output of your board.
 - Connect the **Vdd** pin to 5V or 3.3V output of your board.

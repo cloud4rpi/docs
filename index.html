@@ -150,26 +150,26 @@
 <table>
 <thead>
 <tr>
-<th align="center">Platform</th>
+<th>Platform</th>
 <th>Using <em>git</em></th>
-<th>Using <em>wget</em> and <em>unzip</em></th>
+<th>Without <em>git</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">Raspberry&nbsp;Pi</td>
+<td>Raspberry&nbsp;Pi</td>
 <td><code>git clone https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python.git &amp;&amp; cd cloud4rpi-raspberrypi-python</code></td>
 <td><code>wget https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/archive/master.zip &amp;&amp; unzip master.zip &amp;&amp; rm master.zip &amp;&amp; cd cloud4rpi-raspberrypi-python-master</code></td>
 </tr>
 <tr>
-<td align="center">C.H.I.P.</td>
+<td>C.H.I.P.</td>
 <td><code>git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git &amp;&amp; cd cloud4rpi-chip-python</code></td>
 <td><code>wget https://github.com/cloud4rpi/cloud4rpi-chip-python/archive/master.zip &amp;&amp; unzip master.zip &amp;&amp; rm master.zip &amp;&amp; cd cloud4rpi-chip-python-master</code></td>
 </tr>
 <tr>
-<td align="center">Omega2</td>
+<td>Omega2</td>
 <td><code>git clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git &amp;&amp; cd cloud4rpi-omega2-python</code></td>
-<td><code>wget https://github.com/cloud4rpi/cloud4rpi-omega2-python/archive/master.zip &amp;&amp; unzip master.zip &amp;&amp; rm master.zip &amp;&amp; cd cloud4rpi-omega2-python-master</code></td>
+<td><code>mkdir c4r &amp;&amp; cd c4r &amp;&amp; r="https://raw.githubusercontent.com/cloud4rpi/cloud4rpi-omega2-python/master" &amp;&amp; wget $r"/omega2.py" $r"/led.py" $r"/rgb_led.py"</code></td>
 </tr>
 </tbody>
 </table>
@@ -242,5 +242,5 @@ sudo ./service_install.sh your_script.py
 
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2017-08-07 15:16:47
+Build Date UTC : 2017-08-08 13:24:23
 -->

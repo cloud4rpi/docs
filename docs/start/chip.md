@@ -1,4 +1,4 @@
-# Connecting a New Device
+# Connecting a New C.H.I.P. Board
 
 Follow the instructions below to connect your device to the [Cloud4RPi](https://cloud4rpi.io) control panel.
 

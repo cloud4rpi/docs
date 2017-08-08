@@ -67,11 +67,11 @@ Get Cloud4RPi examples for your device. You can use **git**, or **wget** with **
 Execute the command that suites your needs from the table below:
 
 
-Platform | Using *git* | Using *wget* and *unzip*
-: ----- :| ----------- | -----------------
+Platform | Using *git* | Without *git*
+ ------- | ----------- | -----------------
 Raspberry&nbsp;Pi | `git clone https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python.git && cd cloud4rpi-raspberrypi-python` | `wget https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-raspberrypi-python-master`
 C.H.I.P. | `git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git && cd cloud4rpi-chip-python` | `wget https://github.com/cloud4rpi/cloud4rpi-chip-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-chip-python-master`
-Omega2 | `git clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git && cd cloud4rpi-omega2-python` | `wget https://github.com/cloud4rpi/cloud4rpi-omega2-python/archive/master.zip && unzip master.zip && rm master.zip && cd cloud4rpi-omega2-python-master`
+Omega2 | `git clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git && cd cloud4rpi-omega2-python` | `mkdir c4r && cd c4r && r="https://raw.githubusercontent.com/cloud4rpi/cloud4rpi-omega2-python/master" && wget $r"/omega2.py" $r"/led.py" $r"/rgb_led.py"`
 
 
 Before running a sample, remember to insert your device token to the line like this:

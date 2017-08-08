@@ -2,6 +2,10 @@ site_name: Cloud4RPi Documentation
 
 pages:
 - Home: index.md
+- Getting Started: 
+    - Raspberry Pi: start-rpi.md
+    - C.H.I.P.: start-chip.md
+    - Omega2: start-o2.md
 - HTTP API: http_api.md
 - MQTT API: mqtt_api.md
 - How To: howto.md

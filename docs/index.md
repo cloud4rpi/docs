@@ -1,6 +1,6 @@
 # Cloud4RPi Documentation
 
-This website provides the documentation for [Cloud4RPi](https://cloud4rpi.io/) service &mdash; cloud control panel for your IoT projects.
+This website provides documentation for the [Cloud4RPi](https://cloud4rpi.io/) service &mdash; cloud control panel for your IoT projects.
 
 ---
 
@@ -12,7 +12,7 @@ Cloud4RPi is able to communicate practically with any device via the [MQTT](http
 - [Next Thing Co. C.H.I.P.](https://getchip.com/pages/chip)
 - [Onion Omega2](https://onion.io/omega2/)
 
-If your platform is not listed here, try to follow the instruction for the similar platform. For example, if you have a Debian-based operating system, the [Raspberry Pi instructions](/start/rpi/) will probably work with minimal **Raspberry Pi**-related changes. The operating system of **Omega2** is based on **OpenWRT**, so you should be able to use [Omega2 instructions](/start/o2/) to connect Cloud4RPi to a router with **OpenWRT**.
+If your platform is not listed here, try to follow the instruction for a similar platform. For example, if you have a Debian-based operating system, the [Raspberry Pi instructions](/start/rpi/) will probably work with minimal changes. The operating system of **Omega2** is based on **OpenWRT**, so you should be able to use [Omega2 instructions](/start/o2/) to connect Cloud4RPi to an **OpenWRT**-enabled router.
 
 ## Documentation Structure
 

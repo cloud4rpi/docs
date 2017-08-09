@@ -1,10 +1,8 @@
-# Cloud4RPi
+# Cloud4RPi Documentation
 
-Cloud control panel for your IoT projects
+This website provides the documentation for [Cloud4RPi](https://cloud4rpi.io/) service &mdash; cloud control panel for your IoT projects.
 
 ---
-
-This website provides the documentation for [Cloud4RPi](https://cloud4rpi.io/) service.
 
 ## Supported Platforms
 
@@ -18,13 +16,13 @@ If your platform is not listed here, try to follow the instruction for the simil
 
 ## Documentation Structure
 
-The **Getting Started** and **How To** sections are diferent for each platform, use the drop-down menu on these sections to select your platform:
+The **Getting Started** and **How To** sections are different for each platform, use the drop-down menu on these sections to select your platform:
 
 ![](res/platform-selector.png)
 
 ## Where to Begin?
 
-If you are new to Cloud4RPi, begin by reading the **Geting Started** topic for your platform:
+If you are new to Cloud4RPi, begin by reading the **Getting Started** topic for your platform:
 
 - [Connecting a New Raspberry Pi Board](/start/rpi/)
 - [Connecting a New C.H.I.P. Board](/start/chip/)

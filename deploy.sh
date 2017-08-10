@@ -36,6 +36,9 @@ cd $OUTPUT
 git config user.name "Travis CI"
 git config user.email "cloud4rpi@gmail.com"
 
+# Configuring GitHub Pages Custom Domain
+echo -n "docs.cloud4rpi.io" > CNAME
+
 # If there are no changes (e.g. this is a README update) then just bail.
 echo "Looking for changes:"
 git diff -G"^([^B]|B[^u]|Bu[^i]|Bui[^l]|Buil[^d]|Build[^ ]|Build [^D]|Build D[^a]|Build Da[^t]|Build Dat[^e]|Build Date[^ ]|Build Date [^U])"
@@ -43,9 +46,6 @@ if [[ -z `git diff -G"^([^B]|B[^u]|Bu[^i]|Bui[^l]|Buil[^d]|Build[^ ]|Build [^D]|
     echo "No changes to the spec on this push; exiting."
     exit 0
 fi
-
-# Configuring GitHub Pages Custom Domain
-echo -n "docs.cloud4rpi.io" > CNAME
 
 # Commit the the new version.
 git add -A .

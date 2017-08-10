@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Cloud4RPi Team">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Raspberry Pi - Cloud4RPi Documentation</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../res/extra.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Cloud4RPi Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../start/rpi/">Raspberry Pi</a>
+</li>
+                            
+<li >
+    <a href="../../start/chip/">C.H.I.P.</a>
+</li>
+                            
+<li >
+    <a href="../../start/o2/">Omega2</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">How To <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li class="active">
+    <a href="./">Raspberry Pi</a>
+</li>
+                            
+<li >
+    <a href="../chip/">C.H.I.P.</a>
+</li>
+                            
+<li >
+    <a href="../o2/">Omega2</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../../api/http/">HTTP Protocol</a>
+</li>
+                            
+<li >
+    <a href="../../api/mqtt/">MQTT Protocol</a>
+</li>
+                        </ul>
+                    </li>
+                    <li >
+                        <a href="../../faq/">FAQ</a>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../../start/o2/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../chip/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/cloud4rpi/docs">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#control-led-from-web">Control LED from WEB</a></li>
+            <li><a href="#prerequisites">Prerequisites</a></li>
+            <li><a href="#code">Code</a></li>
+        <li class="main "><a href="#monitor-device-events-using-colored-status">Monitor Device Events using Colored Status</a></li>
+            <li><a href="#prerequisites_1">Prerequisites</a></li>
+            <li><a href="#code_1">Code</a></li>
+        <li class="main "><a href="#connect-ds18b20-temperature-sensor">Connect DS18B20 Temperature Sensor</a></li>
+            <li><a href="#prerequisites_2">Prerequisites</a></li>
+            <li><a href="#schematics">Schematics</a></li>
+            <li><a href="#code_2">Code</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="control-led-from-web">Control LED from WEB</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Configured and <a href="../../#connecting-a-new-device">connected</a> device.</li>
+<li>Breadboard, connecting wires, 330Ω..1kΩ resistor.</li>
+</ul>
+<h2 id="code">Code</h2>
+<ul>
+<li>Open the <a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py">control.py</a> sample file.</li>
+<li>Replace <code>__YOUR_DEVICE_TOKEN__</code> with your personal device token from the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
+<li>Connect an LED to a GPIO pin and set the correct value to the <code>LED_PIN</code> variable. The default pin is <strong>GPIO18</strong> (Pin 12).</li>
+<li>Run <code>sudo python control.py</code>. A new variable named <code>LED On</code> should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
+<li>Open the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel.</li>
+<li>Add a new <strong>Switch</strong> widget and choose the newly added <code>LED On</code> variable.</li>
+</ul>
+<p>You can now switch the LED state using this widget.</p>
+<h1 id="monitor-device-events-using-colored-status">Monitor Device Events using Colored Status</h1>
+<h2 id="prerequisites_1">Prerequisites</h2>
+<ul>
+<li>Configured and <a href="../../#connecting-a-new-device">connected</a> device.</li>
+</ul>
+<h2 id="code_1">Code</h2>
+<ul>
+<li>Open the <a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py">control.py</a> sample file.</li>
+<li>Replace <code>__YOUR_DEVICE_TOKEN__</code> with your personal device token from the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
+<li>Run <code>sudo python control.py</code>. A new variable named <code>STATUS</code> should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
+<li>Open the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel or open an existing one.</li>
+<li>Add a new <code>Text</code> widget and choose the newly added <code>STATUS</code> variable.</li>
+<li>Change the pre-defined status color items according to the event names from the code above.</li>
+<li>As a result, you should have three items like the following:
+<code>{ IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}</code></li>
+</ul>
+<p>Now this widget displays incoming status with color.</p>
+<h1 id="connect-ds18b20-temperature-sensor">Connect DS18B20 Temperature Sensor</h1>
+<p>This example shows how to use the <a href="https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf">DS18B20</a> temperature sensor with the Cloud4RPi service.</p>
+<h2 id="prerequisites_2">Prerequisites</h2>
+<ul>
+<li>Configured and <a href="../../#connecting-a-new-device">connected</a> device with 1-Wire support.</li>
+<li><a href="../../#prerequisites">Enabled</a> 1-Wire interface.</li>
+<li>Breadboard, connecting wires, pull-up resistor (4.7kΩ).</li>
+</ul>
+<h2 id="schematics">Schematics</h2>
+<p><img alt="" src="../../res/ds18b20.png" /></p>
+<ul>
+<li>Connect the <strong>GND</strong> pin to any GND output of your board.</li>
+<li>Connect the <strong>Vdd</strong> pin to 5V or 3.3V output of your board.</li>
+<li>Connect the <strong>DQ</strong> pin to the pull-up resistor and the resistor to <strong>Vdd</strong>.</li>
+<li>Connect the <strong>DQ</strong> pin to the 1-Wire pin. The default pin is <strong>GPIO4</strong> (Pin 7).</li>
+</ul>
+<p>If you need to connect several 1-Wire devices, connect them to the bus without additional resistors.</p>
+<h2 id="code_2">Code</h2>
+<ul>
+<li>Open the <a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py">control.py</a> sample file.</li>
+<li>
+<p>Replace <code>__YOUR_DEVICE_TOKEN__</code> with your personal device token from the <a href="https://cloud4rpi.io/devices">Device</a> page.</p>
+</li>
+<li>
+<p>Run <code>sudo python control.py</code>. New variables named <code>Room Temp</code> and <code>CPU Temp</code> should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page.</p>
+</li>
+<li>Open the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel.</li>
+<li>Add a new <strong>Chart</strong> widget and choose the newly added <code>Room Temp</code> variable.</li>
+<li>Add a new <strong>Gauge</strong> widget and choose the newly added <code>CPU Temp</code> variable.</li>
+</ul>
+<p>You can now monitor CPU and room temperature using these widgets.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need to start your script automatically on system load, install the <strong>control.py</strong> script as a service using our <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh">service_install.sh</a> script. For details, refer to the <a href="../../#installing-as-a-service">Installing as a Service</a> section.</p>
+</div></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>© 2016-2017 Devsoft Baltic OÜ. All rights reserved.</p>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

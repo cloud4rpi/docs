@@ -4,39 +4,75 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-08-08</lastmod>
+     <lastmod>2017-08-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
+        
     <url>
-     <loc>/http_api/</loc>
-     <lastmod>2017-08-08</lastmod>
+     <loc>/start/rpi/</loc>
+     <lastmod>2017-08-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>/start/chip/</loc>
+     <lastmod>2017-08-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/start/o2/</loc>
+     <lastmod>2017-08-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
+        
     <url>
-     <loc>/mqtt_api/</loc>
-     <lastmod>2017-08-08</lastmod>
+     <loc>/howto/rpi/</loc>
+     <lastmod>2017-08-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>/howto/chip/</loc>
+     <lastmod>2017-08-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/howto/o2/</loc>
+     <lastmod>2017-08-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
+        
     <url>
-     <loc>/howto/</loc>
-     <lastmod>2017-08-08</lastmod>
+     <loc>/api/http/</loc>
+     <lastmod>2017-08-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>/api/mqtt/</loc>
+     <lastmod>2017-08-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
     <url>
      <loc>/faq/</loc>
-     <lastmod>2017-08-08</lastmod>
+     <lastmod>2017-08-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

@@ -2,388 +2,553 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Connecting a New Device\n\n\nFollow the instructions below to connect your device to the \nCloud4RPi\n control panel.\n\n\nPrerequisites\n\n\nIt is advisable to update your system before installing.\n\n\nsudo apt update \n sudo apt upgrade -y\n\n\n\n\nInstall/update the required packages.\n\n\nsudo apt install wget unzip python python-pip -y\n\n\n\n\nYou can use alternative methods to \ninstall pip\n.\n\n\n\n\nNote\n\n\nThe Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.\n\n\n\n\n[Optional] Enable interfaces\n\n\nIf your OS is \nRaspbian\n, follow the steps below:\n\n\n\n\nRun \nsudo raspi-config\n\n\nOpen a section for configuring additional interfaces (\nAdvanced Options\n or \nInterfacing Options | Configure connections to peripherals\n depending on the version).\n\n\nEnable I2C, 1-wire and other necessary interfaces.\n\n\nChoose \nFinish\n.\n\n\nReboot the device with the \nsudo reboot\n command.\n\n\n\n\nGetting the Cloud4RPi Client Library\n\n\nInstall the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):\n\n\nsudo pip install cloud4rpi\n\n\n\n\nIf you are using Python 3, use the following command:\n\n\nsudo python3 -m pip install cloud4rpi\n\n\n\n\n\n\nNote\n\n\nFor information on how to work with several versions of Python installed, see \nPython Documentation\n.\n\n\n\n\nIf you get an error while using \npip\n, try to update the \nsetuptools\n package.\n\n\nsudo pip install --upgrade setuptools\n\n\n\n\nHacking Together some Code\n\n\nWe have prepared sample code for several platforms in \nour repositories\n to demonstrate sending data to the Cloud.\n\n\nGet Cloud4RPi examples for your device. You can use \ngit\n, or \nwget\n with \nunzip\n for this. \n\n\n\n\nNote\n\n\nIf you decide to use \ngit\n, install it using the \nsudo apt install git -y\n command.\n\n\n\n\nExecute the command that suites your needs from the table below:\n\n\n\n\n\n\n\n\nPlatform\n\n\nUsing \ngit\n\n\nWithout \ngit\n\n\n\n\n\n\n\n\n\n\nRaspberry\nPi\n\n\ngit clone https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python.git \n cd cloud4rpi-raspberrypi-python\n\n\nwget https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/archive/master.zip \n unzip master.zip \n rm master.zip \n cd cloud4rpi-raspberrypi-python-master\n\n\n\n\n\n\nC.H.I.P.\n\n\ngit clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git \n cd cloud4rpi-chip-python\n\n\nwget https://github.com/cloud4rpi/cloud4rpi-chip-python/archive/master.zip \n unzip master.zip \n rm master.zip \n cd cloud4rpi-chip-python-master\n\n\n\n\n\n\nOmega2\n\n\ngit clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git \n cd cloud4rpi-omega2-python\n\n\nmkdir c4r \n cd c4r \n r=\"https://raw.githubusercontent.com/cloud4rpi/cloud4rpi-omega2-python/master\" \n wget $r\"/omega2.py\" $r\"/led.py\" $r\"/rgb_led.py\"\n\n\n\n\n\n\n\n\nBefore running a sample, remember to insert your device token to the line like this:\n\n\nDEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'\n\n\n\n\nUse a text editor (for instance, \nnano\n) to replace \n__YOUR_DEVICE_TOKEN__\n with the token displayed at the top of the device page. If it does not display anything on the \nDevices\n page, you can create a device using the \nNew Device\n button in the top right corner, and use its token.\n\n\nRunning\n\n\nExecute the script with the Python interpreter, for example:\n\n\nsudo python control.py\n\n\n\n\n\n\nNote\n\n\nIf you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.\n\n\n\n\nIf the script output looks right, open the \nDevices\n page to see if the device status has changed.\n\n\nInstalling as a Service\n\n\nYou can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the \nservice_install.sh\n script as a parameter.\n\n\nYou can use the piped script technique to do this in a single line.\n\n\nwget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py\n\n\n\n\nIf you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.\n\n\nwget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh\nchmod +x service_install.sh\nsudo ./service_install.sh your_script.py\n\n\n\n\n\n\nNote\n\n\nYou need to replace 'your_script.py' with the actual path to your service script.", 
+            "text": "Cloud4RPi Documentation\n\n\nThis website provides documentation for the \nCloud4RPi\n service \n cloud control panel for your IoT projects.\n\n\n\n\nSupported Platforms\n\n\nCloud4RPi \u0441ommunicates practically with any device via the \nMQTT\n or HTTP protocol. Currently we provide detailed instructions and examples for the following platforms:\n\n\n\n\nRaspberry Pi\n\n\nNext Thing Co. C.H.I.P.\n\n\nOnion Omega2\n\n\n\n\nIf your platform is not listed here, try to follow the instruction for a similar platform. For example, if you have a Debian-based operating system, the \nRaspberry Pi instructions\n will probably work with minimal changes. The operating system of \nOmega2\n is based on \nOpenWRT\n, so you should be able to use \nOmega2 instructions\n to connect Cloud4RPi to an \nOpenWRT\n-enabled router.\n\n\nDocumentation Structure\n\n\nThe \nGetting Started\n and \nHow To\n sections are different for each platform, use the drop-down menu on these sections to select your platform:\n\n\n\n\nWhere to Begin?\n\n\nIf you are new to Cloud4RPi, start with the \nGetting Started\n topic for your platform:\n\n\n\n\nConnecting a New Raspberry Pi Board\n\n\nConnecting a New C.H.I.P. Board\n\n\nConnecting a New Omega2 Board", 
             "title": "Home"
         }, 
         {
-            "location": "/#connecting-a-new-device", 
-            "text": "Follow the instructions below to connect your device to the  Cloud4RPi  control panel.", 
-            "title": "Connecting a New Device"
+            "location": "/#cloud4rpi-documentation", 
+            "text": "This website provides documentation for the  Cloud4RPi  service   cloud control panel for your IoT projects.", 
+            "title": "Cloud4RPi Documentation"
         }, 
         {
-            "location": "/#prerequisites", 
-            "text": "It is advisable to update your system before installing.  sudo apt update   sudo apt upgrade -y  Install/update the required packages.  sudo apt install wget unzip python python-pip -y  You can use alternative methods to  install pip .   Note  The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.", 
+            "location": "/#supported-platforms", 
+            "text": "Cloud4RPi \u0441ommunicates practically with any device via the  MQTT  or HTTP protocol. Currently we provide detailed instructions and examples for the following platforms:   Raspberry Pi  Next Thing Co. C.H.I.P.  Onion Omega2   If your platform is not listed here, try to follow the instruction for a similar platform. For example, if you have a Debian-based operating system, the  Raspberry Pi instructions  will probably work with minimal changes. The operating system of  Omega2  is based on  OpenWRT , so you should be able to use  Omega2 instructions  to connect Cloud4RPi to an  OpenWRT -enabled router.", 
+            "title": "Supported Platforms"
+        }, 
+        {
+            "location": "/#documentation-structure", 
+            "text": "The  Getting Started  and  How To  sections are different for each platform, use the drop-down menu on these sections to select your platform:", 
+            "title": "Documentation Structure"
+        }, 
+        {
+            "location": "/#where-to-begin", 
+            "text": "If you are new to Cloud4RPi, start with the  Getting Started  topic for your platform:   Connecting a New Raspberry Pi Board  Connecting a New C.H.I.P. Board  Connecting a New Omega2 Board", 
+            "title": "Where to Begin?"
+        }, 
+        {
+            "location": "/start/rpi/", 
+            "text": "Connecting a New Raspberry Pi Board\n\n\nFollow the instructions below to connect your device to the \nCloud4RPi\n control panel.\n\n\nPrerequisites\n\n\nIt is advisable to update your system before installing.\n\n\nsudo apt update \n sudo apt upgrade -y\n\n\n\n\nInstall/update the required packages.\n\n\nsudo apt install git python python-pip -y\n\n\n\n\nYou can use alternative methods to \ninstall pip\n.\n\n\n\n\nNote\n\n\nThe Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.\n\n\n\n\n[Optional] Enable interfaces\n\n\n\n\nRun \nsudo raspi-config\n\n\nOpen a section for configuring additional interfaces (\nAdvanced Options\n or \nInterfacing Options | Configure connections to peripherals\n depending on the version).\n\n\nEnable I2C, 1-wire and other necessary interfaces.\n\n\nChoose \nFinish\n.\n\n\nReboot the device with the \nsudo reboot\n command.\n\n\n\n\nGetting the Cloud4RPi Client Library\n\n\nInstall the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):\n\n\nsudo pip install cloud4rpi\n\n\n\n\nIf you are using Python 3, use the following command:\n\n\nsudo python3 -m pip install cloud4rpi\n\n\n\n\n\n\nNote\n\n\nFor information on how to work with several versions of Python installed, see \nPython Documentation\n.\n\n\n\n\nIf you get an error while using \npip\n, try to update the \nsetuptools\n package.\n\n\nsudo pip install --upgrade setuptools\n\n\n\n\nHacking Together some Code\n\n\nWe have prepared sample code for several platforms in the \ncloud4rpi-raspberrypi-python\n repository to demonstrate sending data to the Cloud.\n\n\nGet Cloud4RPi examples for your device:\n\n\ngit clone https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python.git \n cd cloud4rpi-raspberrypi-python\n\n\n\n\nBefore running a sample, remember to insert your device token to the line like this:\n\n\nDEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'\n\n\n\n\nUse a text editor (for instance, \nnano\n) to replace \n__YOUR_DEVICE_TOKEN__\n with the token displayed at the top of the device page. If it does not display anything on the \nDevices\n page, you can create a device using the \nNew Device\n button in the top right corner, and use its token.\n\n\nRunning\n\n\nExecute the script with the Python interpreter, for example:\n\n\nsudo python control.py\n\n\n\n\n\n\nNote\n\n\nIf you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.\n\n\n\n\nIf the script output looks right, open the \nDevices\n page to see if the device status has changed.\n\n\nInstalling as a Service\n\n\nYou can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the \nservice_install.sh\n script as a parameter.\n\n\nYou can use the piped script technique to do this in a single line.\n\n\nwget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py\n\n\n\n\nIf you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.\n\n\nwget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh\nchmod +x service_install.sh\nsudo ./service_install.sh your_script.py\n\n\n\n\n\n\nNote\n\n\nYou need to replace 'your_script.py' with the actual path to your service script.", 
+            "title": "Raspberry Pi"
+        }, 
+        {
+            "location": "/start/rpi/#connecting-a-new-raspberry-pi-board", 
+            "text": "Follow the instructions below to connect your device to the  Cloud4RPi  control panel.", 
+            "title": "Connecting a New Raspberry Pi Board"
+        }, 
+        {
+            "location": "/start/rpi/#prerequisites", 
+            "text": "It is advisable to update your system before installing.  sudo apt update   sudo apt upgrade -y  Install/update the required packages.  sudo apt install git python python-pip -y  You can use alternative methods to  install pip .   Note  The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.", 
             "title": "Prerequisites"
         }, 
         {
-            "location": "/#optional-enable-interfaces", 
-            "text": "If your OS is  Raspbian , follow the steps below:   Run  sudo raspi-config  Open a section for configuring additional interfaces ( Advanced Options  or  Interfacing Options | Configure connections to peripherals  depending on the version).  Enable I2C, 1-wire and other necessary interfaces.  Choose  Finish .  Reboot the device with the  sudo reboot  command.", 
+            "location": "/start/rpi/#optional-enable-interfaces", 
+            "text": "Run  sudo raspi-config  Open a section for configuring additional interfaces ( Advanced Options  or  Interfacing Options | Configure connections to peripherals  depending on the version).  Enable I2C, 1-wire and other necessary interfaces.  Choose  Finish .  Reboot the device with the  sudo reboot  command.", 
             "title": "[Optional] Enable interfaces"
         }, 
         {
-            "location": "/#getting-the-cloud4rpi-client-library", 
+            "location": "/start/rpi/#getting-the-cloud4rpi-client-library", 
             "text": "Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):  sudo pip install cloud4rpi  If you are using Python 3, use the following command:  sudo python3 -m pip install cloud4rpi   Note  For information on how to work with several versions of Python installed, see  Python Documentation .   If you get an error while using  pip , try to update the  setuptools  package.  sudo pip install --upgrade setuptools", 
             "title": "Getting the Cloud4RPi Client Library"
         }, 
         {
-            "location": "/#hacking-together-some-code", 
-            "text": "We have prepared sample code for several platforms in  our repositories  to demonstrate sending data to the Cloud.  Get Cloud4RPi examples for your device. You can use  git , or  wget  with  unzip  for this.    Note  If you decide to use  git , install it using the  sudo apt install git -y  command.   Execute the command that suites your needs from the table below:     Platform  Using  git  Without  git      Raspberry Pi  git clone https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python.git   cd cloud4rpi-raspberrypi-python  wget https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/archive/master.zip   unzip master.zip   rm master.zip   cd cloud4rpi-raspberrypi-python-master    C.H.I.P.  git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git   cd cloud4rpi-chip-python  wget https://github.com/cloud4rpi/cloud4rpi-chip-python/archive/master.zip   unzip master.zip   rm master.zip   cd cloud4rpi-chip-python-master    Omega2  git clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git   cd cloud4rpi-omega2-python  mkdir c4r   cd c4r   r=\"https://raw.githubusercontent.com/cloud4rpi/cloud4rpi-omega2-python/master\"   wget $r\"/omega2.py\" $r\"/led.py\" $r\"/rgb_led.py\"     Before running a sample, remember to insert your device token to the line like this:  DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'  Use a text editor (for instance,  nano ) to replace  __YOUR_DEVICE_TOKEN__  with the token displayed at the top of the device page. If it does not display anything on the  Devices  page, you can create a device using the  New Device  button in the top right corner, and use its token.", 
+            "location": "/start/rpi/#hacking-together-some-code", 
+            "text": "We have prepared sample code for several platforms in the  cloud4rpi-raspberrypi-python  repository to demonstrate sending data to the Cloud.  Get Cloud4RPi examples for your device:  git clone https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python.git   cd cloud4rpi-raspberrypi-python  Before running a sample, remember to insert your device token to the line like this:  DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'  Use a text editor (for instance,  nano ) to replace  __YOUR_DEVICE_TOKEN__  with the token displayed at the top of the device page. If it does not display anything on the  Devices  page, you can create a device using the  New Device  button in the top right corner, and use its token.", 
             "title": "Hacking Together some Code"
         }, 
         {
-            "location": "/#running", 
+            "location": "/start/rpi/#running", 
             "text": "Execute the script with the Python interpreter, for example:  sudo python control.py   Note  If you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.   If the script output looks right, open the  Devices  page to see if the device status has changed.", 
             "title": "Running"
         }, 
         {
-            "location": "/#installing-as-a-service", 
+            "location": "/start/rpi/#installing-as-a-service", 
             "text": "You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the  service_install.sh  script as a parameter.  You can use the piped script technique to do this in a single line.  wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py  If you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.  wget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh\nchmod +x service_install.sh\nsudo ./service_install.sh your_script.py   Note  You need to replace 'your_script.py' with the actual path to your service script.", 
             "title": "Installing as a Service"
         }, 
         {
-            "location": "/http_api/", 
-            "text": "Variables Configuration\n\n\nUpdates the device's configuration.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/config\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        [\n            {\nname\n: name, \ntype\n: type},\n            {\nname\n: name, \ntype\n: type},\n            // ...\n            {\nname\n: name, \ntype\n: type}\n        ]\n    }\n}\n\n\n\n\nor\n\n\n[\n    {\nname\n: name, \ntype\n: type},\n    {\nname\n: name, \ntype\n: type},\n    // ...\n    {\nname\n: name, \ntype\n: type}\n]\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly.\n\n\n\n\n\n\nname\n\n\nVariable name\n\n\nstring\n\n\nAny string\n\n\n\n\n\n\ntype\n\n\nVariable type\n\n\nstring\n\n\n\"bool\", \"numeric\" or \"string\"\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example creates two variables on the device:\n\n\n\n\nTemperature\n (numeric)\n\n\nLEDOn\n (boolean)\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '[{\nname\n:\nTemperature\n,\ntype\n:\nnumeric\n},{\nname\n:\nLEDOn\n,\ntype\n:\nbool\n}]' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\nVariable Values\n\n\nSends variable values.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/data\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nOne of the variables\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\ncorresponding\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the values of two variables:\n\n\n\n\nTemperature\n: \n24\n.\n\n\nLEDOn\n: \ntrue\n.\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n$(date -Is)\n,\npayload\n:{\nTemperature\n:24,\nLEDOn\n:true}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\nDiagnostic Data\n\n\nSends device's diagnostic data.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/diagnostics\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\nany\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the following diagnostic values to Cloud4RPi:\n\n\n\n\nCPU Temperature\n: \n41\n\n\nIP Address\n: \n192.168.1.50\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n$(date -Is)\n,\npayload\n:{\nCPU Temperature\n:41,\nIP Address\n:\n192.168.1.50\n}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\nCommands Queue\n\n\nAcquires the recent commands sent from the Control Panel.\n\n\nRequest Destination\n\n\n\n\nMethod\n: GET\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/commands/latest\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nExample\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest\n\n\n\n\nResponse Body\n\n\n[\n    {var_name: var_new_value},\n    {var_name: var_new_value},\n    // ...\n    {var_name: var_new_value}\n]\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_new_value\n\n\nNew variable value\n\n\ncorresponding\n\n\nAny\n\n\n\n\n\n\n\n\nThe commands are in chronological order.", 
-            "title": "HTTP API"
+            "location": "/start/chip/", 
+            "text": "Connecting a New C.H.I.P. Board\n\n\nFollow the instructions below to connect your device to the \nCloud4RPi\n control panel.\n\n\nPrerequisites\n\n\nIt is advisable to update your system before installing.\n\n\nsudo apt update \n sudo apt upgrade -y\n\n\n\n\nInstall/update the required packages.\n\n\nsudo apt install git python python-pip -y\n\n\n\n\nYou can use alternative methods to \ninstall pip\n.\n\n\n\n\nNote\n\n\nThe Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.\n\n\n\n\nGetting the Cloud4RPi Client Library\n\n\nInstall the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):\n\n\nsudo pip install cloud4rpi\n\n\n\n\nIf you are using Python 3, use the following command:\n\n\nsudo python3 -m pip install cloud4rpi\n\n\n\n\n\n\nNote\n\n\nFor information on how to work with several versions of Python installed, see \nPython Documentation\n.\n\n\n\n\nIf you get an error while using \npip\n, try to update the \nsetuptools\n package.\n\n\nsudo pip install --upgrade setuptools\n\n\n\n\nHacking Together some Code\n\n\nWe have prepared sample code for several platforms in the \ncloud4rpi-chip-python\n repository to demonstrate sending data to the Cloud.\n\n\nGet Cloud4RPi examples for your device.:\n\n\ngit clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git \n cd cloud4rpi-chip-python\n\n\n\n\nBefore running a sample, remember to insert your device token to the line like this:\n\n\nDEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'\n\n\n\n\nUse a text editor (for instance, \nnano\n) to replace \n__YOUR_DEVICE_TOKEN__\n with the token displayed at the top of the device page. If it does not display anything on the \nDevices\n page, you can create a device using the \nNew Device\n button in the top right corner, and use its token.\n\n\nRunning\n\n\nExecute the script with the Python interpreter, for example:\n\n\nsudo python control.py\n\n\n\n\n\n\nNote\n\n\nIf you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.\n\n\n\n\nIf the script output looks right, open the \nDevices\n page to see if the device status has changed.\n\n\nInstalling as a Service\n\n\nYou can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the \nservice_install.sh\n script as a parameter.\n\n\nYou can use the piped script technique to do this in a single line.\n\n\nwget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py\n\n\n\n\nIf you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.\n\n\nwget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh\nchmod +x service_install.sh\nsudo ./service_install.sh your_script.py\n\n\n\n\n\n\nNote\n\n\nYou need to replace 'your_script.py' with the actual path to your service script.", 
+            "title": "C.H.I.P."
         }, 
         {
-            "location": "/http_api/#variables-configuration", 
-            "text": "Updates the device's configuration.", 
-            "title": "Variables Configuration"
+            "location": "/start/chip/#connecting-a-new-chip-board", 
+            "text": "Follow the instructions below to connect your device to the  Cloud4RPi  control panel.", 
+            "title": "Connecting a New C.H.I.P. Board"
         }, 
         {
-            "location": "/http_api/#request-destination", 
-            "text": "Method : POST  URL :  https://cloud4rpi.io/api/devices/{token}/config", 
-            "title": "Request Destination"
-        }, 
-        {
-            "location": "/http_api/#url-parameters", 
-            "text": "Name  Description      token  The  device  token", 
-            "title": "URL Parameters"
-        }, 
-        {
-            "location": "/http_api/#headers", 
-            "text": "Content-Type: application/json", 
-            "title": "Headers"
-        }, 
-        {
-            "location": "/http_api/#request-body", 
-            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        [\n            { name : name,  type : type},\n            { name : name,  type : type},\n            // ...\n            { name : name,  type : type}\n        ]\n    }\n}  or  [\n    { name : name,  type : type},\n    { name : name,  type : type},\n    // ...\n    { name : name,  type : type}\n]", 
-            "title": "Request Body"
-        }, 
-        {
-            "location": "/http_api/#parameters", 
-            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly.    name  Variable name  string  Any string    type  Variable type  string  \"bool\", \"numeric\" or \"string\"", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/http_api/#example", 
-            "text": "The following example creates two variables on the device:   Temperature  (numeric)  LEDOn  (boolean)   export DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '[{ name : Temperature , type : numeric },{ name : LEDOn , type : bool }]' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/http_api/#response-body", 
-            "text": "{  message :  OK  }  or  {  error : error_text }", 
-            "title": "Response Body"
-        }, 
-        {
-            "location": "/http_api/#variable-values", 
-            "text": "Sends variable values.", 
-            "title": "Variable Values"
-        }, 
-        {
-            "location": "/http_api/#request-destination_1", 
-            "text": "Method : POST  URL :  https://cloud4rpi.io/api/devices/{token}/data", 
-            "title": "Request Destination"
-        }, 
-        {
-            "location": "/http_api/#url-parameters_1", 
-            "text": "Name  Description      token  The  device  token", 
-            "title": "URL Parameters"
-        }, 
-        {
-            "location": "/http_api/#headers_1", 
-            "text": "Content-Type: application/json", 
-            "title": "Headers"
-        }, 
-        {
-            "location": "/http_api/#request-body_1", 
-            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}", 
-            "title": "Request Body"
-        }, 
-        {
-            "location": "/http_api/#parameters_1", 
-            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly    var_name  Variable name  string  One of the variables    var_value  Variable value  corresponding  Any", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/http_api/#example_1", 
-            "text": "The following example sends the values of two variables:   Temperature :  24 .  LEDOn :  true .   export DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '{ ts : $(date -Is) , payload :{ Temperature :24, LEDOn :true}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/http_api/#response-body_1", 
-            "text": "{  message :  OK  }  or  {  error : error_text }", 
-            "title": "Response Body"
-        }, 
-        {
-            "location": "/http_api/#diagnostic-data", 
-            "text": "Sends device's diagnostic data.", 
-            "title": "Diagnostic Data"
-        }, 
-        {
-            "location": "/http_api/#request-destination_2", 
-            "text": "Method : POST  URL :  https://cloud4rpi.io/api/devices/{token}/diagnostics", 
-            "title": "Request Destination"
-        }, 
-        {
-            "location": "/http_api/#url-parameters_2", 
-            "text": "Name  Description      token  The  device  token", 
-            "title": "URL Parameters"
-        }, 
-        {
-            "location": "/http_api/#headers_2", 
-            "text": "Content-Type: application/json", 
-            "title": "Headers"
-        }, 
-        {
-            "location": "/http_api/#request-body_2", 
-            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}", 
-            "title": "Request Body"
-        }, 
-        {
-            "location": "/http_api/#parameters_2", 
-            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly    var_name  Variable name  string  Any    var_value  Variable value  any  Any", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/http_api/#example_2", 
-            "text": "The following example sends the following diagnostic values to Cloud4RPi:   CPU Temperature :  41  IP Address :  192.168.1.50   export DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '{ ts : $(date -Is) , payload :{ CPU Temperature :41, IP Address : 192.168.1.50 }}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/http_api/#response-body_2", 
-            "text": "{  message :  OK  }  or  {  error : error_text }", 
-            "title": "Response Body"
-        }, 
-        {
-            "location": "/http_api/#commands-queue", 
-            "text": "Acquires the recent commands sent from the Control Panel.", 
-            "title": "Commands Queue"
-        }, 
-        {
-            "location": "/http_api/#request-destination_3", 
-            "text": "Method : GET  URL :  https://cloud4rpi.io/api/devices/{token}/commands/latest", 
-            "title": "Request Destination"
-        }, 
-        {
-            "location": "/http_api/#url-parameters_3", 
-            "text": "Name  Description      token  The  device  token", 
-            "title": "URL Parameters"
-        }, 
-        {
-            "location": "/http_api/#example_3", 
-            "text": "export DEVICE_TOKEN=your_device_token\n\ncurl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/http_api/#response-body_3", 
-            "text": "[\n    {var_name: var_new_value},\n    {var_name: var_new_value},\n    // ...\n    {var_name: var_new_value}\n]", 
-            "title": "Response Body"
-        }, 
-        {
-            "location": "/http_api/#parameters_3", 
-            "text": "Name  Description  Type  Possible Values      var_name  Variable name  string  Any    var_new_value  New variable value  corresponding  Any     The commands are in chronological order.", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/mqtt_api/", 
-            "text": "Prerequisites\n\n\nThe examples in this section are presented for the \nEclipse Mosquitto\u2122\n MQTT client. Install the client if you are going to run the examples:\n\n\nsudo apt-get install mosquitto-clients\n\n\n\n\nCloud4RPi MQTT Broker\n\n\nUse the following data to connect to the MQTT broker:\n\n\n\n\nHost:\n \n\n\nWith SSL encryption: \nmqtts://mq.cloud4rpi.io\n\n\nWithout SSL encryption: \nmqtt://mq.cloud4rpi.io\n\n\n\n\n\n\nPort:\n \n\n\nWith SSL encryption: \n8883\n\n\nWithout SSL encryption: \n1883\n\n\n\n\n\n\nClient ID\n: Your \nDevice\n Token\n\n\n\n\n\n\nWarning\n\n\nSince the \nClient ID\n is used for authentication, you should not open more than one connection to the MQTT broker at the same time.\n\n\n\n\n\n\nNote\n\n\nLogin\n and \nPassword\n are not used, you can leave them empty.\n\n\n\n\nVariables Configuration\n\n\nUpdate the device's configuration by sending messages to the following topic:\n\n\ndevices/{token}/config\n\n\n\n\nTopic Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nMessage Structure\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        [\n            {\nname\n: name, \ntype\n: type},\n            {\nname\n: name, \ntype\n: type},\n            // ...\n            {\nname\n: name, \ntype\n: type}\n        ]\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly.\n\n\n\n\n\n\nname\n\n\nVariable name\n\n\nstring\n\n\nAny string\n\n\n\n\n\n\ntype\n\n\nVariable type\n\n\nstring\n\n\n\"bool\", \"numeric\" or \"string\"\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example creates two variables on the device:\n\n\n\n\nTemperature\n (numeric)\n\n\nLEDOn\n (boolean)\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t \ndevices/$DEVICE_TOKEN/config\n -h mq.cloud4rpi.io -i \n$DEVICE_TOKEN\n \\\n              -m '{\nts\n:\n$(date -Is)\n,\npayload\n:[{\nname\n:\nTemperature\n,\ntype\n:\nnumeric\n},{\nname\n:\nLEDOn\n,\ntype\n:\nbool\n}]}'\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nVariable Values\n\n\nSend messages with your variable values to the following topic:\n\n\ndevices/{token}/data\n\n\n\n\nTopic Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nMessage Structure\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nOne of the variables\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\ncorresponding\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the values of two variables:\n\n\n\n\nTemperature\n: \n24\n\n\nLEDOn\n: \ntrue\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t \ndevices/$DEVICE_TOKEN/data\n -h mq.cloud4rpi.io -i \n$DEVICE_TOKEN\n \\\n              -m '{\nts\n:\n$(date -Is)\n,\npayload\n:{\nTemperature\n:24,\nLEDOn\n:true}}'\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nDiagnostic Data\n\n\nSend messages with your device's diagnostic data to the following topic:\n\n\ndevices/{token}/diagnostics\n\n\n\n\nTopic Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nMessage Structure\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\nany\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the following diagnostic values to Cloud4RPI:\n\n\n\n\nCPU Temperature\n: \n41\n\n\nIP Address\n: \n192.168.1.50\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t \ndevices/$DEVICE_TOKEN/diagnostics\n -h mq.cloud4rpi.io -i \n$DEVICE_TOKEN\n \\\n              -m '{\nts\n:\n$(date -Is)\n,\npayload\n:{\nCPU Temperature\n:41,\nIP Address\n:\n192.168.1.50\n}}'\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nCommands Stream\n\n\nReceive commands sent from the \nControl Panels\n in real time by subscribing to the following topic:\n\n\ndevices/{token}/commands\n\n\n\n\nTopic Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nExample\n\n\nExecute the following command to subscribe:\n\n\nexport DEVICE_TOKEN=your_device_token\nmosquitto_sub -d -t \ndevices/$DEVICE_TOKEN/commands\n -h mq.cloud4rpi.io -i \n$DEVICE_TOKEN\n\n\n\n\n\nThis program works in the foreground and blocks the input while the connection to the broker persists. So, you instantly get commands sent from the UI in the following format:\n\n\nMessage Structure\n\n\n{var_name:var_new_value}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_new_value\n\n\nNew variable value\n\n\ncorresponding\n\n\nAny", 
-            "title": "MQTT API"
-        }, 
-        {
-            "location": "/mqtt_api/#prerequisites", 
-            "text": "The examples in this section are presented for the  Eclipse Mosquitto\u2122  MQTT client. Install the client if you are going to run the examples:  sudo apt-get install mosquitto-clients", 
+            "location": "/start/chip/#prerequisites", 
+            "text": "It is advisable to update your system before installing.  sudo apt update   sudo apt upgrade -y  Install/update the required packages.  sudo apt install git python python-pip -y  You can use alternative methods to  install pip .   Note  The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.", 
             "title": "Prerequisites"
         }, 
         {
-            "location": "/mqtt_api/#cloud4rpi-mqtt-broker", 
-            "text": "Use the following data to connect to the MQTT broker:   Host:    With SSL encryption:  mqtts://mq.cloud4rpi.io  Without SSL encryption:  mqtt://mq.cloud4rpi.io    Port:    With SSL encryption:  8883  Without SSL encryption:  1883    Client ID : Your  Device  Token    Warning  Since the  Client ID  is used for authentication, you should not open more than one connection to the MQTT broker at the same time.    Note  Login  and  Password  are not used, you can leave them empty.", 
-            "title": "Cloud4RPi MQTT Broker"
+            "location": "/start/chip/#getting-the-cloud4rpi-client-library", 
+            "text": "Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):  sudo pip install cloud4rpi  If you are using Python 3, use the following command:  sudo python3 -m pip install cloud4rpi   Note  For information on how to work with several versions of Python installed, see  Python Documentation .   If you get an error while using  pip , try to update the  setuptools  package.  sudo pip install --upgrade setuptools", 
+            "title": "Getting the Cloud4RPi Client Library"
         }, 
         {
-            "location": "/mqtt_api/#variables-configuration", 
-            "text": "Update the device's configuration by sending messages to the following topic:  devices/{token}/config", 
-            "title": "Variables Configuration"
+            "location": "/start/chip/#hacking-together-some-code", 
+            "text": "We have prepared sample code for several platforms in the  cloud4rpi-chip-python  repository to demonstrate sending data to the Cloud.  Get Cloud4RPi examples for your device.:  git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git   cd cloud4rpi-chip-python  Before running a sample, remember to insert your device token to the line like this:  DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'  Use a text editor (for instance,  nano ) to replace  __YOUR_DEVICE_TOKEN__  with the token displayed at the top of the device page. If it does not display anything on the  Devices  page, you can create a device using the  New Device  button in the top right corner, and use its token.", 
+            "title": "Hacking Together some Code"
         }, 
         {
-            "location": "/mqtt_api/#topic-parameters", 
-            "text": "Name  Description      token  The  device  token", 
-            "title": "Topic Parameters"
+            "location": "/start/chip/#running", 
+            "text": "Execute the script with the Python interpreter, for example:  sudo python control.py   Note  If you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.   If the script output looks right, open the  Devices  page to see if the device status has changed.", 
+            "title": "Running"
         }, 
         {
-            "location": "/mqtt_api/#message-structure", 
-            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        [\n            { name : name,  type : type},\n            { name : name,  type : type},\n            // ...\n            { name : name,  type : type}\n        ]\n    }\n}", 
-            "title": "Message Structure"
+            "location": "/start/chip/#installing-as-a-service", 
+            "text": "You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the  service_install.sh  script as a parameter.  You can use the piped script technique to do this in a single line.  wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py  If you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.  wget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh\nchmod +x service_install.sh\nsudo ./service_install.sh your_script.py   Note  You need to replace 'your_script.py' with the actual path to your service script.", 
+            "title": "Installing as a Service"
         }, 
         {
-            "location": "/mqtt_api/#parameters", 
-            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly.    name  Variable name  string  Any string    type  Variable type  string  \"bool\", \"numeric\" or \"string\"", 
-            "title": "Parameters"
+            "location": "/start/o2/", 
+            "text": "Connecting a New Omega2 Board\n\n\nFollow the instructions below to connect your device to the \nCloud4RPi\n control panel.\n\n\nPrerequisites\n\n\nInstall/update the required packages.\n\n\nopkg update\nopkg install wget python python-pip\npip install --upgrade setuptools pip\n\n\n\n\nYou can use alternative methods to \ninstall pip\n.\n\n\n\n\nNote\n\n\nThe Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.\n\n\n\n\nGetting the Cloud4RPi Client Library\n\n\nInstall the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):\n\n\npip install cloud4rpi\n\n\n\n\nHacking Together some Code\n\n\nWe have prepared sample code for several platforms in the \ncloud4rpi-omega2-python\n repository to demonstrate sending data to the Cloud.\n\n\nGet Cloud4RPi examples for your device:\n\n\nmkdir cloud4rpi-omega2-python \n cd cloud4rpi-omega2-python\nrepo=\nhttps://raw.githubusercontent.com/cloud4rpi/cloud4rpi-omega2-python/master\n\nwget $repo\n/omega2.py\n $repo\n/control.py\n\n\n\n\n\n\n\nNote\n\n\nYou can install \ngit\n if your board has sufficient memory and you prefer using it, and clone this repository with the following command: \nopkg install git git-http ca-bundle \n git clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git \n cd cloud4rpi-omega2-python\n\n\n\n\nBefore running a sample, remember to insert your device token to the line like this:\n\n\nDEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'\n\n\n\n\nUse a text editor (for instance, \nvim\n) to replace \n__YOUR_DEVICE_TOKEN__\n with the token displayed at the top of the device page. If it does not display anything on the \nDevices\n page, you can create a device using the \nNew Device\n button in the top right corner, and use its token.\n\n\nRunning\n\n\nExecute the script with the Python interpreter, for example:\n\n\npython control.py\n\n\n\n\n\n\nNote\n\n\nIf you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.\n\n\n\n\nIf the script output looks right, open the \nDevices\n page to see if the device status has changed.\n\n\nInstalling as a Service\n\n\nYou can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the \nservice_install.sh\n script as a parameter.\n\n\nYou can use the piped script technique to do this in a single line.\n\n\nwget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py\n\n\n\n\nIf you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.\n\n\nwget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh\nchmod +x service_install.sh\nsudo ./service_install.sh your_script.py\n\n\n\n\n\n\nNote\n\n\nYou need to replace 'your_script.py' with the actual path to your service script.", 
+            "title": "Omega2"
         }, 
         {
-            "location": "/mqtt_api/#example", 
-            "text": "The following example creates two variables on the device:   Temperature  (numeric)  LEDOn  (boolean)   export DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t  devices/$DEVICE_TOKEN/config  -h mq.cloud4rpi.io -i  $DEVICE_TOKEN  \\\n              -m '{ ts : $(date -Is) , payload :[{ name : Temperature , type : numeric },{ name : LEDOn , type : bool }]}'   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
-            "title": "Example"
+            "location": "/start/o2/#connecting-a-new-omega2-board", 
+            "text": "Follow the instructions below to connect your device to the  Cloud4RPi  control panel.", 
+            "title": "Connecting a New Omega2 Board"
         }, 
         {
-            "location": "/mqtt_api/#variable-values", 
-            "text": "Send messages with your variable values to the following topic:  devices/{token}/data", 
-            "title": "Variable Values"
+            "location": "/start/o2/#prerequisites", 
+            "text": "Install/update the required packages.  opkg update\nopkg install wget python python-pip\npip install --upgrade setuptools pip  You can use alternative methods to  install pip .   Note  The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.", 
+            "title": "Prerequisites"
         }, 
         {
-            "location": "/mqtt_api/#topic-parameters_1", 
-            "text": "Name  Description      token  The  device  token", 
-            "title": "Topic Parameters"
+            "location": "/start/o2/#getting-the-cloud4rpi-client-library", 
+            "text": "Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):  pip install cloud4rpi", 
+            "title": "Getting the Cloud4RPi Client Library"
         }, 
         {
-            "location": "/mqtt_api/#message-structure_1", 
-            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}", 
-            "title": "Message Structure"
+            "location": "/start/o2/#hacking-together-some-code", 
+            "text": "We have prepared sample code for several platforms in the  cloud4rpi-omega2-python  repository to demonstrate sending data to the Cloud.  Get Cloud4RPi examples for your device:  mkdir cloud4rpi-omega2-python   cd cloud4rpi-omega2-python\nrepo= https://raw.githubusercontent.com/cloud4rpi/cloud4rpi-omega2-python/master \nwget $repo /omega2.py  $repo /control.py    Note  You can install  git  if your board has sufficient memory and you prefer using it, and clone this repository with the following command:  opkg install git git-http ca-bundle   git clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git   cd cloud4rpi-omega2-python   Before running a sample, remember to insert your device token to the line like this:  DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'  Use a text editor (for instance,  vim ) to replace  __YOUR_DEVICE_TOKEN__  with the token displayed at the top of the device page. If it does not display anything on the  Devices  page, you can create a device using the  New Device  button in the top right corner, and use its token.", 
+            "title": "Hacking Together some Code"
         }, 
         {
-            "location": "/mqtt_api/#parameters_1", 
-            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly    var_name  Variable name  string  One of the variables    var_value  Variable value  corresponding  Any", 
-            "title": "Parameters"
+            "location": "/start/o2/#running", 
+            "text": "Execute the script with the Python interpreter, for example:  python control.py   Note  If you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.   If the script output looks right, open the  Devices  page to see if the device status has changed.", 
+            "title": "Running"
         }, 
         {
-            "location": "/mqtt_api/#example_1", 
-            "text": "The following example sends the values of two variables:   Temperature :  24  LEDOn :  true   export DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t  devices/$DEVICE_TOKEN/data  -h mq.cloud4rpi.io -i  $DEVICE_TOKEN  \\\n              -m '{ ts : $(date -Is) , payload :{ Temperature :24, LEDOn :true}}'   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
-            "title": "Example"
+            "location": "/start/o2/#installing-as-a-service", 
+            "text": "You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the  service_install.sh  script as a parameter.  You can use the piped script technique to do this in a single line.  wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py  If you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.  wget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh\nchmod +x service_install.sh\nsudo ./service_install.sh your_script.py   Note  You need to replace 'your_script.py' with the actual path to your service script.", 
+            "title": "Installing as a Service"
         }, 
         {
-            "location": "/mqtt_api/#diagnostic-data", 
-            "text": "Send messages with your device's diagnostic data to the following topic:  devices/{token}/diagnostics", 
-            "title": "Diagnostic Data"
+            "location": "/howto/rpi/", 
+            "text": "Control LED from WEB\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n device.\n\n\nBreadboard, connecting wires, 330\u03a9..1k\u03a9 resistor.\n\n\n\n\nCode\n\n\n\n\nOpen the \ncontrol.py\n sample file.\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\nConnect an LED to a GPIO pin and set the correct value to the \nLED_PIN\n variable. The default pin is \nGPIO18\n (Pin 12).\n\n\nRun \nsudo python control.py\n. A new variable named \nLED On\n should appear on the \nDevice\n page.\n\n\nOpen the \nControl Panels\n page and add a new control panel.\n\n\nAdd a new \nSwitch\n widget and choose the newly added \nLED On\n variable.\n\n\n\n\nYou can now switch the LED state using this widget.\n\n\nMonitor Device Events using Colored Status\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n device.\n\n\n\n\nCode\n\n\n\n\nOpen the \ncontrol.py\n sample file.\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\nRun \nsudo python control.py\n. A new variable named \nSTATUS\n should appear on the \nDevice\n page.\n\n\nOpen the \nControl Panels\n page and add a new control panel or open an existing one.\n\n\nAdd a new \nText\n widget and choose the newly added \nSTATUS\n variable.\n\n\nChange the pre-defined status color items according to the event names from the code above.\n\n\nAs a result, you should have three items like the following:\n\n{ IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}\n\n\n\n\nNow this widget displays incoming status with color.\n\n\nConnect DS18B20 Temperature Sensor\n\n\nThis example shows how to use the \nDS18B20\n temperature sensor with the Cloud4RPi service.\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n device with 1-Wire support.\n\n\nEnabled\n 1-Wire interface.\n\n\nBreadboard, connecting wires, pull-up resistor (4.7k\u03a9).\n\n\n\n\nSchematics\n\n\n\n\n\n\nConnect the \nGND\n pin to any GND output of your board.\n\n\nConnect the \nVdd\n pin to 5V or 3.3V output of your board.\n\n\nConnect the \nDQ\n pin to the pull-up resistor and the resistor to \nVdd\n.\n\n\nConnect the \nDQ\n pin to the 1-Wire pin. The default pin is \nGPIO4\n (Pin 7).\n\n\n\n\nIf you need to connect several 1-Wire devices, connect them to the bus without additional resistors.\n\n\nCode\n\n\n\n\nOpen the \ncontrol.py\n sample file.\n\n\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\n\n\n\n\nRun \nsudo python control.py\n. New variables named \nRoom Temp\n and \nCPU Temp\n should appear on the \nDevice\n page.\n\n\n\n\nOpen the \nControl Panels\n page and add a new control panel.\n\n\nAdd a new \nChart\n widget and choose the newly added \nRoom Temp\n variable.\n\n\nAdd a new \nGauge\n widget and choose the newly added \nCPU Temp\n variable.\n\n\n\n\nYou can now monitor CPU and room temperature using these widgets.\n\n\n\n\nNote\n\n\nIf you need to start your script automatically on system load, install the \ncontrol.py\n script as a service using our \nservice_install.sh\n script. For details, refer to the \nInstalling as a Service\n section.", 
+            "title": "Raspberry Pi"
         }, 
         {
-            "location": "/mqtt_api/#topic-parameters_2", 
-            "text": "Name  Description      token  The  device  token", 
-            "title": "Topic Parameters"
-        }, 
-        {
-            "location": "/mqtt_api/#message-structure_2", 
-            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}", 
-            "title": "Message Structure"
-        }, 
-        {
-            "location": "/mqtt_api/#parameters_2", 
-            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly    var_name  Variable name  string  Any    var_value  Variable value  any  Any", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/mqtt_api/#example_2", 
-            "text": "The following example sends the following diagnostic values to Cloud4RPI:   CPU Temperature :  41  IP Address :  192.168.1.50   export DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t  devices/$DEVICE_TOKEN/diagnostics  -h mq.cloud4rpi.io -i  $DEVICE_TOKEN  \\\n              -m '{ ts : $(date -Is) , payload :{ CPU Temperature :41, IP Address : 192.168.1.50 }}'   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/mqtt_api/#commands-stream", 
-            "text": "Receive commands sent from the  Control Panels  in real time by subscribing to the following topic:  devices/{token}/commands", 
-            "title": "Commands Stream"
-        }, 
-        {
-            "location": "/mqtt_api/#topic-parameters_3", 
-            "text": "Name  Description      token  The  device  token", 
-            "title": "Topic Parameters"
-        }, 
-        {
-            "location": "/mqtt_api/#example_3", 
-            "text": "Execute the following command to subscribe:  export DEVICE_TOKEN=your_device_token\nmosquitto_sub -d -t  devices/$DEVICE_TOKEN/commands  -h mq.cloud4rpi.io -i  $DEVICE_TOKEN   This program works in the foreground and blocks the input while the connection to the broker persists. So, you instantly get commands sent from the UI in the following format:", 
-            "title": "Example"
-        }, 
-        {
-            "location": "/mqtt_api/#message-structure_3", 
-            "text": "{var_name:var_new_value}", 
-            "title": "Message Structure"
-        }, 
-        {
-            "location": "/mqtt_api/#parameters_3", 
-            "text": "Name  Description  Type  Possible Values      var_name  Variable name  string  Any    var_new_value  New variable value  corresponding  Any", 
-            "title": "Parameters"
-        }, 
-        {
-            "location": "/howto/", 
-            "text": "Control LED from WEB\n\n\nRaspberry Pi and C.H.I.P.\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n device.\n\n\nBreadboard, connecting wires, 330\u03a9..1k\u03a9 resistor.\n\n\n\n\nCode\n\n\n\n\nOpen the \ncontrol.py\n sample file (\nRaspberry Pi\n, \nC.H.I.P.\n).\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\nConnect an LED to a GPIO pin and set the correct value to the \nLED_PIN\n variable. The default pin is \nGPIO18\n (Pin 12) on Raspberry Pi and \nXIO-P0\n on C.H.I.P.\n\n\nRun \nsudo python control.py\n. A new variable named \nLED On\n should appear on the \nDevice\n page.\n\n\nOpen the \nControl Panels\n page and add a new control panel.\n\n\nAdd a new \nSwitch\n widget and choose the newly added \nLED On\n variable.\n\n\n\n\nYou can now switch the LED state using this widget.\n\n\nOmega2\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n Omega2 board.\n\n\n\n\nCode\n\n\n\n\nOpen the \nled.py\n sample file.\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\nRun \npython led.py\n. A new variable named \nOmega LED\n should appear on the \nDevice\n page.\n\n\nOpen the \nControl Panels\n page and add a new control panel.\n\n\nAdd a new \nSwitch\n widget and choose the newly added \nOmega LED\n variable.\n\n\n\n\nYou can now switch the onboard LED state using this widget.\n\n\nMonitor Device Events using Colored Status\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n device.\n\n\n\n\nCode\n\n\n\n\nOpen the \ncontrol.py\n sample file (\nRaspberry Pi\n, \nC.H.I.P.\n).\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\nRun \nsudo python control.py\n. A new variable named \nSTATUS\n should appear on the \nDevice\n page.\n\n\nOpen the \nControl Panels\n page and add a new control panel or open an existing one.\n\n\nAdd a new \nText\n widget and choose the newly added \nSTATUS\n variable.\n\n\nChange the pre-defined status color items according to the event names from the code above.\n\n\nAs a result, you should have three items like the following:\n\n{ IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}\n\n\n\n\nNow this widget displays incoming status with color.\n\n\nConnect DS18B20 Temperature Sensor\n\n\nThis example shows how to use the \nDS18B20\n temperature sensor with the Cloud4RPi service.\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n device with 1-Wire support.\n\n\nEnabled\n 1-Wire interface (in case of Raspberry Pi or similar platforms).\n\n\nBreadboard, connecting wires, pull-up resistor (4.7k\u03a9).\n\n\n\n\nSchematics\n\n\n\n\n\n\nConnect the \nGND\n pin to any GND output of your board.\n\n\nConnect the \nVdd\n pin to 5V or 3.3V output of your board.\n\n\nConnect the \nDQ\n pin to the pull-up resistor and the resistor to \nVdd\n.\n\n\nConnect the \nDQ\n pin to the 1-Wire pin of your board:\n\n\nRaspberry Pi: The default pin is \nGPIO4\n (Pin 7)\n\n\nC.H.I.P.: \nLCD-D2\n\n\nOmega2: \nGPIO 19\n\n\n\n\n\n\n\n\nIf you need to connect several 1-Wire devices, connect them to the bus without additional resistors.\n\n\nCode\n\n\n\n\nOpen the \ncontrol.py\n sample file (\nRaspberry Pi\n, \nC.H.I.P.\n).\n\n\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\n\n\n\n\nRun \nsudo python control.py\n. New variables named \nRoom Temp\n and \nCPU Temp\n should appear on the \nDevice\n page.\n\n\n\n\nOpen the \nControl Panels\n page and add a new control panel.\n\n\nAdd a new \nChart\n widget and choose the newly added \nRoom Temp\n variable.\n\n\nAdd a new \nGauge\n widget and choose the newly added \nCPU Temp\n variable.\n\n\n\n\nYou can now monitor CPU and room temperature using these widgets.\n\n\n\n\nNote\n\n\nIf you need to start your script automatically on system load, install the \ncontrol.py\n script as a service using our \nservice_install.sh\n script. For details, refer to the \nInstalling as a Service\n section.", 
-            "title": "How To"
-        }, 
-        {
-            "location": "/howto/#control-led-from-web", 
+            "location": "/howto/rpi/#control-led-from-web", 
             "text": "", 
             "title": "Control LED from WEB"
         }, 
         {
-            "location": "/howto/#raspberry-pi-and-chip", 
-            "text": "", 
-            "title": "Raspberry Pi and C.H.I.P."
-        }, 
-        {
-            "location": "/howto/#prerequisites", 
+            "location": "/howto/rpi/#prerequisites", 
             "text": "Configured and  connected  device.  Breadboard, connecting wires, 330\u03a9..1k\u03a9 resistor.", 
             "title": "Prerequisites"
         }, 
         {
-            "location": "/howto/#code", 
-            "text": "Open the  control.py  sample file ( Raspberry Pi ,  C.H.I.P. ).  Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.  Connect an LED to a GPIO pin and set the correct value to the  LED_PIN  variable. The default pin is  GPIO18  (Pin 12) on Raspberry Pi and  XIO-P0  on C.H.I.P.  Run  sudo python control.py . A new variable named  LED On  should appear on the  Device  page.  Open the  Control Panels  page and add a new control panel.  Add a new  Switch  widget and choose the newly added  LED On  variable.   You can now switch the LED state using this widget.", 
+            "location": "/howto/rpi/#code", 
+            "text": "Open the  control.py  sample file.  Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.  Connect an LED to a GPIO pin and set the correct value to the  LED_PIN  variable. The default pin is  GPIO18  (Pin 12).  Run  sudo python control.py . A new variable named  LED On  should appear on the  Device  page.  Open the  Control Panels  page and add a new control panel.  Add a new  Switch  widget and choose the newly added  LED On  variable.   You can now switch the LED state using this widget.", 
             "title": "Code"
         }, 
         {
-            "location": "/howto/#omega2", 
-            "text": "", 
-            "title": "Omega2"
-        }, 
-        {
-            "location": "/howto/#prerequisites_1", 
-            "text": "Configured and  connected  Omega2 board.", 
-            "title": "Prerequisites"
-        }, 
-        {
-            "location": "/howto/#code_1", 
-            "text": "Open the  led.py  sample file.  Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.  Run  python led.py . A new variable named  Omega LED  should appear on the  Device  page.  Open the  Control Panels  page and add a new control panel.  Add a new  Switch  widget and choose the newly added  Omega LED  variable.   You can now switch the onboard LED state using this widget.", 
-            "title": "Code"
-        }, 
-        {
-            "location": "/howto/#monitor-device-events-using-colored-status", 
+            "location": "/howto/rpi/#monitor-device-events-using-colored-status", 
             "text": "", 
             "title": "Monitor Device Events using Colored Status"
         }, 
         {
-            "location": "/howto/#prerequisites_2", 
+            "location": "/howto/rpi/#prerequisites_1", 
             "text": "Configured and  connected  device.", 
             "title": "Prerequisites"
         }, 
         {
-            "location": "/howto/#code_2", 
-            "text": "Open the  control.py  sample file ( Raspberry Pi ,  C.H.I.P. ).  Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.  Run  sudo python control.py . A new variable named  STATUS  should appear on the  Device  page.  Open the  Control Panels  page and add a new control panel or open an existing one.  Add a new  Text  widget and choose the newly added  STATUS  variable.  Change the pre-defined status color items according to the event names from the code above.  As a result, you should have three items like the following: { IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}   Now this widget displays incoming status with color.", 
+            "location": "/howto/rpi/#code_1", 
+            "text": "Open the  control.py  sample file.  Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.  Run  sudo python control.py . A new variable named  STATUS  should appear on the  Device  page.  Open the  Control Panels  page and add a new control panel or open an existing one.  Add a new  Text  widget and choose the newly added  STATUS  variable.  Change the pre-defined status color items according to the event names from the code above.  As a result, you should have three items like the following: { IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}   Now this widget displays incoming status with color.", 
             "title": "Code"
         }, 
         {
-            "location": "/howto/#connect-ds18b20-temperature-sensor", 
+            "location": "/howto/rpi/#connect-ds18b20-temperature-sensor", 
             "text": "This example shows how to use the  DS18B20  temperature sensor with the Cloud4RPi service.", 
             "title": "Connect DS18B20 Temperature Sensor"
         }, 
         {
-            "location": "/howto/#prerequisites_3", 
-            "text": "Configured and  connected  device with 1-Wire support.  Enabled  1-Wire interface (in case of Raspberry Pi or similar platforms).  Breadboard, connecting wires, pull-up resistor (4.7k\u03a9).", 
+            "location": "/howto/rpi/#prerequisites_2", 
+            "text": "Configured and  connected  device with 1-Wire support.  Enabled  1-Wire interface.  Breadboard, connecting wires, pull-up resistor (4.7k\u03a9).", 
             "title": "Prerequisites"
         }, 
         {
-            "location": "/howto/#schematics", 
-            "text": "Connect the  GND  pin to any GND output of your board.  Connect the  Vdd  pin to 5V or 3.3V output of your board.  Connect the  DQ  pin to the pull-up resistor and the resistor to  Vdd .  Connect the  DQ  pin to the 1-Wire pin of your board:  Raspberry Pi: The default pin is  GPIO4  (Pin 7)  C.H.I.P.:  LCD-D2  Omega2:  GPIO 19     If you need to connect several 1-Wire devices, connect them to the bus without additional resistors.", 
+            "location": "/howto/rpi/#schematics", 
+            "text": "Connect the  GND  pin to any GND output of your board.  Connect the  Vdd  pin to 5V or 3.3V output of your board.  Connect the  DQ  pin to the pull-up resistor and the resistor to  Vdd .  Connect the  DQ  pin to the 1-Wire pin. The default pin is  GPIO4  (Pin 7).   If you need to connect several 1-Wire devices, connect them to the bus without additional resistors.", 
             "title": "Schematics"
         }, 
         {
-            "location": "/howto/#code_3", 
-            "text": "Open the  control.py  sample file ( Raspberry Pi ,  C.H.I.P. ).   Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.    Run  sudo python control.py . New variables named  Room Temp  and  CPU Temp  should appear on the  Device  page.   Open the  Control Panels  page and add a new control panel.  Add a new  Chart  widget and choose the newly added  Room Temp  variable.  Add a new  Gauge  widget and choose the newly added  CPU Temp  variable.   You can now monitor CPU and room temperature using these widgets.   Note  If you need to start your script automatically on system load, install the  control.py  script as a service using our  service_install.sh  script. For details, refer to the  Installing as a Service  section.", 
+            "location": "/howto/rpi/#code_2", 
+            "text": "Open the  control.py  sample file.   Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.    Run  sudo python control.py . New variables named  Room Temp  and  CPU Temp  should appear on the  Device  page.   Open the  Control Panels  page and add a new control panel.  Add a new  Chart  widget and choose the newly added  Room Temp  variable.  Add a new  Gauge  widget and choose the newly added  CPU Temp  variable.   You can now monitor CPU and room temperature using these widgets.   Note  If you need to start your script automatically on system load, install the  control.py  script as a service using our  service_install.sh  script. For details, refer to the  Installing as a Service  section.", 
             "title": "Code"
+        }, 
+        {
+            "location": "/howto/chip/", 
+            "text": "Control LED from WEB\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n device.\n\n\nBreadboard, connecting wires, 330\u03a9..1k\u03a9 resistor.\n\n\n\n\nCode\n\n\n\n\nOpen the \ncontrol.py\n sample file.\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\nConnect an LED to a GPIO pin and set the correct value to the \nLED_PIN\n variable. The default pin is \nXIO-P0\n.\n\n\nRun \nsudo python control.py\n. A new variable named \nLED On\n should appear on the \nDevice\n page.\n\n\nOpen the \nControl Panels\n page and add a new control panel.\n\n\nAdd a new \nSwitch\n widget and choose the newly added \nLED On\n variable.\n\n\n\n\nYou can now switch the LED state using this widget.\n\n\nMonitor Device Events using Colored Status\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n device.\n\n\n\n\nCode\n\n\n\n\nOpen the \ncontrol.py\n sample file.\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\nRun \nsudo python control.py\n. A new variable named \nSTATUS\n should appear on the \nDevice\n page.\n\n\nOpen the \nControl Panels\n page and add a new control panel or open an existing one.\n\n\nAdd a new \nText\n widget and choose the newly added \nSTATUS\n variable.\n\n\nChange the pre-defined status color items according to the event names from the code above.\n\n\nAs a result, you should have three items like the following:\n\n{ IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}\n\n\n\n\nNow this widget displays incoming status with color.\n\n\nConnect DS18B20 Temperature Sensor\n\n\nThis example shows how to use the \nDS18B20\n temperature sensor with the Cloud4RPi service.\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n device.\n\n\nBreadboard, connecting wires, pull-up resistor (4.7k\u03a9).\n\n\n\n\nSchematics\n\n\n\n\n\n\nConnect the \nGND\n pin to any GND output of your board.\n\n\nConnect the \nVdd\n pin to 5V or 3.3V output of your board.\n\n\nConnect the \nDQ\n pin to the pull-up resistor and the resistor to \nVdd\n.\n\n\nConnect the \nDQ\n pin to the \nLCD-D2\n pin:\n\n\n\n\nIf you need to connect several 1-Wire devices, connect them to the bus without additional resistors.\n\n\nCode\n\n\n\n\nOpen the \ncontrol.py\n.\n\n\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\n\n\n\n\nRun \nsudo python control.py\n. New variables named \nRoom Temp\n and \nCPU Temp\n should appear on the \nDevice\n page.\n\n\n\n\nOpen the \nControl Panels\n page and add a new control panel.\n\n\nAdd a new \nChart\n widget and choose the newly added \nRoom Temp\n variable.\n\n\nAdd a new \nGauge\n widget and choose the newly added \nCPU Temp\n variable.\n\n\n\n\nYou can now monitor CPU and room temperature using these widgets.\n\n\n\n\nNote\n\n\nIf you need to start your script automatically on system load, install the \ncontrol.py\n script as a service using our \nservice_install.sh\n script. For details, refer to the \nInstalling as a Service\n section.", 
+            "title": "C.H.I.P."
+        }, 
+        {
+            "location": "/howto/chip/#control-led-from-web", 
+            "text": "", 
+            "title": "Control LED from WEB"
+        }, 
+        {
+            "location": "/howto/chip/#prerequisites", 
+            "text": "Configured and  connected  device.  Breadboard, connecting wires, 330\u03a9..1k\u03a9 resistor.", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/howto/chip/#code", 
+            "text": "Open the  control.py  sample file.  Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.  Connect an LED to a GPIO pin and set the correct value to the  LED_PIN  variable. The default pin is  XIO-P0 .  Run  sudo python control.py . A new variable named  LED On  should appear on the  Device  page.  Open the  Control Panels  page and add a new control panel.  Add a new  Switch  widget and choose the newly added  LED On  variable.   You can now switch the LED state using this widget.", 
+            "title": "Code"
+        }, 
+        {
+            "location": "/howto/chip/#monitor-device-events-using-colored-status", 
+            "text": "", 
+            "title": "Monitor Device Events using Colored Status"
+        }, 
+        {
+            "location": "/howto/chip/#prerequisites_1", 
+            "text": "Configured and  connected  device.", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/howto/chip/#code_1", 
+            "text": "Open the  control.py  sample file.  Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.  Run  sudo python control.py . A new variable named  STATUS  should appear on the  Device  page.  Open the  Control Panels  page and add a new control panel or open an existing one.  Add a new  Text  widget and choose the newly added  STATUS  variable.  Change the pre-defined status color items according to the event names from the code above.  As a result, you should have three items like the following: { IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}   Now this widget displays incoming status with color.", 
+            "title": "Code"
+        }, 
+        {
+            "location": "/howto/chip/#connect-ds18b20-temperature-sensor", 
+            "text": "This example shows how to use the  DS18B20  temperature sensor with the Cloud4RPi service.", 
+            "title": "Connect DS18B20 Temperature Sensor"
+        }, 
+        {
+            "location": "/howto/chip/#prerequisites_2", 
+            "text": "Configured and  connected  device.  Breadboard, connecting wires, pull-up resistor (4.7k\u03a9).", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/howto/chip/#schematics", 
+            "text": "Connect the  GND  pin to any GND output of your board.  Connect the  Vdd  pin to 5V or 3.3V output of your board.  Connect the  DQ  pin to the pull-up resistor and the resistor to  Vdd .  Connect the  DQ  pin to the  LCD-D2  pin:   If you need to connect several 1-Wire devices, connect them to the bus without additional resistors.", 
+            "title": "Schematics"
+        }, 
+        {
+            "location": "/howto/chip/#code_2", 
+            "text": "Open the  control.py .   Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.    Run  sudo python control.py . New variables named  Room Temp  and  CPU Temp  should appear on the  Device  page.   Open the  Control Panels  page and add a new control panel.  Add a new  Chart  widget and choose the newly added  Room Temp  variable.  Add a new  Gauge  widget and choose the newly added  CPU Temp  variable.   You can now monitor CPU and room temperature using these widgets.   Note  If you need to start your script automatically on system load, install the  control.py  script as a service using our  service_install.sh  script. For details, refer to the  Installing as a Service  section.", 
+            "title": "Code"
+        }, 
+        {
+            "location": "/howto/o2/", 
+            "text": "Control Omega LED from WEB\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n Omega2 board.\n\n\n\n\nCode\n\n\n\n\nOpen the \ncontrol.py\n sample file.\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\nRun \npython led.py\n. A new variable named \nOmega LED\n should appear on the \nDevice\n page.\n\n\nOpen the \nControl Panels\n page and add a new control panel.\n\n\nAdd a new \nSwitch\n widget and choose the newly added \nOmega LED\n variable.\n\n\n\n\nYou can now switch the onboard LED state using this widget.\n\n\nControl Expansion Board RGB LED from WEB\n\n\nPrerequisites\n\n\n\n\nConfigured and \nconnected\n Omega2 board.\n\n\nExpansion Board\n\n\n\n\nCode\n\n\n\n\n\n\n\nOpen the \ncontrol.py\n sample file.\n\n\nReplace \n__YOUR_DEVICE_TOKEN__\n with your personal device token from the \nDevice\n page.\n\n\nRun \npython control.py\n. Three new variables should appear on the \nDevice\n page: \nRGB LED - Red\n, \nRGB LED - Green\n and \nRGB LED - Blue\n.\n\n\nOpen the \nControl Panels\n page and add a new control panel.\n\n\nAdd a \nSwitch\n widget for each variable.\n\n\n\n\nYou can now change the RGB LED color using these widgets.", 
+            "title": "Omega2"
+        }, 
+        {
+            "location": "/howto/o2/#control-omega-led-from-web", 
+            "text": "", 
+            "title": "Control Omega LED from WEB"
+        }, 
+        {
+            "location": "/howto/o2/#prerequisites", 
+            "text": "Configured and  connected  Omega2 board.", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/howto/o2/#code", 
+            "text": "Open the  control.py  sample file.  Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.  Run  python led.py . A new variable named  Omega LED  should appear on the  Device  page.  Open the  Control Panels  page and add a new control panel.  Add a new  Switch  widget and choose the newly added  Omega LED  variable.   You can now switch the onboard LED state using this widget.", 
+            "title": "Code"
+        }, 
+        {
+            "location": "/howto/o2/#control-expansion-board-rgb-led-from-web", 
+            "text": "", 
+            "title": "Control Expansion Board RGB LED from WEB"
+        }, 
+        {
+            "location": "/howto/o2/#prerequisites_1", 
+            "text": "Configured and  connected  Omega2 board.  Expansion Board", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/howto/o2/#code_1", 
+            "text": "Open the  control.py  sample file.  Replace  __YOUR_DEVICE_TOKEN__  with your personal device token from the  Device  page.  Run  python control.py . Three new variables should appear on the  Device  page:  RGB LED - Red ,  RGB LED - Green  and  RGB LED - Blue .  Open the  Control Panels  page and add a new control panel.  Add a  Switch  widget for each variable.   You can now change the RGB LED color using these widgets.", 
+            "title": "Code"
+        }, 
+        {
+            "location": "/api/http/", 
+            "text": "Variables Configuration\n\n\nUpdates the device's configuration.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/config\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        [\n            {\nname\n: name, \ntype\n: type},\n            {\nname\n: name, \ntype\n: type},\n            // ...\n            {\nname\n: name, \ntype\n: type}\n        ]\n    }\n}\n\n\n\n\nor\n\n\n[\n    {\nname\n: name, \ntype\n: type},\n    {\nname\n: name, \ntype\n: type},\n    // ...\n    {\nname\n: name, \ntype\n: type}\n]\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly.\n\n\n\n\n\n\nname\n\n\nVariable name\n\n\nstring\n\n\nAny string\n\n\n\n\n\n\ntype\n\n\nVariable type\n\n\nstring\n\n\n\"bool\", \"numeric\" or \"string\"\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example creates two variables on the device:\n\n\n\n\nTemperature\n (numeric)\n\n\nLEDOn\n (boolean)\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '[{\nname\n:\nTemperature\n,\ntype\n:\nnumeric\n},{\nname\n:\nLEDOn\n,\ntype\n:\nbool\n}]' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\nVariable Values\n\n\nSends variable values.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/data\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nOne of the variables\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\ncorresponding\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the values of two variables:\n\n\n\n\nTemperature\n: \n24\n.\n\n\nLEDOn\n: \ntrue\n.\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n$(date -Is)\n,\npayload\n:{\nTemperature\n:24,\nLEDOn\n:true}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\nDiagnostic Data\n\n\nSends device's diagnostic data.\n\n\nRequest Destination\n\n\n\n\nMethod\n: POST\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/diagnostics\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nHeaders\n\n\nContent-Type: application/json\n\n\n\n\nRequest Body\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\nany\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the following diagnostic values to Cloud4RPi:\n\n\n\n\nCPU Temperature\n: \n41\n\n\nIP Address\n: \n192.168.1.50\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H \nContent-Type: application/json\n \\\n     -d '{\nts\n:\n$(date -Is)\n,\npayload\n:{\nCPU Temperature\n:41,\nIP Address\n:\n192.168.1.50\n}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nResponse Body\n\n\n{ \nmessage\n: \nOK\n }\n\n\n\n\nor\n\n\n{ \nerror\n: error_text }\n\n\n\n\nCommands Queue\n\n\nAcquires the recent commands sent from the Control Panel.\n\n\nRequest Destination\n\n\n\n\nMethod\n: GET\n\n\nURL\n: \nhttps://cloud4rpi.io/api/devices/{token}/commands/latest\n\n\n\n\nURL Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nExample\n\n\nexport DEVICE_TOKEN=your_device_token\n\ncurl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest\n\n\n\n\nResponse Body\n\n\n[\n    {var_name: var_new_value},\n    {var_name: var_new_value},\n    // ...\n    {var_name: var_new_value}\n]\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_new_value\n\n\nNew variable value\n\n\ncorresponding\n\n\nAny\n\n\n\n\n\n\n\n\nThe commands are in chronological order.", 
+            "title": "HTTP Protocol"
+        }, 
+        {
+            "location": "/api/http/#variables-configuration", 
+            "text": "Updates the device's configuration.", 
+            "title": "Variables Configuration"
+        }, 
+        {
+            "location": "/api/http/#request-destination", 
+            "text": "Method : POST  URL :  https://cloud4rpi.io/api/devices/{token}/config", 
+            "title": "Request Destination"
+        }, 
+        {
+            "location": "/api/http/#url-parameters", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "URL Parameters"
+        }, 
+        {
+            "location": "/api/http/#headers", 
+            "text": "Content-Type: application/json", 
+            "title": "Headers"
+        }, 
+        {
+            "location": "/api/http/#request-body", 
+            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        [\n            { name : name,  type : type},\n            { name : name,  type : type},\n            // ...\n            { name : name,  type : type}\n        ]\n    }\n}  or  [\n    { name : name,  type : type},\n    { name : name,  type : type},\n    // ...\n    { name : name,  type : type}\n]", 
+            "title": "Request Body"
+        }, 
+        {
+            "location": "/api/http/#parameters", 
+            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly.    name  Variable name  string  Any string    type  Variable type  string  \"bool\", \"numeric\" or \"string\"", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/http/#example", 
+            "text": "The following example creates two variables on the device:   Temperature  (numeric)  LEDOn  (boolean)   export DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '[{ name : Temperature , type : numeric },{ name : LEDOn , type : bool }]' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/api/http/#response-body", 
+            "text": "{  message :  OK  }  or  {  error : error_text }", 
+            "title": "Response Body"
+        }, 
+        {
+            "location": "/api/http/#variable-values", 
+            "text": "Sends variable values.", 
+            "title": "Variable Values"
+        }, 
+        {
+            "location": "/api/http/#request-destination_1", 
+            "text": "Method : POST  URL :  https://cloud4rpi.io/api/devices/{token}/data", 
+            "title": "Request Destination"
+        }, 
+        {
+            "location": "/api/http/#url-parameters_1", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "URL Parameters"
+        }, 
+        {
+            "location": "/api/http/#headers_1", 
+            "text": "Content-Type: application/json", 
+            "title": "Headers"
+        }, 
+        {
+            "location": "/api/http/#request-body_1", 
+            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}", 
+            "title": "Request Body"
+        }, 
+        {
+            "location": "/api/http/#parameters_1", 
+            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly    var_name  Variable name  string  One of the variables    var_value  Variable value  corresponding  Any", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/http/#example_1", 
+            "text": "The following example sends the values of two variables:   Temperature :  24 .  LEDOn :  true .   export DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '{ ts : $(date -Is) , payload :{ Temperature :24, LEDOn :true}}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/api/http/#response-body_1", 
+            "text": "{  message :  OK  }  or  {  error : error_text }", 
+            "title": "Response Body"
+        }, 
+        {
+            "location": "/api/http/#diagnostic-data", 
+            "text": "Sends device's diagnostic data.", 
+            "title": "Diagnostic Data"
+        }, 
+        {
+            "location": "/api/http/#request-destination_2", 
+            "text": "Method : POST  URL :  https://cloud4rpi.io/api/devices/{token}/diagnostics", 
+            "title": "Request Destination"
+        }, 
+        {
+            "location": "/api/http/#url-parameters_2", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "URL Parameters"
+        }, 
+        {
+            "location": "/api/http/#headers_2", 
+            "text": "Content-Type: application/json", 
+            "title": "Headers"
+        }, 
+        {
+            "location": "/api/http/#request-body_2", 
+            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}", 
+            "title": "Request Body"
+        }, 
+        {
+            "location": "/api/http/#parameters_2", 
+            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly    var_name  Variable name  string  Any    var_value  Variable value  any  Any", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/http/#example_2", 
+            "text": "The following example sends the following diagnostic values to Cloud4RPi:   CPU Temperature :  41  IP Address :  192.168.1.50   export DEVICE_TOKEN=your_device_token\n\ncurl -X POST \\\n     -H  Content-Type: application/json  \\\n     -d '{ ts : $(date -Is) , payload :{ CPU Temperature :41, IP Address : 192.168.1.50 }}' \\\n     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/api/http/#response-body_2", 
+            "text": "{  message :  OK  }  or  {  error : error_text }", 
+            "title": "Response Body"
+        }, 
+        {
+            "location": "/api/http/#commands-queue", 
+            "text": "Acquires the recent commands sent from the Control Panel.", 
+            "title": "Commands Queue"
+        }, 
+        {
+            "location": "/api/http/#request-destination_3", 
+            "text": "Method : GET  URL :  https://cloud4rpi.io/api/devices/{token}/commands/latest", 
+            "title": "Request Destination"
+        }, 
+        {
+            "location": "/api/http/#url-parameters_3", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "URL Parameters"
+        }, 
+        {
+            "location": "/api/http/#example_3", 
+            "text": "export DEVICE_TOKEN=your_device_token\n\ncurl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/api/http/#response-body_3", 
+            "text": "[\n    {var_name: var_new_value},\n    {var_name: var_new_value},\n    // ...\n    {var_name: var_new_value}\n]", 
+            "title": "Response Body"
+        }, 
+        {
+            "location": "/api/http/#parameters_3", 
+            "text": "Name  Description  Type  Possible Values      var_name  Variable name  string  Any    var_new_value  New variable value  corresponding  Any     The commands are in chronological order.", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/mqtt/", 
+            "text": "Prerequisites\n\n\nThe examples in this section are presented for the \nEclipse Mosquitto\u2122\n MQTT client. Install the client if you are going to run the examples:\n\n\nsudo apt-get install mosquitto-clients\n\n\n\n\nCloud4RPi MQTT Broker\n\n\nUse the following data to connect to the MQTT broker:\n\n\n\n\nHost:\n \n\n\nWith SSL encryption: \nmqtts://mq.cloud4rpi.io\n\n\nWithout SSL encryption: \nmqtt://mq.cloud4rpi.io\n\n\n\n\n\n\nPort:\n \n\n\nWith SSL encryption: \n8883\n\n\nWithout SSL encryption: \n1883\n\n\n\n\n\n\nClient ID\n: Your \nDevice\n Token\n\n\n\n\n\n\nWarning\n\n\nSince the \nClient ID\n is used for authentication, you should not open more than one connection to the MQTT broker at the same time.\n\n\n\n\n\n\nNote\n\n\nLogin\n and \nPassword\n are not used, you can leave them empty.\n\n\n\n\nVariables Configuration\n\n\nUpdate the device's configuration by sending messages to the following topic:\n\n\ndevices/{token}/config\n\n\n\n\nTopic Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nMessage Structure\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        [\n            {\nname\n: name, \ntype\n: type},\n            {\nname\n: name, \ntype\n: type},\n            // ...\n            {\nname\n: name, \ntype\n: type}\n        ]\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly.\n\n\n\n\n\n\nname\n\n\nVariable name\n\n\nstring\n\n\nAny string\n\n\n\n\n\n\ntype\n\n\nVariable type\n\n\nstring\n\n\n\"bool\", \"numeric\" or \"string\"\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example creates two variables on the device:\n\n\n\n\nTemperature\n (numeric)\n\n\nLEDOn\n (boolean)\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t \ndevices/$DEVICE_TOKEN/config\n -h mq.cloud4rpi.io -i \n$DEVICE_TOKEN\n \\\n              -m '{\nts\n:\n$(date -Is)\n,\npayload\n:[{\nname\n:\nTemperature\n,\ntype\n:\nnumeric\n},{\nname\n:\nLEDOn\n,\ntype\n:\nbool\n}]}'\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nVariable Values\n\n\nSend messages with your variable values to the following topic:\n\n\ndevices/{token}/data\n\n\n\n\nTopic Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nMessage Structure\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nOne of the variables\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\ncorresponding\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the values of two variables:\n\n\n\n\nTemperature\n: \n24\n\n\nLEDOn\n: \ntrue\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t \ndevices/$DEVICE_TOKEN/data\n -h mq.cloud4rpi.io -i \n$DEVICE_TOKEN\n \\\n              -m '{\nts\n:\n$(date -Is)\n,\npayload\n:{\nTemperature\n:24,\nLEDOn\n:true}}'\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nDiagnostic Data\n\n\nSend messages with your device's diagnostic data to the following topic:\n\n\ndevices/{token}/diagnostics\n\n\n\n\nTopic Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nMessage Structure\n\n\n{\n    \nts\n: datetime_isoformat,\n    \npayload\n: {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\ndatetime_isoformat\n\n\nTimestamp\n\n\nstring\n\n\nTime in the \nISO 8601\n format with the \ntime zone designator\n specified explicitly\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_value\n\n\nVariable value\n\n\nany\n\n\nAny\n\n\n\n\n\n\n\n\nExample\n\n\nThe following example sends the following diagnostic values to Cloud4RPI:\n\n\n\n\nCPU Temperature\n: \n41\n\n\nIP Address\n: \n192.168.1.50\n\n\n\n\nexport DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t \ndevices/$DEVICE_TOKEN/diagnostics\n -h mq.cloud4rpi.io -i \n$DEVICE_TOKEN\n \\\n              -m '{\nts\n:\n$(date -Is)\n,\npayload\n:{\nCPU Temperature\n:41,\nIP Address\n:\n192.168.1.50\n}}'\n\n\n\n\n\n\nNote\n\n\nYou need to replace \nyour_device_token\n with your device token displayed on the \ndevice page\n.\n\n\n\n\nCommands Stream\n\n\nReceive commands sent from the \nControl Panels\n in real time by subscribing to the following topic:\n\n\ndevices/{token}/commands\n\n\n\n\nTopic Parameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\ntoken\n\n\nThe \ndevice\n token\n\n\n\n\n\n\n\n\nExample\n\n\nExecute the following command to subscribe:\n\n\nexport DEVICE_TOKEN=your_device_token\nmosquitto_sub -d -t \ndevices/$DEVICE_TOKEN/commands\n -h mq.cloud4rpi.io -i \n$DEVICE_TOKEN\n\n\n\n\n\nThis program works in the foreground and blocks the input while the connection to the broker persists. So, you instantly get commands sent from the UI in the following format:\n\n\nMessage Structure\n\n\n{var_name:var_new_value}\n\n\n\n\nParameters\n\n\n\n\n\n\n\n\nName\n\n\nDescription\n\n\nType\n\n\nPossible Values\n\n\n\n\n\n\n\n\n\n\nvar_name\n\n\nVariable name\n\n\nstring\n\n\nAny\n\n\n\n\n\n\nvar_new_value\n\n\nNew variable value\n\n\ncorresponding\n\n\nAny", 
+            "title": "MQTT Protocol"
+        }, 
+        {
+            "location": "/api/mqtt/#prerequisites", 
+            "text": "The examples in this section are presented for the  Eclipse Mosquitto\u2122  MQTT client. Install the client if you are going to run the examples:  sudo apt-get install mosquitto-clients", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/api/mqtt/#cloud4rpi-mqtt-broker", 
+            "text": "Use the following data to connect to the MQTT broker:   Host:    With SSL encryption:  mqtts://mq.cloud4rpi.io  Without SSL encryption:  mqtt://mq.cloud4rpi.io    Port:    With SSL encryption:  8883  Without SSL encryption:  1883    Client ID : Your  Device  Token    Warning  Since the  Client ID  is used for authentication, you should not open more than one connection to the MQTT broker at the same time.    Note  Login  and  Password  are not used, you can leave them empty.", 
+            "title": "Cloud4RPi MQTT Broker"
+        }, 
+        {
+            "location": "/api/mqtt/#variables-configuration", 
+            "text": "Update the device's configuration by sending messages to the following topic:  devices/{token}/config", 
+            "title": "Variables Configuration"
+        }, 
+        {
+            "location": "/api/mqtt/#topic-parameters", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "Topic Parameters"
+        }, 
+        {
+            "location": "/api/mqtt/#message-structure", 
+            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        [\n            { name : name,  type : type},\n            { name : name,  type : type},\n            // ...\n            { name : name,  type : type}\n        ]\n    }\n}", 
+            "title": "Message Structure"
+        }, 
+        {
+            "location": "/api/mqtt/#parameters", 
+            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly.    name  Variable name  string  Any string    type  Variable type  string  \"bool\", \"numeric\" or \"string\"", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/mqtt/#example", 
+            "text": "The following example creates two variables on the device:   Temperature  (numeric)  LEDOn  (boolean)   export DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t  devices/$DEVICE_TOKEN/config  -h mq.cloud4rpi.io -i  $DEVICE_TOKEN  \\\n              -m '{ ts : $(date -Is) , payload :[{ name : Temperature , type : numeric },{ name : LEDOn , type : bool }]}'   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/api/mqtt/#variable-values", 
+            "text": "Send messages with your variable values to the following topic:  devices/{token}/data", 
+            "title": "Variable Values"
+        }, 
+        {
+            "location": "/api/mqtt/#topic-parameters_1", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "Topic Parameters"
+        }, 
+        {
+            "location": "/api/mqtt/#message-structure_1", 
+            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}", 
+            "title": "Message Structure"
+        }, 
+        {
+            "location": "/api/mqtt/#parameters_1", 
+            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly    var_name  Variable name  string  One of the variables    var_value  Variable value  corresponding  Any", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/mqtt/#example_1", 
+            "text": "The following example sends the values of two variables:   Temperature :  24  LEDOn :  true   export DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t  devices/$DEVICE_TOKEN/data  -h mq.cloud4rpi.io -i  $DEVICE_TOKEN  \\\n              -m '{ ts : $(date -Is) , payload :{ Temperature :24, LEDOn :true}}'   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/api/mqtt/#diagnostic-data", 
+            "text": "Send messages with your device's diagnostic data to the following topic:  devices/{token}/diagnostics", 
+            "title": "Diagnostic Data"
+        }, 
+        {
+            "location": "/api/mqtt/#topic-parameters_2", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "Topic Parameters"
+        }, 
+        {
+            "location": "/api/mqtt/#message-structure_2", 
+            "text": "{\n     ts : datetime_isoformat,\n     payload : {\n        var_name: var_value,\n        var_name: var_value,\n        // ...\n        var_name: var_value\n    }\n}", 
+            "title": "Message Structure"
+        }, 
+        {
+            "location": "/api/mqtt/#parameters_2", 
+            "text": "Name  Description  Type  Possible Values      datetime_isoformat  Timestamp  string  Time in the  ISO 8601  format with the  time zone designator  specified explicitly    var_name  Variable name  string  Any    var_value  Variable value  any  Any", 
+            "title": "Parameters"
+        }, 
+        {
+            "location": "/api/mqtt/#example_2", 
+            "text": "The following example sends the following diagnostic values to Cloud4RPI:   CPU Temperature :  41  IP Address :  192.168.1.50   export DEVICE_TOKEN=your_device_token\nmosquitto_pub -d -t  devices/$DEVICE_TOKEN/diagnostics  -h mq.cloud4rpi.io -i  $DEVICE_TOKEN  \\\n              -m '{ ts : $(date -Is) , payload :{ CPU Temperature :41, IP Address : 192.168.1.50 }}'   Note  You need to replace  your_device_token  with your device token displayed on the  device page .", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/api/mqtt/#commands-stream", 
+            "text": "Receive commands sent from the  Control Panels  in real time by subscribing to the following topic:  devices/{token}/commands", 
+            "title": "Commands Stream"
+        }, 
+        {
+            "location": "/api/mqtt/#topic-parameters_3", 
+            "text": "Name  Description      token  The  device  token", 
+            "title": "Topic Parameters"
+        }, 
+        {
+            "location": "/api/mqtt/#example_3", 
+            "text": "Execute the following command to subscribe:  export DEVICE_TOKEN=your_device_token\nmosquitto_sub -d -t  devices/$DEVICE_TOKEN/commands  -h mq.cloud4rpi.io -i  $DEVICE_TOKEN   This program works in the foreground and blocks the input while the connection to the broker persists. So, you instantly get commands sent from the UI in the following format:", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/api/mqtt/#message-structure_3", 
+            "text": "{var_name:var_new_value}", 
+            "title": "Message Structure"
+        }, 
+        {
+            "location": "/api/mqtt/#parameters_3", 
+            "text": "Name  Description  Type  Possible Values      var_name  Variable name  string  Any    var_new_value  New variable value  corresponding  Any", 
+            "title": "Parameters"
         }, 
         {
             "location": "/faq/", 

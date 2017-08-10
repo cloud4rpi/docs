@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        
+        <meta name="author" content="Cloud4RPi Team">
         
         <link rel="shortcut icon" href="/img/favicon.ico">
         <title>Cloud4RPi Documentation</title>
@@ -13,7 +13,7 @@
         <link href="/css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="/css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/highlight.css">
-        <link href="/extra.css" rel="stylesheet">
+        <link href="/res/extra.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -49,14 +49,52 @@
                     <li >
                         <a href="/">Home</a>
                     </li>
-                    <li >
-                        <a href="/http_api/">HTTP API</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/start/rpi/">Raspberry Pi</a>
+</li>
+                            
+<li >
+    <a href="/start/chip/">C.H.I.P.</a>
+</li>
+                            
+<li >
+    <a href="/start/o2/">Omega2</a>
+</li>
+                        </ul>
                     </li>
-                    <li >
-                        <a href="/mqtt_api/">MQTT API</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">How To <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/howto/rpi/">Raspberry Pi</a>
+</li>
+                            
+<li >
+    <a href="/howto/chip/">C.H.I.P.</a>
+</li>
+                            
+<li >
+    <a href="/howto/o2/">Omega2</a>
+</li>
+                        </ul>
                     </li>
-                    <li >
-                        <a href="/howto/">How To</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="/api/http/">HTTP Protocol</a>
+</li>
+                            
+<li >
+    <a href="/api/mqtt/">MQTT Protocol</a>
+</li>
+                        </ul>
                     </li>
                     <li >
                         <a href="/faq/">FAQ</a>
@@ -69,6 +107,11 @@
                         <i class="fa fa-search"></i> Search
                     </a>
                 </li>
+                    <li>
+                        <a href="https://github.com/cloud4rpi/docs">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
             </ul>
         </div>
     </div>
@@ -88,6 +131,7 @@
 
         <footer class="col-md-12">
             <hr>
+                <p>© 2016-2017 Devsoft Baltic OÜ. All rights reserved.</p>
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>var base_url = '';</script>

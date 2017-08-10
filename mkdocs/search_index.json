@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Cloud4RPi Documentation\n\n\nThis website provides documentation for the \nCloud4RPi\n service \n cloud control panel for your IoT projects.\n\n\n\n\nSupported Platforms\n\n\nCloud4RPi \u0441ommunicates practically with any device via the \nMQTT\n or HTTP protocol. Currently we provide detailed instructions and examples for the following platforms:\n\n\n\n\nRaspberry Pi\n\n\nNext Thing Co. C.H.I.P.\n\n\nOnion Omega2\n\n\n\n\nIf your platform is not listed here, try to follow the instruction for a similar platform. For example, if you have a Debian-based operating system, the \nRaspberry Pi instructions\n will probably work with minimal changes. The operating system of \nOmega2\n is based on \nOpenWRT\n, so you should be able to use \nOmega2 instructions\n to connect Cloud4RPi to an \nOpenWRT\n-enabled router.\n\n\nDocumentation Structure\n\n\nThe \nGetting Started\n and \nHow To\n sections are different for each platform, use the drop-down menu on these sections to select your platform:\n\n\n\n\nWhere to Begin?\n\n\nIf you are new to Cloud4RPi, start with the \nGetting Started\n topic for your platform:\n\n\n\n\nConnecting a New Raspberry Pi Board\n\n\nConnecting a New C.H.I.P. Board\n\n\nConnecting a New Omega2 Board", 
+            "text": "Cloud4RPi Documentation\n\n\nThis website provides documentation for the \nCloud4RPi\n service \n cloud control panel for your IoT projects.\n\n\n\n\nSupported Platforms\n\n\nCloud4RPi \u0441ommunicates practically with any device via the \nMQTT\n or HTTP protocol. Currently we provide detailed instructions and examples for the following platforms:\n\n\n\n\nRaspberry Pi\n\n\nNext Thing Co. C.H.I.P.\n\n\nOnion Omega2\n\n\n\n\nIn case your device is not listed, please \ncontact us\n and we will help you connect it.\n\n\nDocumentation Structure\n\n\nThe \nGetting Started\n and \nHow To\n sections are different for each platform, use the drop-down menu on these sections to select your platform:\n\n\n\n\nWhere to Begin?\n\n\nIf you are new to Cloud4RPi, start with the \nGetting Started\n topic for your platform:\n\n\n\n\nConnecting a New Raspberry Pi Board\n\n\nConnecting a New C.H.I.P. Board\n\n\nConnecting a New Omega2 Board", 
             "title": "Home"
         }, 
         {
@@ -12,7 +12,7 @@
         }, 
         {
             "location": "/#supported-platforms", 
-            "text": "Cloud4RPi \u0441ommunicates practically with any device via the  MQTT  or HTTP protocol. Currently we provide detailed instructions and examples for the following platforms:   Raspberry Pi  Next Thing Co. C.H.I.P.  Onion Omega2   If your platform is not listed here, try to follow the instruction for a similar platform. For example, if you have a Debian-based operating system, the  Raspberry Pi instructions  will probably work with minimal changes. The operating system of  Omega2  is based on  OpenWRT , so you should be able to use  Omega2 instructions  to connect Cloud4RPi to an  OpenWRT -enabled router.", 
+            "text": "Cloud4RPi \u0441ommunicates practically with any device via the  MQTT  or HTTP protocol. Currently we provide detailed instructions and examples for the following platforms:   Raspberry Pi  Next Thing Co. C.H.I.P.  Onion Omega2   In case your device is not listed, please  contact us  and we will help you connect it.", 
             "title": "Supported Platforms"
         }, 
         {

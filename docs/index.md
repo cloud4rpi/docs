@@ -12,7 +12,7 @@ Cloud4RPi сommunicates practically with any device via the [MQTT](https://en.wi
 - [Next Thing Co. C.H.I.P.](https://getchip.com/pages/chip)
 - [Onion Omega2](https://onion.io/omega2/)
 
-If your platform is not listed here, follow the instruction for a similar platform. For example, if you have a Debian-based operating system, the [Raspberry Pi instructions](/start/rpi/) will probably work with minimal changes. The operating system of **Omega2** is based on **OpenWRT**, so you should be able to use [Omega2 instructions](/start/o2/) to connect Cloud4RPi to an **OpenWRT**-enabled router.
+If your platform is not listed here, try to follow the instruction for a similar platform. For example, if you have a Debian-based operating system, the [Raspberry Pi instructions](/start/rpi/) will probably work with minimal changes. The operating system of **Omega2** is based on **OpenWRT**, so you should be able to use [Omega2 instructions](/start/o2/) to connect Cloud4RPi to an **OpenWRT**-enabled router.
 
 ## Documentation Structure
 

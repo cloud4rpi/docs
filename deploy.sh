@@ -42,8 +42,10 @@ if [[ -z `git diff -G"^([^B]|B[^u]|Bu[^i]|Bui[^l]|Buil[^d]|Build[^ ]|Build [^D]|
     exit 0
 fi
 
-# Commit the "changes", i.e. the new version.
-# The delta will show diffs between new and old versions.
+# Configuring GitHub Pages Custom Domain
+echo "docs.cloud4rpi.io" > CNAME
+
+# Commit the the new version.
 git add -A .
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
@@ -60,7 +62,9 @@ eval `ssh-agent -s`
 ssh-add deploy_key
 
 cd $OUTPUT
+
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH
 
+# Killing ssh-agent to let the session finish
 ssh-agent -k

@@ -1,4 +1,4 @@
-# Control LED from WEB
+# Control LED from WEB using C.H.I.P.
 
 ## Prerequisites
 

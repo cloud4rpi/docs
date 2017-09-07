@@ -44,7 +44,6 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 ```javascript
 {
-    "ts": datetime_isoformat,
     "payload": {
         [
             {"name": name, "type": type},
@@ -60,7 +59,6 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 Name               | Description   | Type   | Possible Values
 ------------------ | ------------- | ------ | ----------------------------
-datetime_isoformat | Timestamp     | string | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly.
 name               | Variable name | string | Any string
 type               | Variable type | string | "bool", "numeric" or "string"
 
@@ -76,7 +74,7 @@ The following example creates two variables on the device:
 ```sh
 export DEVICE_TOKEN=your_device_token
 mosquitto_pub -d -t "devices/$DEVICE_TOKEN/config" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
-              -m '{"ts":"$(date -Is)","payload":[{"name":"Temperature","type":"numeric"},{"name":"LEDOn","type":"bool"}]}'
+              -m '{"payload":[{"name":"Temperature","type":"numeric"},{"name":"LEDOn","type":"bool"}]}'
 ```
 
 
@@ -117,7 +115,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 Name               | Description    | Type          | Possible Values
 ------------------ | -------------  | ------------- | ----------------------------
-datetime_isoformat | Timestamp      | string        | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
+datetime_isoformat | Timestamp      | string        | Optional. Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
 var_name           | Variable name  | string        | One of the variables
 var_value          | Variable value | corresponding | Any
 
@@ -172,7 +170,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 Name               | Description    | Type   | Possible Values
 ------------------ | -------------  | ------ | ----------------------------
-datetime_isoformat | Timestamp      | string | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
+datetime_isoformat | Timestamp      | string | Optional. Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
 var_name           | Variable name  | string | Any
 var_value          | Variable value | any    | Any
 

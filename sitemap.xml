@@ -56,13 +56,13 @@
     
         
     <url>
-     <loc>/api/http/</loc>
+     <loc>/api/mqtt/</loc>
      <lastmod>2017-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/api/mqtt/</loc>
+     <loc>/api/http/</loc>
      <lastmod>2017-09-07</lastmod>
      <changefreq>daily</changefreq>
     </url>

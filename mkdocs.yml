@@ -14,8 +14,8 @@ pages:
     - C.H.I.P.: howto/chip.md
     - Omega2: howto/o2.md
 - API:
-    - HTTP Protocol: api/http.md
     - MQTT Protocol: api/mqtt.md
+    - HTTP Protocol: api/http.md
 - FAQ: faq.md
 
 markdown_extensions:

@@ -73,7 +73,7 @@ The following example creates two variables on the device:
 
 ```sh
 export DEVICE_TOKEN=your_device_token
-mosquitto_pub -d -t "devices/$DEVICE_TOKEN/config" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
+mosquitto_pub -q 1 -d -t "devices/$DEVICE_TOKEN/config" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
               -m '{"payload":[{"name":"Temperature","type":"numeric"},{"name":"LEDOn","type":"bool"}]}'
 ```
 
@@ -113,11 +113,11 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 ### Parameters
 
-Name               | Description    | Type          | Possible Values
------------------- | -------------  | ------------- | ----------------------------
-datetime_isoformat | Timestamp      | string        | Optional. Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
-var_name           | Variable name  | string        | One of the variables
-var_value          | Variable value | corresponding | Any
+Name               | Description          | Type          | Possible Values
+------------------ | -------------------- | ------------- | ----------------------------
+datetime_isoformat | Timestamp (optional) | string        | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
+var_name           | Variable name        | string        | One of the variables
+var_value          | Variable value       | corresponding | Any
 
 
 ## Example
@@ -129,8 +129,8 @@ The following example sends the values of two variables:
 
 ```sh
 export DEVICE_TOKEN=your_device_token
-mosquitto_pub -d -t "devices/$DEVICE_TOKEN/data" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
-              -m '{"ts":"$(date -Is)","payload":{"Temperature":24,"LEDOn":true}}'
+mosquitto_pub -q 1 -d -t "devices/$DEVICE_TOKEN/data" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
+              -m '{"payload":{"Temperature":24,"LEDOn":true}}'
 ```
 
 !!! Note
@@ -168,11 +168,11 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 ### Parameters
 
-Name               | Description    | Type   | Possible Values
------------------- | -------------  | ------ | ----------------------------
-datetime_isoformat | Timestamp      | string | Optional. Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
-var_name           | Variable name  | string | Any
-var_value          | Variable value | any    | Any
+Name               | Description          | Type   | Possible Values
+------------------ | -------------------- | ------ | ----------------------------
+datetime_isoformat | Timestamp (optional) | string | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
+var_name           | Variable name        | string | Any
+var_value          | Variable value       | any    | Any
 
 
 ## Example
@@ -184,8 +184,8 @@ The following example sends the following diagnostic values to Cloud4RPI:
 
 ```sh
 export DEVICE_TOKEN=your_device_token
-mosquitto_pub -d -t "devices/$DEVICE_TOKEN/diagnostics" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
-              -m '{"ts":"$(date -Is)","payload":{"CPU Temperature":41,"IP Address":"192.168.1.50"}}'
+mosquitto_pub -q 1 -d -t "devices/$DEVICE_TOKEN/diagnostics" -h mq.cloud4rpi.io -i "$DEVICE_TOKEN" \
+              -m '{"payload":{"CPU Temperature":41,"IP Address":"192.168.1.50"}}'
 ```
 
 !!! Note

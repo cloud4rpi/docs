@@ -119,11 +119,11 @@ Content-Type: application/json
 
 ### Parameters
 
-Name               | Description    | Type          | Possible Values
------------------- | -------------  | ------------- | ----------------------------
-datetime_isoformat | Timestamp      | string        | Optional. Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
-var_name           | Variable name  | string        | One of the variables
-var_value          | Variable value | corresponding | Any
+Name               | Description          | Type          | Possible Values
+------------------ | -------------------  | ------------- | ----------------------------
+datetime_isoformat | Timestamp (optional) | string        | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
+var_name           | Variable name        | string        | One of the variables
+var_value          | Variable value       | corresponding | Any
 
 
 ## Example
@@ -194,11 +194,11 @@ Content-Type: application/json
 
 ### Parameters
 
-Name               | Description    | Type   | Possible Values
------------------- | -------------  | ------ | ----------------------------
-datetime_isoformat | Timestamp      | string | Optional. Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
-var_name           | Variable name  | string | Any
-var_value          | Variable value | any    | Any
+Name               | Description          | Type   | Possible Values
+------------------ | -------------------- | ------ | ----------------------------
+datetime_isoformat | Timestamp (optional) | string | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
+var_name           | Variable name        | string | Any
+var_value          | Variable value       | any    | Any
 
 
 ## Example

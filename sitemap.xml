@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-09-07</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,19 +13,19 @@
         
     <url>
      <loc>/start/rpi/</loc>
-     <lastmod>2017-09-07</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/start/chip/</loc>
-     <lastmod>2017-09-07</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/start/o2/</loc>
-     <lastmod>2017-09-07</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -35,19 +35,19 @@
         
     <url>
      <loc>/howto/rpi/</loc>
-     <lastmod>2017-09-07</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/howto/chip/</loc>
-     <lastmod>2017-09-07</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/howto/o2/</loc>
-     <lastmod>2017-09-07</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -57,13 +57,13 @@
         
     <url>
      <loc>/api/mqtt/</loc>
-     <lastmod>2017-09-07</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/http/</loc>
-     <lastmod>2017-09-07</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -72,7 +72,7 @@
     
     <url>
      <loc>/faq/</loc>
-     <lastmod>2017-09-07</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

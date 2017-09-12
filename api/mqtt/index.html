@@ -254,6 +254,10 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/config&quot; -h mq.cloud4rp
 <p>You need to replace <strong>your_device_token</strong> with your device token displayed on the <a href="https://cloud4rpi.io/devices">device page</a>.</p>
 </div>
 <h1 id="variable-values">Variable Values</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before sending variable values, configure variables by sending the <a href="#variables-configuration">Variables Configuration message</a>.</p>
+</div>
 <p>Send messages with your variable values to the following topic:</p>
 <pre><code class="gradle">devices/{token}/data
 </code></pre>

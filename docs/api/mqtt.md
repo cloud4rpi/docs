@@ -83,6 +83,9 @@ mosquitto_pub -q 1 -d -t "devices/$DEVICE_TOKEN/config" -h mq.cloud4rpi.io -i "$
 
 # Variable Values
 
+!!! Note
+    Before sending variable values, configure variables by sending the [Variables Configuration message](#variables-configuration).
+
 Send messages with your variable values to the following topic:
 
 ```gradle

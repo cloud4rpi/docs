@@ -86,6 +86,9 @@ or
 
 Sends variable values.
 
+!!! Note
+    Before sending variable values, configure variables by sending the [Variables Configuration message](#variables-configuration).
+
 ## Request Destination
 
 * **Method**: POST

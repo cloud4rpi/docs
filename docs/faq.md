@@ -20,6 +20,17 @@ After updating, restart the **cloud4rpi** package installation:
 sudo pip install cloud4rpi
 ```
 
+## Raspberry Pi does not recognize my 1-Wire device
+
+If you experience issues with 1-Wire interface on Raspberry Pi, follow the instructions below.
+
+1. Run `sudo raspi-config` and make sure that the 1-Wire interface is enabled (**Interfacing Options** | **1-Wire** menu).
+2. Add the `dtoverlay=w1-gpio` string to your `/boot/config.txt` file (`echo dtoverlay=w1-gpio | sudo tee -a /boot/config.txt`).
+3. Reboot (`sudo reboot` command).
+4. Double-check the wiring and your device's operational voltage. The 1-Wire **DATA** bus should be connected to **GPIO4** (Pin 7) and pulled up to **VCC**.
+
+    ![](/res/ds18b20.png)
+
 ## How to avoid "Insecure Platform" warning?
 
 The `InsecurePlatformWarning: A true SSLContext object is not available...` notification appears when you run Cloud4RPi on Python version lower than 2.7.9. Check your current Python version using the following command:

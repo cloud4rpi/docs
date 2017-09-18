@@ -5,15 +5,15 @@ repo_url: https://github.com/cloud4rpi/docs
 
 pages:
 - Home: index.md
-- Getting Started: 
+- Getting Started:
     - Raspberry Pi: start/rpi.md
     - C.H.I.P.: start/chip.md
     - Omega2: start/o2.md
-- How To: 
+- How To:
     - Raspberry Pi: howto/rpi.md
     - C.H.I.P.: howto/chip.md
     - Omega2: howto/o2.md
-- API:
+- API: 
     - MQTT Protocol: api/mqtt.md
     - HTTP Protocol: api/http.md
 - FAQ: faq.md

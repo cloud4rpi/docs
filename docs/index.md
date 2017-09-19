@@ -1,12 +1,12 @@
 # Cloud4RPi Documentation
 
-This website provides documentation for the [Cloud4RPi](https://cloud4rpi.io/) service &mdash; cloud control panel for your IoT projects.
+This website provides documentation for the [Cloud4RPi](https://cloud4rpi.io/) service&mdash;a cloud control panel for your IoT projects.
 
 ---
 
 ## Supported Platforms
 
-Cloud4RPi communicates practically with any device via the [MQTT](https://en.wikipedia.org/wiki/MQTT) or **HTTP** protocol. 
+Cloud4RPi can communicates with almost any device via the [MQTT](https://en.wikipedia.org/wiki/MQTT) or **HTTP** protocol. 
 
 Currently we provide detailed instructions and examples for the following languages and platforms:
 
@@ -17,11 +17,11 @@ Currently we provide detailed instructions and examples for the following langua
 !!! Note
     Both Python 2 and Python 3 are supported.
 
-If your device or prefered language is not listed, please [contact us](https://cloud4rpi.answerdesk.io/) and we will help you connect it.
+[Contact us](https://cloud4rpi.answerdesk.io/) if your device or preferred language is not listed, we are here to help.
 
 ## Documentation Structure
 
-The **Getting Started** and **How To** sections are different for each platform, use the drop-down menu on these sections to select your platform:
+The **Getting Started** and **How To** sections are different for each platform. Use the drop-down menu on these sections to select your platform:
 
 ![](res/platform-selector.png)
 

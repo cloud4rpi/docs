@@ -1,6 +1,6 @@
 Frequently asked questions and possible issues you may face when working with [Cloud4RPi](https://cloud4rpi.io):
 
-## How to avoid Installation Error?
+## How to avoid an Installation Error?
 
 You can get the following error while installing the Cloud4RPi client library using the `sudo pip install cloud4rpi` command:
 
@@ -20,17 +20,28 @@ After updating, restart the **cloud4rpi** package installation:
 sudo pip install cloud4rpi
 ```
 
-## How to avoid "Insecure Platform" warning?
+## Raspberry Pi does not recognize my 1-Wire device
 
-The `InsecurePlatformWarning: A true SSLContext object is not available...` notification appears when you run Cloud4RPi on Python version lower than 2.7.9. Check your current Python version using the following command:
+If you experience issues with the 1-Wire interface on Raspberry Pi, follow the instructions below.
+
+1. Run `sudo raspi-config` and make sure that the 1-Wire interface is enabled (**Interfacing Options** | **1-Wire** menu).
+2. Add the `dtoverlay=w1-gpio` string to your `/boot/config.txt` file (`echo dtoverlay=w1-gpio | sudo tee -a /boot/config.txt`).
+3. Reboot (`sudo reboot` command).
+4. Double-check the wiring and your device's operational voltage. The 1-Wire **DATA** bus should be connected to **GPIO4** (Pin 7) and pulled up to **VCC**.
+
+    ![](/res/ds18b20.png)
+
+## How to avoid the "Insecure Platform" warning?
+
+The `InsecurePlatformWarning: A true SSLContext object is not available...` notification appears when you run Cloud4RPi on a Python version lower than 2.7.9. Check your current Python version with the following command:
 
 ```sh
 python --version
 ```
 
-If the version of Python is lower than 2.7.9, install the latest version using one of the [following ways](https://docs.python.org/2/using/index.html).
+You can install the latest version using [one of the following ways](https://docs.python.org/2/using/index.html).
 
-## Where are log files?
+## Where are the log files?
 
 You can read the logs containing the service's output and errors using one of the following commands:
 
@@ -39,9 +50,9 @@ You can read the logs containing the service's output and errors using one of th
 
 
 !!! Note
-    Use the `ps -p 1` command to see the init manager of your operating system. If it differs from `init` and `systemd`, refer to the documentation for your init manager to learn about its logging capabilities.
+    Use the `ps -p 1` command to see your operating system's init manager. If it differs from `init` and `systemd`, refer to the documentation for your init manager to learn about its logging capabilities or [contact us](https://cloud4rpi.answerdesk.io/).
 
-You can also call the following function at the beginning of your script to have the script output saved to file. It is useful if you do not run your Cloud4RPi-enabled script as a service:
+You can also call the following function at the beginning of your script to save the script output. It is useful if you do not run your Cloud4RPi-enabled script as a service:
 
 ```python
 cloud4rpi.set_logging_to_file(YOUR_LOGFILE_PATH)

@@ -1,6 +1,6 @@
 Frequently asked questions and possible issues you may face when working with [Cloud4RPi](https://cloud4rpi.io):
 
-## How to avoid Installation Error?
+## How to avoid an Installation Error?
 
 You can get the following error while installing the Cloud4RPi client library using the `sudo pip install cloud4rpi` command:
 
@@ -31,7 +31,7 @@ If you experience issues with the 1-Wire interface on Raspberry Pi, follow the i
 
     ![](/res/ds18b20.png)
 
-## How to avoid "Insecure Platform" warning?
+## How to avoid the "Insecure Platform" warning?
 
 The `InsecurePlatformWarning: A true SSLContext object is not available...` notification appears when you run Cloud4RPi on a Python version lower than 2.7.9. Check your current Python version with the following command:
 
@@ -41,7 +41,7 @@ python --version
 
 You can install the latest version using [one of the following ways](https://docs.python.org/2/using/index.html).
 
-## Where are log files?
+## Where are the log files?
 
 You can read the logs containing the service's output and errors using one of the following commands:
 

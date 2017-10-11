@@ -13,6 +13,7 @@ Currently we provide detailed instructions and examples for the following langua
 - [Python](https://www.python.org/) on [Raspberry Pi](https://www.raspberrypi.org/products/)
 - [Python](https://www.python.org/) on [Next Thing Co. C.H.I.P.](https://getchip.com/pages/chip)
 - [Python](https://www.python.org/) on [Onion Omega2](https://onion.io/omega2/)
+- [MicroPython](https://micropython.org/) on [ESP8266](https://en.wikipedia.org/wiki/ESP8266/)
 
 !!! Note
     Both Python 2 and Python 3 are supported.
@@ -32,3 +33,4 @@ If you are new to Cloud4RPi, start with the **Getting Started** topic for your p
 - [Connecting a New Raspberry Pi Board](/start/rpi/)
 - [Connecting a New C.H.I.P. Board](/start/chip/)
 - [Connecting a New Omega2 Board](/start/o2/)
+- [Connecting a New ESP8266 Board](/start/esp8266/)

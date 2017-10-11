@@ -9,6 +9,7 @@ pages:
     - Raspberry Pi: start/rpi.md
     - C.H.I.P.: start/chip.md
     - Omega2: start/o2.md
+    - ESP8266: start/esp8266.md
 - How To:
     - Raspberry Pi: howto/rpi.md
     - C.H.I.P.: howto/chip.md

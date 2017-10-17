@@ -1,4 +1,4 @@
-# Connecting a New Raspberry Pi Board
+# Connecting a Raspberry Pi Board
 
 Follow the instructions below to connect your device to the [Cloud4RPi](https://cloud4rpi.io) control panel.
 
@@ -70,7 +70,7 @@ Before running a sample, remember to insert your device token to the line like t
 DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 ```
 
-Use a text editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page. If it does not display anything on the [Devices](https://cloud4rpi.io/devices) page, you can create a device using the **New Device** button in the top right corner, and use its token.
+Use a text editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page on [cloud4rpi.io](https://cloud4rpi.io/). If you have no token yet, open the [Devices](https://cloud4rpi.io/devices) page, create a device using the **New Device** button in the top right corner, and use its token.
 
 
 ## Running

@@ -8,7 +8,7 @@
         <meta name="author" content="Cloud4RPi Team">
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Omega2 - Cloud4RPi Documentation</title>
+        <title>ESP8266 - Cloud4RPi Documentation</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -61,12 +61,12 @@
     <a href="../chip/">C.H.I.P.</a>
 </li>
                             
-<li class="active">
-    <a href="./">Omega2</a>
+<li >
+    <a href="../o2/">Omega2</a>
 </li>
                             
-<li >
-    <a href="../esp8266/">ESP8266</a>
+<li class="active">
+    <a href="./">ESP8266</a>
 </li>
                         </ul>
                     </li>
@@ -112,12 +112,12 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../chip/">
+                        <a rel="next" href="../o2/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../esp8266/">
+                        <a rel="prev" href="../../howto/rpi/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -134,78 +134,76 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#connecting-a-new-omega2-board">Connecting a New Omega2 Board</a></li>
+        <li class="main active"><a href="#connecting-an-esp8266">Connecting an ESP8266</a></li>
             <li><a href="#prerequisites">Prerequisites</a></li>
-            <li><a href="#getting-the-cloud4rpi-client-library">Getting the Cloud4RPi Client Library</a></li>
+            <li><a href="#getting-libraries-and-examples">Getting Libraries and Examples</a></li>
             <li><a href="#hacking-together-some-code">Hacking Together some Code</a></li>
+            <li><a href="#the-led-button-examples-hardware">The LED &amp; Button Example's Hardware</a></li>
             <li><a href="#running">Running</a></li>
-            <li><a href="#installing-as-a-service">Installing as a Service</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="connecting-a-new-omega2-board">Connecting a New Omega2 Board</h1>
+<h1 id="connecting-an-esp8266">Connecting an ESP8266</h1>
 <p>Follow the instructions below to connect your device to the <a href="https://cloud4rpi.io">Cloud4RPi</a> control panel.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Install/update the required packages.</p>
-<pre><code class="sh">opkg update
-opkg install wget python python-pip
-pip install --upgrade setuptools pip
+<p>Your ESP8266 module should have at least 1Mbyte of flash storage to install the full version of MicroPython.</p>
+<ol>
+<li>Flash the latest version of <a href="http://micropython.org/">MicroPython</a> using <a href="http://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/intro.html#intro">the official manual</a>.</li>
+<li>
+<p>Connect to your Wi-Fi network:</p>
+<pre><code>&gt;&gt;&gt; from network import WLAN
+&gt;&gt;&gt; STA = WLAN(0); STA.active(1)
+&gt;&gt;&gt; STA.connect('__SSID__', '__PASSWORD__')
+&gt;&gt;&gt; STA.ifconfig()  # Outputs the network configuration. If it is not valid, wait and re-execute
 </code></pre>
-
-<p>You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.</p>
-</div>
-<h2 id="getting-the-cloud4rpi-client-library">Getting the Cloud4RPi Client Library</h2>
-<p>Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):</p>
-<pre><code class="sh">pip install cloud4rpi
+</li>
+<li>
+<p>Configure <a href="http://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/repl.html#webrepl-a-prompt-over-wifi">WebREPL</a> for easier file uploading.</p>
+<pre><code>&gt;&gt;&gt; import webrepl_setup
 </code></pre>
-
+</li>
+<li>
+<p>Connect to the ESP8266 via <strong>WebREPL</strong>.</p>
+</li>
+</ol>
+<h2 id="getting-libraries-and-examples">Getting Libraries and Examples</h2>
+<p>Download the required source code files to your computer:</p>
+<ul>
+<li><a href="https://github.com/micropython/micropython-lib/blob/master/umqtt.simple/umqtt/simple.py">simple.py</a>: MQTT Library for MicroPython. Save this file as <strong>mqtt.py</strong> when downloading.</li>
+<li><a href="../cloud4rpi.py">cloud4rpi.py</a>: Cloud4RPi client library for MicroPython.</li>
+<li><a href="../main.py">main.py</a>: Sample code.</li>
+</ul>
 <h2 id="hacking-together-some-code">Hacking Together some Code</h2>
-<p>We have prepared sample code for several platforms in the <a href="https://github.com/cloud4rpi/cloud4rpi-omega2-python">cloud4rpi-omega2-python</a> repository to demonstrate sending data to the Cloud.</p>
-<p>Get Cloud4RPi examples for your device:</p>
-<pre><code class="sh">mkdir cloud4rpi-omega2-python &amp;&amp; cd cloud4rpi-omega2-python
-repo=&quot;https://raw.githubusercontent.com/cloud4rpi/cloud4rpi-omega2-python/master&quot;
-wget $repo&quot;/omega2.py&quot; $repo&quot;/control.py&quot;
-</code></pre>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can install <strong>git</strong> if your board has sufficient memory and you prefer using it, and clone this repository with the following command: <code>opkg install git git-http ca-bundle &amp;&amp; git clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git &amp;&amp; cd cloud4rpi-omega2-python</code></p>
-</div>
-<p>Before running a sample, remember to insert your device token to the line like this:</p>
-<pre><code class="python">DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
-</code></pre>
-
-<p>Use a text editor (for instance, <code>vim</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page. If it does not display anything on the <a href="https://cloud4rpi.io/devices">Devices</a> page, you can create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
+<p>Open the <a href="../main.py">main.py</a> file in a text editor (for instance, <a href="https://code.visualstudio.com/">Visual Studio Code</a>) and replace the following strings:</p>
+<ul>
+<li><code>__SSID__</code> with your Wi-Fi network name.</li>
+<li><code>__PWD__</code> with your Wi-Fi network password. If you have an open network, remove the <code>'__PWD__'</code> element without removing the trailing comma so that the <code>WIFI_SSID_PASSWORD</code> variable becomes a tuple with one element.</li>
+<li><code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page on <a href="https://cloud4rpi.io/">cloud4rpi.io</a>. If you have no token yet, open the <a href="https://cloud4rpi.io/devices">Devices</a> page, create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</li>
+</ul>
+<p>Save the file.</p>
+<h2 id="the-led-button-examples-hardware">The LED &amp; Button Example's Hardware</h2>
+<p>Connect the LED to <strong>GPIO12</strong> and a button to <strong>GPIO16</strong>. If you need to use other pins, change the corresponding variables in <strong>main.py</strong>.</p>
+<p><img alt="" src="https://github.com/cloud4rpi/cloud4rpi-esp8266-micropython/raw/master/hardware.png" /></p>
 <h2 id="running">Running</h2>
-<p>Execute the script with the Python interpreter, for example:</p>
-<pre><code class="sh">python control.py
+<ol>
+<li>Upload three files (<strong>mqtt.py</strong>, <strong>cloud4rpi.py</strong> and <strong>main.py</strong>) to your ESP8266 via the <strong>WebREPL</strong>.</li>
+<li>
+<p>Reset the ESP8266. You can use the console for this:</p>
+<pre><code>&gt;&gt;&gt; import machine
+&gt;&gt;&gt; machine.reset()
 </code></pre>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.</p>
-</div>
-<p>If the script output looks right, open the <a href="https://cloud4rpi.io/devices">Devices</a> page to see if the device status has changed.</p>
-<h2 id="installing-as-a-service">Installing as a Service</h2>
-<p>You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh">service_install.sh</a> script as a parameter.</p>
-<p>You can use the piped script technique to do this in a single line.</p>
-<pre><code class="sh">wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
-</code></pre>
-
-<p>If you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.</p>
-<pre><code class="sh">wget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh
-chmod +x service_install.sh
-sudo ./service_install.sh your_script.py
-</code></pre>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You need to replace 'your_script.py' with the actual path to your service script.</p>
-</div></div>
+</li>
+<li>
+<p>Check that the <a href="https://cloud4rpi.io/devices">device</a> goes online and starts sending data.</p>
+</li>
+<li>Go to the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel.</li>
+<li>Add two <strong>Switch</strong> widgets and bind them to the <code>LED</code> variable.</li>
+<li>Add a new <strong>Text</strong> widget and bind it to the <code>Button</code> variable. Configure different colors for the "true" and "false" strings.</li>
+<li>Press the hardware button and notice the changes on the control panel.</li>
+<li>Use the <strong>LED</strong> switch on the control panel to light the hardware LED.</li>
+</ol>
+<p>Explore the code of the <a href="../main.py">main.py</a> file and adapt it for your needs. Feel free to <a href="https://cloud4rpi.answerdesk.io/">share</a> your projects and ideas with us!</p></div>
         </div>
 
         <footer class="col-md-12">

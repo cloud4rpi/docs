@@ -29,6 +29,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/start/esp8266/</loc>
+     <lastmod>2017-10-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     

@@ -134,7 +134,7 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#connecting-a-new-raspberry-pi-board">Connecting a New Raspberry Pi Board</a></li>
+        <li class="main active"><a href="#connecting-a-raspberry-pi-board">Connecting a Raspberry Pi Board</a></li>
             <li><a href="#prerequisites">Prerequisites</a></li>
             <li><a href="#getting-the-cloud4rpi-client-library">Getting the Cloud4RPi Client Library</a></li>
             <li><a href="#hacking-together-some-code">Hacking Together some Code</a></li>
@@ -144,7 +144,7 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="connecting-a-new-raspberry-pi-board">Connecting a New Raspberry Pi Board</h1>
+<h1 id="connecting-a-raspberry-pi-board">Connecting a Raspberry Pi Board</h1>
 <p>Follow the instructions below to connect your device to the <a href="https://cloud4rpi.io">Cloud4RPi</a> control panel.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>It is advisable to update your system before installing.</p>
@@ -195,7 +195,7 @@
 <pre><code class="python">DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
 </code></pre>
 
-<p>Use a text editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page. If it does not display anything on the <a href="https://cloud4rpi.io/devices">Devices</a> page, you can create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
+<p>Use a text editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page on <a href="https://cloud4rpi.io/">cloud4rpi.io</a>. If you have no token yet, open the <a href="https://cloud4rpi.io/devices">Devices</a> page, create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
 <h2 id="running">Running</h2>
 <p>Execute the script with the Python interpreter, for example:</p>
 <pre><code class="sh">sudo python control.py

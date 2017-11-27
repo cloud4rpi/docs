@@ -45,8 +45,8 @@ You can install the latest version using [one of the following ways](https://doc
 
 You can read the logs containing the service's output and errors using one of the following commands:
 
-* `less /var/log/cloud4rpi.log` — if your init manager is `init` and you have not changed the [log path](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L54);
-* `sudo journalctl -u cloud4rpi` — if your init manager is `systemd` and you have not changed the [service name](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L151).
+* `less /var/log/cloud4rpi.log` — if your init manager is `init` and you have left the [service name](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4) and [log path](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L55) unchanged;
+* `sudo journalctl -u cloud4rpi` — if your init manager is `systemd` and you have not changed the [service name](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4).
 
 
 !!! Note
@@ -64,4 +64,21 @@ The Cloud4RPi client library is a [PyPI package](https://pypi.python.org/pypi/cl
 
 ```sh
 sudo pip install --upgrade cloud4rpi
+```
+
+## How to use the service installed using the service_install.sh script?
+
+The default service name is **cloud4rpi** (can be changed in [service_install.sh:4](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4)). If your init manager is `init`, you can use the following commands:
+
+```sh
+sudo service cloud4rpi start|stop|status|restart|uninstall
+```
+
+If your init manager is `systemd`, you can use the same commands except for `uninstall`. To remove the `systemd` service, execute the following commands:
+
+```sh
+sudo systemctl stop cloud4rpi.service
+sudo systemctl disable cloud4rpi.service
+sudo rm /lib/systemd/system/cloud4rpi.service
+sudo systemctl daemon-reload
 ```

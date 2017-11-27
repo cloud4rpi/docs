@@ -181,11 +181,7 @@
 <pre><code class="sh">git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git &amp;&amp; cd cloud4rpi-chip-python
 </code></pre>
 
-<p>Before running a sample, remember to insert your device token to the line like this:</p>
-<pre><code class="python">DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
-</code></pre>
-
-<p>Use a text editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page on <a href="https://cloud4rpi.io/">cloud4rpi.io</a>. If you have no token yet, open the <a href="https://cloud4rpi.io/devices">Devices</a> page, create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
+<p>Before running a sample (<a href="https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/control.py">control.py</a>), remember to replace the <code>__YOUR_DEVICE_TOKEN__</code> string with your real device token. Use a text editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page on <a href="https://cloud4rpi.io/">cloud4rpi.io</a>. If you have no token yet, open the <a href="https://cloud4rpi.io/devices">Devices</a> page, create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
 <h2 id="running">Running</h2>
 <p>Execute the script with the Python interpreter, for example:</p>
 <pre><code class="sh">sudo python control.py

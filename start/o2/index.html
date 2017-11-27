@@ -166,21 +166,17 @@ pip install --upgrade setuptools pip
 <p>Get Cloud4RPi examples for your device:</p>
 <pre><code class="sh">mkdir cloud4rpi-omega2-python &amp;&amp; cd cloud4rpi-omega2-python
 repo=&quot;https://raw.githubusercontent.com/cloud4rpi/cloud4rpi-omega2-python/master&quot;
-wget $repo&quot;/omega2.py&quot; $repo&quot;/control.py&quot;
+wget $repo&quot;/omega2.py&quot; $repo&quot;/led.py&quot; $repo&quot;/rgb_led.py&quot;
 </code></pre>
 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can install <strong>git</strong> if your board has sufficient memory and you prefer using it, and clone this repository with the following command: <code>opkg install git git-http ca-bundle &amp;&amp; git clone https://github.com/cloud4rpi/cloud4rpi-omega2-python.git &amp;&amp; cd cloud4rpi-omega2-python</code></p>
 </div>
-<p>Before running a sample, remember to insert your device token to the line like this:</p>
-<pre><code class="python">DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
-</code></pre>
-
-<p>Use a text editor (for instance, <code>vim</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page on <a href="https://cloud4rpi.io/">cloud4rpi.io</a>. If you have no token yet, open the <a href="https://cloud4rpi.io/devices">Devices</a> page, create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
+<p>Before running a sample (<a href="https://github.com/cloud4rpi/cloud4rpi-omega2-python/blob/master/led.py">led.py</a> or <a href="https://github.com/cloud4rpi/cloud4rpi-omega2-python/blob/master/rgb_led.py">rgb_led.py</a>), remember to replace the <code>__YOUR_DEVICE_TOKEN__</code> string with your real device token. Use a text editor (for instance, <code>vim</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page on <a href="https://cloud4rpi.io/">cloud4rpi.io</a>. If you have no token yet, open the <a href="https://cloud4rpi.io/devices">Devices</a> page, create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
 <h2 id="running">Running</h2>
 <p>Execute the script with the Python interpreter, for example:</p>
-<pre><code class="sh">python control.py
+<pre><code class="sh">python led.py
 </code></pre>
 
 <div class="admonition note">

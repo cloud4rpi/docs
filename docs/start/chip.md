@@ -54,13 +54,7 @@ Get Cloud4RPi examples for your device.:
 git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git && cd cloud4rpi-chip-python
 ```
 
-Before running a sample, remember to insert your device token to the line like this:
-
-``` python
-DEVICE_TOKEN = '__YOUR_DEVICE_TOKEN__'
-```
-
-Use a text editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page on [cloud4rpi.io](https://cloud4rpi.io/). If you have no token yet, open the [Devices](https://cloud4rpi.io/devices) page, create a device using the **New Device** button in the top right corner, and use its token.
+Before running a sample ([control.py](https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/control.py)), remember to replace the `__YOUR_DEVICE_TOKEN__` string with your real device token. Use a text editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page on [cloud4rpi.io](https://cloud4rpi.io/). If you have no token yet, open the [Devices](https://cloud4rpi.io/devices) page, create a device using the **New Device** button in the top right corner, and use its token.
 
 
 ## Running

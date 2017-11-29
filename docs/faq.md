@@ -68,7 +68,7 @@ sudo pip install --upgrade cloud4rpi
 
 ## How to use the service installed using the service_install.sh script?
 
-The default service is **cloud4rpi** (can be changed in [service_install.sh:4](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4)). If your init manager is `init`, you can use the following commands:
+The default service name is **cloud4rpi** (can be changed in [service_install.sh:4](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4)). If your init manager is `init`, you can use the following commands:
 
 ```sh
 sudo service cloud4rpi start|stop|status|restart|uninstall

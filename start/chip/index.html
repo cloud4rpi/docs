@@ -193,14 +193,8 @@
 </div>
 <p>If the script output looks right, open the <a href="https://cloud4rpi.io/devices">Devices</a> page to see if the device status has changed.</p>
 <h2 id="installing-as-a-service">Installing as a Service</h2>
-<p>You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh">service_install.sh</a> script as a parameter.</p>
-<p>You can use the piped script technique to do this in a single line.</p>
-<pre><code class="sh">wget -O - https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh | sudo bash -s your_script.py
-</code></pre>
-
-<p>If you are not comfortable running a piped script, or if your Internet connection is unstable, download and run the script manually.</p>
-<pre><code class="sh">wget https://raw.githubusercontent.com/cloud4rpi/cloud4rpi/master/service_install.sh
-chmod +x service_install.sh
+<p>You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the <a href="https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/service_install.sh">service_install.sh</a> script as a parameter.</p>
+<pre><code class="sh">chmod +x service_install.sh
 sudo ./service_install.sh your_script.py
 </code></pre>
 

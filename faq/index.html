@@ -176,8 +176,8 @@
 <h2 id="where-are-the-log-files">Where are the log files?</h2>
 <p>You can read the logs containing the service's output and errors using one of the following commands:</p>
 <ul>
-<li><code>less /var/log/cloud4rpi.log</code> — if your init manager is <code>init</code> and you have left the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4">service name</a> and <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L55">log path</a> unchanged;</li>
-<li><code>sudo journalctl -u cloud4rpi</code> — if your init manager is <code>systemd</code> and you have not changed the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4">service name</a>.</li>
+<li><code>less /var/log/cloud4rpi.log</code> — if your init manager is <code>init</code> and you have left the <a href="https://gist.github.com/c4r-gists/3bdeff914dd57a26928973656685a503#file-service_install-sh-L4">service name</a> and <a href="https://gist.github.com/c4r-gists/3bdeff914dd57a26928973656685a503#file-service_install-sh-L55">log path</a> unchanged;</li>
+<li><code>sudo journalctl -u cloud4rpi</code> — if your init manager is <code>systemd</code> and you have not changed the <a href="https://gist.github.com/c4r-gists/3bdeff914dd57a26928973656685a503#file-service_install-sh-L4">service name</a>.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -193,7 +193,7 @@
 </code></pre>
 
 <h2 id="how-to-use-the-service-installed-using-the-service_installsh-script">How to use the service installed using the service_install.sh script?</h2>
-<p>The default service's name is <strong>cloud4rpi</strong> (can be changed in <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4">service_install.sh:4</a>). If your init manager is <code>init</code>, you can use the following commands:</p>
+<p>The default service's name is <strong>cloud4rpi</strong> (can be changed in <a href="https://gist.github.com/c4r-gists/3bdeff914dd57a26928973656685a503#file-service_install-sh-L4">service_install.sh:4</a>). If your init manager is <code>init</code>, you can use the following commands:</p>
 <pre><code class="sh">sudo service cloud4rpi start|stop|status|restart|uninstall
 </code></pre>
 

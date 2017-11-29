@@ -72,5 +72,5 @@ If you need to connect several 1-Wire devices, connect them to the bus without a
 You can now monitor CPU and room temperature using these widgets.
 
 !!! Note
-    If you need to start your script automatically on system load, install the **control.py** script as a service using our [service_install.sh](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh) script. For details, refer to the [Installing as a Service](/#installing-as-a-service) section.
+    If you need to start your script automatically on system load, install the **control.py** script as a service using our [service_install.sh](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/service_install.sh) script. For details, refer to the [Installing as a Service](/#installing-as-a-service) section.
 

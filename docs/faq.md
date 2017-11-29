@@ -45,8 +45,8 @@ You can install the latest version using [one of the following ways](https://doc
 
 You can read the logs containing the service's output and errors using one of the following commands:
 
-* `less /var/log/cloud4rpi.log` — if your init manager is `init` and you have left the [service name](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4) and [log path](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L55) unchanged;
-* `sudo journalctl -u cloud4rpi` — if your init manager is `systemd` and you have not changed the [service name](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4).
+* `less /var/log/cloud4rpi.log` — if your init manager is `init` and you have left the [service name](https://gist.github.com/c4r-gists/3bdeff914dd57a26928973656685a503#file-service_install-sh-L4) and [log path](https://gist.github.com/c4r-gists/3bdeff914dd57a26928973656685a503#file-service_install-sh-L55) unchanged;
+* `sudo journalctl -u cloud4rpi` — if your init manager is `systemd` and you have not changed the [service name](https://gist.github.com/c4r-gists/3bdeff914dd57a26928973656685a503#file-service_install-sh-L4).
 
 
 !!! Note
@@ -68,7 +68,7 @@ sudo pip install --upgrade cloud4rpi
 
 ## How to use the service installed using the service_install.sh script?
 
-The default service's name is **cloud4rpi** (can be changed in [service_install.sh:4](https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4)). If your init manager is `init`, you can use the following commands:
+The default service's name is **cloud4rpi** (can be changed in [service_install.sh:4](https://gist.github.com/c4r-gists/3bdeff914dd57a26928973656685a503#file-service_install-sh-L4)). If your init manager is `init`, you can use the following commands:
 
 ```sh
 sudo service cloud4rpi start|stop|status|restart|uninstall

@@ -137,6 +137,7 @@
         <li class="main "><a href="#how-to-avoid-the-insecure-platform-warning">How to avoid the "Insecure Platform" warning?</a></li>
         <li class="main "><a href="#where-are-the-log-files">Where are the log files?</a></li>
         <li class="main "><a href="#how-to-update-cloud4rpi-client-installation">How to update Cloud4RPi client installation?</a></li>
+        <li class="main "><a href="#how-to-use-the-service-installed-using-the-service_installsh-script">How to use the service installed using the service_install.sh script?</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -151,7 +152,7 @@
 <pre><code class="sh">sudo pip install --upgrade setuptools
 </code></pre>
 
-<p>After updating, restart the <strong>cloud4rpi</strong> package installation:</p>
+<p>After updating, reinstall <strong>cloud4rpi</strong>:</p>
 <pre><code class="sh">sudo pip install cloud4rpi
 </code></pre>
 
@@ -175,8 +176,8 @@
 <h2 id="where-are-the-log-files">Where are the log files?</h2>
 <p>You can read the logs containing the service's output and errors using one of the following commands:</p>
 <ul>
-<li><code>less /var/log/cloud4rpi.log</code> — if your init manager is <code>init</code> and you have not changed the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L54">log path</a>;</li>
-<li><code>sudo journalctl -u cloud4rpi</code> — if your init manager is <code>systemd</code> and you have not changed the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L151">service name</a>.</li>
+<li><code>less /var/log/cloud4rpi.log</code> — if your init manager is <code>init</code> and you have left the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4">service name</a> and <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L55">log path</a> unchanged;</li>
+<li><code>sudo journalctl -u cloud4rpi</code> — if your init manager is <code>systemd</code> and you have not changed the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4">service name</a>.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -189,6 +190,18 @@
 <h2 id="how-to-update-cloud4rpi-client-installation">How to update Cloud4RPi client installation?</h2>
 <p>The Cloud4RPi client library is a <a href="https://pypi.python.org/pypi/cloud4rpi">PyPI package</a>, managed by the <a href="https://pip.pypa.io/en/stable/">pip utility</a>. Execute the following command to update the Cloud4RPi client library:</p>
 <pre><code class="sh">sudo pip install --upgrade cloud4rpi
+</code></pre>
+
+<h2 id="how-to-use-the-service-installed-using-the-service_installsh-script">How to use the service installed using the service_install.sh script?</h2>
+<p>The default service's name is <strong>cloud4rpi</strong> (can be changed in <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/service_install.sh#L4">service_install.sh:4</a>). If your init manager is <code>init</code>, you can use the following commands:</p>
+<pre><code class="sh">sudo service cloud4rpi start|stop|status|restart|uninstall
+</code></pre>
+
+<p>If your init manager is <code>systemd</code>, you can use the same commands except for <code>uninstall</code>. To remove the <code>systemd</code> service, execute the following commands:</p>
+<pre><code class="sh">sudo systemctl stop cloud4rpi.service
+sudo systemctl disable cloud4rpi.service
+sudo rm /lib/systemd/system/cloud4rpi.service
+sudo systemctl daemon-reload
 </code></pre></div>
         </div>
 

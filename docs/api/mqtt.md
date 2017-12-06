@@ -20,7 +20,7 @@ Use the following data to connect to the MQTT broker:
 
 
 !!! Warning
-    Since the **Client ID** is used for authentication, you should not open more than one connection to the MQTT broker at the same time.
+    Since the **Client ID** is used for authentication, you should not open more than one connection with a single **Device Token** at the same time.
 
 !!! Note
     **Login** and **Password** are not used, you can leave them empty.

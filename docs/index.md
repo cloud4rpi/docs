@@ -30,7 +30,7 @@ The **Getting Started** and **How To** sections are different for each platform.
 
 If you are new to Cloud4RPi, start with the **Getting Started** topic for your platform:
 
-- [Connecting a New Raspberry Pi Board](/start/rpi/)
-- [Connecting a New C.H.I.P. Board](/start/chip/)
-- [Connecting a New Omega2 Board](/start/o2/)
-- [Connecting a New ESP8266 Board](/start/esp8266/)
+- [Connecting a Raspberry Pi Board](/start/rpi/)
+- [Connecting a C.H.I.P. Board](/start/chip/)
+- [Connecting an Omega2 Board](/start/o2/)
+- [Connecting an ESP8266 Board](/start/esp8266/)

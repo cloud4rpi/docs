@@ -2,16 +2,15 @@ Frequently asked questions and possible issues you may face when working with [C
 
 ## How to avoid an Installation Error?
 
-You can get the following error while installing the Cloud4RPi client library using the `sudo pip install cloud4rpi` command:
+You can get one of the following errors while installing the Cloud4RPi client library using the `sudo pip install cloud4rpi` command:
 
-```
-InstallationError: Command "python setup.py egg_info" failed with error code 1
-```
+1. InstallationError: Command "python setup.py egg_info" failed with error code 1
+2. Error while finding spec for 'pip.\_\_main\_\_' (&lt;class 'ImportError'&gt;: cannot import name 'IncompleteRead'); 'pip' is a package and cannot be directly executed
 
-This happens because the **setuptools** package your Python interpreter uses is outdated. Update the package with the following command:
+This happens because the **setuptools** and/or **pip** packages your Python interpreter uses are outdated. Update the packages with the following command:
 
 ```sh
-sudo pip install --upgrade setuptools
+sudo pip install --upgrade setuptools pip
 ```
 
 After updating, reinstall **cloud4rpi**:

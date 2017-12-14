@@ -48,10 +48,10 @@ sudo python3 -m pip install cloud4rpi
 !!! Note
     For information on how to work with several versions of Python installed, see [Python Documentation](https://docs.python.org/3/installing/).
 
-If you get an error while using **pip**, try to update the **setuptools** package.
+If you get an error while using **pip**, try to update the **setuptools** and **pip** packages.
 
 ```sh
-sudo pip install --upgrade setuptools
+sudo pip install --upgrade setuptools pip
 ```
 
 ## Hacking Together some Code

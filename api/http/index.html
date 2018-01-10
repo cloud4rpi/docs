@@ -239,7 +239,7 @@
 curl -X POST \
      -H &quot;Content-Type: application/json&quot; \
      -d '[{&quot;name&quot;:&quot;Temperature&quot;,&quot;type&quot;:&quot;numeric&quot;},{&quot;name&quot;:&quot;LEDOn&quot;,&quot;type&quot;:&quot;bool&quot;}]' \
-     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config
+     https://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config
 </code></pre>
 
 <div class="admonition note">
@@ -338,7 +338,7 @@ curl -X POST \
 curl -X POST \
      -H &quot;Content-Type: application/json&quot; \
      -d '{&quot;ts&quot;:&quot;$(date -Is)&quot;,&quot;payload&quot;:{&quot;Temperature&quot;:24,&quot;LEDOn&quot;:true}}' \
-     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data
+     https://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data
 </code></pre>
 
 <div class="admonition note">
@@ -433,7 +433,7 @@ curl -X POST \
 curl -X POST \
      -H &quot;Content-Type: application/json&quot; \
      -d '{&quot;ts&quot;:&quot;$(date -Is)&quot;,&quot;payload&quot;:{&quot;CPU Temperature&quot;:41,&quot;IP Address&quot;:&quot;192.168.1.50&quot;}}' \
-     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics
+     https://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics
 </code></pre>
 
 <div class="admonition note">
@@ -473,7 +473,7 @@ curl -X POST \
 <h2 id="example_3">Example</h2>
 <pre><code class="sh">export DEVICE_TOKEN=your_device_token
 
-curl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
+curl -X GET https://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
 </code></pre>
 
 <h2 id="response-body_3">Response Body</h2>

@@ -65,7 +65,7 @@ export DEVICE_TOKEN=your_device_token
 curl -X POST \
      -H "Content-Type: application/json" \
      -d '[{"name":"Temperature","type":"numeric"},{"name":"LEDOn","type":"bool"}]' \
-     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config
+     https://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/config
 ```
 
 !!! Note
@@ -142,7 +142,7 @@ export DEVICE_TOKEN=your_device_token
 curl -X POST \
      -H "Content-Type: application/json" \
      -d '{"ts":"$(date -Is)","payload":{"Temperature":24,"LEDOn":true}}' \
-     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data
+     https://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/data
 ```
 
 !!! Note
@@ -217,7 +217,7 @@ export DEVICE_TOKEN=your_device_token
 curl -X POST \
      -H "Content-Type: application/json" \
      -d '{"ts":"$(date -Is)","payload":{"CPU Temperature":41,"IP Address":"192.168.1.50"}}' \
-     http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics
+     https://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/diagnostics
 ```
 
 !!! Note
@@ -257,7 +257,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 ```sh
 export DEVICE_TOKEN=your_device_token
 
-curl -X GET http://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
+curl -X GET https://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
 ```
 
 ## Response Body

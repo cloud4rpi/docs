@@ -74,3 +74,13 @@ You can now monitor CPU and room temperature using these widgets.
 !!! Note
     If you need to start your script automatically on system load, install the **control.py** script as a service using our [service_install.sh](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/service_install.sh) script. For details, refer to the [Installing as a Service](/#installing-as-a-service) section.
 
+
+# Secure your MQTT connection
+
+Cloud4RPi supports the TLS-enabled MQTTs protocol. If your task requires an encrypted data transfer, enable TLS by changing the `cloud4rpi.connect()` method call as follows:
+
+```python
+device = cloud4rpi.connect(DEVICE_TOKEN, tls_config={'ca_certs': '/etc/ssl/certs/ca-certificates.crt'})
+```
+
+The `tls_config` dictionary holds parameters for the Paho MQTT's [tls_set()](https://github.com/eclipse/paho.mqtt.python#tls_set) function.

@@ -137,6 +137,7 @@
             <li><a href="#code">Code</a></li>
         <li class="main "><a href="#control-expansion-board-rgb-led-from-web">Control Expansion Board RGB LED from WEB</a></li>
             <li><a href="#prerequisites_1">Prerequisites</a></li>
+        <li class="main "><a href="#secure-your-mqtt-connection">Secure your MQTT connection</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -171,7 +172,22 @@
 <li>Open the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel.</li>
 <li>Add a <strong>Switch</strong> widget for each variable.</li>
 </ul>
-<p>You can now change the RGB LED color using these widgets.</p></div>
+<p>You can now change the RGB LED color using these widgets.</p>
+<h1 id="secure-your-mqtt-connection">Secure your MQTT connection</h1>
+<p>Cloud4RPi supports the TLS-enabled MQTTs protocol. If your task requires an encrypted data transfer, follow the steps below:</p>
+<ol>
+<li>Install a package that provides the CA certificates for SSL and TLS protocols:</li>
+</ol>
+<p><code>sh
+   opkg update &amp;&amp; opkg install ca-certificates</code></p>
+<ol>
+<li>
+<p>Enable TLS by changing the <code>cloud4rpi.connect()</code> method call as follows:</p>
+<p><code>python
+device = cloud4rpi.connect(DEVICE_TOKEN, tls_config={'ca_certs': '/etc/ssl/certs/ca-certificates.crt'})</code></p>
+<p>The <code>tls_config</code> dictionary holds parameters for the Paho MQTT's <a href="https://github.com/eclipse/paho.mqtt.python#tls_set">tls_set()</a> function.</p>
+</li>
+</ol></div>
         </div>
 
         <footer class="col-md-12">

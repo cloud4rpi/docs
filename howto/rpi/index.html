@@ -142,6 +142,7 @@
             <li><a href="#prerequisites_2">Prerequisites</a></li>
             <li><a href="#schematics">Schematics</a></li>
             <li><a href="#code_2">Code</a></li>
+        <li class="main "><a href="#secure-your-mqtt-connection">Secure your MQTT connection</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -213,7 +214,13 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you need to start your script automatically on system load, install the <strong>control.py</strong> script as a service using our <a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/service_install.sh">service_install.sh</a> script. For details, refer to the <a href="../../#installing-as-a-service">Installing as a Service</a> section.</p>
-</div></div>
+</div>
+<h1 id="secure-your-mqtt-connection">Secure your MQTT connection</h1>
+<p>Cloud4RPi supports the TLS-enabled MQTTs protocol. If your task requires an encrypted data transfer, enable TLS by changing the <code>cloud4rpi.connect()</code> method call as follows:</p>
+<pre><code class="python">device = cloud4rpi.connect(DEVICE_TOKEN, tls_config={'ca_certs': '/etc/ssl/certs/ca-certificates.crt'})
+</code></pre>
+
+<p>The <code>tls_config</code> dictionary holds parameters for the Paho MQTT's <a href="https://github.com/eclipse/paho.mqtt.python#tls_set">tls_set()</a> function.</p></div>
         </div>
 
         <footer class="col-md-12">

@@ -45,10 +45,10 @@ or
 
 ### Parameters
 
-Name               | Description   | Type   | Possible Values
------------------- | ------------- | ------ | ----------------------------
-name               | Variable name | string | Any string
-type               | Variable type | string | "bool", "numeric" or "string"
+Name  | Description   | Type   | Possible Values
+----- | ------------- | ------ | -----------------------------
+name  | Variable name | string | Any string
+type  | Variable type | string | "bool", "numeric" or "string"
 
 
 ## Example

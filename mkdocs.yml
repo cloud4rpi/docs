@@ -9,7 +9,8 @@ pages:
     - Raspberry Pi: start/rpi.md
     - C.H.I.P.: start/chip.md
     - Omega2: start/o2.md
-    - ESP8266: start/esp8266.md
+    - ESP8266 on MicroPython: start/esp8266-upy.md
+    - ESP boards on Arduino: start/esp-ino.md
 - How To:
     - Raspberry Pi: howto/rpi.md
     - C.H.I.P.: howto/chip.md

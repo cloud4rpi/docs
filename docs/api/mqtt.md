@@ -79,7 +79,7 @@ mosquitto_pub -q 1 -d -t "devices/$DEVICE_TOKEN/config" -h mq.cloud4rpi.io -i "$
 
 
 !!! Note
-    You need to replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
+    Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
 # Variable Values
 
@@ -137,7 +137,7 @@ mosquitto_pub -q 1 -d -t "devices/$DEVICE_TOKEN/data" -h mq.cloud4rpi.io -i "$DE
 ```
 
 !!! Note
-    You need to replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
+    Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
 
 # Diagnostic Data
@@ -192,7 +192,7 @@ mosquitto_pub -q 1 -d -t "devices/$DEVICE_TOKEN/diagnostics" -h mq.cloud4rpi.io 
 ```
 
 !!! Note
-    You need to replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
+    Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
 # Commands Stream
 

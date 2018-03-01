@@ -8,9 +8,9 @@
 ## Code
 
 - Open the [control.py](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py) sample file.
-- Replace `__YOUR_DEVICE_TOKEN__` with your personal device token from the [Device](https://cloud4rpi.io/devices) page.
+- Replace `__YOUR_DEVICE_TOKEN__` with the device token from the [Device](https://cloud4rpi.io/devices) page.
 - Connect an LED to a GPIO pin and set the correct value to the `LED_PIN` variable. The default pin is **GPIO18** (Pin 12).
-- Run `sudo python control.py`. A new variable named `LED On` should appear on the [Device](https://cloud4rpi.io/devices) page.
+- Run `sudo python control.py`. A new `LED On` variable should appear on the [Device](https://cloud4rpi.io/devices) page.
 - Open the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.
 - Add a new **Switch** widget and choose the newly added `LED On` variable.
 
@@ -26,15 +26,15 @@ You can now switch the LED state using this widget.
 ## Code
 
 - Open the [control.py](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py) sample file.
-- Replace `__YOUR_DEVICE_TOKEN__` with your personal device token from the [Device](https://cloud4rpi.io/devices) page.
-- Run `sudo python control.py`. A new variable named `STATUS` should appear on the [Device](https://cloud4rpi.io/devices) page.
+- Replace `__YOUR_DEVICE_TOKEN__` with the device token from the [Device](https://cloud4rpi.io/devices) page.
+- Run `sudo python control.py`. A new `STATUS` variable should appear on the [Device](https://cloud4rpi.io/devices) page.
 - Open the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel or open an existing one.
 - Add a new `Text` widget and choose the newly added `STATUS` variable.
 - Change the pre-defined status color items according to the event names from the code above.
-- As a result, you should have three items like the following:
+- As a result, you should have the following items:
 `{ IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}`
 
-Now this widget displays incoming status with color.
+Now this widget displays an incoming status with color.
 
 
 
@@ -46,25 +46,25 @@ This example shows how to use the [DS18B20](https://datasheets.maximintegrated.c
 
 - Configured and [connected](/#connecting-a-new-device) device with 1-Wire support.
 - [Enabled](/#prerequisites) 1-Wire interface.
-- Breadboard, connecting wires, pull-up resistor (4.7kΩ).
+- Breadboard, connecting wires, a pull-up resistor (4.7kΩ).
 
 ## Schematics
 
 ![](/res/ds18b20.png)
 
-- Connect the **GND** pin to any GND output of your board.
-- Connect the **Vdd** pin to 5V or 3.3V output of your board.
+- Connect the **GND** pin to any GND pin on your board.
+- Connect the **Vdd** pin to a 5V or 3.3V pin.
 - Connect the **DQ** pin to the pull-up resistor and the resistor to **Vdd**.
 - Connect the **DQ** pin to the 1-Wire pin. The default pin is **GPIO4** (Pin 7).
 
-If you need to connect several 1-Wire devices, connect them to the bus without additional resistors.
+You can connect several 1-Wire devices to the bus without additional resistors.
 
 ## Code
 
 - Open the [control.py](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py) sample file.
 - Replace `__YOUR_DEVICE_TOKEN__` with your personal device token from the [Device](https://cloud4rpi.io/devices) page.
 
-- Run `sudo python control.py`. New variables named `Room Temp` and `CPU Temp` should appear on the [Device](https://cloud4rpi.io/devices) page.
+- Run `sudo python control.py`. New `Room Temp` and `CPU Temp` variables should appear on the [Device](https://cloud4rpi.io/devices) page.
 - Open the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.
 - Add a new **Chart** widget and choose the newly added `Room Temp` variable.
 - Add a new **Gauge** widget and choose the newly added `CPU Temp` variable.
@@ -72,7 +72,7 @@ If you need to connect several 1-Wire devices, connect them to the bus without a
 You can now monitor CPU and room temperature using these widgets.
 
 !!! Note
-    If you need to start your script automatically on system load, install the **control.py** script as a service using our [service_install.sh](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/service_install.sh) script. For details, refer to the [Installing as a Service](/#installing-as-a-service) section.
+    If you need to start your script automatically when the system loads, install the **control.py** script as a service using our [service_install.sh](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/service_install.sh) script. Refer to the [Installing as a Service](/#installing-as-a-service) section for more details.
 
 
 # Secure your MQTT connection

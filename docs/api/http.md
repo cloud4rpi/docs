@@ -70,7 +70,7 @@ curl -X POST \
 
 !!! Note
 
-    You need to replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
+    Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
 ## Response Body
 
@@ -147,7 +147,7 @@ curl -X POST \
 
 !!! Note
 
-    You need to replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
+    Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
 ## Response Body
 
@@ -222,7 +222,7 @@ curl -X POST \
 
 !!! Note
 
-    You need to replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
+    Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
 ## Response Body
 

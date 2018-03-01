@@ -156,9 +156,9 @@
 <h2 id="code">Code</h2>
 <ul>
 <li>Open the <a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py">control.py</a> sample file.</li>
-<li>Replace <code>__YOUR_DEVICE_TOKEN__</code> with your personal device token from the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
+<li>Replace <code>__YOUR_DEVICE_TOKEN__</code> with the device token from the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
 <li>Connect an LED to a GPIO pin and set the correct value to the <code>LED_PIN</code> variable. The default pin is <strong>GPIO18</strong> (Pin 12).</li>
-<li>Run <code>sudo python control.py</code>. A new variable named <code>LED On</code> should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
+<li>Run <code>sudo python control.py</code>. A new <code>LED On</code> variable should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
 <li>Open the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel.</li>
 <li>Add a new <strong>Switch</strong> widget and choose the newly added <code>LED On</code> variable.</li>
 </ul>
@@ -171,32 +171,32 @@
 <h2 id="code_1">Code</h2>
 <ul>
 <li>Open the <a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py">control.py</a> sample file.</li>
-<li>Replace <code>__YOUR_DEVICE_TOKEN__</code> with your personal device token from the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
-<li>Run <code>sudo python control.py</code>. A new variable named <code>STATUS</code> should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
+<li>Replace <code>__YOUR_DEVICE_TOKEN__</code> with the device token from the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
+<li>Run <code>sudo python control.py</code>. A new <code>STATUS</code> variable should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
 <li>Open the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel or open an existing one.</li>
 <li>Add a new <code>Text</code> widget and choose the newly added <code>STATUS</code> variable.</li>
 <li>Change the pre-defined status color items according to the event names from the code above.</li>
-<li>As a result, you should have three items like the following:
+<li>As a result, you should have the following items:
 <code>{ IDLE: #00ff00}  { RING: #ff6600}  { BOOM!: #ff0000}</code></li>
 </ul>
-<p>Now this widget displays incoming status with color.</p>
+<p>Now this widget displays an incoming status with color.</p>
 <h1 id="connect-ds18b20-temperature-sensor">Connect DS18B20 Temperature Sensor</h1>
 <p>This example shows how to use the <a href="https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf">DS18B20</a> temperature sensor with the Cloud4RPi service.</p>
 <h2 id="prerequisites_2">Prerequisites</h2>
 <ul>
 <li>Configured and <a href="../../#connecting-a-new-device">connected</a> device with 1-Wire support.</li>
 <li><a href="../../#prerequisites">Enabled</a> 1-Wire interface.</li>
-<li>Breadboard, connecting wires, pull-up resistor (4.7kΩ).</li>
+<li>Breadboard, connecting wires, a pull-up resistor (4.7kΩ).</li>
 </ul>
 <h2 id="schematics">Schematics</h2>
 <p><img alt="" src="../../res/ds18b20.png" /></p>
 <ul>
-<li>Connect the <strong>GND</strong> pin to any GND output of your board.</li>
-<li>Connect the <strong>Vdd</strong> pin to 5V or 3.3V output of your board.</li>
+<li>Connect the <strong>GND</strong> pin to any GND pin on your board.</li>
+<li>Connect the <strong>Vdd</strong> pin to a 5V or 3.3V pin.</li>
 <li>Connect the <strong>DQ</strong> pin to the pull-up resistor and the resistor to <strong>Vdd</strong>.</li>
 <li>Connect the <strong>DQ</strong> pin to the 1-Wire pin. The default pin is <strong>GPIO4</strong> (Pin 7).</li>
 </ul>
-<p>If you need to connect several 1-Wire devices, connect them to the bus without additional resistors.</p>
+<p>You can connect several 1-Wire devices to the bus without additional resistors.</p>
 <h2 id="code_2">Code</h2>
 <ul>
 <li>Open the <a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py">control.py</a> sample file.</li>
@@ -204,7 +204,7 @@
 <p>Replace <code>__YOUR_DEVICE_TOKEN__</code> with your personal device token from the <a href="https://cloud4rpi.io/devices">Device</a> page.</p>
 </li>
 <li>
-<p>Run <code>sudo python control.py</code>. New variables named <code>Room Temp</code> and <code>CPU Temp</code> should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page.</p>
+<p>Run <code>sudo python control.py</code>. New <code>Room Temp</code> and <code>CPU Temp</code> variables should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page.</p>
 </li>
 <li>Open the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel.</li>
 <li>Add a new <strong>Chart</strong> widget and choose the newly added <code>Room Temp</code> variable.</li>
@@ -213,7 +213,7 @@
 <p>You can now monitor CPU and room temperature using these widgets.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you need to start your script automatically on system load, install the <strong>control.py</strong> script as a service using our <a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/service_install.sh">service_install.sh</a> script. For details, refer to the <a href="../../#installing-as-a-service">Installing as a Service</a> section.</p>
+<p>If you need to start your script automatically when the system loads, install the <strong>control.py</strong> script as a service using our <a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/service_install.sh">service_install.sh</a> script. Refer to the <a href="../../#installing-as-a-service">Installing as a Service</a> section for more details.</p>
 </div>
 <h1 id="secure-your-mqtt-connection">Secure your MQTT connection</h1>
 <p>Cloud4RPi supports the TLS-enabled MQTTs protocol. If your task requires an encrypted data transfer, enable TLS by changing the <code>cloud4rpi.connect()</code> method call as follows:</p>

@@ -45,3 +45,7 @@ The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduin
 10. Add a new **Chart** widget and bind it to the `Uptime` variable.
 10. Add a new **Switch** widget and bind it to the `LED On` variable.
 11. Add a new **Text** widget and bind it to the `STATUS` variable. Configure different colors for the **"IDLE"**, **"RING"** and **"BOOM!"** strings.
+
+## Video 
+
+<iframe width="739" height="480" src="https://www.youtube.com/embed/umUjwUjJsNI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

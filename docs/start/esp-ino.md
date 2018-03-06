@@ -4,13 +4,13 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 
 ## Prerequisites
 
-* **USB-UART Adapter** (if your board does not have it integrated).
+* **USB-UART Adapter** (if it is not integrated into your board).
 * Access to ESP8266's **GPIO0** pin to enter flashing mode.
 
 ## Getting Libraries and Examples
 
 1. Open **Arduino** and select your board in the **Tools** | **Board** menu. [Add ESP8266 support](https://github.com/esp8266/Arduino) if required.
-2. Install the Cloud4RPi library from the **Library Manager**: open the **Sketch** | **Include Library** | **Manage Libraries** menu, enter `cloud4rpi` into the search field and install the **cloud4rpi-esp-arduino** package.
+2. Install the Cloud4RPi library from the **Library Manager** by opening the **Sketch** | **Include Library** | **Manage Libraries** menu, entering `cloud4rpi` into the search field and installing the **cloud4rpi-esp-arduino** package.
 3. Install **ArduinoJson** and **PubSubClient** libraries. You should do it manually because the **Library Manager** does not manage package dependencies.
 4. Configure the installed libraries:
     1. Open the `%HOMEPATH%\Documents\Arduino\libraries\PubSubClient\src\PubSubClient.h` (`~/Documents/Arduino/libraries/PubSubClient/src/PubSubClient.h` on Mac) file with any text editor (for instance, [VS Code](https://code.visualstudio.com)).
@@ -36,7 +36,7 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 
 ## Running
 
-6. Hit the `Build` button and wait until the compilation is done.
+6. Hit the `Build` button and wait until the compilation is completed.
 8. Connect the board in the flashing mode (power it with the GPIO0 pin connected to GND) and hit the `Upload` button.
 9. Once flashing is complete, open `Serial Monitor` and watch the sample code's output.
 8. Notice that the [device](https://cloud4rpi.io/devices) went online and started sending data.

@@ -8,7 +8,7 @@
         <meta name="author" content="Cloud4RPi Team">
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>C.H.I.P. - Cloud4RPi Documentation</title>
+        <title>ESP boards on Arduino - Cloud4RPi Documentation</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -57,8 +57,8 @@
     <a href="../rpi/">Raspberry Pi</a>
 </li>
                             
-<li class="active">
-    <a href="./">C.H.I.P.</a>
+<li >
+    <a href="../chip/">C.H.I.P.</a>
 </li>
                             
 <li >
@@ -73,8 +73,8 @@
     <a href="../esp-pio/">ESP boards on PlatformIO</a>
 </li>
                             
-<li >
-    <a href="../esp-ino/">ESP boards on Arduino</a>
+<li class="active">
+    <a href="./">ESP boards on Arduino</a>
 </li>
                         </ul>
                     </li>
@@ -120,17 +120,17 @@
                     </a>
                 </li>
                     <li >
-                        <a rel="next" href="../rpi/">
+                        <a rel="next" href="../esp-pio/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../o2/">
+                        <a rel="prev" href="../../howto/rpi/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/cloud4rpi/docs/edit/master/docs/start/chip.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                        <a href="https://github.com/cloud4rpi/docs/edit/master/docs/start/esp-ino.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                     </li>
             </ul>
         </div>
@@ -140,76 +140,67 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#connecting-a-chip-board">Connecting a C.H.I.P. Board</a></li>
+        <li class="main active"><a href="#connecting-an-esp8266">Connecting an ESP8266</a></li>
             <li><a href="#prerequisites">Prerequisites</a></li>
-            <li><a href="#getting-the-cloud4rpi-client-library">Getting the Cloud4RPi Client Library</a></li>
-            <li><a href="#hacking-together-some-code">Hacking Together some Code</a></li>
+            <li><a href="#getting-libraries-and-examples">Getting Libraries and Examples</a></li>
+            <li><a href="#opening-sample-code">Opening Sample Code</a></li>
+            <li><a href="#connecting-to-your-cloud4rpi-account">Connecting to Your Cloud4RPi Account</a></li>
             <li><a href="#running">Running</a></li>
-            <li><a href="#installing-as-a-service">Installing as a Service</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="connecting-a-chip-board">Connecting a C.H.I.P. Board</h1>
-<p>Follow the instructions below to connect your device to the <a href="https://cloud4rpi.io">Cloud4RPi</a> control panel.</p>
+<h1 id="connecting-an-esp8266">Connecting an ESP8266</h1>
+<p>Follow the instructions below to connect your <a href="https://en.wikipedia.org/wiki/ESP8266">ESP8266</a> board (like <a href="http://www.nodemcu.com/index_en.html#fr_54747661d775ef1a3600009e">NodeMCU Dev Kit</a>) to the <a href="https://cloud4rpi.io">Cloud4RPi</a> control panel.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>It is advisable to update your system before installing.</p>
-<pre><code class="sh">sudo apt update &amp;&amp; sudo apt upgrade -y
+<ul>
+<li><strong>USB-UART Adapter</strong> (if it is not integrated into your board).</li>
+<li>Access to ESP8266's <strong>GPIO0</strong> pin to enter flashing mode.</li>
+</ul>
+<h2 id="getting-libraries-and-examples">Getting Libraries and Examples</h2>
+<ol>
+<li>Open <strong>Arduino</strong> and select your board in the <strong>Tools</strong> | <strong>Board</strong> menu. <a href="https://github.com/esp8266/Arduino">Add ESP8266 support</a> if required.</li>
+<li>Install the Cloud4RPi library from the <strong>Library Manager</strong> by opening the <strong>Sketch</strong> | <strong>Include Library</strong> | <strong>Manage Libraries</strong> menu, entering <code>cloud4rpi</code> into the search field and installing the <strong>cloud4rpi-esp-arduino</strong> package.</li>
+<li>Install <strong>ArduinoJson</strong> and <strong>PubSubClient</strong> libraries. You should do it manually because the <strong>Library Manager</strong> does not manage package dependencies.</li>
+<li>
+<p>Configure the installed libraries:</p>
+<ol>
+<li>Open the <code>%HOMEPATH%\Documents\Arduino\libraries\PubSubClient\src\PubSubClient.h</code> (<code>~/Documents/Arduino/libraries/PubSubClient/src/PubSubClient.h</code> on Mac) file with any text editor (for instance, <a href="https://code.visualstudio.com">VS Code</a>).</li>
+<li>
+<p>Add the following define directives at the beginning:</p>
+<pre><code>#define MQTT_MAX_PACKET_SIZE 1024
+#define MQTT_MAX_TRANSFER_SIZE 128
 </code></pre>
-
-<p>Install/update the required packages.</p>
-<pre><code class="sh">sudo apt install git python python-pip -y
-</code></pre>
-
-<p>You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.</p>
-</div>
-<h2 id="getting-the-cloud4rpi-client-library">Getting the Cloud4RPi Client Library</h2>
-<p>Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):</p>
-<pre><code class="sh">sudo pip install cloud4rpi
-</code></pre>
-
-<p>If you are using Python 3, use the following command:</p>
-<pre><code class="sh">sudo python3 -m pip install cloud4rpi
-</code></pre>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For information on how to work with several versions of Python installed, see <a href="https://docs.python.org/3/installing/">Python Documentation</a>.</p>
-</div>
-<p>If you get an error while using <strong>pip</strong>, try to update the <strong>setuptools</strong> and <strong>pip</strong> packages.</p>
-<pre><code class="sh">sudo pip install --upgrade setuptools pip
-</code></pre>
-
-<h2 id="hacking-together-some-code">Hacking Together some Code</h2>
-<p>We have prepared sample code for several platforms in the <a href="https://github.com/cloud4rpi/cloud4rpi-chip-python">cloud4rpi-chip-python</a> repository to demonstrate sending data to the Cloud.</p>
-<p>Get Cloud4RPi examples for your device.:</p>
-<pre><code class="sh">git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git &amp;&amp; cd cloud4rpi-chip-python
-</code></pre>
-
-<p>Before running a sample (<a href="https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/control.py">control.py</a>), remember to replace the <code>__YOUR_DEVICE_TOKEN__</code> string with your real device token. Use a text editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page on <a href="https://cloud4rpi.io/">cloud4rpi.io</a>. If you have no token yet, open the <a href="https://cloud4rpi.io/devices">Devices</a> page, create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
+</li>
+<li>
+<p>Open the <code>%HOMEPATH%\Documents\Arduino\libraries\cloud4rpi-esp-arduino\src\Cloud4RPi.h</code> (<code>~/Documents/Arduino/libraries/cloud4rpi-esp-arduino/src/Cloud4RPi.h</code> on Mac) file and enable verbose output by adding the <code>#define CLOUD4RPI_DEBUG 1</code> line at the beginning.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="opening-sample-code">Opening Sample Code</h2>
+<ol>
+<li>Open the sample code using the <strong>File</strong> | <strong>Examples</strong> | <strong>cloud4rpi-esp-arduino</strong> | <strong>ESP8266</strong> menu item. Restart Arduino IDE if this item did not appear.</li>
+<li>If you know the pin number connected to an LED on your board, replace the <code>BUILTIN_LED</code> constant with it.</li>
+</ol>
+<h2 id="connecting-to-your-cloud4rpi-account">Connecting to Your Cloud4RPi Account</h2>
+<ol>
+<li><a href="https://cloud4rpi.io/signin">Log in to your Cloud4RPi account</a> or <a href="https://cloud4rpi.io/register">create a new one</a>.</li>
+<li>Copy <a href="https://cloud4rpi.io/devices">your device</a>'s <strong>Device Token</strong>. You can create a device on the <a href="https://cloud4rpi.io/devices">Devices</a> page and copy its <strong>Device Token</strong> if you do not have one.</li>
+<li>Replace the <code>__YOUR_DEVICE_TOKEN__</code> string with your device token.</li>
+<li>Replace the <code>__SSID__</code> and <code>__PASSWORD__</code> strings with your Wi-Fi network data.</li>
+</ol>
 <h2 id="running">Running</h2>
-<p>Execute the script with the Python interpreter, for example:</p>
-<pre><code class="sh">sudo python control.py
-</code></pre>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.</p>
-</div>
-<p>If the script output looks right, open the <a href="https://cloud4rpi.io/devices">Devices</a> page to see if the device status has changed.</p>
-<h2 id="installing-as-a-service">Installing as a Service</h2>
-<p>You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the <a href="https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/service_install.sh">service_install.sh</a> script as a parameter.</p>
-<pre><code class="sh">chmod +x service_install.sh
-sudo ./service_install.sh your_script.py
-</code></pre>
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You need to replace 'your_script.py' with the actual path to your service script.</p>
-</div></div>
+<ol>
+<li>Hit the <code>Build</code> button and wait until the compilation is completed.</li>
+<li>Connect the board in the flashing mode (power it with the GPIO0 pin connected to GND) and hit the <code>Upload</code> button.</li>
+<li>Once flashing is complete, open <code>Serial Monitor</code> and watch the sample code's output.</li>
+<li>Notice that the <a href="https://cloud4rpi.io/devices">device</a> went online and started sending data.</li>
+<li>Go to the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel.</li>
+<li>Add a new <strong>Chart</strong> widget and bind it to the <code>Uptime</code> variable.</li>
+<li>Add a new <strong>Switch</strong> widget and bind it to the <code>LED On</code> variable.</li>
+<li>Add a new <strong>Text</strong> widget and bind it to the <code>STATUS</code> variable. Configure different colors for the <strong>"IDLE"</strong>, <strong>"RING"</strong> and <strong>"BOOM!"</strong> strings.</li>
+</ol></div>
         </div>
 
         <footer class="col-md-12">

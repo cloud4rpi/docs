@@ -27,7 +27,7 @@
         }, 
         {
             "location": "/start/rpi/", 
-            "text": "Connecting a Raspberry Pi Board\n\n\nFollow the instructions below to connect your device to the \nCloud4RPi\n control panel.\n\n\nPrerequisites\n\n\nIt is advisable to update your system before installing.\n\n\nsudo apt update \n sudo apt upgrade -y\n\n\n\n\nInstall/update the required packages.\n\n\nsudo apt install git python python-pip -y\n\n\n\n\nYou can use alternative methods to \ninstall pip\n.\n\n\n\n\nNote\n\n\nThe Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.\n\n\n\n\n[Optional] Enable interfaces\n\n\n\n\nRun \nsudo raspi-config\n\n\nOpen a section for configuring additional interfaces (\nAdvanced Options\n or \nInterfacing Options | Configure connections to peripherals\n depending on the version).\n\n\nEnable I2C, 1-wire and other necessary interfaces.\n\n\nChoose \nFinish\n.\n\n\nReboot the device with the \nsudo reboot\n command.\n\n\n\n\nGetting the Cloud4RPi Client Library\n\n\nInstall the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):\n\n\nsudo pip install cloud4rpi\n\n\n\n\nIf you are using Python 3, use the following command:\n\n\nsudo python3 -m pip install cloud4rpi\n\n\n\n\n\n\nNote\n\n\nFor information on how to work with several versions of Python installed, see \nPython Documentation\n.\n\n\n\n\nIf you get an error while using \npip\n, try to update the \nsetuptools\n and \npip\n packages.\n\n\nsudo pip install --upgrade setuptools pip\n\n\n\n\nHacking Together some Code\n\n\nWe have prepared sample code for several platforms in the \ncloud4rpi-raspberrypi-python\n repository to demonstrate sending data to the Cloud.\n\n\nGet Cloud4RPi examples for your device:\n\n\ngit clone https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python.git \n cd cloud4rpi-raspberrypi-python\n\n\n\n\nBefore running a sample (\ncontrol.py\n), remember to replace the \n__YOUR_DEVICE_TOKEN__\n string with your real device token. Use a text editor (for instance, \nnano\n) to replace \n__YOUR_DEVICE_TOKEN__\n with the token displayed at the top of the device page on \ncloud4rpi.io\n. If you have no token yet, open the \nDevices\n page, create a device using the \nNew Device\n button in the top right corner, and use its token.\n\n\nRunning\n\n\nExecute the script with the Python interpreter, for example:\n\n\nsudo python control.py\n\n\n\n\n\n\nNote\n\n\nIf you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.\n\n\n\n\nIf the script output looks right, open the \nDevices\n page to see if the device status has changed.\n\n\nInstalling as a Service\n\n\nYou can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the \nservice_install.sh\n script as a parameter.\n\n\nchmod +x service_install.sh\nsudo ./service_install.sh your_script.py\n\n\n\n\n\n\nNote\n\n\nYou need to replace 'your_script.py' with the actual path to your service script.", 
+            "text": "Connecting a Raspberry Pi Board\n\n\nFollow the instructions below to connect your device to the \nCloud4RPi\n control panel.\n\n\nPrerequisites\n\n\nIt is advisable to update your system before installing.\n\n\nsudo apt update \n sudo apt upgrade -y\n\n\n\n\nInstall/update the required packages.\n\n\nsudo apt install git python python-pip -y\n\n\n\n\nYou can use alternative methods to \ninstall pip\n.\n\n\n\n\nNote\n\n\nThe Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.\n\n\n\n\n[Optional] Enable interfaces\n\n\n\n\nRun \nsudo raspi-config\n\n\nOpen a section for configuring additional interfaces (\nAdvanced Options\n or \nInterfacing Options | Configure connections to peripherals\n depending on the version).\n\n\nEnable I2C, 1-wire and other necessary interfaces.\n\n\nChoose \nFinish\n.\n\n\nReboot the device with the \nsudo reboot\n command.\n\n\n\n\nGetting the Cloud4RPi Client Library\n\n\nInstall the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):\n\n\nsudo pip install cloud4rpi\n\n\n\n\nIf you are using Python 3, use the following command:\n\n\nsudo python3 -m pip install cloud4rpi\n\n\n\n\n\n\nNote\n\n\nFor information on how to work with several versions of Python installed, see \nPython Documentation\n.\n\n\n\n\nIf you get an error while using \npip\n, try to update the \nsetuptools\n and \npip\n packages.\n\n\nsudo pip install --upgrade setuptools pip\n\n\n\n\nHacking Together some Code\n\n\nWe have prepared sample code for several platforms in the \ncloud4rpi-raspberrypi-python\n repository to demonstrate sending data to the Cloud.\n\n\nGet Cloud4RPi examples for your device:\n\n\ngit clone https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python.git \n cd cloud4rpi-raspberrypi-python\n\n\n\n\nBefore running a sample (\ncontrol.py\n), remember to replace the \n__YOUR_DEVICE_TOKEN__\n string with your real device token. Use a text editor (for instance, \nnano\n) to replace \n__YOUR_DEVICE_TOKEN__\n with the token displayed at the top of the device page on \ncloud4rpi.io\n. If you have no token yet, open the \nDevices\n page, create a device using the \nNew Device\n button in the top right corner, and use its token.\n\n\nRunning\n\n\nExecute the script with the Python interpreter, for example:\n\n\nsudo python control.py\n\n\n\n\n\n\nNote\n\n\nIf you have installed Cloud4RPi to a non-default Python, use the version with the Cloud4RPi library.\n\n\n\n\nIf the script output looks right, open the \nDevices\n page to see if the device status has changed.\n\n\nInstalling as a Service\n\n\nYou can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the \nservice_install.sh\n script as a parameter.\n\n\nchmod +x service_install.sh\nsudo ./service_install.sh your_script.py\n\n\n\n\n\n\nNote\n\n\nYou need to replace 'your_script.py' with the actual path to your service script.\n\n\n\n\nVideo", 
             "title": "Raspberry Pi"
         }, 
         {
@@ -64,6 +64,11 @@
             "location": "/start/rpi/#installing-as-a-service", 
             "text": "You can use our service templates to facilitate service installation. Pass the path to your Cloud4RPi-enabled Python script to the  service_install.sh  script as a parameter.  chmod +x service_install.sh\nsudo ./service_install.sh your_script.py   Note  You need to replace 'your_script.py' with the actual path to your service script.", 
             "title": "Installing as a Service"
+        }, 
+        {
+            "location": "/start/rpi/#video", 
+            "text": "", 
+            "title": "Video"
         }, 
         {
             "location": "/start/chip/", 
@@ -131,38 +136,108 @@
             "title": "Running"
         }, 
         {
-            "location": "/start/esp8266/", 
+            "location": "/start/esp8266-upy/", 
             "text": "Connecting an ESP8266\n\n\nFollow the instructions below to connect your device to the \nCloud4RPi\n control panel.\n\n\nPrerequisites\n\n\nYour ESP8266 module should have at least 1Mbyte of flash storage to install the full version of MicroPython.\n\n\n\n\nFlash the latest version of \nMicroPython\n using \nthe official manual\n.\n\n\n\n\nConnect to your Wi-Fi network:\n\n\n from network import WLAN\n\n STA = WLAN(0); STA.active(1)\n\n STA.connect('__SSID__', '__PASSWORD__')\n\n STA.ifconfig()  # Outputs the network configuration. If it is not valid, wait and re-execute\n\n\n\n\n\n\n\nConfigure \nWebREPL\n for easier file uploading.\n\n\n import webrepl_setup\n\n\n\n\n\n\n\nConnect to the ESP8266 via \nWebREPL\n.\n\n\n\n\n\n\nGetting Libraries and Examples\n\n\nDownload the required source code files to your computer:\n\n\n\n\nsimple.py\n: MQTT Library for MicroPython. Save this file as \nmqtt.py\n when downloading.\n\n\ncloud4rpi.py\n: Cloud4RPi client library for MicroPython.\n\n\nmain.py\n: Sample code.\n\n\n\n\nHacking Together some Code\n\n\nOpen the \nmain.py\n file in a text editor (for instance, \nVisual Studio Code\n) and replace the following strings:\n\n\n\n\n__SSID__\n with your Wi-Fi network name.\n\n\n__PWD__\n with your Wi-Fi network password. If you have an open network, remove the \n'__PWD__'\n element without removing the trailing comma so that the \nWIFI_SSID_PASSWORD\n variable becomes a tuple with one element.\n\n\n__YOUR_DEVICE_TOKEN__\n with the token displayed at the top of the device page on \ncloud4rpi.io\n. If you have no token yet, open the \nDevices\n page, create a device using the \nNew Device\n button in the top right corner, and use its token.\n\n\n\n\nSave the file.\n\n\nThe LED \n Button Example's Hardware\n\n\nConnect the LED to \nGPIO12\n and a button to \nGPIO16\n. If you need to use other pins, change the corresponding variables in \nmain.py\n.\n\n\n\n\nRunning\n\n\n\n\nUpload three files (\nmqtt.py\n, \ncloud4rpi.py\n and \nmain.py\n) to your ESP8266 via the \nWebREPL\n.\n\n\n\n\nReset the ESP8266. You can use the console for this:\n\n\n import machine\n\n machine.reset()\n\n\n\n\n\n\n\nCheck that the \ndevice\n goes online and starts sending data.\n\n\n\n\nGo to the \nControl Panels\n page and add a new control panel.\n\n\nAdd a new \nSwitch\n widget and bind it to the \nLED\n variable.\n\n\nAdd a new \nText\n widget and bind it to the \nButton\n variable. Configure different colors for the \"true\" and \"false\" strings.\n\n\nPress the hardware button and notice the changes on the control panel.\n\n\nUse the \nLED\n switch on the control panel to light the hardware LED.\n\n\n\n\nExplore the code of the \nmain.py\n file and adapt it for your needs. Feel free to \nshare\n your projects and ideas with us!", 
-            "title": "ESP8266"
+            "title": "ESP8266 on MicroPython"
         }, 
         {
-            "location": "/start/esp8266/#connecting-an-esp8266", 
+            "location": "/start/esp8266-upy/#connecting-an-esp8266", 
             "text": "Follow the instructions below to connect your device to the  Cloud4RPi  control panel.", 
             "title": "Connecting an ESP8266"
         }, 
         {
-            "location": "/start/esp8266/#prerequisites", 
+            "location": "/start/esp8266-upy/#prerequisites", 
             "text": "Your ESP8266 module should have at least 1Mbyte of flash storage to install the full version of MicroPython.   Flash the latest version of  MicroPython  using  the official manual .   Connect to your Wi-Fi network:   from network import WLAN  STA = WLAN(0); STA.active(1)  STA.connect('__SSID__', '__PASSWORD__')  STA.ifconfig()  # Outputs the network configuration. If it is not valid, wait and re-execute    Configure  WebREPL  for easier file uploading.   import webrepl_setup    Connect to the ESP8266 via  WebREPL .", 
             "title": "Prerequisites"
         }, 
         {
-            "location": "/start/esp8266/#getting-libraries-and-examples", 
+            "location": "/start/esp8266-upy/#getting-libraries-and-examples", 
             "text": "Download the required source code files to your computer:   simple.py : MQTT Library for MicroPython. Save this file as  mqtt.py  when downloading.  cloud4rpi.py : Cloud4RPi client library for MicroPython.  main.py : Sample code.", 
             "title": "Getting Libraries and Examples"
         }, 
         {
-            "location": "/start/esp8266/#hacking-together-some-code", 
+            "location": "/start/esp8266-upy/#hacking-together-some-code", 
             "text": "Open the  main.py  file in a text editor (for instance,  Visual Studio Code ) and replace the following strings:   __SSID__  with your Wi-Fi network name.  __PWD__  with your Wi-Fi network password. If you have an open network, remove the  '__PWD__'  element without removing the trailing comma so that the  WIFI_SSID_PASSWORD  variable becomes a tuple with one element.  __YOUR_DEVICE_TOKEN__  with the token displayed at the top of the device page on  cloud4rpi.io . If you have no token yet, open the  Devices  page, create a device using the  New Device  button in the top right corner, and use its token.   Save the file.", 
             "title": "Hacking Together some Code"
         }, 
         {
-            "location": "/start/esp8266/#the-led-button-examples-hardware", 
+            "location": "/start/esp8266-upy/#the-led-button-examples-hardware", 
             "text": "Connect the LED to  GPIO12  and a button to  GPIO16 . If you need to use other pins, change the corresponding variables in  main.py .", 
             "title": "The LED &amp; Button Example's Hardware"
         }, 
         {
-            "location": "/start/esp8266/#running", 
+            "location": "/start/esp8266-upy/#running", 
             "text": "Upload three files ( mqtt.py ,  cloud4rpi.py  and  main.py ) to your ESP8266 via the  WebREPL .   Reset the ESP8266. You can use the console for this:   import machine  machine.reset()    Check that the  device  goes online and starts sending data.   Go to the  Control Panels  page and add a new control panel.  Add a new  Switch  widget and bind it to the  LED  variable.  Add a new  Text  widget and bind it to the  Button  variable. Configure different colors for the \"true\" and \"false\" strings.  Press the hardware button and notice the changes on the control panel.  Use the  LED  switch on the control panel to light the hardware LED.   Explore the code of the  main.py  file and adapt it for your needs. Feel free to  share  your projects and ideas with us!", 
+            "title": "Running"
+        }, 
+        {
+            "location": "/start/esp-pio/", 
+            "text": "Connecting an ESP8266\n\n\nFollow the instructions below to connect your \nESP8266\n board (like \nNodeMCU Dev Kit\n) to the \nCloud4RPi\n control panel.\n\n\nPrerequisites\n\n\n\n\nUSB-UART Adapter\n (if it is not integrated into your board).\n\n\nAccess to the ESP8266's \nGPIO0\n pin to enter flashing mode.\n\n\n\n\nCreating a Project\n\n\nThe \nCloud4RPi library\n is published in the \nPlatformIO Registry\n. Follow the instructions below to start a new Cloud4RPi-enabled project:\n\n\n\n\nCreate a new PlatformIO project for your board as described in the PlatformIO documentation (\nVisual Studio Code\n, \nAtom\n)\n\n\n\n\nOpen your \nplatformio.ini\n and add the following lines to the end:\n\n\nlib_deps =\n    cloud4rpi-esp-arduino\n\nbuild_flags=\n; Required for PubSub library\n    -D MQTT_MAX_PACKET_SIZE=1024\n    -D MQTT_MAX_TRANSFER_SIZE=128\n; Enables the verbose output to Serial\n    -D CLOUD4RPI_DEBUG=1\n\n\n\n\n\n\n\nSave the \nplatformio.ini\n file and open the \nsrc\\main.cpp\n file.\n\n\n\n\nCopy-paste the \nsample code\n into it.\n\n\nIf you know the pin number connected to an LED on your board, replace the \nBUILTIN_LED\n constant with it.\n\n\n\n\nConnecting to Your Cloud4RPi Account\n\n\n\n\nLog in to your Cloud4RPi account\n or \ncreate a new one\n.\n\n\nCopy \nyour device\n's \nDevice Token\n. You can create a device on the \nDevices\n page and copy its \nDevice Token\n if you do not have one.\n\n\nReplace the \n__YOUR_DEVICE_TOKEN__\n string with your device token.\n\n\nReplace the \n__SSID__\n and \n__PASSWORD__\n strings with your Wi-Fi network data.\n\n\n\n\nRunning\n\n\n\n\nHit the \nBuild\n button and wait until the compilation is completed.\n\n\nConnect the board in the flashing mode (power it with the GPIO0 pin connected to GND) and hit the \nUpload\n button.\n\n\nOnce flashing is complete, open \nSerial Monitor\n and watch the sample code's output.\n\n\nNotice that the \ndevice\n went online and started sending data.\n\n\nGo to the \nControl Panels\n page and add a new control panel.\n\n\nAdd a new \nChart\n widget and bind it to the \nUptime\n variable.\n\n\nAdd a new \nSwitch\n widget and bind it to the \nLED On\n variable.\n\n\nAdd a new \nText\n widget and bind it to the \nSTATUS\n variable. Configure different colors for the \n\"IDLE\"\n, \n\"RING\"\n and \n\"BOOM!\"\n strings.\n\n\n\n\nVideo", 
+            "title": "ESP boards on PlatformIO"
+        }, 
+        {
+            "location": "/start/esp-pio/#connecting-an-esp8266", 
+            "text": "Follow the instructions below to connect your  ESP8266  board (like  NodeMCU Dev Kit ) to the  Cloud4RPi  control panel.", 
+            "title": "Connecting an ESP8266"
+        }, 
+        {
+            "location": "/start/esp-pio/#prerequisites", 
+            "text": "USB-UART Adapter  (if it is not integrated into your board).  Access to the ESP8266's  GPIO0  pin to enter flashing mode.", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/start/esp-pio/#creating-a-project", 
+            "text": "The  Cloud4RPi library  is published in the  PlatformIO Registry . Follow the instructions below to start a new Cloud4RPi-enabled project:   Create a new PlatformIO project for your board as described in the PlatformIO documentation ( Visual Studio Code ,  Atom )   Open your  platformio.ini  and add the following lines to the end:  lib_deps =\n    cloud4rpi-esp-arduino\n\nbuild_flags=\n; Required for PubSub library\n    -D MQTT_MAX_PACKET_SIZE=1024\n    -D MQTT_MAX_TRANSFER_SIZE=128\n; Enables the verbose output to Serial\n    -D CLOUD4RPI_DEBUG=1    Save the  platformio.ini  file and open the  src\\main.cpp  file.   Copy-paste the  sample code  into it.  If you know the pin number connected to an LED on your board, replace the  BUILTIN_LED  constant with it.", 
+            "title": "Creating a Project"
+        }, 
+        {
+            "location": "/start/esp-pio/#connecting-to-your-cloud4rpi-account", 
+            "text": "Log in to your Cloud4RPi account  or  create a new one .  Copy  your device 's  Device Token . You can create a device on the  Devices  page and copy its  Device Token  if you do not have one.  Replace the  __YOUR_DEVICE_TOKEN__  string with your device token.  Replace the  __SSID__  and  __PASSWORD__  strings with your Wi-Fi network data.", 
+            "title": "Connecting to Your Cloud4RPi Account"
+        }, 
+        {
+            "location": "/start/esp-pio/#running", 
+            "text": "Hit the  Build  button and wait until the compilation is completed.  Connect the board in the flashing mode (power it with the GPIO0 pin connected to GND) and hit the  Upload  button.  Once flashing is complete, open  Serial Monitor  and watch the sample code's output.  Notice that the  device  went online and started sending data.  Go to the  Control Panels  page and add a new control panel.  Add a new  Chart  widget and bind it to the  Uptime  variable.  Add a new  Switch  widget and bind it to the  LED On  variable.  Add a new  Text  widget and bind it to the  STATUS  variable. Configure different colors for the  \"IDLE\" ,  \"RING\"  and  \"BOOM!\"  strings.", 
+            "title": "Running"
+        }, 
+        {
+            "location": "/start/esp-pio/#video", 
+            "text": "", 
+            "title": "Video"
+        }, 
+        {
+            "location": "/start/esp-ino/", 
+            "text": "Connecting an ESP8266\n\n\nFollow the instructions below to connect your \nESP8266\n board (like \nNodeMCU Dev Kit\n) to the \nCloud4RPi\n control panel.\n\n\nPrerequisites\n\n\n\n\nUSB-UART Adapter\n (if it is not integrated into your board).\n\n\nAccess to ESP8266's \nGPIO0\n pin to enter flashing mode.\n\n\n\n\nGetting Libraries and Examples\n\n\n\n\nOpen \nArduino\n and select your board in the \nTools\n | \nBoard\n menu. \nAdd ESP8266 support\n if required.\n\n\nInstall the Cloud4RPi library from the \nLibrary Manager\n by opening the \nSketch\n | \nInclude Library\n | \nManage Libraries\n menu, entering \ncloud4rpi\n into the search field and installing the \ncloud4rpi-esp-arduino\n package.\n\n\nInstall \nArduinoJson\n and \nPubSubClient\n libraries. You should do it manually because the \nLibrary Manager\n does not manage package dependencies.\n\n\n\n\nConfigure the installed libraries:\n\n\n\n\nOpen the \n%HOMEPATH%\\Documents\\Arduino\\libraries\\PubSubClient\\src\\PubSubClient.h\n (\n~/Documents/Arduino/libraries/PubSubClient/src/PubSubClient.h\n on Mac) file with any text editor (for instance, \nVS Code\n).\n\n\n\n\nAdd the following define directives at the beginning:\n\n\n#define MQTT_MAX_PACKET_SIZE 1024\n#define MQTT_MAX_TRANSFER_SIZE 128\n\n\n\n\n\n\n\nOpen the \n%HOMEPATH%\\Documents\\Arduino\\libraries\\cloud4rpi-esp-arduino\\src\\Cloud4RPi.h\n (\n~/Documents/Arduino/libraries/cloud4rpi-esp-arduino/src/Cloud4RPi.h\n on Mac) file and enable verbose output by adding the \n#define CLOUD4RPI_DEBUG 1\n line at the beginning.\n\n\n\n\n\n\n\n\n\n\nOpening Sample Code\n\n\n\n\nOpen the sample code using the \nFile\n | \nExamples\n | \ncloud4rpi-esp-arduino\n | \nESP8266\n menu item. Restart Arduino IDE if this item did not appear.\n\n\nIf you know the pin number connected to an LED on your board, replace the \nBUILTIN_LED\n constant with it.\n\n\n\n\nConnecting to Your Cloud4RPi Account\n\n\n\n\nLog in to your Cloud4RPi account\n or \ncreate a new one\n.\n\n\nCopy \nyour device\n's \nDevice Token\n. You can create a device on the \nDevices\n page and copy its \nDevice Token\n if you do not have one.\n\n\nReplace the \n__YOUR_DEVICE_TOKEN__\n string with your device token.\n\n\nReplace the \n__SSID__\n and \n__PASSWORD__\n strings with your Wi-Fi network data.\n\n\n\n\nRunning\n\n\n\n\nHit the \nBuild\n button and wait until the compilation is completed.\n\n\nConnect the board in the flashing mode (power it with the GPIO0 pin connected to GND) and hit the \nUpload\n button.\n\n\nOnce flashing is complete, open \nSerial Monitor\n and watch the sample code's output.\n\n\nNotice that the \ndevice\n went online and started sending data.\n\n\nGo to the \nControl Panels\n page and add a new control panel.\n\n\nAdd a new \nChart\n widget and bind it to the \nUptime\n variable.\n\n\nAdd a new \nSwitch\n widget and bind it to the \nLED On\n variable.\n\n\nAdd a new \nText\n widget and bind it to the \nSTATUS\n variable. Configure different colors for the \n\"IDLE\"\n, \n\"RING\"\n and \n\"BOOM!\"\n strings.", 
+            "title": "ESP boards on Arduino"
+        }, 
+        {
+            "location": "/start/esp-ino/#connecting-an-esp8266", 
+            "text": "Follow the instructions below to connect your  ESP8266  board (like  NodeMCU Dev Kit ) to the  Cloud4RPi  control panel.", 
+            "title": "Connecting an ESP8266"
+        }, 
+        {
+            "location": "/start/esp-ino/#prerequisites", 
+            "text": "USB-UART Adapter  (if it is not integrated into your board).  Access to ESP8266's  GPIO0  pin to enter flashing mode.", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/start/esp-ino/#getting-libraries-and-examples", 
+            "text": "Open  Arduino  and select your board in the  Tools  |  Board  menu.  Add ESP8266 support  if required.  Install the Cloud4RPi library from the  Library Manager  by opening the  Sketch  |  Include Library  |  Manage Libraries  menu, entering  cloud4rpi  into the search field and installing the  cloud4rpi-esp-arduino  package.  Install  ArduinoJson  and  PubSubClient  libraries. You should do it manually because the  Library Manager  does not manage package dependencies.   Configure the installed libraries:   Open the  %HOMEPATH%\\Documents\\Arduino\\libraries\\PubSubClient\\src\\PubSubClient.h  ( ~/Documents/Arduino/libraries/PubSubClient/src/PubSubClient.h  on Mac) file with any text editor (for instance,  VS Code ).   Add the following define directives at the beginning:  #define MQTT_MAX_PACKET_SIZE 1024\n#define MQTT_MAX_TRANSFER_SIZE 128    Open the  %HOMEPATH%\\Documents\\Arduino\\libraries\\cloud4rpi-esp-arduino\\src\\Cloud4RPi.h  ( ~/Documents/Arduino/libraries/cloud4rpi-esp-arduino/src/Cloud4RPi.h  on Mac) file and enable verbose output by adding the  #define CLOUD4RPI_DEBUG 1  line at the beginning.", 
+            "title": "Getting Libraries and Examples"
+        }, 
+        {
+            "location": "/start/esp-ino/#opening-sample-code", 
+            "text": "Open the sample code using the  File  |  Examples  |  cloud4rpi-esp-arduino  |  ESP8266  menu item. Restart Arduino IDE if this item did not appear.  If you know the pin number connected to an LED on your board, replace the  BUILTIN_LED  constant with it.", 
+            "title": "Opening Sample Code"
+        }, 
+        {
+            "location": "/start/esp-ino/#connecting-to-your-cloud4rpi-account", 
+            "text": "Log in to your Cloud4RPi account  or  create a new one .  Copy  your device 's  Device Token . You can create a device on the  Devices  page and copy its  Device Token  if you do not have one.  Replace the  __YOUR_DEVICE_TOKEN__  string with your device token.  Replace the  __SSID__  and  __PASSWORD__  strings with your Wi-Fi network data.", 
+            "title": "Connecting to Your Cloud4RPi Account"
+        }, 
+        {
+            "location": "/start/esp-ino/#running", 
+            "text": "Hit the  Build  button and wait until the compilation is completed.  Connect the board in the flashing mode (power it with the GPIO0 pin connected to GND) and hit the  Upload  button.  Once flashing is complete, open  Serial Monitor  and watch the sample code's output.  Notice that the  device  went online and started sending data.  Go to the  Control Panels  page and add a new control panel.  Add a new  Chart  widget and bind it to the  Uptime  variable.  Add a new  Switch  widget and bind it to the  LED On  variable.  Add a new  Text  widget and bind it to the  STATUS  variable. Configure different colors for the  \"IDLE\" ,  \"RING\"  and  \"BOOM!\"  strings.", 
             "title": "Running"
         }, 
         {

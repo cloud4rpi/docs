@@ -4,8 +4,8 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 
 ## Prerequisites
 
-* **USB-UART Adapter** (if your board does not have it integrated).
-* Access to ESP8266's **GPIO0** pin to enter flashing mode.
+* **USB-UART Adapter** (if it is not integrate in your board).
+* Access to the ESP8266's **GPIO0** pin to enter flashing mode.
 
 ## Creating a Project
 
@@ -37,7 +37,7 @@ The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduin
 
 ## Running
 
-6. Hit the `Build` button and wait until the compilation is done.
+6. Hit the `Build` button and wait until the compilation is completed.
 8. Connect the board in the flashing mode (power it with the GPIO0 pin connected to GND) and hit the `Upload` button.
 9. Once flashing is complete, open `Serial Monitor` and watch the sample code's output.
 8. Notice that the [device](https://cloud4rpi.io/devices) went online and started sending data.

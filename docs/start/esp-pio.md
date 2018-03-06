@@ -4,7 +4,7 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 
 ## Prerequisites
 
-* **USB-UART Adapter** (if it is not integrate in your board).
+* **USB-UART Adapter** (if it is not integrated into your board).
 * Access to the ESP8266's **GPIO0** pin to enter flashing mode.
 
 ## Creating a Project

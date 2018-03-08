@@ -25,7 +25,7 @@ The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduin
             -D CLOUD4RPI_DEBUG=1
 
 4. Save the `platformio.ini` file and open the `src\main.cpp` file.
-5. Copy-paste the [sample code](examples/ESP8266/ESP8266.ino) into it.
+5. Copy-paste the [sample code](https://github.com/cloud4rpi/cloud4rpi-esp-arduino/blob/master/examples/ESP8266/ESP8266.ino) into it.
 7. If you know the pin number connected to an LED on your board, replace the `BUILTIN_LED` constant with it.
 
 ## Connecting to Your Cloud4RPi Account

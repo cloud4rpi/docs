@@ -8,12 +8,14 @@ This website provides documentation for the [Cloud4RPi](https://cloud4rpi.io/) s
 
 Cloud4RPi can communicates with almost any device via the [MQTT](https://en.wikipedia.org/wiki/MQTT) or **HTTP** protocol. 
 
-Currently we provide detailed instructions and examples for the following languages and platforms:
+Currently we provide detailed instructions and examples for the following platforms and languages:
 
-- [Python](https://www.python.org/) on [Raspberry Pi](https://www.raspberrypi.org/products/)
-- [Python](https://www.python.org/) on [Next Thing Co. C.H.I.P.](https://getchip.com/pages/chip)
-- [Python](https://www.python.org/) on [Onion Omega2](https://onion.io/omega2/)
-- [MicroPython](https://micropython.org/) on [ESP8266](https://en.wikipedia.org/wiki/ESP8266/)
+- [Raspberry Pi](https://www.raspberrypi.org/products/) on [Python](https://www.python.org/)
+- [Next Thing Co. C.H.I.P.](https://getchip.com/pages/chip) on [Python](https://www.python.org/)
+- [Onion Omega2](https://onion.io/omega2/) on [Python](https://www.python.org/)
+- [ESP8266](https://en.wikipedia.org/wiki/ESP8266/) on [MicroPython](https://micropython.org/)
+- [ESP8266](https://en.wikipedia.org/wiki/ESP8266/) on [PlatformIO](http://platformio.org)
+- [ESP8266](https://en.wikipedia.org/wiki/ESP8266/) on [Arduino](https://www.arduino.cc/)
 
 !!! Note
     Both Python 2 and Python 3 are supported.
@@ -33,4 +35,6 @@ If you are new to Cloud4RPi, start with the **Getting Started** topic for your p
 - [Connecting a Raspberry Pi Board](/start/rpi/)
 - [Connecting a C.H.I.P. Board](/start/chip/)
 - [Connecting an Omega2 Board](/start/o2/)
-- [Connecting an ESP8266 Board](/start/esp8266/)
+- [Connecting an ESP8266 Board using MicroPython](/start/esp8266-upy/)
+- [Connecting an ESP8266 Board using PlatformIO](/start/esp-pio/)
+- [Connecting an ESP8266 Board using Arduino](/start/esp-ino/)

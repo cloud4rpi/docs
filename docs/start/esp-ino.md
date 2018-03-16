@@ -44,3 +44,7 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 10. Add a new **Chart** widget and bind it to the `Uptime` variable.
 10. Add a new **Switch** widget and bind it to the `LED On` variable.
 11. Add a new **Text** widget and bind it to the `STATUS` variable. Configure different colors for the **"IDLE"**, **"RING"** and **"BOOM!"** strings.
+
+## Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5lpbJHRNVMo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

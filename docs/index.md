@@ -13,9 +13,10 @@ Currently we provide detailed instructions and examples for the following platfo
 - [Raspberry Pi](https://www.raspberrypi.org/products/) on [Python](https://www.python.org/)
 - [Next Thing Co. C.H.I.P.](https://getchip.com/pages/chip) on [Python](https://www.python.org/)
 - [Onion Omega2](https://onion.io/omega2/) on [Python](https://www.python.org/)
-- [ESP8266](https://en.wikipedia.org/wiki/ESP8266/) on [MicroPython](https://micropython.org/)
-- [ESP8266](https://en.wikipedia.org/wiki/ESP8266/) on [PlatformIO](http://platformio.org)
-- [ESP8266](https://en.wikipedia.org/wiki/ESP8266/) on [Arduino](https://www.arduino.cc/)
+- [ESP8266](https://en.wikipedia.org/wiki/ESP8266/) on the following platforms:
+    - [MicroPython](https://micropython.org/)
+    - [PlatformIO](http://platformio.org)
+    - [Arduino](https://www.arduino.cc/)
 
 !!! Note
     Both Python 2 and Python 3 are supported.

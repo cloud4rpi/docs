@@ -6,9 +6,9 @@ This website provides documentation for the [Cloud4RPi](https://cloud4rpi.io/) s
 
 ## Supported Platforms
 
-Cloud4RPi can communicates with almost any device via the [MQTT](https://en.wikipedia.org/wiki/MQTT) or **HTTP** protocol. 
+Cloud4RPi communicates with almost any device via the [MQTT](https://en.wikipedia.org/wiki/MQTT) or **HTTP** protocol. 
 
-Currently we provide detailed instructions and examples for the following platforms and languages:
+Currently, we provide detailed instructions and examples for the following platforms and languages:
 
 - [Raspberry Pi](https://www.raspberrypi.org/products/) on [Python](https://www.python.org/)
 - [Next Thing Co. C.H.I.P.](https://getchip.com/pages/chip) on [Python](https://www.python.org/)

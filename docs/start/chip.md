@@ -48,7 +48,7 @@ sudo pip install --upgrade setuptools pip
 
 We have prepared sample code for several platforms in the [cloud4rpi-chip-python](https://github.com/cloud4rpi/cloud4rpi-chip-python) repository to demonstrate sending data to the Cloud.
 
-Get Cloud4RPi examples for your device.:
+Get Cloud4RPi examples for your device:
 
 ```sh
 git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git && cd cloud4rpi-chip-python
@@ -56,6 +56,8 @@ git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git && cd cloud4rpi
 
 Before running a sample ([control.py](https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/control.py)), remember to replace the `__YOUR_DEVICE_TOKEN__` string with your real device token. Use a text editor (for instance, `nano`) to replace `__YOUR_DEVICE_TOKEN__` with the token displayed at the top of the device page on [cloud4rpi.io](https://cloud4rpi.io/). If you have no token yet, open the [Devices](https://cloud4rpi.io/devices) page, create a device using the **New Device** button in the top right corner, and use its token.
 
+!!! Note
+    Install the [CHIP_IO](https://github.com/xtacocorex/CHIP_IO) Python library as described [in its documentation](https://github.com/xtacocorex/CHIP_IO) to use the C.H.I.P.'s GPIO subsystem from Python. If you do not need GPIO, remove the `import CHIP_IO.GPIO as GPIO` line and all `GPIO` references from the [control.py](https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/control.py) example.
 
 ## Running
 

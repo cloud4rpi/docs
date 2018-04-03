@@ -191,11 +191,15 @@
 
 <h2 id="hacking-together-some-code">Hacking Together some Code</h2>
 <p>We have prepared sample code for several platforms in the <a href="https://github.com/cloud4rpi/cloud4rpi-chip-python">cloud4rpi-chip-python</a> repository to demonstrate sending data to the Cloud.</p>
-<p>Get Cloud4RPi examples for your device.:</p>
+<p>Get Cloud4RPi examples for your device:</p>
 <pre><code class="sh">git clone https://github.com/cloud4rpi/cloud4rpi-chip-python.git &amp;&amp; cd cloud4rpi-chip-python
 </code></pre>
 
 <p>Before running a sample (<a href="https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/control.py">control.py</a>), remember to replace the <code>__YOUR_DEVICE_TOKEN__</code> string with your real device token. Use a text editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page on <a href="https://cloud4rpi.io/">cloud4rpi.io</a>. If you have no token yet, open the <a href="https://cloud4rpi.io/devices">Devices</a> page, create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Install the <a href="https://github.com/xtacocorex/CHIP_IO">CHIP_IO</a> Python library as described <a href="https://github.com/xtacocorex/CHIP_IO">in its documentation</a> to use the C.H.I.P.'s GPIO subsystem from Python. If you don't need GPIO, remove the <code>import CHIP_IO.GPIO as GPIO</code> line and all <code>GPIO</code> references from the <a href="https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/control.py">control.py</a> example.</p>
+</div>
 <h2 id="running">Running</h2>
 <p>Execute the script with the Python interpreter, for example:</p>
 <pre><code class="sh">sudo python control.py

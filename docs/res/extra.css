@@ -1,4 +1,4 @@
-/* theme: mkdocs */
+/* theme: mkdocs 
 
 .bs-sidenav>li {
     margin-left: 1.5em;
@@ -7,7 +7,7 @@ ul.nav .main {
     margin-left: 0px;
 }
 
-/* theme: readthedocs*/
+/* theme: readthedocs
 
 .toctree-l3 {
     font-style: italic;
@@ -16,4 +16,42 @@ ul.nav .main {
 
 h1 {
     font-size: 36px;
+
+
+/* theme: material */
+
+.md-header {
+    background-color: #29b5ec;
+}
+
+.md-source:hover {
+    color: #fff;
+}
+
+.md-typeset a, .md-nav__link:focus, .md-nav__link:hover {
+    color: #29b5ec;
+}
+
+.md-typeset a:active, .md-typeset a:hover, .md-nav__link--active, .md-nav__link:active {
+    color: #1089b8;
+}
+
+@media only screen and (min-width: 60em) {
+    .md-search__input {
+        border: 1px solid hsla(0,0%,100%,0.0);
+        border-radius: 22px;
+        transition: background-color .25s cubic-bezier(.1,.7,.1,1),
+                    border-color .25s cubic-bezier(.1,.7,.1,1),
+                    color .25s cubic-bezier(.1,.7,.1,1), 
+                    border-radius .25s cubic-bezier(.1,.7,.1,1);
+    }
+
+    .md-search__input:hover {
+        background-color: rgba(0, 0, 0, 0);
+        border-color:hsla(0,0%,100%,0.7);
+    }
+
+    [data-md-toggle=search]:checked~.md-search__input {
+        border-radius: .2rem .2rem 0 0;
+    }
 }

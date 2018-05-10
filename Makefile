@@ -1,7 +1,7 @@
 .PHONY: build clean publish
 
 init:
-	pip install mkdocs
+	pip install mkdocs mkdocs-material
 
 build:
 	mkdocs build --clean

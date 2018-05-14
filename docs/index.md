@@ -23,12 +23,6 @@ Currently, we provide detailed instructions and examples for the following platf
 
 [Contact us](https://cloud4rpi.answerdesk.io/) if your device or preferred language is not listed, we are here to help.
 
-## Documentation Structure
-
-The **Getting Started** and **How To** sections are different for each platform. Use the drop-down menu on these sections to select your platform:
-
-![](res/platform-selector.png)
-
 ## Where to Begin?
 
 If you are new to Cloud4RPi, start with the **Getting Started** topic for your platform:

@@ -55,3 +55,15 @@ h1 {
         border-radius: .2rem .2rem 0 0;
     }
 }
+
+@media only screen and (max-width: 59.9375em) {
+    .md-nav__source {
+        background-color: hsl(197, 71%, 40%);
+    }
+}
+
+@media only screen and (max-width: 76.1875em) {
+    html .md-nav--primary .md-nav__title--site {
+        background-color: #29b5ec;
+    }
+}

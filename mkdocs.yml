@@ -26,6 +26,6 @@ markdown_extensions:
     - admonition:
 
 extra_css: [res/extra.css]
-theme: mkdocs
+theme: material
 
 copyright: © 2016-2018 Devsoft Baltic OÜ. All rights reserved.

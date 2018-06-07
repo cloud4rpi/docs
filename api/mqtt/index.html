@@ -95,7 +95,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#prerequisites" tabindex="1" class="md-skip">
+      <a href="#mqtt-protocol-api" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -459,9 +459,233 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        MQTT Protocol
+      </label>
+    
     <a href="./" title="MQTT Protocol" class="md-nav__link md-nav__link--active">
       MQTT Protocol
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud4rpi-mqtt-broker" title="Cloud4RPi MQTT Broker" class="md-nav__link">
+    Cloud4RPi MQTT Broker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-configuration" title="Variables Configuration" class="md-nav__link">
+    Variables Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-parameters" title="Topic Parameters" class="md-nav__link">
+    Topic Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-structure" title="Message Structure" class="md-nav__link">
+    Message Structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-values" title="Variable Values" class="md-nav__link">
+    Variable Values
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-parameters_1" title="Topic Parameters" class="md-nav__link">
+    Topic Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-structure_1" title="Message Structure" class="md-nav__link">
+    Message Structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-data" title="Diagnostic Data" class="md-nav__link">
+    Diagnostic Data
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-parameters_2" title="Topic Parameters" class="md-nav__link">
+    Topic Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-structure_2" title="Message Structure" class="md-nav__link">
+    Message Structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands-stream" title="Commands Stream" class="md-nav__link">
+    Commands Stream
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-parameters_3" title="Topic Parameters" class="md-nav__link">
+    Topic Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-structure_3" title="Message Structure" class="md-nav__link">
+    Message Structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -512,6 +736,217 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud4rpi-mqtt-broker" title="Cloud4RPi MQTT Broker" class="md-nav__link">
+    Cloud4RPi MQTT Broker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-configuration" title="Variables Configuration" class="md-nav__link">
+    Variables Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-parameters" title="Topic Parameters" class="md-nav__link">
+    Topic Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-structure" title="Message Structure" class="md-nav__link">
+    Message Structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-values" title="Variable Values" class="md-nav__link">
+    Variable Values
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-parameters_1" title="Topic Parameters" class="md-nav__link">
+    Topic Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-structure_1" title="Message Structure" class="md-nav__link">
+    Message Structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-data" title="Diagnostic Data" class="md-nav__link">
+    Diagnostic Data
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-parameters_2" title="Topic Parameters" class="md-nav__link">
+    Topic Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-structure_2" title="Message Structure" class="md-nav__link">
+    Message Structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands-stream" title="Commands Stream" class="md-nav__link">
+    Commands Stream
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#topic-parameters_3" title="Topic Parameters" class="md-nav__link">
+    Topic Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" title="Example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-structure_3" title="Message Structure" class="md-nav__link">
+    Message Structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" title="Parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -525,12 +960,13 @@
                   <a href="https://github.com/cloud4rpi/docs/edit/master/docs/api/mqtt.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="prerequisites">Prerequisites</h1>
-<p>The examples in this section are presented for the <a href="https://mosquitto.org/">Eclipse Mosquitto™</a> MQTT client. Install the client if you are going to run the examples:</p>
+                <h1 id="mqtt-protocol-api">MQTT Protocol API</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The examples in this section are presented for the <a href="https://mosquitto.org/">Eclipse Mosquitto™</a> MQTT client. Install the client if you are going to run the examples. On Debian-based operating systems you can install it using the following command:</p>
 <pre><code class="sh">sudo apt-get install mosquitto-clients
 </code></pre>
 
-<h1 id="cloud4rpi-mqtt-broker">Cloud4RPi MQTT Broker</h1>
+<h2 id="cloud4rpi-mqtt-broker">Cloud4RPi MQTT Broker</h2>
 <p>Use the following data to connect to the MQTT broker:</p>
 <ul>
 <li><strong>Host:</strong> <ul>
@@ -553,12 +989,12 @@
 <p class="admonition-title">Note</p>
 <p><strong>Login</strong> and <strong>Password</strong> are not used, you can leave them empty.</p>
 </div>
-<h1 id="variables-configuration">Variables Configuration</h1>
+<h2 id="variables-configuration">Variables Configuration</h2>
 <p>Update the device's configuration by sending messages to the following topic:</p>
 <pre><code class="gradle">devices/{token}/config
 </code></pre>
 
-<h3 id="topic-parameters">Topic Parameters</h3>
+<h4 id="topic-parameters">Topic Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -573,7 +1009,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="message-structure">Message Structure</h2>
+<h3 id="message-structure">Message Structure</h3>
 <pre><code class="javascript">{
     &quot;payload&quot;: {
         [
@@ -586,7 +1022,7 @@
 }
 </code></pre>
 
-<h3 id="parameters">Parameters</h3>
+<h4 id="parameters">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -611,7 +1047,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="example">Example</h2>
+<h3 id="example">Example</h3>
 <p>The following example creates two variables on the device:</p>
 <ul>
 <li><strong>Temperature</strong> (numeric)</li>
@@ -626,7 +1062,7 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/config&quot; -h mq.cloud4rp
 <p class="admonition-title">Note</p>
 <p>Replace <strong>your_device_token</strong> with your device token displayed on the <a href="https://cloud4rpi.io/devices">device page</a>.</p>
 </div>
-<h1 id="variable-values">Variable Values</h1>
+<h2 id="variable-values">Variable Values</h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Before sending variable values, configure variables by sending the <a href="#variables-configuration">Variables Configuration message</a>.</p>
@@ -635,7 +1071,7 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/config&quot; -h mq.cloud4rp
 <pre><code class="gradle">devices/{token}/data
 </code></pre>
 
-<h3 id="topic-parameters_1">Topic Parameters</h3>
+<h4 id="topic-parameters_1">Topic Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -650,7 +1086,7 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/config&quot; -h mq.cloud4rp
 </tr>
 </tbody>
 </table>
-<h2 id="message-structure_1">Message Structure</h2>
+<h3 id="message-structure_1">Message Structure</h3>
 <pre><code class="javascript">{
     &quot;ts&quot;: datetime_isoformat,
     &quot;payload&quot;: {
@@ -662,7 +1098,7 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/config&quot; -h mq.cloud4rp
 }
 </code></pre>
 
-<h3 id="parameters_1">Parameters</h3>
+<h4 id="parameters_1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -693,7 +1129,7 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/config&quot; -h mq.cloud4rp
 </tr>
 </tbody>
 </table>
-<h2 id="example_1">Example</h2>
+<h3 id="example_1">Example</h3>
 <p>The following example sends the values of two variables:</p>
 <ul>
 <li><strong>Temperature</strong>: <em>24</em></li>
@@ -708,12 +1144,12 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/data&quot; -h mq.cloud4rpi.
 <p class="admonition-title">Note</p>
 <p>Replace <strong>your_device_token</strong> with your device token displayed on the <a href="https://cloud4rpi.io/devices">device page</a>.</p>
 </div>
-<h1 id="diagnostic-data">Diagnostic Data</h1>
+<h2 id="diagnostic-data">Diagnostic Data</h2>
 <p>Send messages with your device's diagnostic data to the following topic:</p>
 <pre><code class="gradle">devices/{token}/diagnostics
 </code></pre>
 
-<h3 id="topic-parameters_2">Topic Parameters</h3>
+<h4 id="topic-parameters_2">Topic Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -728,7 +1164,7 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/data&quot; -h mq.cloud4rpi.
 </tr>
 </tbody>
 </table>
-<h2 id="message-structure_2">Message Structure</h2>
+<h3 id="message-structure_2">Message Structure</h3>
 <pre><code class="javascript">{
     &quot;ts&quot;: datetime_isoformat,
     &quot;payload&quot;: {
@@ -740,7 +1176,7 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/data&quot; -h mq.cloud4rpi.
 }
 </code></pre>
 
-<h3 id="parameters_2">Parameters</h3>
+<h4 id="parameters_2">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -771,7 +1207,7 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/data&quot; -h mq.cloud4rpi.
 </tr>
 </tbody>
 </table>
-<h2 id="example_2">Example</h2>
+<h3 id="example_2">Example</h3>
 <p>The following example sends the following diagnostic values to Cloud4RPI:</p>
 <ul>
 <li><strong>CPU Temperature</strong>: <em>41</em></li>
@@ -786,12 +1222,12 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/diagnostics&quot; -h mq.clo
 <p class="admonition-title">Note</p>
 <p>Replace <strong>your_device_token</strong> with your device token displayed on the <a href="https://cloud4rpi.io/devices">device page</a>.</p>
 </div>
-<h1 id="commands-stream">Commands Stream</h1>
+<h2 id="commands-stream">Commands Stream</h2>
 <p>Receive commands sent from the <a href="https://cloud4rpi.io/control-panels">Control Panels</a> in real time by subscribing to the following topic:</p>
 <pre><code class="gradle">devices/{token}/commands
 </code></pre>
 
-<h3 id="topic-parameters_3">Topic Parameters</h3>
+<h4 id="topic-parameters_3">Topic Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -806,18 +1242,18 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/diagnostics&quot; -h mq.clo
 </tr>
 </tbody>
 </table>
-<h2 id="example_3">Example</h2>
+<h3 id="example_3">Example</h3>
 <p>Execute the following command to subscribe:</p>
 <pre><code class="sh">export DEVICE_TOKEN=your_device_token
 mosquitto_sub -d -t &quot;devices/$DEVICE_TOKEN/commands&quot; -h mq.cloud4rpi.io -i &quot;$DEVICE_TOKEN&quot;
 </code></pre>
 
 <p>This program works in the foreground and blocks the input while the connection to the broker persists. So, you instantly get commands sent from the UI in the following format:</p>
-<h2 id="message-structure_3">Message Structure</h2>
+<h3 id="message-structure_3">Message Structure</h3>
 <pre><code class="javascript">{var_name:var_new_value}
 </code></pre>
 
-<h3 id="parameters_3">Parameters</h3>
+<h4 id="parameters_3">Parameters</h4>
 <table>
 <thead>
 <tr>

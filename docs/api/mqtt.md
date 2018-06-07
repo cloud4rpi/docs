@@ -1,12 +1,16 @@
-# Prerequisites
+MQTT Protocol API
+=================
 
-The examples in this section are presented for the [Eclipse Mosquitto™](https://mosquitto.org/) MQTT client. Install the client if you are going to run the examples:
+
+## Prerequisites
+
+The examples in this section are presented for the [Eclipse Mosquitto™](https://mosquitto.org/) MQTT client. Install the client if you are going to run the examples. On Debian-based operating systems you can install it using the following command:
 
 ```sh
 sudo apt-get install mosquitto-clients
 ```
 
-# Cloud4RPi MQTT Broker
+## Cloud4RPi MQTT Broker
 
 Use the following data to connect to the MQTT broker:
 
@@ -26,7 +30,7 @@ Use the following data to connect to the MQTT broker:
     **Login** and **Password** are not used, you can leave them empty.
 
 
-# Variables Configuration
+## Variables Configuration
 
 Update the device's configuration by sending messages to the following topic:
 
@@ -34,13 +38,13 @@ Update the device's configuration by sending messages to the following topic:
 devices/{token}/config
 ```
 
-### Topic Parameters
+#### Topic Parameters
 
 Name      | Description
 --------- | -----------------------
 token     | The [device](https://cloud4rpi.io/devices) token
 
-## Message Structure
+### Message Structure
 
 ```javascript
 {
@@ -55,7 +59,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 }
 ```
 
-### Parameters
+#### Parameters
 
 Name               | Description   | Type   | Possible Values
 ------------------ | ------------- | ------ | ----------------------------
@@ -63,7 +67,7 @@ name               | Variable name | string | Any string
 type               | Variable type | string | "bool", "numeric" or "string"
 
 
-## Example
+### Example
 
 The following example creates two variables on the device:
 
@@ -81,7 +85,7 @@ mosquitto_pub -q 1 -d -t "devices/$DEVICE_TOKEN/config" -h mq.cloud4rpi.io -i "$
 !!! Note
     Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
-# Variable Values
+## Variable Values
 
 !!! Note
     Before sending variable values, configure variables by sending the [Variables Configuration message](#variables-configuration).
@@ -92,7 +96,7 @@ Send messages with your variable values to the following topic:
 devices/{token}/data
 ```
 
-### Topic Parameters
+#### Topic Parameters
 
 Name      | Description
 --------- | -----------------------
@@ -100,7 +104,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 
 
-## Message Structure
+### Message Structure
 
 ```javascript
 {
@@ -114,7 +118,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 }
 ```
 
-### Parameters
+#### Parameters
 
 Name               | Description          | Type          | Possible Values
 ------------------ | -------------------- | ------------- | ----------------------------
@@ -123,7 +127,7 @@ var_name           | Variable name        | string        | One of the variables
 var_value          | Variable value       | corresponding | Any
 
 
-## Example
+### Example
 
 The following example sends the values of two variables:
 
@@ -140,7 +144,7 @@ mosquitto_pub -q 1 -d -t "devices/$DEVICE_TOKEN/data" -h mq.cloud4rpi.io -i "$DE
     Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
 
-# Diagnostic Data
+## Diagnostic Data
 
 Send messages with your device's diagnostic data to the following topic:
 
@@ -148,14 +152,14 @@ Send messages with your device's diagnostic data to the following topic:
 devices/{token}/diagnostics
 ```
 
-### Topic Parameters
+#### Topic Parameters
 
 Name      | Description
 --------- | -----------------------
 token     | The [device](https://cloud4rpi.io/devices) token
 
 
-## Message Structure
+### Message Structure
 
 ```javascript
 {
@@ -169,7 +173,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 }
 ```
 
-### Parameters
+#### Parameters
 
 Name               | Description          | Type   | Possible Values
 ------------------ | -------------------- | ------ | ----------------------------
@@ -178,7 +182,7 @@ var_name           | Variable name        | string | Any
 var_value          | Variable value       | any    | Any
 
 
-## Example
+### Example
 
 The following example sends the following diagnostic values to Cloud4RPI:
 
@@ -194,7 +198,7 @@ mosquitto_pub -q 1 -d -t "devices/$DEVICE_TOKEN/diagnostics" -h mq.cloud4rpi.io 
 !!! Note
     Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
-# Commands Stream
+## Commands Stream
 
 Receive commands sent from the [Control Panels](https://cloud4rpi.io/control-panels) in real time by subscribing to the following topic:
 
@@ -202,14 +206,14 @@ Receive commands sent from the [Control Panels](https://cloud4rpi.io/control-pan
 devices/{token}/commands
 ```
 
-### Topic Parameters
+#### Topic Parameters
 
 Name      | Description
 --------- | -----------------------
 token     | The [device](https://cloud4rpi.io/devices) token
 
 
-## Example
+### Example
 
 Execute the following command to subscribe:
 
@@ -221,13 +225,13 @@ mosquitto_sub -d -t "devices/$DEVICE_TOKEN/commands" -h mq.cloud4rpi.io -i "$DEV
 This program works in the foreground and blocks the input while the connection to the broker persists. So, you instantly get commands sent from the UI in the following format:
 
 
-## Message Structure
+### Message Structure
 
 ```javascript
 {var_name:var_new_value}
 ```
 
-### Parameters
+#### Parameters
 
 Name               | Description        | Type             | Possible Values
 ------------------ | ------------------ | ---------------- | ----------------

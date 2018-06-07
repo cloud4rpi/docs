@@ -1,25 +1,28 @@
-# Variables Configuration
+HTTP Protocol API
+=================
+
+## Variables Configuration
 
 Updates the device's configuration.
 
-## Request Destination
+### Request Destination
 
 * **Method**: POST
 * **URL**: `https://cloud4rpi.io/api/devices/{token}/config`
 
-### URL Parameters
+#### URL Parameters
 
 Name      | Description
 --------- | -----------------------
 token     | The [device](https://cloud4rpi.io/devices) token
 
-### Headers
+#### Headers
 
 ```
 Content-Type: application/json
 ```
 
-## Request Body
+### Request Body
 
 ```javascript
 {
@@ -43,7 +46,7 @@ or
 ]
 ```
 
-### Parameters
+#### Parameters
 
 Name  | Description   | Type   | Possible Values
 ----- | ------------- | ------ | -----------------------------
@@ -51,7 +54,7 @@ name  | Variable name | string | Any string
 type  | Variable type | string | "bool", "numeric" or "string"
 
 
-## Example
+### Example
 
 The following example creates two variables on the device:
 
@@ -72,7 +75,7 @@ curl -X POST \
 
     Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
-## Response Body
+### Response Body
 
 ```javascript
 { "message": "OK" }
@@ -82,31 +85,31 @@ or
 { "error": error_text }
 ```
 
-# Variable Values
+## Variable Values
 
 Sends variable values.
 
 !!! Note
     Before sending variable values, configure variables by sending the [Variables Configuration message](#variables-configuration).
 
-## Request Destination
+### Request Destination
 
 * **Method**: POST
 * **URL**: `https://cloud4rpi.io/api/devices/{token}/data`
 
-### URL Parameters
+#### URL Parameters
 
 Name      | Description
 --------- | -----------------------
 token     | The [device](https://cloud4rpi.io/devices) token
 
-### Headers
+#### Headers
 
 ```
 Content-Type: application/json
 ```
 
-## Request Body
+### Request Body
 
 ```javascript
 {
@@ -120,7 +123,7 @@ Content-Type: application/json
 }
 ```
 
-### Parameters
+#### Parameters
 
 Name               | Description          | Type          | Possible Values
 ------------------ | -------------------  | ------------- | ----------------------------
@@ -129,7 +132,7 @@ var_name           | Variable name        | string        | One of the variables
 var_value          | Variable value       | corresponding | Any
 
 
-## Example
+### Example
 
 The following example sends the values of two variables:
 
@@ -149,7 +152,7 @@ curl -X POST \
 
     Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
-## Response Body
+### Response Body
 
 ```javascript
 { "message": "OK" }
@@ -160,28 +163,28 @@ or
 ```
 
 
-# Diagnostic Data
+## Diagnostic Data
 
 Sends device's diagnostic data.
 
-## Request Destination
+### Request Destination
 
 * **Method**: POST
 * **URL**: `https://cloud4rpi.io/api/devices/{token}/diagnostics`
 
-### URL Parameters
+#### URL Parameters
 
 Name      | Description
 --------- | -----------------------
 token     | The [device](https://cloud4rpi.io/devices) token
 
-### Headers
+#### Headers
 
 ```
 Content-Type: application/json
 ```
 
-## Request Body
+### Request Body
 
 ```javascript
 {
@@ -195,7 +198,7 @@ Content-Type: application/json
 }
 ```
 
-### Parameters
+#### Parameters
 
 Name               | Description          | Type   | Possible Values
 ------------------ | -------------------- | ------ | ----------------------------
@@ -204,7 +207,7 @@ var_name           | Variable name        | string | Any
 var_value          | Variable value       | any    | Any
 
 
-## Example
+### Example
 
 The following example sends the following diagnostic values to Cloud4RPi:
 
@@ -224,7 +227,7 @@ curl -X POST \
 
     Replace **your_device_token** with your device token displayed on the [device page](https://cloud4rpi.io/devices).
 
-## Response Body
+### Response Body
 
 ```javascript
 { "message": "OK" }
@@ -235,16 +238,16 @@ or
 ```
 
 
-# Commands Queue
+## Commands Queue
 
 Acquires the recent commands sent from the Control Panel.
 
-## Request Destination
+### Request Destination
 
 * **Method**: GET
 * **URL**: `https://cloud4rpi.io/api/devices/{token}/commands/latest`
 
-### URL Parameters
+#### URL Parameters
 
 Name      | Description
 --------- | -----------------------
@@ -252,7 +255,7 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 
 
-## Example
+### Example
 
 ```sh
 export DEVICE_TOKEN=your_device_token
@@ -260,7 +263,7 @@ export DEVICE_TOKEN=your_device_token
 curl -X GET https://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
 ```
 
-## Response Body
+### Response Body
 
 ```javascript
 [
@@ -271,7 +274,7 @@ curl -X GET https://cloud4rpi.io/api/devices/${DEVICE_TOKEN}/commands/latest
 ]
 ```
 
-### Parameters
+#### Parameters
 
 Name               | Description        | Type             | Possible Values
 ------------------ | ------------------ | ---------------- | ----------------

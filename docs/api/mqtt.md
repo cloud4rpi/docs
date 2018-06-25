@@ -14,10 +14,10 @@ sudo apt-get install mosquitto-clients
 
 Use the following data to connect to the MQTT broker:
 
-* **Host:** 
+* **Host:**
     * With SSL encryption: `mqtts://mq.cloud4rpi.io`
     * Without SSL encryption: `mqtt://mq.cloud4rpi.io`
-* **Port:** 
+* **Port:**
     * With SSL encryption: `8883`
     * Without SSL encryption: `1883`
 * **Client ID**: Your [Device](https://cloud4rpi.io/devices/) Token
@@ -48,14 +48,12 @@ token     | The [device](https://cloud4rpi.io/devices) token
 
 ```javascript
 {
-    "payload": {
-        [
-            {"name": name, "type": type},
-            {"name": name, "type": type},
-            // ...
-            {"name": name, "type": type}
-        ]
-    }
+    "payload": [
+        {"name": name, "type": type},
+        {"name": name, "type": type},
+        // ...
+        {"name": name, "type": type}
+    ]
 }
 ```
 

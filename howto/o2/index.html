@@ -96,7 +96,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#control-omega-led-from-web" tabindex="1" class="md-skip">
+      <a href="#control-omega-leds-from-web" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -447,12 +447,18 @@
     Prerequisites
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#code" title="Code" class="md-nav__link">
     Code
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -557,12 +563,18 @@
     Prerequisites
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#code" title="Code" class="md-nav__link">
     Code
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -585,37 +597,22 @@
                   <a href="https://github.com/cloud4rpi/docs/edit/master/docs/howto/o2.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="control-omega-led-from-web">Control Omega LED from WEB</h1>
-<h3 id="prerequisites">Prerequisites</h3>
+                <h1 id="control-omega-leds-from-web">Control Omega LEDs from WEB</h1>
+<h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>Configured and <a href="../../#connecting-a-new-device">connected</a> Omega2 board.</li>
+<li><a href="https://docs.onion.io/omega2-docs/expansion-dock.html">Expansion Dock</a> (optional)</li>
 </ul>
 <h3 id="code">Code</h3>
 <ul>
 <li>Open the <a href="https://github.com/cloud4rpi/cloud4rpi-omega2-python/blob/master/control.py">control.py</a> sample file.</li>
-<li>Replace <code>__YOUR_DEVICE_TOKEN__</code> with the device token from the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
-<li>Run <code>python led.py</code>. A new <code>Omega LED</code> variable should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
-<li>Open the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel.</li>
-<li>Add a new <strong>Switch</strong> widget and choose the newly added <code>Omega LED</code> variable.</li>
-</ul>
-<p>You can now switch the onboard LED state using this widget.</p>
-<h1 id="control-expansion-board-rgb-led-from-web">Control Expansion Board RGB LED from WEB</h1>
-<h2 id="prerequisites_1">Prerequisites</h2>
-<ul>
-<li>Configured and <a href="../../#connecting-a-new-device">connected</a> Omega2 board.</li>
-<li>Expansion Board</li>
-</ul>
-<h3 id="code_1">Code</h3>
-<!-- MERGE THE EXAMPLES !!! -->
-
-<ul>
-<li>Open the <a href="https://github.com/cloud4rpi/cloud4rpi-omega2-python/blob/master/led.py">led.py</a> sample file.</li>
 <li>Replace <code>__YOUR_DEVICE_TOKEN__</code> with the device token from the from the <a href="https://cloud4rpi.io/devices">Device</a> page.</li>
-<li>Run <code>python control.py</code>. Three new variables should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page: <code>RGB LED - Red</code>, <code>RGB LED - Green</code> and <code>RGB LED - Blue</code>.</li>
+<li>Run <code>python control.py</code>. Four new variables should appear on the <a href="https://cloud4rpi.io/devices">Device</a> page: <code>Omega LED</code>, <code>RGB LED - Red</code>, <code>RGB LED - Green</code> and <code>RGB LED - Blue</code>.</li>
 <li>Open the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel.</li>
-<li>Add a <strong>Switch</strong> widget for each variable.</li>
+<li>Add a <strong>Switch</strong> widget and bind them to the <code>Omega LED</code> variable.</li>
+<li>Add <strong>Slider</strong> widgets and bind them to <code>RGB LED</code> variables with range from 0 to 255.</li>
 </ul>
-<p>You can now change the RGB LED color using these widgets.</p>
+<p>You can now change the onboard LED state (and RGB LED color if you use the Expansion Dock) with these widgets.</p>
 <h1 id="secure-your-mqtt-connection">Secure your MQTT connection</h1>
 <p>Cloud4RPi supports the TLS-enabled MQTTs protocol. If your task requires an encrypted data transfer, follow the steps below:</p>
 <ol>

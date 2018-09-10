@@ -24,11 +24,84 @@ The [Cloud4RPi Python library](https://github.com/cloud4rpi/cloud4rpi) provides 
 
 The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device.py) class provides the following methods to communicate with the Cloud4RPi server and manage the variables state:
 
-* `declare(variables)` &ndash; 
-* `declare_diag(diag)` &ndash; 
-* `read_config()` &ndash; 
-* `read_data()` &ndash; 
-* `read_diag()` &ndash; 
-* `publish_config(cfg=None)` &ndash; 
-* `publish_data(data=None)` &ndash; 
-* `publish_diag(diag=None)` &ndash; 
+* `declare(variables)` &ndash; configures the variables attached to the device.
+    
+    **Parameters:**
+    
+    * `variables` &ndash; a dictionary with the variables description of the following structure: 
+        
+        `{ name: { 'type': type, 'bind': binding, 'value': value }, ... }`, where:
+
+        * `name` &ndash; an internal variable name. You can change the name displayed in the UI on the device page.
+        * `type` &ndash; a variable type. Available types: `'bool'`, `'numeric'` and `'string'`.
+        * `binding` &ndash; a function that accepts the current variable as a parameter and returns the new one. This function is called on every value update (scheduled updates and value change signals from Control Panels). You can also pass a Python variable if the value should not be changed from Cloud4RPi Control Panels.
+        * `value` *(optional)* &ndash; an initial variable value.
+
+    **Example:**
+
+        def led_control(value):
+            GPIO.output(LED_PIN, value)
+            return GPIO.input(LED_PIN)
+
+        ds_sensors = DS18b20.find_all()
+
+        device.declare({
+            'Room Temp': {
+                'type': 'numeric',
+                'bind': ds_sensors[0] if ds_sensors else None
+            }, 
+            'LED On': {
+                'type': 'bool',
+                'value': False,
+                'bind': led_control
+            }
+        })
+
+
+* `declare_diag(diag)` &ndash; configures the diagnostic variables attached to the device.
+
+    **Parameters:**
+
+    * `diag` &ndash; a dictionary with the diagnostic variables description of the following structure:
+
+    `{ name: binding, ... }`, where:
+
+    * `name` &ndash; a diagnostic variable name.
+    * `binding` &ndash; a Python variable or function that holds or returns the actual Cloud4RPi diagnostic variable value.
+
+    **Example:**
+
+        device.declare_diag({
+            'Host': gethostname(),
+            'Operating System': " ".join(uname())
+        })
+
+* `read_config()` &ndash; prepares the previously declared (with the `declare(variables)` function) variables configuration for publishing (with the `publish_config(cfg=None)` function).
+
+    **Returns:** The dictionary in the format suitable for the `publish_config(cfg=None)` function.
+
+* `read_data()` &ndash; reads all variable values and prepares the variables state for publishing (with the `publish_data(data=None)` function).
+
+    **Returns:** The dictionary in the format suitable for the `publish_data(data=None)` function.
+
+* `read_diag()` &ndash; reads all diagnostic variable values and prepares the data for publishing (with the `publish_diag(diag=None)` function).
+
+    **Returns:** The dictionary in the format suitable for the `publish_diag(diag=None)` function.
+
+* `publish_config(cfg=None)` &ndash; publishes the variables configuration to the Cloud4RPi server.
+
+    **Parameters:**
+
+    * `cfg` *(optional)* &ndash; the `read_config()` output. If not passed, `read_config()` is invoked internally.
+
+* `publish_data(data=None)` &ndash; publishes the variable values to the Cloud4RPi server.
+
+    **Parameters:**
+
+    * `data` *(optional)* &ndash; the `read_data()` output. If not passed, `read_data()` is invoked internally.
+    
+* `publish_diag(diag=None)` &ndash; publishes the diagnostic variable values to the Cloud4RPi server.
+
+    **Parameters:**
+
+    * `diag` *(optional)* &ndash; the `read_diag()` output. If not passed, `read_diag()` is invoked internally.

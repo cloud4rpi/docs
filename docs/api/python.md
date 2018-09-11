@@ -75,7 +75,7 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
 
     * `diag` &ndash; a dictionary with the diagnostic variables description of the following structure:
 
-    `{ name: binding, ... }`, where:
+        `{ name: binding, ... }`, where:
 
     * `name` &ndash; a diagnostic variable name.
     * `binding` &ndash; a Python variable or function that holds or returns the actual Cloud4RPi diagnostic variable value.
@@ -103,18 +103,24 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
 
     **Parameters:**
 
-    * `cfg` *(optional)* &ndash; the `read_config()` output. If not passed, `read_config()` is invoked internally. This is a list with the following structure: `[{'name': name, 'type': type}, ...]`, where `name` and `type` corresponds to the same values in the `variables` parameter passed to the `declare(variables)` function.
+    * `cfg` *(optional)* &ndash; the `read_config()` output. If not passed, `read_config()` is invoked internally. This is a list with the following structure:
+    
+        `[{'name': name, 'type': type}, ...]`, where `name` and `type` corresponds to the same values in the `variables` parameter passed to the `declare(variables)` function.
 
 * `publish_data(data=None)` &ndash; publishes the variable values to the Cloud4RPi server.
 
     **Parameters:**
 
-    * `data` *(optional)* &ndash; the `read_data()` output. If not passed, `read_data()` is invoked internally. This is a dictionary with the following structure: `{name: value, ...}`, where `name` corresponds to the variable name in the `variables` parameter passed to the `declare(variables)` function, and `value` is the variable value returned by `binding`.
+    * `data` *(optional)* &ndash; the `read_data()` output. If not passed, `read_data()` is invoked internally. This is a dictionary with the following structure:
+    
+        `{name: value, ...}`, where `name` corresponds to the variable name in the `variables` parameter passed to the `declare(variables)` function, and `value` is the variable value returned by `binding`.
     
 * `publish_diag(diag=None)` &ndash; publishes the diagnostic variable values to the Cloud4RPi server.
 
     **Parameters:**
 
-    * `diag` *(optional)* &ndash; the `read_diag()` output. If not passed, `read_diag()` is invoked internally. This is a dictionary with the following structure: `{name: value, ...}`, where `name` corresponds to the variable name in the `diag` parameter passed to the `declare_diag(diag)` function, and `value` is the variable value returned by `binding`.
+    * `diag` *(optional)* &ndash; the `read_diag()` output. If not passed, `read_diag()` is invoked internally. This is a dictionary with the following structure:
+    
+        `{name: value, ...}`, where `name` corresponds to the variable name in the `diag` parameter passed to the `declare_diag(diag)` function, and `value` is the variable value returned by `binding`.
 
 

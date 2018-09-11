@@ -5,7 +5,7 @@ Python Library API
 
 The [Cloud4RPi Python library](https://github.com/cloud4rpi/cloud4rpi) provides the following public methods (defined in the [\_\_init\_\_.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/__init__.py) file):
 
-* `connect(device_token, host=mqqtBrokerHost, port=None, tls_config=None)` &ndash; connects to the Cloud and returns the [Device](#device) object.
+* `connect(device_token, host=mqqtBrokerHost, port=None, tls_config=None)` &ndash; connects to the Cloud and returns a [Device](#device) object.
 
     **Parameters:**
 
@@ -89,15 +89,15 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
 
 * `read_config()` &ndash; prepares the previously declared (with the `declare(variables)` function) variables configuration for publishing (with the `publish_config(cfg=None)` function).
 
-    **Returns:** The dictionary in the format suitable for the `publish_config(cfg=None)` function.
+    **Returns:** A dictionary in the format suitable for the `publish_config(cfg=None)` function.
 
 * `read_data()` &ndash; reads all variable values and prepares the variables state for publishing (with the `publish_data(data=None)` function).
 
-    **Returns:** The dictionary in the format suitable for the `publish_data(data=None)` function.
+    **Returns:** A dictionary in the format suitable for the `publish_data(data=None)` function.
 
 * `read_diag()` &ndash; reads all diagnostic variable values and prepares the data for publishing (with the `publish_diag(diag=None)` function).
 
-    **Returns:** The dictionary in the format suitable for the `publish_diag(diag=None)` function.
+    **Returns:** A dictionary in the format suitable for the `publish_diag(diag=None)` function.
 
 * `publish_config(cfg=None)` &ndash; publishes the variables configuration to the Cloud4RPi server.
 

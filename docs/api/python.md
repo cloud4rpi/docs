@@ -107,7 +107,7 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
     
         `[{'name': name, 'type': type}, ...]`, where `name` and `type` corresponds to the same values in the `variables` parameter passed to the `declare(variables)` function.
 
-* `publish_data(data=None)` &ndash; publishes the variable values to the Cloud4RPi server.
+* `publish_data(data=None)` &ndash; publishes variable values to the Cloud4RPi server.
 
     **Parameters:**
 
@@ -115,7 +115,7 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
     
         `{name: value, ...}`, where `name` corresponds to the variable name in the `variables` parameter passed to the `declare(variables)` function, and `value` is the variable value returned by `binding`.
     
-* `publish_diag(diag=None)` &ndash; publishes the diagnostic variable values to the Cloud4RPi server.
+* `publish_diag(diag=None)` &ndash; publishes diagnostic variable values to the Cloud4RPi server.
 
     **Parameters:**
 

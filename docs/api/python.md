@@ -3,7 +3,7 @@ Python Library API
 
 ## Library Root
 
-The [Cloud4RPi Python library](https://github.com/cloud4rpi/cloud4rpi) provides the following methods in the [\_\_init\_\_.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/__init__.py) file:
+The [Cloud4RPi Python library](https://github.com/cloud4rpi/cloud4rpi) provides the following public methods (defined in the [\_\_init\_\_.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/__init__.py) file):
 
 * `connect(device_token, host=mqqtBrokerHost, port=None, tls_config=None)` &ndash; connects to the Cloud and returns the [Device](#device) object.
 
@@ -19,6 +19,17 @@ The [Cloud4RPi Python library](https://github.com/cloud4rpi/cloud4rpi) provides 
         import cloud4rpi
         device = cloud4rpi.connect('823SnkK3N8L5Y7QQGiuGd53fi', tls_config={'ca_certs': '/etc/ssl/certs/ca-certificates.crt'})
 
+* `set_logging_to_file(log_file_path)` &ndash; TODO
+
+    **Parameters:**
+
+    * `log_file_path` &ndash; TODO
+
+* `set_logging_level(level=logging.INFO)` &ndash; TODO
+
+    **Parameters:**
+
+    * `level` *(optional)* &ndash; TODO
 
 ## Device
 
@@ -105,3 +116,5 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
     **Parameters:**
 
     * `diag` *(optional)* &ndash; the `read_diag()` output. If not passed, `read_diag()` is invoked internally.
+
+

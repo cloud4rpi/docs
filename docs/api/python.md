@@ -9,7 +9,7 @@ The [Cloud4RPi Python library](https://github.com/cloud4rpi/cloud4rpi) provides 
 
     **Parameters:**
 
-    * `device_token` &ndash; a token displayed at the top of the device page on [cloud4rpi.io](https://cloud4rpi.io/devices). You can get one on the [Devices](https://cloud4rpi.io/devices) page: create a device using the **New Device** button in the top right corner, and use its token.
+    * `device_token` &ndash; a token displayed at the top of the device page on [cloud4rpi.io](https://cloud4rpi.io/devices). You can use the **New Device** button in the top right corner of the [Devices](https://cloud4rpi.io/devices) page to create a device and use its token.
     * `host` *(optional)* &ndash; a Cloud4RPi MQTT broker address. The default address is defined in the [config.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/config.py) file.
     * `port` *(optional)* &ndash; a Cloud4RPi MQTT broker port. The default port is defined in the [config.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/config.py) file.
     * `tls_config` *(optional)* &ndash; a dictionary with parameters for the Paho MQTT's [tls_set()](https://github.com/eclipse/paho.mqtt.python#tls_set) function.
@@ -45,7 +45,7 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
 
         * `name` &ndash; an internal variable name. You can change the name displayed in the UI on the device page.
         * `type` &ndash; a variable type. Available types: `'bool'`, `'numeric'` and `'string'`.
-        * `binding` &ndash; a function that accepts the current variable as a parameter and returns the new one. This function is called on every value update (scheduled updates and value change signals from Control Panels). You can also pass a Python variable if the value should not be changed from Cloud4RPi Control Panels.
+        * `binding` &ndash; a function that accepts the current variable as a parameter and returns a new one. This function is called on every value update (scheduled updates and value change signals from Control Panels). You can also pass a Python variable if the value should not be changed from Cloud4RPi Control Panels.
         * `value` *(optional)* &ndash; an initial variable value passed to a `binding` function during the first update.
 
     **Example:**
@@ -121,6 +121,6 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
 
     * `diag` *(optional)* &ndash; the `read_diag()` output. If not passed, `read_diag()` is invoked internally. This is a dictionary with the following structure:
     
-        `{name: value, ...}`, where `name` corresponds to the variable name in the `diag` parameter passed to the `declare_diag(diag)` function, and `value` is the variable value returned by `binding`.
+        `{name: value, ...}`, where `name` corresponds to the variable name in the `diag` parameter passed to the `declare_diag(diag)` function, and `value` is the variable value the `binding` returns.
 
 

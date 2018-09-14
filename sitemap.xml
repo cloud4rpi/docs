@@ -1,68 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/start/rpi/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/start/chip/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/start/o2/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/start/esp8266-upy/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/start/esp-pio/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/start/esp-ino/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/howto/rpi/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/howto/chip/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/howto/o2/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/api/mqtt/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/api/http/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>/faq/</loc>
-     <lastmod>2018-07-26</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>None</loc>
+     <lastmod>2018-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

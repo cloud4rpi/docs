@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.5, mkdocs-material-2.9.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.ba0fd1a6.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
       
       
     
@@ -52,8 +52,8 @@
       <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
@@ -96,7 +96,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#control-led-from-web-using-raspberry-pi" tabindex="1" class="md-skip">
+      <a href="../../#control-led-from-web-using-raspberry-pi" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -201,11 +201,11 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <span class="md-nav__button md-logo">
+    <a href="../.." title="Cloud4RPi Documentation" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
-    </span>
+    </a>
     Cloud4RPi Documentation
   </label>
   
@@ -497,6 +497,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../api/python/" title="Python Library" class="md-nav__link">
+      Python Library
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../api/mqtt/" title="MQTT Protocol" class="md-nav__link">
       MQTT Protocol
     </a>
@@ -588,7 +600,7 @@
                 <h1 id="control-led-from-web-using-raspberry-pi">Control LED from WEB using Raspberry Pi</h1>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>Configured and <a href="../../#connecting-a-new-device">connected</a> device.</li>
+<li>Configured and <a href="/#connecting-a-new-device">connected</a> device.</li>
 <li>Breadboard, connecting wires, 330Ω..1kΩ resistor.</li>
 </ul>
 <h2 id="code">Code</h2>
@@ -604,7 +616,7 @@
 <h1 id="monitor-device-events-using-colored-status">Monitor Device Events using Colored Status</h1>
 <h2 id="prerequisites_1">Prerequisites</h2>
 <ul>
-<li>Configured and <a href="../../#connecting-a-new-device">connected</a> device.</li>
+<li>Configured and <a href="/#connecting-a-new-device">connected</a> device.</li>
 </ul>
 <h2 id="code_1">Code</h2>
 <ul>
@@ -622,12 +634,12 @@
 <p>This example shows how to use the <a href="https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf">DS18B20</a> temperature sensor with the Cloud4RPi service.</p>
 <h2 id="prerequisites_2">Prerequisites</h2>
 <ul>
-<li>Configured and <a href="../../#connecting-a-new-device">connected</a> device with 1-Wire support.</li>
-<li><a href="../../#prerequisites">Enabled</a> 1-Wire interface.</li>
+<li>Configured and <a href="/#connecting-a-new-device">connected</a> device with 1-Wire support.</li>
+<li><a href="/#prerequisites">Enabled</a> 1-Wire interface.</li>
 <li>Breadboard, connecting wires, a pull-up resistor (4.7kΩ).</li>
 </ul>
 <h2 id="schematics">Schematics</h2>
-<p><img alt="" src="../../res/ds18b20.png" /></p>
+<p><img alt="" src="/res/ds18b20.png" /></p>
 <ul>
 <li>Connect the <strong>GND</strong> pin to any GND pin on your board.</li>
 <li>Connect the <strong>Vdd</strong> pin to a 5V or 3.3V pin.</li>
@@ -651,7 +663,7 @@
 <p>You can now monitor CPU and room temperature using these widgets.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you need to start your script automatically when the system loads, install the <strong>control.py</strong> script as a service using our <a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/service_install.sh">service_install.sh</a> script. Refer to the <a href="../../#installing-as-a-service">Installing as a Service</a> section for more details.</p>
+<p>If you need to start your script automatically when the system loads, install the <strong>control.py</strong> script as a service using our <a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/service_install.sh">service_install.sh</a> script. Refer to the <a href="/#installing-as-a-service">Installing as a Service</a> section for more details.</p>
 </div>
 <h1 id="secure-your-mqtt-connection">Secure your MQTT connection</h1>
 <p>Cloud4RPi supports the TLS-enabled MQTTs protocol. If your task requires an encrypted data transfer, enable TLS by changing the <code>cloud4rpi.connect()</code> method call as follows:</p>
@@ -734,9 +746,9 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.a59e2a89.js"></script>
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"0.17.5",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     

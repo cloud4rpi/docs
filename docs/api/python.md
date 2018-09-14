@@ -91,7 +91,7 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
 
     **Returns:** A dictionary in the format suitable for the `publish_config(cfg=None)` function.
 
-* `read_data()` &ndash; reads all variable values and prepares the variables state for publishing (with the `publish_data(data=None)` function).
+* `read_data()` &ndash; updates all variable values and prepares the variables state for publishing (with the `publish_data(data=None)` function). This method calls all `binding` functions and saves the returned values as new variable values.
 
     **Returns:** A dictionary in the format suitable for the `publish_data(data=None)` function.
 

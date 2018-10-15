@@ -10,13 +10,11 @@ Cloud4RPi communicates with almost any device via the [MQTT](https://en.wikipedi
 
 Currently, we provide detailed instructions and examples for the following platforms and languages:
 
-- [Raspberry Pi](https://www.raspberrypi.org/products/) on [Python](https://www.python.org/)
-- [Next Thing Co. C.H.I.P.](https://getchip.com/pages/chip) on [Python](https://www.python.org/)
-- [Onion Omega2](https://onion.io/omega2/) on [Python](https://www.python.org/)
-- [ESP8266](https://en.wikipedia.org/wiki/ESP8266/) on the following platforms:
-    - [MicroPython](https://micropython.org/)
-    - [PlatformIO](http://platformio.org)
-    - [Arduino](https://www.arduino.cc/)
+- [Raspberry Pi + Python](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python)
+- [Next Thing Co. C.H.I.P. + Python](https://github.com/cloud4rpi/cloud4rpi-chip-python)
+- [Onion Omega2 + Python](https://github.com/cloud4rpi/cloud4rpi-omega2-python)
+- [ESP8266 + MicroPython](https://github.com/cloud4rpi/cloud4rpi-esp8266-micropython)
+- [ESP8266 + Arduino or PlatformIO](https://github.com/cloud4rpi/cloud4rpi-esp-arduino)
 
 !!! Note
     Both Python 2 and Python 3 are supported.

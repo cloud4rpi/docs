@@ -43,7 +43,7 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
         
         `{ name: { 'type': type, 'bind': binding, 'value': value }, ... }`, where:
 
-        * `name` &ndash; an internal variable name. You can change the name displayed in the UI on the device page.
+        * `name` &ndash; an internal variable name. Name cannot contain dots (i.e. **.**) and dollar signs (i.e. **$**). You can change the name displayed in the UI on the device page.
         * `type` &ndash; a variable type. Available types: `'bool'`, `'numeric'` and `'string'`.
         * `binding` &ndash; a function that accepts the current variable as a parameter and returns a new one. This function is called on every value update (scheduled updates and value change signals from Control Panels). You can also pass a Python variable if the value should not be changed from Cloud4RPi Control Panels.
         * `value` *(optional)* &ndash; an initial variable value passed to a `binding` function during the first update.

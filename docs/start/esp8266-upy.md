@@ -60,4 +60,4 @@ Connect the LED to **GPIO12** and a button to **GPIO16**. If you need to use oth
 12. Press the hardware button and notice the changes on the control panel.
 13. Use the **LED** switch on the control panel to light the hardware LED.
 
-Explore the code of the [main.py](main.py) file and adapt it for your needs. Feel free to [share](https://cloud4rpi.answerdesk.io/) your projects and ideas with us!
+Explore the code of the [main.py](https://github.com/cloud4rpi/cloud4rpi-esp8266-micropython/blob/master/main.py) file and adapt it for your needs. Feel free to [share](https://cloud4rpi.answerdesk.io/) your projects and ideas with us!

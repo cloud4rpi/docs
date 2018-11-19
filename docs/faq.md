@@ -81,3 +81,14 @@ sudo systemctl disable cloud4rpi.service
 sudo rm /lib/systemd/system/cloud4rpi.service
 sudo systemctl daemon-reload
 ```
+
+
+## How to choose the DATA_SENDING_INTERVAL value?
+
+You should call [device.publish_data()](/api/python/#publish_data) and [device.publish_diag()](/api/python/#publish_diag) functions frequently in order to update the monitored variables. The recommended update frequency depends on the variable dynamics. For example, the atmospheric condition
+ does not change very much within a minute, thus the reasonable delay between updates for a weather station is from one to ten minutes.
+
+If you monitor several variables with different dynamics, the delay between updates should be the shortest of all.
+
+!!! Note
+    The variable update interval does not affect commands reception. Variable changes made using the Web UI (**Switch** or **Slider** widget) are applied instantly.

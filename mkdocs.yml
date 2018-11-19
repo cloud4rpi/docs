@@ -25,6 +25,7 @@ pages:
 
 markdown_extensions:
     - admonition:
+    - attr_list:
 
 extra_css: [res/extra.css]
 theme: material

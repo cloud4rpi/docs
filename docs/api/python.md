@@ -10,7 +10,7 @@ The [Cloud4RPi Python library](https://github.com/cloud4rpi/cloud4rpi) provides 
 
     **Parameters:**
 
-    * `device_token` &ndash; a token displayed at the top of the device page on [cloud4rpi.io](https://cloud4rpi.io/devices). You can use the **New Device** button in the top right corner of the [Devices](https://cloud4rpi.io/devices) page to create a device and use its token.
+    * `device_token` &ndash; a token displayed at the top of the device page on [cloud4rpi.io](https://cloud4rpi.io/devices). You can use the **New Device** button in the top right corner of the [Devices](https://cloud4rpi.io/devices) page to create a new device and use its token.
     * `host` *(optional)* &ndash; a Cloud4RPi MQTT broker address. The default address is defined in the [config.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/config.py) file.
     * `port` *(optional)* &ndash; a Cloud4RPi MQTT broker port. The default port is defined in the [config.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/config.py) file.
     * `tls_config` *(optional)* &ndash; a dictionary with parameters for the Paho MQTT's [tls_set()](https://github.com/eclipse/paho.mqtt.python#tls_set) function.
@@ -36,7 +36,7 @@ The [Cloud4RPi Python library](https://github.com/cloud4rpi/cloud4rpi) provides 
 
 ## Device
 
-The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device.py) class provides the following methods to communicate with the Cloud4RPi server and manage the variables state:
+The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device.py) class provides the following methods to communicate with the Cloud4RPi server and manage the variables' state:
 
 * `declare(variables)` &ndash; configures the variables attached to the device.
     {: .anchor #declare }
@@ -47,9 +47,9 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
         
         `{ name: { 'type': type, 'bind': binding, 'value': value }, ... }`, where:
 
-        * `name` &ndash; an internal variable name. Name cannot contain dots (i.e. **.**) and dollar signs (i.e. **$**). You can change the name displayed in the UI on the device page.
+        * `name` &ndash; an internal variable name. Name cannot contain dots (**.**) or dollar signs (**$**). You can change the name displayed in the UI on the device page.
         * `type` &ndash; a variable type. Available types: `'bool'`, `'numeric'` and `'string'`.
-        * `binding` &ndash; a function that accepts the current variable as a parameter and returns a new one. This function is called on every value update (scheduled updates and value change signals from Control Panels). You can also pass a Python variable if the value should not be changed from Cloud4RPi Control Panels.
+        * `binding` &ndash; a function that accepts the current variable as a parameter and returns a new variable. This function is called every time a value is updated (scheduled updates and value change signals from Control Panels). You can also pass a Python variable if the value should not be changed from Cloud4RPi Control Panels.
         * `value` *(optional)* &ndash; an initial variable value passed to a `binding` function during the first update.
 
     **Example:**
@@ -78,12 +78,12 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
 
     **Parameters:**
 
-    * `diag` &ndash; a dictionary with the diagnostic variables description of the following structure:
+    * `diag` &ndash; a dictionary with the diagnostic variables' description. It has the following structure:
 
         `{ name: binding, ... }`, where:
 
-    * `name` &ndash; a diagnostic variable name.
-    * `binding` &ndash; a Python variable or function that holds or returns the actual Cloud4RPi diagnostic variable value.
+    * `name` &ndash; a diagnostic variable's name.
+    * `binding` &ndash; a Python variable or function that holds or returns the actual Cloud4RPi diagnostic variable's value.
 
     **Example:**
 
@@ -92,22 +92,22 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
             'Operating System': " ".join(uname())
         })
 
-* `read_config()` &ndash; prepares the previously declared (with the `declare(variables)` function) variables configuration for publishing (with the `publish_config(cfg=None)` function).
+* `read_config()` &ndash; prepares the previously declared (with the `declare(variables)` function) variables' configuration for publishing (with the `publish_config(cfg=None)` function).
     {: .anchor #read_config }
 
     **Returns:** A dictionary in the format suitable for the `publish_config(cfg=None)` function.
 
-* `read_data()` &ndash; updates all variable values and prepares the variables state for publishing (with the `publish_data(data=None)` function). This method calls all `binding` functions and saves the returned values as new variable values.
+* `read_data()` &ndash; updates all variable values and prepares the variables' state for publishing (with the `publish_data(data=None)` function). This method calls all the `binding` functions and saves the returned values as new variable values.
     {: .anchor #read_data }
 
     **Returns:** A dictionary in the format suitable for the `publish_data(data=None)` function.
 
-* `read_diag()` &ndash; reads all diagnostic variable values and prepares the data for publishing (with the `publish_diag(diag=None)` function).
+* `read_diag()` &ndash; reads all the diagnostic variable values and prepares the data for publishing (with the `publish_diag(diag=None)` function).
     {: .anchor #read_diag }
 
     **Returns:** A dictionary in the format suitable for the `publish_diag(diag=None)` function.
 
-* `publish_config(cfg=None)` &ndash; publishes the variables configuration to the Cloud4RPi server.
+* `publish_config(cfg=None)` &ndash; publishes the variables' configuration to the Cloud4RPi server.
     {: .anchor #publish_config }
 
     **Parameters:**
@@ -132,6 +132,6 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
 
     * `diag` *(optional)* &ndash; the `read_diag()` output. If not passed, `read_diag()` is invoked internally. This is a dictionary with the following structure:
     
-        `{name: value, ...}`, where `name` corresponds to the variable name in the `diag` parameter passed to the `declare_diag(diag)` function, and `value` is the variable value the `binding` returns.
+        `{name: value, ...}`, where `name` corresponds to the variable's name in the `diag` parameter passed to the `declare_diag(diag)` function, and `value` is the variable's value the `binding` returns.
 
 

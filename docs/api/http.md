@@ -38,7 +38,7 @@ Content-Type: application/json
 Name  | Description   | Type   | Possible Values
 ----- | ------------- | ------ | -----------------------------
 name  | Variable name | string | Any string
-type  | Variable type | string | "bool", "numeric" or "string"
+type  | Variable type | string | "bool", "numeric", "string", or "location"
 
 
 ### Example
@@ -77,6 +77,7 @@ or
 Sends variable values.
 
 !!! Note
+
     Before sending variable values, configure variables by sending the [Variables Configuration message](#variables-configuration).
 
 ### Request Destination
@@ -118,6 +119,9 @@ datetime_isoformat | Timestamp (optional) | string        | Time in the **ISO 86
 var_name           | Variable name        | string        | One of the variables
 var_value          | Variable value       | corresponding | Any
 
+!!! Note
+
+    Use the following object to send the `location` variable values: `{"lat": latitude_value, "lng": longitude_value}`, where `latitude_value` and `longitude_value` are floating point numbers.
 
 ### Example
 

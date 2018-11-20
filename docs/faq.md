@@ -85,8 +85,7 @@ sudo systemctl daemon-reload
 
 ## How to choose the DATA_SENDING_INTERVAL value?
 
-You should call [device.publish_data()](/api/python/#publish_data) and [device.publish_diag()](/api/python/#publish_diag) functions frequently to update the monitored variables. The recommended update frequency depends on the variable dynamics, for example, atmospheric conditions
- do not change every minute. This means the delay between updates for a weather station should be one to ten minutes.
+You should call [device.publish_data()](/api/python/#publish_data) and [device.publish_diag()](/api/python/#publish_diag) functions frequently to update the monitored variables. The update frequency depends on the variable dynamics, for example, atmospheric conditions do not change every minute. This means the delay between updates for a weather station should be one to ten minutes.
 
 If you monitor several variables with different dynamics, the delay between updates should be the shortest of all.
 

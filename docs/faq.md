@@ -26,7 +26,7 @@ Follow the instructions below if you experience issues with the 1-Wire interface
 1. Run `sudo raspi-config` and make sure that the 1-Wire interface is enabled (**Interfacing Options** | **1-Wire** menu).
 2. Add the `dtoverlay=w1-gpio` string to your `/boot/config.txt` file (`echo dtoverlay=w1-gpio | sudo tee -a /boot/config.txt`).
 3. Reboot (`sudo reboot` command).
-4. Double-check the wiring and your device's operational voltage. The 1-Wire **DATA** bus should be connected to **GPIO4** (Pin 7) and set to **VCC**.
+4. Double-check the wiring and your device's operational voltage. The 1-Wire **DATA** bus should be connected to **GPIO4** (Pin 7) and pulled-up to **VCC**.
 
     ![](/res/ds18b20.png)
 
@@ -90,4 +90,4 @@ You should call [device.publish_data()](/api/python/#publish_data) and [device.p
 If you monitor several variables with different dynamics, the delay between updates should be the shortest of all.
 
 !!! Note
-    The variable update interval does not affect commands reception. Variable changes made using the Web UI (**Switch** or **Slider** widget) are applied instantly.
+    The variable update interval does not affect commands, and variable changes made through the Web UI (**Switch** or **Slider** widget) are applied instantly.

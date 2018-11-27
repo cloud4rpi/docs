@@ -87,7 +87,7 @@ sudo systemctl daemon-reload
 
 You should call [device.publish_data()](/api/python/#publish_data) and [device.publish_diag()](/api/python/#publish_diag) functions frequently to update the monitored variables. The update frequency depends on the variable dynamics, for example, atmospheric conditions do not change every minute. This means the delay between updates for a weather station should be one to ten minutes.
 
-If you monitor several variables with different dynamics, the delay between updates should be the shortest of all.
+If you monitor several variables with different dynamics, the delay between updates should be the shortest.
 
 !!! Note
     The variable update interval does not affect commands, and variable changes made through the Web UI (**Switch** or **Slider** widget) are applied instantly.

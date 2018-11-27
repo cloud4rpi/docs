@@ -3,7 +3,7 @@ site_description: Cloud control panel for your IoT projects.
 site_author: Cloud4RPi Team
 repo_url: https://github.com/cloud4rpi/docs
 
-pages:
+nav:
 - Home: index.md
 - Getting Started:
     - Raspberry Pi: start/rpi.md
@@ -25,6 +25,7 @@ pages:
 
 markdown_extensions:
     - admonition:
+    - attr_list:
 
 extra_css: [res/extra.css]
 theme: material

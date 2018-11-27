@@ -67,3 +67,8 @@ h1 {
         background-color: #29b5ec;
     }
 }
+
+.anchor {
+    padding-top: 6rem;
+    margin-top: -6rem !important;
+}

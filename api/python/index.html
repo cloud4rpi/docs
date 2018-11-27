@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.5">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
@@ -44,12 +44,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.11e41852.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -59,6 +59,7 @@
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
     
       <link rel="stylesheet" href="../../res/extra.css">
     
@@ -602,10 +603,10 @@
 <p>The <a href="https://github.com/cloud4rpi/cloud4rpi">Cloud4RPi Python library</a> provides the following public methods (defined in the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/__init__.py">__init__.py</a> file):</p>
 <ul>
 <li>
-<p><code>connect(device_token, host=mqqtBrokerHost, port=None, tls_config=None)</code> &ndash; connects to the Cloud and returns a <a href="#device">Device</a> object.</p>
+<p class="anchor" id="connect"><code>connect(device_token, host=mqqtBrokerHost, port=None, tls_config=None)</code> &ndash; connects to the Cloud and returns a <a href="#device">Device</a> object.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>device_token</code> &ndash; a token displayed at the top of the device page on <a href="https://cloud4rpi.io/devices">cloud4rpi.io</a>. You can use the <strong>New Device</strong> button in the top right corner of the <a href="https://cloud4rpi.io/devices">Devices</a> page to create a device and use its token.</li>
+<li><code>device_token</code> &ndash; a token displayed at the top of the device page on <a href="https://cloud4rpi.io/devices">cloud4rpi.io</a>. You can use the <strong>New Device</strong> button in the top right corner of the <a href="https://cloud4rpi.io/devices">Devices</a> page to create a new device and use its token.</li>
 <li><code>host</code> <em>(optional)</em> &ndash; a Cloud4RPi MQTT broker address. The default address is defined in the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/config.py">config.py</a> file.</li>
 <li><code>port</code> <em>(optional)</em> &ndash; a Cloud4RPi MQTT broker port. The default port is defined in the <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/config.py">config.py</a> file.</li>
 <li><code>tls_config</code> <em>(optional)</em> &ndash; a dictionary with parameters for the Paho MQTT's <a href="https://github.com/eclipse/paho.mqtt.python#tls_set">tls_set()</a> function.</li>
@@ -616,14 +617,14 @@ device = cloud4rpi.connect('823SnkK3N8L5Y7QQGiuGd53fi', tls_config={'ca_certs': 
 </code></pre>
 </li>
 <li>
-<p><code>set_logging_to_file(log_file_path)</code> &ndash; configures the library to save activity logs to a specified file.</p>
+<p class="anchor" id="set_logging_to_file"><code>set_logging_to_file(log_file_path)</code> &ndash; configures the library to save activity logs to a specified file.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>log_file_path</code> &ndash; path to a log file.</li>
 </ul>
 </li>
 <li>
-<p><code>set_logging_level(level=logging.INFO)</code> &ndash; changes the logging verbosity level.</p>
+<p class="anchor" id="set_logging_level"><code>set_logging_level(level=logging.INFO)</code> &ndash; changes the logging verbosity level.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>level</code> <em>(optional)</em> &ndash; <a href="https://docs.python.org/3/library/logging.html#levels">logging verbosity level</a>. The default level is <code>INFO</code>.</li>
@@ -631,19 +632,19 @@ device = cloud4rpi.connect('823SnkK3N8L5Y7QQGiuGd53fi', tls_config={'ca_certs': 
 </li>
 </ul>
 <h2 id="device">Device</h2>
-<p>The <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device.py">Device</a> class provides the following methods to communicate with the Cloud4RPi server and manage the variables state:</p>
+<p>The <a href="https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device.py">Device</a> class provides the following methods to communicate with the Cloud4RPi server and manage the variables' state:</p>
 <ul>
 <li>
-<p><code>declare(variables)</code> &ndash; configures the variables attached to the device.</p>
+<p class="anchor" id="declare"><code>declare(variables)</code> &ndash; configures the variables attached to the device.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li>
 <p><code>variables</code> &ndash; a dictionary with the variables description of the following structure: </p>
 <p><code>{ name: { 'type': type, 'bind': binding, 'value': value }, ... }</code>, where:</p>
 <ul>
-<li><code>name</code> &ndash; an internal variable name. Name cannot contain dots (i.e. <strong>.</strong>) and dollar signs (i.e. <strong>$</strong>). You can change the name displayed in the UI on the device page.</li>
+<li><code>name</code> &ndash; an internal variable name. Name cannot contain dots (<strong>.</strong>) or dollar signs (<strong>$</strong>). You can change the name displayed in the UI on the device page.</li>
 <li><code>type</code> &ndash; a variable type. Available types: <code>'bool'</code>, <code>'numeric'</code> and <code>'string'</code>.</li>
-<li><code>binding</code> &ndash; a function that accepts the current variable as a parameter and returns a new one. This function is called on every value update (scheduled updates and value change signals from Control Panels). You can also pass a Python variable if the value should not be changed from Cloud4RPi Control Panels.</li>
+<li><code>binding</code> &ndash; a function that accepts the current variable as a parameter and returns a new variable. This function is called every time a value is updated (scheduled updates and value change signals from Control Panels). You can also pass a Python variable if the value should not be changed from Cloud4RPi Control Panels.</li>
 <li><code>value</code> <em>(optional)</em> &ndash; an initial variable value passed to a <code>binding</code> function during the first update.</li>
 </ul>
 </li>
@@ -669,17 +670,17 @@ device.declare({
 </code></pre>
 </li>
 <li>
-<p><code>declare_diag(diag)</code> &ndash; configures the diagnostic variables attached to the device.</p>
+<p class="anchor" id="declare_diag"><code>declare_diag(diag)</code> &ndash; configures the diagnostic variables attached to the device.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li>
-<p><code>diag</code> &ndash; a dictionary with the diagnostic variables description of the following structure:</p>
+<p><code>diag</code> &ndash; a dictionary with the diagnostic variables' description. It has the following structure:</p>
 <p><code>{ name: binding, ... }</code>, where:</p>
 </li>
 <li>
-<p><code>name</code> &ndash; a diagnostic variable name.</p>
+<p><code>name</code> &ndash; a diagnostic variable's name.</p>
 </li>
-<li><code>binding</code> &ndash; a Python variable or function that holds or returns the actual Cloud4RPi diagnostic variable value.</li>
+<li><code>binding</code> &ndash; a Python variable or function that holds or returns the actual Cloud4RPi diagnostic variable's value.</li>
 </ul>
 <p><strong>Example:</strong></p>
 <pre><code>device.declare_diag({
@@ -689,19 +690,19 @@ device.declare({
 </code></pre>
 </li>
 <li>
-<p><code>read_config()</code> &ndash; prepares the previously declared (with the <code>declare(variables)</code> function) variables configuration for publishing (with the <code>publish_config(cfg=None)</code> function).</p>
+<p class="anchor" id="read_config"><code>read_config()</code> &ndash; prepares the previously declared (with the <code>declare(variables)</code> function) variables' configuration for publishing (with the <code>publish_config(cfg=None)</code> function).</p>
 <p><strong>Returns:</strong> A dictionary in the format suitable for the <code>publish_config(cfg=None)</code> function.</p>
 </li>
 <li>
-<p><code>read_data()</code> &ndash; updates all variable values and prepares the variables state for publishing (with the <code>publish_data(data=None)</code> function). This method calls all <code>binding</code> functions and saves the returned values as new variable values.</p>
+<p class="anchor" id="read_data"><code>read_data()</code> &ndash; updates all variable values and prepares the variables' state for publishing (with the <code>publish_data(data=None)</code> function). This method calls all the <code>binding</code> functions and saves the returned values as new variable values.</p>
 <p><strong>Returns:</strong> A dictionary in the format suitable for the <code>publish_data(data=None)</code> function.</p>
 </li>
 <li>
-<p><code>read_diag()</code> &ndash; reads all diagnostic variable values and prepares the data for publishing (with the <code>publish_diag(diag=None)</code> function).</p>
+<p class="anchor" id="read_diag"><code>read_diag()</code> &ndash; reads all the diagnostic variable values and prepares the data for publishing (with the <code>publish_diag(diag=None)</code> function).</p>
 <p><strong>Returns:</strong> A dictionary in the format suitable for the <code>publish_diag(diag=None)</code> function.</p>
 </li>
 <li>
-<p><code>publish_config(cfg=None)</code> &ndash; publishes the variables configuration to the Cloud4RPi server.</p>
+<p class="anchor" id="publish_config"><code>publish_config(cfg=None)</code> &ndash; publishes the variables' configuration to the Cloud4RPi server.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li>
@@ -711,7 +712,7 @@ device.declare({
 </ul>
 </li>
 <li>
-<p><code>publish_data(data=None)</code> &ndash; publishes variable values to the Cloud4RPi server.</p>
+<p class="anchor" id="publish_data"><code>publish_data(data=None)</code> &ndash; publishes variable values to the Cloud4RPi server.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li>
@@ -721,12 +722,12 @@ device.declare({
 </ul>
 </li>
 <li>
-<p><code>publish_diag(diag=None)</code> &ndash; publishes diagnostic variable values to the Cloud4RPi server.</p>
+<p class="anchor" id="publish_diag"><code>publish_diag(diag=None)</code> &ndash; publishes diagnostic variable values to the Cloud4RPi server.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li>
 <p><code>diag</code> <em>(optional)</em> &ndash; the <code>read_diag()</code> output. If not passed, <code>read_diag()</code> is invoked internally. This is a dictionary with the following structure:</p>
-<p><code>{name: value, ...}</code>, where <code>name</code> corresponds to the variable name in the <code>diag</code> parameter passed to the <code>declare_diag(diag)</code> function, and <code>value</code> is the variable value the <code>binding</code> returns.</p>
+<p><code>{name: value, ...}</code>, where <code>name</code> corresponds to the variable's name in the <code>diag</code> parameter passed to the <code>declare_diag(diag)</code> function, and <code>value</code> is the variable's value the <code>binding</code> returns.</p>
 </li>
 </ul>
 </li>
@@ -806,7 +807,7 @@ device.declare({
       
     </div>
     
-      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../../assets/javascripts/application.9e1f3b71.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

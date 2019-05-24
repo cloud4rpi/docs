@@ -9,7 +9,7 @@ nav:
     - Raspberry Pi: start/rpi.md
     - C.H.I.P.: start/chip.md
     - Omega2: start/o2.md
-    - ESP8266:
+    - ESP8266/ESP32:
         - MicroPython: start/esp8266-upy.md
         - PlatformIO: start/esp-pio.md
         - Arduino: start/esp-ino.md

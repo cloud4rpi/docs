@@ -1,11 +1,6 @@
-# Connecting an ESP8266
+# Connecting an ESP8266 or ESP32
 
-Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org/wiki/ESP8266) board (like [NodeMCU Dev Kit](http://www.nodemcu.com/index_en.html#fr_54747661d775ef1a3600009e)) to the [Cloud4RPi](https://cloud4rpi.io) control panel.
-
-## Prerequisites
-
-* **USB-UART Adapter** (if it is not integrated into your board).
-* Access to the ESP8266's **GPIO0** pin to enter flashing mode.
+Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org/wiki/ESP8266) board (like [NodeMCU Dev Kit](http://www.nodemcu.com/index_en.html#fr_54747661d775ef1a3600009e)) or [ESP32](https://en.wikipedia.org/wiki/ESP32) board (like [ESP32-DevKitC](https://www.espressif.com/en/products/hardware/esp32-devkitc/overview)) to the [Cloud4RPi](https://cloud4rpi.io) control panel.
 
 ## Creating a Project
 
@@ -38,7 +33,8 @@ The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduin
 ## Running
 
 6. Hit the `Build` button and wait until the compilation is completed.
-8. Connect the board in the flashing mode (power it with the GPIO0 pin connected to GND) and hit the `Upload` button.
+8. Hit the `Upload` button.
+8. If the upload fails, try to start the board in the flashing mode (connect the power supply with the GPIO0 pin connected to GND) and try uploading again.
 9. Once flashing is complete, open `Serial Monitor` and watch the sample code's output.
 8. Notice that the [device](https://cloud4rpi.io/devices) went online and started sending data.
 9. Go to the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.

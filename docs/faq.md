@@ -1,5 +1,15 @@
 Frequently asked questions and possible issues you may face when working with [Cloud4RPi](https://cloud4rpi.io):
 
+
+## How to update Cloud4RPi client installation?
+
+The Cloud4RPi client library is a [PyPI package](https://pypi.python.org/pypi/cloud4rpi) the [pip utility](https://pip.pypa.io/en/stable/) manages. Execute the following command to update the Cloud4RPi client library:
+
+```sh
+sudo pip install --upgrade cloud4rpi
+```
+
+
 ## How to avoid an Installation Error?
 
 You can get one of the following errors when you use the `sudo pip install cloud4rpi` command to install the Cloud4RPi client library:
@@ -19,6 +29,7 @@ After updating, reinstall **cloud4rpi**:
 sudo pip install cloud4rpi
 ```
 
+
 ## Raspberry Pi does not recognize my 1-Wire device
 
 Follow the instructions below if you experience issues with the 1-Wire interface on Raspberry Pi.
@@ -30,6 +41,7 @@ Follow the instructions below if you experience issues with the 1-Wire interface
 
     ![](/res/ds18b20.png)
 
+
 ## How to avoid the "Insecure Platform" warning?
 
 The `InsecurePlatformWarning: A true SSLContext object is not available...` notification appears when you run Cloud4RPi on a Python v2.7.9 and earlier. Use the following command to check the Python version:
@@ -39,6 +51,7 @@ python --version
 ```
 
 You can use [one of the following approaches](https://docs.python.org/2/using/index.html) to install the latest version.
+
 
 ## Where are the log files?
 
@@ -57,13 +70,6 @@ You can also call the following function at the beginning of your script to save
 cloud4rpi.set_logging_to_file(YOUR_LOGFILE_PATH)
 ```
 
-## How to update Cloud4RPi client installation?
-
-The Cloud4RPi client library is a [PyPI package](https://pypi.python.org/pypi/cloud4rpi) the [pip utility](https://pip.pypa.io/en/stable/) manages. Execute the following command to update the Cloud4RPi client library:
-
-```sh
-sudo pip install --upgrade cloud4rpi
-```
 
 ## How to use the service installed using the service_install.sh script?
 

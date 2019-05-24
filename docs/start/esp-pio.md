@@ -20,7 +20,7 @@ The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduin
             -D CLOUD4RPI_DEBUG=1
 
 4. Save the `platformio.ini` file and open the `src\main.cpp` file.
-5. Copy-paste the [sample code](https://github.com/cloud4rpi/cloud4rpi-esp-arduino/blob/master/examples/ESP8266/ESP8266.ino) into it.
+5. Copy-paste the sample code ([ESP8266](https://github.com/cloud4rpi/cloud4rpi-esp-arduino/blob/master/examples/ESP8266/ESP8266.ino), [ESP32](https://github.com/cloud4rpi/cloud4rpi-esp-arduino/blob/master/examples/ESP32/ESP32.ino)) into it.
 7. If you know the pin number connected to an LED on your board, replace the `BUILTIN_LED` constant with it.
 
 ## Connecting to Your Cloud4RPi Account
@@ -42,6 +42,6 @@ The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduin
 10. Add a new **Switch** widget and bind it to the `LED On` variable.
 11. Add a new **Text** widget and bind it to the `STATUS` variable. Configure different colors for the **"IDLE"**, **"RING"** and **"BOOM!"** strings.
 
-## Video 
+## Video
 
 <iframe width="739" height="480" src="https://www.youtube.com/embed/umUjwUjJsNI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

@@ -97,3 +97,16 @@ If you monitor several variables with different dynamics, the delay between upda
 
 !!! Note
     The variable update interval does not affect commands, and variable changes made through the Web UI (**Switch** or **Slider** widget) are applied instantly.
+
+
+## How to avoid WiFi library collision on Arduino?
+
+The `Multiple libraries were found for "WiFi.h"` message may appear in Arduino IDE, which means the IDE has two libraries with the same name, and it can not decide which of them to use.
+
+You can avoid this error by specifying the absolute path to the header file in the `#include` directive, for example, like this:
+
+```c
+#include <C:\Users\user\Documents\ArduinoData\packages\esp32\hardware\esp32\1.0.2\libraries\WiFi\src\WiFi.h>
+```
+
+The valid path to both libraries appear in the error message, you can copy-paste it. Remember to add the `src\` subfolder between the library path and header file name.

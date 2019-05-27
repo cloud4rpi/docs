@@ -20,7 +20,9 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 ## Opening Sample Code
 
 5. Open the sample code using the **File** | **Examples** | **cloud4rpi-esp-arduino** menu item. Restart Arduino IDE if this item did not appear.
+6. Select the **ESP32 Dev Module** board in **Tools** menu.
 7. If you know the pin number connected to an LED on your board, replace the `BUILTIN_LED` constant with it.
+7. Replace the `__SSID__` and `__PASSWORD__` strings with your Wi-Fi network data.
 
 
 ## Connecting to Your Cloud4RPi Account
@@ -28,7 +30,7 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 4. [Log in to your Cloud4RPi account](https://cloud4rpi.io/signin) or [create a new one](https://cloud4rpi.io/register).
 5. Copy [your device](https://cloud4rpi.io/devices)'s **Device Token**. You can create a device on the [Devices](https://cloud4rpi.io/devices) page and copy its **Device Token** if you do not have one.
 6. Replace the `__YOUR_DEVICE_TOKEN__` string with your device token.
-7. Replace the `__SSID__` and `__PASSWORD__` strings with your Wi-Fi network data.
+
 
 ## Running
 

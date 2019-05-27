@@ -1,15 +1,11 @@
-# Connecting an ESP8266
+# Connecting an ESP8266 or ESP32
 
-Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org/wiki/ESP8266) board (like [NodeMCU Dev Kit](http://www.nodemcu.com/index_en.html#fr_54747661d775ef1a3600009e)) to the [Cloud4RPi](https://cloud4rpi.io) control panel.
+Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org/wiki/ESP8266) board (like [NodeMCU Dev Kit](http://www.nodemcu.com/index_en.html#fr_54747661d775ef1a3600009e)) or [ESP32](https://en.wikipedia.org/wiki/ESP32) board (like [ESP32-DevKitC](https://www.espressif.com/en/products/hardware/esp32-devkitc/overview)) to the [Cloud4RPi](https://cloud4rpi.io) control panel.
 
-## Prerequisites
-
-* **USB-UART Adapter** (if it is not integrated into your board).
-* Access to ESP8266's **GPIO0** pin to enter flashing mode.
 
 ## Getting Libraries and Examples
 
-1. Open **Arduino** and select your board in the **Tools** | **Board** menu. [Add ESP8266 support](https://github.com/esp8266/Arduino) if required.
+1. Open **Arduino** and select your board in the **Tools** | **Board** menu. Add [ESP8266](https://github.com/esp8266/Arduino#installing-with-boards-manager) or [ESP32](https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md) support if required.
 2. Install the Cloud4RPi library from the **Library Manager** by opening the **Sketch** | **Include Library** | **Manage Libraries** menu, entering `cloud4rpi` into the search field and installing the **cloud4rpi-esp-arduino** package.
 3. Install **ArduinoJson** and **PubSubClient** libraries. You should do it manually because the **Library Manager** does not manage package dependencies.
 4. Configure the installed libraries:
@@ -19,11 +15,11 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
             #define MQTT_MAX_PACKET_SIZE 1024
             #define MQTT_MAX_TRANSFER_SIZE 128
  
-    3. Open the `%HOMEPATH%\Documents\Arduino\libraries\cloud4rpi-esp-arduino\src\Cloud4RPi.h` (`~/Documents/Arduino/libraries/cloud4rpi-esp-arduino/src/Cloud4RPi.h` on Mac) file and enable verbose output by adding the `#define CLOUD4RPI_DEBUG 1` line at the beginning.
+    3. [Optional] Open the `%HOMEPATH%\Documents\Arduino\libraries\cloud4rpi-esp-arduino\src\Cloud4RPi.h` (`~/Documents/Arduino/libraries/cloud4rpi-esp-arduino/src/Cloud4RPi.h` on Mac) file and enable verbose output by adding the `#define CLOUD4RPI_DEBUG 1` line at the beginning.
 
 ## Opening Sample Code
 
-5. Open the sample code using the **File** | **Examples** | **cloud4rpi-esp-arduino** | **ESP8266** menu item. Restart Arduino IDE if this item did not appear.
+5. Open the sample code using the **File** | **Examples** | **cloud4rpi-esp-arduino** menu item. Restart Arduino IDE if this item did not appear.
 7. If you know the pin number connected to an LED on your board, replace the `BUILTIN_LED` constant with it.
 
 

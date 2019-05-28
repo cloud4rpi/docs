@@ -38,9 +38,11 @@ The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduin
 9. Once flashing is complete, open `Serial Monitor` and watch the sample code's output.
 8. Notice that the [device](https://cloud4rpi.io/devices) went online and started sending data.
 9. Go to the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.
-10. Add a new **Chart** widget and bind it to the `Uptime` variable.
+10. Add a new **Number** widget and bind it to the `Uptime` variable.
 10. Add a new **Switch** widget and bind it to the `LED On` variable.
-11. Add a new **Text** widget and bind it to the `STATUS` variable. Configure different colors for the **"IDLE"**, **"RING"** and **"BOOM!"** strings.
+11. Add a new **Text** widget and bind it to the `State` variable. Configure different colors for the **"IDLE"**, **"RING"** and **"BOOM!"** strings.
+12. Add a new **Slider** widget and bind it to the `DesiredTemp` variable, set its minimum value to 10 and maximum value to 30.
+13. Add a new **Gauge** widget and bind it to the `DesiredTemp` variable, set its minimum value to 10 and maximum value to 30.
 
 ## Video
 

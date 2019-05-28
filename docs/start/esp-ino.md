@@ -21,7 +21,7 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 
 5. Open the sample code using the **File** | **Examples** | **cloud4rpi-esp-arduino** menu item. Restart Arduino IDE if this item did not appear.
 6. Select the **ESP32 Dev Module** board in **Tools** menu.
-7. If you know the pin number connected to an LED on your board, replace the `BUILTIN_LED` constant with it.
+7. If the `LED_BUILTIN` constant is not defined in your board's library, change this constant to the pin number to which an LED is connected (for example, `2`).
 7. Replace the `__SSID__` and `__PASSWORD__` strings with your Wi-Fi network data.
 
 

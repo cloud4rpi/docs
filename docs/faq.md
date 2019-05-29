@@ -1,4 +1,4 @@
-Frequently asked questions and possible issues you may face when working with [Cloud4RPi](https://cloud4rpi.io):
+Frequently asked questions and possible issues you can encounter with [Cloud4RPi](https://cloud4rpi.io):
 
 
 ## How to update Cloud4RPi client installation?

@@ -12,7 +12,7 @@ The documentation is created with [MkDocs](http://www.mkdocs.org/). Follow the s
 - Use the `pip install mkdocs mkdocs-material` command to install [MkDocs](http://www.mkdocs.org/#installation) and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 - Run the [serve.sh.bat](serve.sh.bat) file.
 
-While **MkDocs** is running, you should be able to access the documentation using the [http://127.0.0.1:8000](http://127.0.0.1:8000) URL.
+While **MkDocs** is running, use the [http://127.0.0.1:8000](http://127.0.0.1:8000) URL to access the documentation.
 
 
 ## See Also

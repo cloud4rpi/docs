@@ -35,8 +35,8 @@ The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduin
 6. Hit the `Build` button and wait until the compilation is completed.
 8. Hit the `Upload` button.
 8. If the upload fails, try to start the board in the flashing mode (connect the power supply with the GPIO0 pin connected to GND) and try uploading again.
-9. Once flashing is complete, open `Serial Monitor` and watch the sample code's output.
-8. Notice that the [device](https://cloud4rpi.io/devices) went online and started sending data.
+9. Once flashing is complete, open `Serial Monitor` to monitor the device's status.
+8. Notice that the device on the [Devices page](https://cloud4rpi.io/devices) went online and started sending data.
 9. Go to the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.
 10. Add a new **Number** widget and bind it to the `Uptime` variable.
 10. Add a new **Switch** widget and bind it to the `LED On` variable.

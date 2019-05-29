@@ -5,9 +5,9 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 
 ## Getting Libraries and Examples
 
-1. Open **Arduino** and select your board in the **Tools** | **Board** menu. Add [ESP8266](https://github.com/esp8266/Arduino#installing-with-boards-manager) or [ESP32](https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md) support if required.
+1. Open **Arduino** and select your board in the **Tools** | **Board** menu. Add [ESP8266](https://github.com/esp8266/Arduino#installing-with-boards-manager) or [ESP32](https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md) support if it is not added yet.
 2. Install the Cloud4RPi library from the **Library Manager**. To do this, open the **Sketch** | **Include Library** | **Manage Libraries** menu, enter `cloud4rpi` into the search field and install the **cloud4rpi-esp-arduino** package.
-3. Install **ArduinoJson** and **PubSubClient** libraries. You should do it manually because the **Library Manager** does not manage package dependencies.
+3. Install the dependencies: **ArduinoJson** and **PubSubClient** libraries.
 4. Configure the installed libraries:
     1. Open the `%HOMEPATH%\Documents\Arduino\libraries\PubSubClient\src\PubSubClient.h` (`~/Documents/Arduino/libraries/PubSubClient/src/PubSubClient.h` on Mac) file with any text editor (for instance, [VS Code](https://code.visualstudio.com)).
     2. Add the following define directives at the beginning:
@@ -36,8 +36,8 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 
 6. Hit the `Build` button and wait until the compilation is completed.
 8. Connect the board in the flashing mode (power it with the GPIO0 pin connected to GND) and hit the `Upload` button.
-9. Once flashing is complete, open `Serial Monitor` and watch the sample code's output.
-8. Notice that the [device](https://cloud4rpi.io/devices) went online and started sending data.
+9. Once flashing is complete, open `Serial Monitor` to monitor the device's status.
+8. Notice that the device on the [Devices page](https://cloud4rpi.io/devices) went online and started sending data.
 9. Go to the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.
 16. Add a new **Number** widget and bind it to the `Uptime` variable.
 17. Add a new **Switch** widget and bind it to the `LED On` variable.

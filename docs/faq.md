@@ -99,7 +99,7 @@ If you monitor several variables with different dynamics, the delay between upda
     The variable update interval does not affect commands, and variable changes made through the Web UI (**Switch** or **Slider** widget) are applied instantly.
 
 
-## How to avoid WiFi library collision on Arduino?
+## [Arduino IDE] How to avoid WiFi library collision?
 
 The `Multiple libraries were found for "WiFi.h"` message can appear in Arduino IDE. This indicates the IDE has two libraries with the same name, and it does not know which one to use.
 

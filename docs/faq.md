@@ -50,7 +50,7 @@ The `InsecurePlatformWarning: A true SSLContext object is not available...` noti
 python --version
 ```
 
-You can use [one of the following approaches](https://docs.python.org/2/using/index.html) to install the latest version.
+You can use [one of the following approaches](https://docs.python.org/2/using/index.html) to install the latest version:
 
 
 ## Where are the log files?

@@ -103,10 +103,10 @@ If you monitor several variables with different dynamics, the delay between upda
 
 The `Multiple libraries were found for "WiFi.h"` message can appear in Arduino IDE. This indicates the IDE has two libraries with the same name, and it does not know which one to use.
 
-You can avoid this error by specifying the absolute path to the header file in the `#include` directive, for example, like this:
+To avoid this error, specify the absolute path to the header file in the `#include` directive, for example:
 
 ```c
 #include <C:\Users\user\Documents\ArduinoData\packages\esp32\hardware\esp32\1.0.2\libraries\WiFi\src\WiFi.h>
 ```
 
-The valid path to both libraries appear in the error message, you can copy-paste it. Remember to add the `src\` subfolder between the library path and header file name.
+You can copy-paste the valid path to both libraries that appear in the error message. Add the `src\` subfolder between the library path and header file name.

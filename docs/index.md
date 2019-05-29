@@ -8,7 +8,7 @@ This website provides documentation for the [Cloud4RPi](https://cloud4rpi.io/) s
 
 Cloud4RPi communicates with almost any device via the [MQTT](https://en.wikipedia.org/wiki/MQTT) or **HTTP** protocol. 
 
-Currently, we provide detailed instructions and examples for the following platforms and languages:
+Detailed instructions and examples are available for the following platforms and languages:
 
 - [Raspberry Pi using Python](/start/rpi/) ([GitHub Repository](https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python))
 - [Next Thing Co. C.H.I.P. using Python](/start/chip/) ([GitHub Repository](https://github.com/cloud4rpi/cloud4rpi-chip-python))
@@ -18,6 +18,6 @@ Currently, we provide detailed instructions and examples for the following platf
 - [ESP8266 or ESP32 using PlatformIO](/start/esp-pio/) ([GitHub Repository](https://github.com/cloud4rpi/cloud4rpi-esp-arduino))
 
 !!! Note
-    Both Python 2 and Python 3 are supported.
+    Python 2 and Python 3 are supported.
 
-[Contact us](https://cloud4rpi.answerdesk.io/) if your device or preferred language is not listed, we are here to help.
+[Contact us](https://cloud4rpi.answerdesk.io/) if your device or preferred language is not listed.

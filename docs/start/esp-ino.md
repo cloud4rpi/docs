@@ -6,7 +6,7 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 ## Getting Libraries and Examples
 
 1. Open **Arduino** and select your board in the **Tools** | **Board** menu. Add [ESP8266](https://github.com/esp8266/Arduino#installing-with-boards-manager) or [ESP32](https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md) support if required.
-2. Install the Cloud4RPi library from the **Library Manager** by opening the **Sketch** | **Include Library** | **Manage Libraries** menu, entering `cloud4rpi` into the search field and installing the **cloud4rpi-esp-arduino** package.
+2. Install the Cloud4RPi library from the **Library Manager**. To do this, open the **Sketch** | **Include Library** | **Manage Libraries** menu, enter `cloud4rpi` into the search field and install the **cloud4rpi-esp-arduino** package.
 3. Install **ArduinoJson** and **PubSubClient** libraries. You should do it manually because the **Library Manager** does not manage package dependencies.
 4. Configure the installed libraries:
     1. Open the `%HOMEPATH%\Documents\Arduino\libraries\PubSubClient\src\PubSubClient.h` (`~/Documents/Arduino/libraries/PubSubClient/src/PubSubClient.h` on Mac) file with any text editor (for instance, [VS Code](https://code.visualstudio.com)).
@@ -15,13 +15,13 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
             #define MQTT_MAX_PACKET_SIZE 1024
             #define MQTT_MAX_TRANSFER_SIZE 128
  
-    3. [Optional] Open the `%HOMEPATH%\Documents\Arduino\libraries\cloud4rpi-esp-arduino\src\Cloud4RPi.h` (`~/Documents/Arduino/libraries/cloud4rpi-esp-arduino/src/Cloud4RPi.h` on Mac) file and enable verbose output by adding the `#define CLOUD4RPI_DEBUG 1` line at the beginning.
+    3. [Optional] Open the `%HOMEPATH%\Documents\Arduino\libraries\cloud4rpi-esp-arduino\src\Cloud4RPi.h` (`~/Documents/Arduino/libraries/cloud4rpi-esp-arduino/src/Cloud4RPi.h` on Mac) file and add the `#define CLOUD4RPI_DEBUG 1` line at the beginning to enable verbose output.
 
 ## Opening Sample Code
 
-5. Open the sample code using the **File** | **Examples** | **cloud4rpi-esp-arduino** menu item. Restart Arduino IDE if this item did not appear.
+5. Use the **File** | **Examples** | **cloud4rpi-esp-arduino** menu item to open the sample code. Restart Arduino IDE if this item does not appear.
 6. Select the **ESP32 Dev Module** board in **Tools** menu.
-7. If the `LED_BUILTIN` constant is not defined in your board's library, change this constant to the pin number to which an LED is connected (for example, `2`).
+7. If the `LED_BUILTIN` constant is not defined in your board's library, change this constant to the LED's pin number (for example, `2`).
 7. Replace the `__SSID__` and `__PASSWORD__` strings with your Wi-Fi network data.
 
 

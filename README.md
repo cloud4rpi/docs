@@ -7,7 +7,7 @@ This repository contains documentation for [Cloud4RPi](https://cloud4rpi.io/) se
 
 You can read it on [Cloud4RPi Documentation](http://docs.cloud4rpi.io) website.
 
-The documentation is created with [MkDocs](http://www.mkdocs.org/). If you need to open it locally do the following:
+The documentation is created with [MkDocs](http://www.mkdocs.org/). Follow the steps below to open it locally. 
 
 - Install [MkDocs](http://www.mkdocs.org/#installation) and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) using the `pip install mkdocs mkdocs-material` command.
 - Run the [serve.sh.bat](serve.sh.bat) file.

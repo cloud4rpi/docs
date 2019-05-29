@@ -35,15 +35,16 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 ## Running
 
 6. Hit the `Build` button and wait until the compilation is completed.
-8. Connect the board in the flashing mode (power it with the GPIO0 pin connected to GND) and hit the `Upload` button.
-9. Once flashing is complete, open `Serial Monitor` to monitor the device's status.
-8. Notice that the device on the [Devices page](https://cloud4rpi.io/devices) went online and started sending data.
-9. Go to the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.
-16. Add a new **Number** widget and bind it to the `Uptime` variable.
-17. Add a new **Switch** widget and bind it to the `LED On` variable.
-18. Add a new **Text** widget and bind it to the `State` variable. Configure different colors for the **"IDLE"**, **"RING"** and **"BOOM!"** strings.
-19. Add a new **Slider** widget and bind it to the `DesiredTemp` variable, set its minimum value to 10 and maximum value to 30.
-20. Add a new **Gauge** widget and bind it to the `DesiredTemp` variable, set its minimum value to 10 and maximum value to 30.
+8. Hit the `Upload` button.
+9. If the upload fails, try to start the board in the flashing mode (connect the power supply with the GPIO0 pin connected to GND) and try uploading again.
+10. Once flashing is complete, open `Serial Monitor` to monitor the device's status.
+11. Notice that the device on the [Devices page](https://cloud4rpi.io/devices) went online and started sending data.
+12. Go to the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.
+13. Add a new **Number** widget and bind it to the `Uptime` variable.
+14. Add a new **Switch** widget and bind it to the `LED On` variable.
+15. Add a new **Text** widget and bind it to the `State` variable. Configure different colors for the **"IDLE"**, **"RING"** and **"BOOM!"** strings.
+16. Add a new **Slider** widget and bind it to the `DesiredTemp` variable, set its minimum value to 10 and maximum value to 30.
+17. Add a new **Gauge** widget and bind it to the `DesiredTemp` variable, set its minimum value to 10 and maximum value to 30.
 
 
 ## Video

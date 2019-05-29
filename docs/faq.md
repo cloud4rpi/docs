@@ -44,7 +44,7 @@ Follow the instructions below if you experience issues with the 1-Wire interface
 
 ## How to avoid the "Insecure Platform" warning?
 
-The `InsecurePlatformWarning: A true SSLContext object is not available...` notification appears when you run Cloud4RPi on a Python v2.7.9 and earlier. Use the following command to check the Python version:
+The `InsecurePlatformWarning: A true SSLContext object is not available...` notification appears when you run Cloud4RPi on Python v2.7.9 and earlier. Use the following command to check the Python version:
 
 ```sh
 python --version

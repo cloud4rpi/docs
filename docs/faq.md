@@ -101,7 +101,7 @@ If you monitor several variables with different dynamics, the delay between upda
 
 ## How to avoid WiFi library collision on Arduino?
 
-The `Multiple libraries were found for "WiFi.h"` message may appear in Arduino IDE, which means the IDE has two libraries with the same name, and it can not decide which of them to use.
+The `Multiple libraries were found for "WiFi.h"` message can appear in Arduino IDE. This indicates the IDE has two libraries with the same name, and it does not know which one to use.
 
 You can avoid this error by specifying the absolute path to the header file in the `#include` directive, for example, like this:
 

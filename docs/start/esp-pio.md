@@ -20,7 +20,7 @@ The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduin
             -D CLOUD4RPI_DEBUG=1
 
 4. Save the `platformio.ini` file and open the `src\main.cpp` file.
-5. Copy-paste the sample code ([ESP8266](https://github.com/cloud4rpi/cloud4rpi-esp-arduino/blob/master/examples/ESP8266/ESP8266.ino), [ESP32](https://github.com/cloud4rpi/cloud4rpi-esp-arduino/blob/master/examples/ESP32/ESP32.ino)).
+5. Copy-paste the [sample code](https://github.com/cloud4rpi/cloud4rpi-esp-arduino/blob/master/examples/control/control.ino).
 7. If the `LED_BUILTIN` constant is not defined in your board's library, change this constant to the LED's pin number (for example, `2`).
 7. Replace the `__SSID__` and `__PASSWORD__` strings with your Wi-Fi network data.
 

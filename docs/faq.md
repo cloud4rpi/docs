@@ -1,5 +1,16 @@
 Frequently asked questions and possible issues you may face when working with [Cloud4RPi](https://cloud4rpi.io):
 
+## What are packets?
+
+Packet is a data portion sent from a device to the Cloud4RPi server (via the [MQTT](/api/mqtt/#cloud4rpi-mqtt-broker) or [HTTPs](/api/http/) protocol). A single packet can include multiple variable values. [Diagnostic data](/api/mqtt/#diagnostic-data) transfer is unlimited and does not consume packets.
+
+Packets information is displayed at the top right corner of [Devices](https://cloud4rpi.io/devices) and [Control Panels](https://cloud4rpi.io/control-panels) pages.
+
+![](packets.png)
+
+You can add more packets using the [Subscription](https://cloud4rpi.io/packets/purchase) page.
+
+
 ## How to avoid an Installation Error?
 
 You can get one of the following errors when you use the `sudo pip install cloud4rpi` command to install the Cloud4RPi client library:

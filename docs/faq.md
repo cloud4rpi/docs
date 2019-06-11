@@ -4,7 +4,7 @@ Frequently asked questions and possible issues you may face when working with [C
 
 Packet is a data portion sent from a device to the Cloud4RPi server (using the [MQTT](/api/mqtt/#cloud4rpi-mqtt-broker) or [HTTPs](/api/http/) protocol). A single packet can include multiple variable values. [Diagnostic data](/api/mqtt/#diagnostic-data) transfer is unlimited and does not consume packets.
 
-Packets information is displayed at the top right corner of [Devices](https://cloud4rpi.io/devices) and [Control Panels](https://cloud4rpi.io/control-panels) pages.
+Packets information is displayed at the top right corner of Cloud4RPi pages and on the [Account](https://stage.cloud4rpi.io/account) page.
 
 ![](packets.png)
 
@@ -96,7 +96,7 @@ sudo systemctl daemon-reload
 
 ## How to choose the DATA_SENDING_INTERVAL value?
 
-You should call [device.publish_data()](/api/python/#publish_data) and [device.publish_diag()](/api/python/#publish_diag) functions frequently to update the monitored variables. The update frequency depends on the variable dynamics, for example, atmospheric conditions do not change every minute. This means the delay between updates for a weather station should be one to ten minutes.
+You should call [device.publish_data()](/api/python/#publish_data) and [device.publish_diag()](/api/python/#publish_diag) functions frequently to update the monitored variables. The update frequency depends on the variable dynamics, for example, atmospheric conditions do not change every minute. This means the delay between updates for a weather station should be one to ten minutes. You should also consider available [packets](#what-are-packets) when choosing the `DATA_SENDING_INTERVAL` value.
 
 If you monitor several variables with different dynamics, the delay between updates should be the shortest.
 

@@ -2,7 +2,7 @@ Frequently asked questions and possible issues you may face when working with [C
 
 ## What are packets?
 
-Packet is a data portion sent from a device to the Cloud4RPi server (via the [MQTT](/api/mqtt/#cloud4rpi-mqtt-broker) or [HTTPs](/api/http/) protocol). A single packet can include multiple variable values. [Diagnostic data](/api/mqtt/#diagnostic-data) transfer is unlimited and does not consume packets.
+Packet is a data portion sent from a device to the Cloud4RPi server (using the [MQTT](/api/mqtt/#cloud4rpi-mqtt-broker) or [HTTPs](/api/http/) protocol). A single packet can include multiple variable values. [Diagnostic data](/api/mqtt/#diagnostic-data) transfer is unlimited and does not consume packets.
 
 Packets information is displayed at the top right corner of [Devices](https://cloud4rpi.io/devices) and [Control Panels](https://cloud4rpi.io/control-panels) pages.
 

@@ -5,7 +5,7 @@
 Starting from the date of your registration, you receive 10k free packets every new month. This amount is sufficient to send data to the cloud every five minutes for the whole month:
 
 ```
-10000 / 30 / 24 / 60 ≈ 0.23 packets a minute ≈ 1 packet every 4 minutes and 20 seconds
+10000 / 31 / 24 / 60 ≈ 0.22 packets a minute ≈ 1 packet every 4 minutes and 28 seconds
 ```
 
 ## Purchase Extra Packets

@@ -10,7 +10,7 @@ Starting from the date of your registration, you receive 10k free packets every 
 
 ## Purchase Extra Packets
 
-If you need a higher throughput, you can purchase extra packets. These packets are used only when you have no free packets left. For prices, refer to the [Purchase](https://stage.cloud4rpi.io/packets/purchase) page.
+If you need a higher throughput, you can purchase extra packets. These packets are used only when you have no free packets left. To view prices, refer to the [Purchase](https://stage.cloud4rpi.io/packets/purchase) page.
 
 ## Packet Spending Rate
 

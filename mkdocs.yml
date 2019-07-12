@@ -13,6 +13,7 @@ nav:
           - MicroPython: start/esp8266-upy.md
           - PlatformIO: start/esp-pio.md
           - Arduino: start/esp-ino.md
+  - Plans and Pricing: plans-and-pricing.md
   - How To:
       - Raspberry Pi: howto/rpi.md
       - C.H.I.P.: howto/chip.md
@@ -21,7 +22,6 @@ nav:
       - Python Library: api/python.md
       - MQTT Protocol: api/mqtt.md
       - HTTP Protocol: api/http.md
-  - Manage Packets: manage-packets.md
   - FAQ: faq.md
 
 markdown_extensions:

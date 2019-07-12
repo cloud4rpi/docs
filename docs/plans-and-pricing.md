@@ -1,4 +1,4 @@
-# Manage Packets
+# Plans and Pricing
 
 ## The Free Tier
 

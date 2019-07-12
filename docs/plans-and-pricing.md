@@ -26,7 +26,7 @@ The same functionality is available in the **Pricing Plan** category of your acc
 
 ## Packet Spending Rate
 
-You can spend packets at any rate. Unspent free and purchased packets are carried over to the next month. This applies to both free and purchased packets.
+You can spend packets at any rate. Unspent free and purchased packets are carried over to the next month.
 
 ## Send Data When Out of Packets
 

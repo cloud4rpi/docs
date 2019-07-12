@@ -4,28 +4,29 @@ site_author: Cloud4RPi Team
 repo_url: https://github.com/cloud4rpi/docs
 
 nav:
-- Home: index.md
-- Getting Started:
-    - Raspberry Pi: start/rpi.md
-    - C.H.I.P.: start/chip.md
-    - Omega2: start/o2.md
-    - ESP8266:
-        - MicroPython: start/esp8266-upy.md
-        - PlatformIO: start/esp-pio.md
-        - Arduino: start/esp-ino.md
-- How To:
-    - Raspberry Pi: howto/rpi.md
-    - C.H.I.P.: howto/chip.md
-    - Omega2: howto/o2.md
-- API:
-    - Python Library: api/python.md
-    - MQTT Protocol: api/mqtt.md
-    - HTTP Protocol: api/http.md
-- FAQ: faq.md
+  - Home: index.md
+  - Getting Started:
+      - Raspberry Pi: start/rpi.md
+      - C.H.I.P.: start/chip.md
+      - Omega2: start/o2.md
+      - ESP8266:
+          - MicroPython: start/esp8266-upy.md
+          - PlatformIO: start/esp-pio.md
+          - Arduino: start/esp-ino.md
+  - How To:
+      - Raspberry Pi: howto/rpi.md
+      - C.H.I.P.: howto/chip.md
+      - Omega2: howto/o2.md
+  - API:
+      - Python Library: api/python.md
+      - MQTT Protocol: api/mqtt.md
+      - HTTP Protocol: api/http.md
+  - Manage Packets: manage-packets.md
+  - FAQ: faq.md
 
 markdown_extensions:
-    - admonition:
-    - attr_list:
+  - admonition:
+  - attr_list:
 
 extra_css: [res/extra.css]
 theme: material

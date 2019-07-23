@@ -38,7 +38,7 @@ You can specify a personal spending cap to ensure that you never spend too many 
 
 ![Spending Cap](/res/managePackets/spending-cap.png)
 
-The minimum cap is 1 packet an hour - the maximum is unlimited.
+The minimum cap is 1 packet an hour&mdash;the maximum is unlimited.
 
 ## Set Up Your Device
 

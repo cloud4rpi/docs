@@ -10,6 +10,7 @@ Packet information is displayed at the top right corner of Cloud4RPi pages and i
 
 You can add more packets using the [Subscription](https://cloud4rpi.io/packets/purchase) page.
 
+Learn more about the subscription plans in the [Plans and Pricing](/plans-and-pricing) section.
 
 ## How to avoid an Installation Error?
 

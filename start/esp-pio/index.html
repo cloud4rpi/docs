@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#connecting-an-esp8266" tabindex="1" class="md-skip">
+      <a href="#connecting-an-esp8266-or-esp32" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -295,11 +295,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" checked>
     
     <label class="md-nav__link" for="nav-2-4">
-      ESP8266
+      ESP8266/ESP32
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-2-4">
-        ESP8266
+        ESP8266/ESP32
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -347,13 +347,6 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#creating-a-project" title="Creating a Project" class="md-nav__link">
@@ -569,13 +562,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#creating-a-project" title="Creating a Project" class="md-nav__link">
     Creating a Project
   </a>
@@ -622,13 +608,8 @@
                   <a href="https://github.com/cloud4rpi/docs/edit/master/docs/start/esp-pio.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="connecting-an-esp8266">Connecting an ESP8266</h1>
-<p>Follow the instructions below to connect your <a href="https://en.wikipedia.org/wiki/ESP8266">ESP8266</a> board (like <a href="http://www.nodemcu.com/index_en.html#fr_54747661d775ef1a3600009e">NodeMCU Dev Kit</a>) to the <a href="https://cloud4rpi.io">Cloud4RPi</a> control panel.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<ul>
-<li><strong>USB-UART Adapter</strong> (if it is not integrated into your board).</li>
-<li>Access to the ESP8266's <strong>GPIO0</strong> pin to enter flashing mode.</li>
-</ul>
+                <h1 id="connecting-an-esp8266-or-esp32">Connecting an ESP8266 or ESP32</h1>
+<p>Follow the instructions below to connect your <a href="https://en.wikipedia.org/wiki/ESP8266">ESP8266</a> board (like <a href="http://www.nodemcu.com/index_en.html#fr_54747661d775ef1a3600009e">NodeMCU Dev Kit</a>) or <a href="https://en.wikipedia.org/wiki/ESP32">ESP32</a> board (like <a href="https://www.espressif.com/en/products/hardware/esp32-devkitc/overview">ESP32-DevKitC</a>) to the <a href="https://cloud4rpi.io">Cloud4RPi</a> control panel.</p>
 <h2 id="creating-a-project">Creating a Project</h2>
 <p>The <a href="http://platformio.org/lib/show/2045/cloud4rpi-esp-arduino">Cloud4RPi library</a> is published in the <a href="http://platformio.org/lib">PlatformIO Registry</a>. Follow the instructions below to start a new Cloud4RPi-enabled project:</p>
 <ol>
@@ -649,26 +630,29 @@ build_flags=
 <li>
 <p>Save the <code>platformio.ini</code> file and open the <code>src\main.cpp</code> file.</p>
 </li>
-<li>Copy-paste the <a href="https://github.com/cloud4rpi/cloud4rpi-esp-arduino/blob/master/examples/ESP8266/ESP8266.ino">sample code</a> into it.</li>
-<li>If you know the pin number connected to an LED on your board, replace the <code>BUILTIN_LED</code> constant with it.</li>
+<li>Copy-paste the <a href="https://github.com/cloud4rpi/cloud4rpi-esp-arduino/blob/master/examples/control/control.ino">sample code</a>.</li>
+<li>If the <code>LED_BUILTIN</code> constant is not defined in your board's library, change this constant to the LED's pin number (for example, <code>2</code>).</li>
+<li>Replace the <code>__SSID__</code> and <code>__PASSWORD__</code> strings with your Wi-Fi network data.</li>
 </ol>
 <h2 id="connecting-to-your-cloud4rpi-account">Connecting to Your Cloud4RPi Account</h2>
 <ol>
 <li><a href="https://cloud4rpi.io/signin">Log in to your Cloud4RPi account</a> or <a href="https://cloud4rpi.io/register">create a new one</a>.</li>
 <li>Copy <a href="https://cloud4rpi.io/devices">your device</a>'s <strong>Device Token</strong>. You can create a device on the <a href="https://cloud4rpi.io/devices">Devices</a> page and copy its <strong>Device Token</strong> if you do not have one.</li>
 <li>Replace the <code>__YOUR_DEVICE_TOKEN__</code> string with your device token.</li>
-<li>Replace the <code>__SSID__</code> and <code>__PASSWORD__</code> strings with your Wi-Fi network data.</li>
 </ol>
 <h2 id="running">Running</h2>
 <ol>
 <li>Hit the <code>Build</code> button and wait until the compilation is completed.</li>
-<li>Connect the board in the flashing mode (power it with the GPIO0 pin connected to GND) and hit the <code>Upload</code> button.</li>
-<li>Once flashing is complete, open <code>Serial Monitor</code> and watch the sample code's output.</li>
-<li>Notice that the <a href="https://cloud4rpi.io/devices">device</a> went online and started sending data.</li>
+<li>Hit the <code>Upload</code> button.</li>
+<li>If the upload fails, try to start the board in the flashing mode (connect the power supply with the GPIO0 pin connected to GND) and try uploading again.</li>
+<li>Once flashing is complete, open <code>Serial Monitor</code> to monitor the device's status.</li>
+<li>Notice that the device on the <a href="https://cloud4rpi.io/devices">Devices page</a> went online and started sending data.</li>
 <li>Go to the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel.</li>
-<li>Add a new <strong>Chart</strong> widget and bind it to the <code>Uptime</code> variable.</li>
+<li>Add a new <strong>Number</strong> widget and bind it to the <code>Uptime</code> variable.</li>
 <li>Add a new <strong>Switch</strong> widget and bind it to the <code>LED On</code> variable.</li>
-<li>Add a new <strong>Text</strong> widget and bind it to the <code>STATUS</code> variable. Configure different colors for the <strong>"IDLE"</strong>, <strong>"RING"</strong> and <strong>"BOOM!"</strong> strings.</li>
+<li>Add a new <strong>Text</strong> widget and bind it to the <code>State</code> variable. Configure different colors for the <strong>"IDLE"</strong>, <strong>"RING"</strong> and <strong>"BOOM!"</strong> strings.</li>
+<li>Add a new <strong>Slider</strong> widget and bind it to the <code>DesiredTemp</code> variable, set its minimum value to 10 and maximum value to 30.</li>
+<li>Add a new <strong>Gauge</strong> widget and bind it to the <code>DesiredTemp</code> variable, set its minimum value to 10 and maximum value to 30.</li>
 </ol>
 <h2 id="video">Video</h2>
 <iframe width="739" height="480" src="https://www.youtube.com/embed/umUjwUjJsNI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

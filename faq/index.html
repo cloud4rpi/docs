@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#how-to-avoid-an-installation-error" tabindex="1" class="md-skip">
+      <a href="#how-to-update-cloud4rpi-client-installation" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -291,11 +291,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
     
     <label class="md-nav__link" for="nav-2-4">
-      ESP8266
+      ESP8266/ESP32
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-2-4">
-        ESP8266
+        ESP8266/ESP32
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -495,6 +495,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-to-update-cloud4rpi-client-installation" title="How to update Cloud4RPi client installation?" class="md-nav__link">
+    How to update Cloud4RPi client installation?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-avoid-an-installation-error" title="How to avoid an Installation Error?" class="md-nav__link">
     How to avoid an Installation Error?
   </a>
@@ -523,13 +530,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-update-cloud4rpi-client-installation" title="How to update Cloud4RPi client installation?" class="md-nav__link">
-    How to update Cloud4RPi client installation?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-to-use-the-service-installed-using-the-service_installsh-script" title="How to use the service installed using the service_install.sh script?" class="md-nav__link">
     How to use the service installed using the service_install.sh script?
   </a>
@@ -539,6 +539,13 @@
         <li class="md-nav__item">
   <a href="#how-to-choose-the-data_sending_interval-value" title="How to choose the DATA_SENDING_INTERVAL value?" class="md-nav__link">
     How to choose the DATA_SENDING_INTERVAL value?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arduino-ide-how-to-avoid-wifi-library-collision" title="[Arduino IDE] How to avoid WiFi library collision?" class="md-nav__link">
+    [Arduino IDE] How to avoid WiFi library collision?
   </a>
   
 </li>
@@ -573,6 +580,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-to-update-cloud4rpi-client-installation" title="How to update Cloud4RPi client installation?" class="md-nav__link">
+    How to update Cloud4RPi client installation?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-avoid-an-installation-error" title="How to avoid an Installation Error?" class="md-nav__link">
     How to avoid an Installation Error?
   </a>
@@ -601,13 +615,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-update-cloud4rpi-client-installation" title="How to update Cloud4RPi client installation?" class="md-nav__link">
-    How to update Cloud4RPi client installation?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-to-use-the-service-installed-using-the-service_installsh-script" title="How to use the service installed using the service_install.sh script?" class="md-nav__link">
     How to use the service installed using the service_install.sh script?
   </a>
@@ -617,6 +624,13 @@
         <li class="md-nav__item">
   <a href="#how-to-choose-the-data_sending_interval-value" title="How to choose the DATA_SENDING_INTERVAL value?" class="md-nav__link">
     How to choose the DATA_SENDING_INTERVAL value?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arduino-ide-how-to-avoid-wifi-library-collision" title="[Arduino IDE] How to avoid WiFi library collision?" class="md-nav__link">
+    [Arduino IDE] How to avoid WiFi library collision?
   </a>
   
 </li>
@@ -642,7 +656,12 @@
                 
                   <h1>FAQ</h1>
                 
-                <p>Frequently asked questions and possible issues you may face when working with <a href="https://cloud4rpi.io">Cloud4RPi</a>:</p>
+                <p>Frequently asked questions and possible issues you can encounter with <a href="https://cloud4rpi.io">Cloud4RPi</a>:</p>
+<h2 id="how-to-update-cloud4rpi-client-installation">How to update Cloud4RPi client installation?</h2>
+<p>The Cloud4RPi client library is a <a href="https://pypi.python.org/pypi/cloud4rpi">PyPI package</a> the <a href="https://pip.pypa.io/en/stable/">pip utility</a> manages. Execute the following command to update the Cloud4RPi client library:</p>
+<pre><code class="sh">sudo pip install --upgrade cloud4rpi
+</code></pre>
+
 <h2 id="how-to-avoid-an-installation-error">How to avoid an Installation Error?</h2>
 <p>You can get one of the following errors when you use the <code>sudo pip install cloud4rpi</code> command to install the Cloud4RPi client library:</p>
 <ol>
@@ -669,11 +688,11 @@
 </li>
 </ol>
 <h2 id="how-to-avoid-the-insecure-platform-warning">How to avoid the "Insecure Platform" warning?</h2>
-<p>The <code>InsecurePlatformWarning: A true SSLContext object is not available...</code> notification appears when you run Cloud4RPi on a Python v2.7.9 and earlier. Use the following command to check the Python version:</p>
+<p>The <code>InsecurePlatformWarning: A true SSLContext object is not available...</code> notification appears when you run Cloud4RPi on Python v2.7.9 and earlier. Use the following command to check the Python version:</p>
 <pre><code class="sh">python --version
 </code></pre>
 
-<p>You can use <a href="https://docs.python.org/2/using/index.html">one of the following approaches</a> to install the latest version.</p>
+<p>You can use <a href="https://docs.python.org/2/using/index.html">one of the following approaches</a> to install the latest version:</p>
 <h2 id="where-are-the-log-files">Where are the log files?</h2>
 <p>Use one of the following commands to read the logs containing the service's output and errors:</p>
 <ul>
@@ -686,11 +705,6 @@
 </div>
 <p>You can also call the following function at the beginning of your script to save the script output. It is useful if you do not run your Cloud4RPi-enabled script as a service:</p>
 <pre><code class="python">cloud4rpi.set_logging_to_file(YOUR_LOGFILE_PATH)
-</code></pre>
-
-<h2 id="how-to-update-cloud4rpi-client-installation">How to update Cloud4RPi client installation?</h2>
-<p>The Cloud4RPi client library is a <a href="https://pypi.python.org/pypi/cloud4rpi">PyPI package</a> the <a href="https://pip.pypa.io/en/stable/">pip utility</a> manages. Execute the following command to update the Cloud4RPi client library:</p>
-<pre><code class="sh">sudo pip install --upgrade cloud4rpi
 </code></pre>
 
 <h2 id="how-to-use-the-service-installed-using-the-service_installsh-script">How to use the service installed using the service_install.sh script?</h2>
@@ -712,6 +726,13 @@ sudo systemctl daemon-reload
 <p class="admonition-title">Note</p>
 <p>The variable update interval does not affect commands, and variable changes made through the Web UI (<strong>Switch</strong> or <strong>Slider</strong> widget) are applied instantly.</p>
 </div>
+<h2 id="arduino-ide-how-to-avoid-wifi-library-collision">[Arduino IDE] How to avoid WiFi library collision?</h2>
+<p>The <code>Multiple libraries were found for "WiFi.h"</code> message can appear in Arduino IDE. This indicates the IDE has two libraries with the same name, and it does not know which one to use.</p>
+<p>To avoid this error, specify the absolute path to the header file in the <code>#include</code> directive, for example:</p>
+<pre><code class="c">#include &lt;C:\Users\user\Documents\ArduinoData\packages\esp32\hardware\esp32\1.0.2\libraries\WiFi\src\WiFi.h&gt;
+</code></pre>
+
+<p>You can copy-paste the valid path to both libraries that appear in the error message. Add the <code>src\</code> subfolder between the library path and header file name.</p>
                 
                   
                 

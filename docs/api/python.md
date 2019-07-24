@@ -48,9 +48,14 @@ The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device
         `{ name: { 'type': type, 'bind': binding, 'value': value }, ... }`, where:
 
         * `name` &ndash; an internal variable name. Name cannot contain dots (**.**) or dollar signs (**$**). You can change the name displayed in the UI on the device page.
-        * `type` &ndash; a variable type. Available types: `'bool'`, `'numeric'` and `'string'`.
+        * `type` &ndash; a variable type. Available types: `'bool'`, `'numeric'`, `'string'` and `'location'`.
         * `binding` &ndash; a function that accepts the current variable as a parameter and returns a new variable. This function is called every time a value is updated (scheduled updates and value change signals from Control Panels). You can also pass a Python variable if the value should not be changed from Cloud4RPi Control Panels.
         * `value` *(optional)* &ndash; an initial variable value passed to a `binding` function during the first update.
+
+
+        !!! Note
+
+            Use the following object to send the `location` variable values: `{"lat": latitude_value, "lng": longitude_value}`, where `latitude_value` and `longitude_value` are floating point numbers.
 
     **Example:**
 

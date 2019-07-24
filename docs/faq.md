@@ -4,7 +4,7 @@ Frequently asked questions and possible issues you may face when working with [C
 
 Packet is a data portion sent from a device to the Cloud4RPi server (using the [MQTT](/api/mqtt/#cloud4rpi-mqtt-broker) or [HTTPs](/api/http/) protocol). A single packet can include multiple variable values. [Diagnostic data](/api/mqtt/#diagnostic-data) transfer is unlimited and does not consume packets.
 
-Packet information is displayed at the top right corner of Cloud4RPi pages and on the [Account](https://cloud4rpi.io/account) page.
+Packet information is displayed at the top right corner of Cloud4RPi pages and in the **Pricing Plan** category of your [account settings](https://cloud4rpi.io/account).
 
 ![](/res/managePackets/packets-info.png)
 

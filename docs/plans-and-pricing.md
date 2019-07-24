@@ -2,7 +2,7 @@
 
 ## The Free Tier
 
-You receive 10k free packets every month. This is enough to send data to the cloud every five minutes for a month. The table below compares different packet spending rates:
+You receive 10k free [packets](/faq/#what-are-packets) every month. This is enough to send data to the cloud every five minutes for a month. The table below compares different packet spending rates:
 
 |                            | 1 packet per 5 minutes | 1 packet per minute | 2 packets per minute |
 | -------------------------- | ---------------------: | ------------------: | -------------------: |
@@ -20,7 +20,7 @@ The web UI's header displays the number of available packets. You can click it f
 
 ![Buy Packets](/res/managePackets/buy.png)
 
-The same functionality is available in the **Pricing Plan** category of your account settings:
+The same functionality is available in the **Pricing Plan** category of your [account settings](https://cloud4rpi.io/account):
 
 ![Account Settings](/res/managePackets/account-settings.png)
 
@@ -34,11 +34,11 @@ If you run out of packets, you can still send data at 1 packet per hour.
 
 ## Control the Spending Rate
 
-You can specify a personal spending cap to ensure that you never spend too many packets in rapid succession. To do this, go to your [account settings](https://stage.cloud4rpi.io/account) and locate the **Pricing Plan** category. Use the **Packets limit per hour** slider to specify the spending cap.
+You can specify a personal spending cap to ensure that you never spend too many packets in rapid succession. To do this, go to your [account settings](https://cloud4rpi.io/account) and locate the **Pricing Plan** category. Use the **Packets limit per hour** slider to specify the spending cap.
 
 ![Spending Cap](/res/managePackets/spending-cap.png)
 
-The minimum cap is 1 packet an hour - the maximum is unlimited.
+The minimum cap is 1 packet an hour&mdash;the maximum is unlimited.
 
 ## Set Up Your Device
 

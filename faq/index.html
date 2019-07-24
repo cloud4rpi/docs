@@ -502,6 +502,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#what-are-packets" title="What are packets?" class="md-nav__link">
+    What are packets?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-avoid-an-installation-error" title="How to avoid an Installation Error?" class="md-nav__link">
     How to avoid an Installation Error?
   </a>
@@ -587,6 +594,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#what-are-packets" title="What are packets?" class="md-nav__link">
+    What are packets?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-to-avoid-an-installation-error" title="How to avoid an Installation Error?" class="md-nav__link">
     How to avoid an Installation Error?
   </a>
@@ -662,6 +676,11 @@
 <pre><code class="sh">sudo pip install --upgrade cloud4rpi
 </code></pre>
 
+<h2 id="what-are-packets">What are packets?</h2>
+<p>Packet is a data portion sent from a device to the Cloud4RPi server (using the <a href="/api/mqtt/#cloud4rpi-mqtt-broker">MQTT</a> or <a href="/api/http/">HTTPs</a> protocol). A single packet can include multiple variable values. <a href="/api/mqtt/#diagnostic-data">Diagnostic data</a> transfer is unlimited and does not consume packets.</p>
+<p>Packet information is displayed at the top right corner of Cloud4RPi pages and in the <strong>Pricing Plan</strong> category of your <a href="https://cloud4rpi.io/account">account settings</a>.</p>
+<p><img alt="" src="/res/managePackets/packets-info.png" /></p>
+<p>Learn more about the subscription plans in the <a href="/plans-and-pricing">Plans and Pricing</a> section.</p>
 <h2 id="how-to-avoid-an-installation-error">How to avoid an Installation Error?</h2>
 <p>You can get one of the following errors when you use the <code>sudo pip install cloud4rpi</code> command to install the Cloud4RPi client library:</p>
 <ol>
@@ -720,7 +739,7 @@ sudo systemctl daemon-reload
 </code></pre>
 
 <h2 id="how-to-choose-the-data_sending_interval-value">How to choose the DATA_SENDING_INTERVAL value?</h2>
-<p>You should call <a href="/api/python/#publish_data">device.publish_data()</a> and <a href="/api/python/#publish_diag">device.publish_diag()</a> functions frequently to update the monitored variables. The update frequency depends on the variable dynamics, for example, atmospheric conditions do not change every minute. This means the delay between updates for a weather station should be one to ten minutes.</p>
+<p>Call <a href="/api/python/#publish_data">device.publish_data()</a> and <a href="/api/python/#publish_diag">device.publish_diag()</a> functions frequently to update the monitored variables. The update frequency depends on the variable dynamics, for example, atmospheric conditions do not change every minute. This means the delay between updates for a weather station should be one to ten minutes. You should also consider available <a href="#what-are-packets">packets</a> when choosing the <code>DATA_SENDING_INTERVAL</code> value.</p>
 <p>If you monitor several variables with different dynamics, the delay between updates should be the shortest.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

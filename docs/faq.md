@@ -6,7 +6,7 @@ Packet is a data portion sent from a device to the Cloud4RPi server (using the [
 
 Packet information is displayed at the top right corner of Cloud4RPi pages and on the [Account](https://cloud4rpi.io/account) page.
 
-![](packets.png)
+![](/res/managePackets/packets-info.png)
 
 You can add more packets using the [Subscription](https://cloud4rpi.io/packets/purchase) page.
 

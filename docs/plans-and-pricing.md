@@ -20,7 +20,7 @@ The web UI's header displays the number of available packets. You can click it f
 
 ![Buy Packets](/res/managePackets/buy.png)
 
-The same functionality is available in the **Pricing Plan** category of your account settings:
+The same functionality is available in the **Pricing Plan** category of your [account settings](https://cloud4rpi.io/account):
 
 ![Account Settings](/res/managePackets/account-settings.png)
 

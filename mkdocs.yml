@@ -13,6 +13,7 @@ nav:
         - MicroPython: start/esp8266-upy.md
         - PlatformIO: start/esp-pio.md
         - Arduino: start/esp-ino.md
+- Plans and Pricing: plans-and-pricing.md
 - How To:
     - Raspberry Pi: howto/rpi.md
     - C.H.I.P.: howto/chip.md
@@ -24,8 +25,8 @@ nav:
 - FAQ: faq.md
 
 markdown_extensions:
-    - admonition:
-    - attr_list:
+  - admonition:
+  - attr_list:
 
 extra_css: [res/extra.css]
 theme: material

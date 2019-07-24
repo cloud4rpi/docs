@@ -1,4 +1,14 @@
-Frequently asked questions and possible issues you may face when working with [Cloud4RPi](https://cloud4rpi.io):
+Frequently asked questions and possible issues you can encounter with [Cloud4RPi](https://cloud4rpi.io):
+
+
+## How to update Cloud4RPi client installation?
+
+The Cloud4RPi client library is a [PyPI package](https://pypi.python.org/pypi/cloud4rpi) the [pip utility](https://pip.pypa.io/en/stable/) manages. Execute the following command to update the Cloud4RPi client library:
+
+```sh
+sudo pip install --upgrade cloud4rpi
+```
+
 
 ## How to avoid an Installation Error?
 
@@ -19,6 +29,7 @@ After updating, reinstall **cloud4rpi**:
 sudo pip install cloud4rpi
 ```
 
+
 ## Raspberry Pi does not recognize my 1-Wire device
 
 Follow the instructions below if you experience issues with the 1-Wire interface on Raspberry Pi.
@@ -30,15 +41,17 @@ Follow the instructions below if you experience issues with the 1-Wire interface
 
     ![](/res/ds18b20.png)
 
+
 ## How to avoid the "Insecure Platform" warning?
 
-The `InsecurePlatformWarning: A true SSLContext object is not available...` notification appears when you run Cloud4RPi on a Python v2.7.9 and earlier. Use the following command to check the Python version:
+The `InsecurePlatformWarning: A true SSLContext object is not available...` notification appears when you run Cloud4RPi on Python v2.7.9 and earlier. Use the following command to check the Python version:
 
 ```sh
 python --version
 ```
 
-You can use [one of the following approaches](https://docs.python.org/2/using/index.html) to install the latest version.
+You can use [one of the following approaches](https://docs.python.org/2/using/index.html) to install the latest version:
+
 
 ## Where are the log files?
 
@@ -57,13 +70,6 @@ You can also call the following function at the beginning of your script to save
 cloud4rpi.set_logging_to_file(YOUR_LOGFILE_PATH)
 ```
 
-## How to update Cloud4RPi client installation?
-
-The Cloud4RPi client library is a [PyPI package](https://pypi.python.org/pypi/cloud4rpi) the [pip utility](https://pip.pypa.io/en/stable/) manages. Execute the following command to update the Cloud4RPi client library:
-
-```sh
-sudo pip install --upgrade cloud4rpi
-```
 
 ## How to use the service installed using the service_install.sh script?
 
@@ -91,3 +97,16 @@ If you monitor several variables with different dynamics, the delay between upda
 
 !!! Note
     The variable update interval does not affect commands, and variable changes made through the Web UI (**Switch** or **Slider** widget) are applied instantly.
+
+
+## [Arduino IDE] How to avoid WiFi library collision?
+
+The `Multiple libraries were found for "WiFi.h"` message can appear in Arduino IDE. This indicates the IDE has two libraries with the same name, and it does not know which one to use.
+
+To avoid this error, specify the absolute path to the header file in the `#include` directive, for example:
+
+```c
+#include <C:\Users\user\Documents\ArduinoData\packages\esp32\hardware\esp32\1.0.2\libraries\WiFi\src\WiFi.h>
+```
+
+You can copy-paste the valid path to both libraries that appear in the error message. Add the `src\` subfolder between the library path and header file name.

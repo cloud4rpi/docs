@@ -65,6 +65,11 @@ name               | Variable name | string | Any string
 type               | Variable type | string | "bool", "numeric", "string", or "location"
 
 
+!!! Note
+
+    Use the following object to send the `location` variable values: `{"lat": latitude_value, "lng": longitude_value}`, where `latitude_value` and `longitude_value` are floating point numbers.
+
+
 ### Example
 
 The following example creates two variables on the device:
@@ -178,11 +183,6 @@ Name               | Description          | Type   | Possible Values
 datetime_isoformat | Timestamp (optional) | string | Time in the **ISO 8601** format with the [time zone designator](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators) specified explicitly
 var_name           | Variable name        | string | Any
 var_value          | Variable value       | any    | Any
-
-
-!!! Note
-
-    Use the following object to send the `location` variable values: `{"lat": latitude_value, "lng": longitude_value}`, where `latitude_value` and `longitude_value` are floating point numbers.
 
 
 ### Example

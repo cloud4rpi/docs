@@ -1051,6 +1051,10 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use the following object to send the <code>location</code> variable values: <code>{"lat": latitude_value, "lng": longitude_value}</code>, where <code>latitude_value</code> and <code>longitude_value</code> are floating point numbers.</p>
+</div>
 <h3 id="example">Example</h3>
 <p>The following example creates two variables on the device:</p>
 <ul>
@@ -1211,10 +1215,6 @@ mosquitto_pub -q 1 -d -t &quot;devices/$DEVICE_TOKEN/data&quot; -h mq.cloud4rpi.
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Use the following object to send the <code>location</code> variable values: <code>{"lat": latitude_value, "lng": longitude_value}</code>, where <code>latitude_value</code> and <code>longitude_value</code> are floating point numbers.</p>
-</div>
 <h3 id="example_2">Example</h3>
 <p>The following example sends the following diagnostic values to Cloud4RPI:</p>
 <ul>

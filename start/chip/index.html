@@ -640,21 +640,21 @@
 </code></pre>
 
 <p>Install/update the required packages.</p>
-<pre><code class="sh">sudo apt install git python python-pip -y
+<pre><code class="sh">sudo apt install git python3 python3-pip -y
 </code></pre>
 
 <p>You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.</p>
+<p>The Cloud4RPi library is compatible with Python 3.2+ and Python 2.7.9+ versions.</p>
 </div>
 <h2 id="getting-the-cloud4rpi-client-library">Getting the Cloud4RPi Client Library</h2>
-<p>Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):</p>
-<pre><code class="sh">sudo pip install cloud4rpi
+<p>Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 3):</p>
+<pre><code class="sh">sudo pip3 install cloud4rpi
 </code></pre>
 
-<p>If you are using Python 3, use the following command:</p>
-<pre><code class="sh">sudo python3 -m pip install cloud4rpi
+<p>If you are using Python 2, use the following command:</p>
+<pre><code class="sh">sudo python2 -m pip install cloud4rpi
 </code></pre>
 
 <div class="admonition note">
@@ -662,7 +662,7 @@
 <p>For information on how to work with several versions of Python installed, see <a href="https://docs.python.org/3/installing/">Python Documentation</a>.</p>
 </div>
 <p>If you get an error while using <strong>pip</strong>, try to update the <strong>setuptools</strong> and <strong>pip</strong> packages.</p>
-<pre><code class="sh">sudo pip install --upgrade setuptools pip
+<pre><code class="sh">sudo pip3 install --upgrade setuptools pip
 </code></pre>
 
 <h2 id="hacking-together-some-code">Hacking Together some Code</h2>
@@ -677,8 +677,8 @@
 <p>Install the <a href="https://github.com/xtacocorex/CHIP_IO">CHIP_IO</a> Python library as described <a href="https://github.com/xtacocorex/CHIP_IO">in its documentation</a> to use the C.H.I.P.'s GPIO subsystem from Python. If you do not need GPIO, remove the <code>import CHIP_IO.GPIO as GPIO</code> line and all <code>GPIO</code> references from the <a href="https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/control.py">control.py</a> example.</p>
 </div>
 <h2 id="running">Running</h2>
-<p>Execute the script with the Python interpreter, for example:</p>
-<pre><code class="sh">sudo python control.py
+<p>Execute the script with a Python interpreter, for example:</p>
+<pre><code class="sh">sudo python3 control.py
 </code></pre>
 
 <div class="admonition note">

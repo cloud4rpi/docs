@@ -623,18 +623,18 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Install/update the required packages.</p>
 <pre><code class="sh">opkg update
-opkg install wget python python-pip
-pip install --upgrade setuptools pip
+opkg install wget python3 python3-pip
+pip3 install --upgrade setuptools pip
 </code></pre>
 
 <p>You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.</p>
+<p>The Cloud4RPi library is compatible with Python 3.2+ and Python 2.7.9+ versions.</p>
 </div>
 <h2 id="getting-the-cloud4rpi-client-library">Getting the Cloud4RPi Client Library</h2>
-<p>Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):</p>
-<pre><code class="sh">pip install cloud4rpi
+<p>Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 3):</p>
+<pre><code class="sh">pip3 install cloud4rpi
 </code></pre>
 
 <h2 id="hacking-together-some-code">Hacking Together some Code</h2>
@@ -651,8 +651,8 @@ wget &quot;$repo/omega2.py&quot; &quot;$repo/control.py&quot;
 </div>
 <p>Before running a sample (<a href="https://github.com/cloud4rpi/cloud4rpi-omega2-python/blob/master/control.py">control.py</a>), remember to replace the <code>__YOUR_DEVICE_TOKEN__</code> string with your real device token. Use a text editor (for instance, <code>vim</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page on <a href="https://cloud4rpi.io/">cloud4rpi.io</a>. If you have no token yet, open the <a href="https://cloud4rpi.io/devices">Devices</a> page, create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
 <h2 id="running">Running</h2>
-<p>Execute the script with the Python interpreter, for example:</p>
-<pre><code class="sh">python control.py
+<p>Execute the script with a Python interpreter, for example:</p>
+<pre><code class="sh">python3 control.py
 </code></pre>
 
 <div class="admonition note">

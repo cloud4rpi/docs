@@ -680,13 +680,13 @@
 </code></pre>
 
 <p>Install/update the required packages.</p>
-<pre><code class="sh">sudo apt install git python python-pip -y
+<pre><code class="sh">sudo apt install git python3 python3-pip -y
 </code></pre>
 
 <p>You can use alternative methods to <a href="https://pip.pypa.io/en/stable/installing.html">install pip</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.</p>
+<p>The Cloud4RPi library is compatible with Python 3.2+ and Python 2.7.9+ versions.</p>
 </div>
 <h3 id="optional-enable-interfaces">[Optional] Enable interfaces</h3>
 <ul>
@@ -697,12 +697,12 @@
 <li>Reboot the device with the <code>sudo reboot</code> command.</li>
 </ul>
 <h2 id="getting-the-cloud4rpi-client-library">Getting the Cloud4RPi Client Library</h2>
-<p>Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):</p>
-<pre><code class="sh">sudo pip install cloud4rpi
+<p>Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 3):</p>
+<pre><code class="sh">sudo pip3 install cloud4rpi
 </code></pre>
 
-<p>If you are using Python 3, use the following command:</p>
-<pre><code class="sh">sudo python3 -m pip install cloud4rpi
+<p>If you are using Python 2, use the following command:</p>
+<pre><code class="sh">sudo python2 -m pip install cloud4rpi
 </code></pre>
 
 <div class="admonition note">
@@ -710,7 +710,7 @@
 <p>For information on how to work with several versions of Python installed, see <a href="https://docs.python.org/3/installing/">Python Documentation</a>.</p>
 </div>
 <p>If you get an error while using <strong>pip</strong>, try to update the <strong>setuptools</strong> and <strong>pip</strong> packages.</p>
-<pre><code class="sh">sudo pip install --upgrade setuptools pip
+<pre><code class="sh">sudo pip3 install --upgrade setuptools pip
 </code></pre>
 
 <h2 id="hacking-together-some-code">Hacking Together some Code</h2>
@@ -721,8 +721,8 @@
 
 <p>Before running a sample (<a href="https://github.com/cloud4rpi/cloud4rpi-raspberrypi-python/blob/master/control.py">control.py</a>), remember to replace the <code>__YOUR_DEVICE_TOKEN__</code> string with your real device token. Use a text editor (for instance, <code>nano</code>) to replace <code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page on <a href="https://cloud4rpi.io/">cloud4rpi.io</a>. If you have no token yet, open the <a href="https://cloud4rpi.io/devices">Devices</a> page, create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</p>
 <h2 id="running">Running</h2>
-<p>Execute the script with the Python interpreter, for example:</p>
-<pre><code class="sh">sudo python control.py
+<p>Execute the script with a Python interpreter, for example:</p>
+<pre><code class="sh">sudo python3 control.py
 </code></pre>
 
 <div class="admonition note">

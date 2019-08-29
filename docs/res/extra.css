@@ -68,7 +68,6 @@ h1 {
     }
 }
 
-.anchor {
-    padding-top: 6rem;
-    margin-top: -6rem !important;
+.md-nav__item > .md-nav {
+    font-size: 90%
 }

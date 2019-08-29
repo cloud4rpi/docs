@@ -5,138 +5,160 @@ Python Library API
 
 The [Cloud4RPi Python library](https://github.com/cloud4rpi/cloud4rpi) provides the following public methods (defined in the [\_\_init\_\_.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/__init__.py) file):
 
-* `connect(device_token, host=mqqtBrokerHost, port=None, tls_config=None)` &ndash; connects to the Cloud and returns a [Device](#device) object.
-    {: .anchor #connect }
 
-    **Parameters:**
+### connect
 
-    * `device_token` &ndash; a token displayed at the top of the device page on [cloud4rpi.io](https://cloud4rpi.io/devices). You can use the **New Device** button in the top right corner of the [Devices](https://cloud4rpi.io/devices) page to create a new device and use its token.
-    * `host` *(optional)* &ndash; a Cloud4RPi MQTT broker address. The default address is defined in the [config.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/config.py) file.
-    * `port` *(optional)* &ndash; a Cloud4RPi MQTT broker port. The default port is defined in the [config.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/config.py) file.
-    * `tls_config` *(optional)* &ndash; a dictionary with parameters for the Paho MQTT's [tls_set()](https://github.com/eclipse/paho.mqtt.python#tls_set) function.
+`connect(device_token, host=mqqtBrokerHost, port=None, tls_config=None)` &ndash; connects to the Cloud and returns a [Device](#device) object.
 
-    **Example:**
+**Parameters:**
 
-        import cloud4rpi
-        device = cloud4rpi.connect('823SnkK3N8L5Y7QQGiuGd53fi', tls_config={'ca_certs': '/etc/ssl/certs/ca-certificates.crt'})
+* `device_token` &ndash; a token displayed at the top of the device page on [cloud4rpi.io](https://cloud4rpi.io/devices). You can use the **New Device** button in the top right corner of the [Devices](https://cloud4rpi.io/devices) page to create a new device and use its token.
+* `host` *(optional)* &ndash; a Cloud4RPi MQTT broker address. The default address is defined in the [config.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/config.py) file.
+* `port` *(optional)* &ndash; a Cloud4RPi MQTT broker port. The default port is defined in the [config.py](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/config.py) file.
+* `tls_config` *(optional)* &ndash; a dictionary with parameters for the Paho MQTT's [tls_set()](https://github.com/eclipse/paho.mqtt.python#tls_set) function.
 
-* `set_logging_to_file(log_file_path)` &ndash; configures the library to save activity logs to a specified file.
-    {: .anchor #set_logging_to_file }
+**Example:**
 
-    **Parameters:**
+    import cloud4rpi
+    device = cloud4rpi.connect('823SnkK3N8L5Y7QQGiuGd53fi', tls_config={'ca_certs': '/etc/ssl/certs/ca-certificates.crt'})
 
-    * `log_file_path` &ndash; path to a log file.
 
-* `set_logging_level(level=logging.INFO)` &ndash; changes the logging verbosity level.
-    {: .anchor #set_logging_level }
+### set_logging_to_file
 
-    **Parameters:**
+`set_logging_to_file(log_file_path)` &ndash; configures the library to save activity logs to a specified file.
 
-    * `level` *(optional)* &ndash; [logging verbosity level](https://docs.python.org/3/library/logging.html#levels). The default level is `INFO`.
+**Parameters:**
+
+`log_file_path` &ndash; path to a log file.
+
+
+### set_logging_level
+
+`set_logging_level(level=logging.INFO)` &ndash; changes the logging verbosity level.
+
+**Parameters:**
+
+* `level` *(optional)* &ndash; [logging verbosity level](https://docs.python.org/3/library/logging.html#levels). The default level is `INFO`.
+
+
+
 
 ## Device
 
 The [Device](https://github.com/cloud4rpi/cloud4rpi/blob/master/cloud4rpi/device.py) class provides the following methods to communicate with the Cloud4RPi server and manage the variables' state:
 
-* `declare(variables)` &ndash; configures the variables attached to the device.
-    {: .anchor #declare }
+
+### declare
+
+`declare(variables)` &ndash; configures the variables attached to the device.
+
+**Parameters:**
+
+* `variables` &ndash; a dictionary with the variables description of the following structure: 
     
-    **Parameters:**
-    
-    * `variables` &ndash; a dictionary with the variables description of the following structure: 
-        
-        `{ name: { 'type': type, 'bind': binding, 'value': value }, ... }`, where:
+    `{ name: { 'type': type, 'bind': binding, 'value': value }, ... }`, where:
 
-        * `name` &ndash; an internal variable name. Name cannot contain dots (**.**) or dollar signs (**$**). You can change the name displayed in the UI on the device page.
-        * `type` &ndash; a variable type. Available types: `'bool'`, `'numeric'`, `'string'` and `'location'`.
-        * `binding` &ndash; a function that accepts the current variable as a parameter and returns a new variable. This function is called every time a value is updated (scheduled updates and value change signals from Control Panels). You can also pass a Python variable if the value should not be changed from Cloud4RPi Control Panels.
-        * `value` *(optional)* &ndash; an initial variable value passed to a `binding` function during the first update.
+    * `name` &ndash; an internal variable name. Name cannot contain dots (**.**) or dollar signs (**$**). You can change the name displayed in the UI on the device page.
+    * `type` &ndash; a variable type. Available types: `'bool'`, `'numeric'`, `'string'` and `'location'`.
+    * `binding` &ndash; a function that accepts the current variable as a parameter and returns a new variable. This function is called every time a value is updated (scheduled updates and value change signals from Control Panels). You can also pass a Python variable if the value should not be changed from Cloud4RPi Control Panels.
+    * `value` *(optional)* &ndash; an initial variable value passed to a `binding` function during the first update.
 
 
-        !!! Note
+    !!! Note
 
-            Use the following object to send the `location` variable values: `{"lat": latitude_value, "lng": longitude_value}`, where `latitude_value` and `longitude_value` are floating point numbers.
+        Use the following object to send the `location` variable values: `{"lat": latitude_value, "lng": longitude_value}`, where `latitude_value` and `longitude_value` are floating point numbers.
 
-    **Example:**
+**Example:**
 
-        def led_control(value):
-            GPIO.output(LED_PIN, value)
-            return GPIO.input(LED_PIN)
+    def led_control(value):
+        GPIO.output(LED_PIN, value)
+        return GPIO.input(LED_PIN)
 
-        ds_sensors = DS18b20.find_all()
+    ds_sensors = DS18b20.find_all()
 
-        device.declare({
-            'Room Temp': {
-                'type': 'numeric',
-                'bind': ds_sensors[0] if ds_sensors else None
-            }, 
-            'LED On': {
-                'type': 'bool',
-                'value': False,
-                'bind': led_control
-            }
-        })
-
-
-* `declare_diag(diag)` &ndash; configures the diagnostic variables attached to the device.
-    {: .anchor #declare_diag }
-
-    **Parameters:**
-
-    * `diag` &ndash; a dictionary with the diagnostic variables' description. It has the following structure:
-
-        `{ name: binding, ... }`, where:
-
-    * `name` &ndash; a diagnostic variable's name.
-    * `binding` &ndash; a Python variable or function that holds or returns the actual Cloud4RPi diagnostic variable's value.
-
-    **Example:**
-
-        device.declare_diag({
-            'Host': gethostname(),
-            'Operating System': " ".join(uname())
-        })
-
-* `read_config()` &ndash; prepares the previously declared (with the `declare(variables)` function) variables' configuration for publishing (with the `publish_config(cfg=None)` function).
-    {: .anchor #read_config }
-
-    **Returns:** A dictionary in the format suitable for the `publish_config(cfg=None)` function.
-
-* `read_data()` &ndash; updates all variable values and prepares the variables' state for publishing (with the `publish_data(data=None)` function). This method calls all the `binding` functions and saves the returned values as new variable values.
-    {: .anchor #read_data }
-
-    **Returns:** A dictionary in the format suitable for the `publish_data(data=None)` function.
-
-* `read_diag()` &ndash; reads all the diagnostic variable values and prepares the data for publishing (with the `publish_diag(diag=None)` function).
-    {: .anchor #read_diag }
-
-    **Returns:** A dictionary in the format suitable for the `publish_diag(diag=None)` function.
-
-* `publish_config(cfg=None)` &ndash; publishes the variables' configuration to the Cloud4RPi server.
-    {: .anchor #publish_config }
-
-    **Parameters:**
-
-    * `cfg` *(optional)* &ndash; the `read_config()` output. If not passed, `read_config()` is invoked internally. This is a list with the following structure:
-    
-        `[{'name': name, 'type': type}, ...]`, where `name` and `type` corresponds to the same values in the `variables` parameter passed to the `declare(variables)` function.
-
-* `publish_data(data=None)` &ndash; publishes variable values to the Cloud4RPi server.
-    {: .anchor #publish_data }
-
-    **Parameters:**
-
-    * `data` *(optional)* &ndash; the `read_data()` output. If not passed, `read_data()` is invoked internally. This is a dictionary with the following structure:
-    
-        `{name: value, ...}`, where `name` corresponds to the variable name in the `variables` parameter passed to the `declare(variables)` function, and `value` is the variable value returned by `binding`.
-    
-* `publish_diag(diag=None)` &ndash; publishes diagnostic variable values to the Cloud4RPi server.
-    {: .anchor #publish_diag }
-
-    **Parameters:**
-
-    * `diag` *(optional)* &ndash; the `read_diag()` output. If not passed, `read_diag()` is invoked internally. This is a dictionary with the following structure:
-    
-        `{name: value, ...}`, where `name` corresponds to the variable's name in the `diag` parameter passed to the `declare_diag(diag)` function, and `value` is the variable's value the `binding` returns.
+    device.declare({
+        'Room Temp': {
+            'type': 'numeric',
+            'bind': ds_sensors[0] if ds_sensors else None
+        }, 
+        'LED On': {
+            'type': 'bool',
+            'value': False,
+            'bind': led_control
+        }
+    })
 
 
+### declare_diag
+
+`declare_diag(diag)` &ndash; configures the diagnostic variables attached to the device.
+
+**Parameters:**
+
+* `diag` &ndash; a dictionary with the diagnostic variables' description. It has the following structure:
+
+    `{ name: binding, ... }`, where:
+
+* `name` &ndash; a diagnostic variable's name.
+* `binding` &ndash; a Python variable or function that holds or returns the actual Cloud4RPi diagnostic variable's value.
+
+**Example:**
+
+    device.declare_diag({
+        'Host': gethostname(),
+        'Operating System': " ".join(uname())
+    })
+
+
+### read_config
+
+`read_config()` &ndash; prepares the previously declared (with the `declare(variables)` function) variables' configuration for publishing (with the `publish_config(cfg=None)` function).
+
+**Returns:** A dictionary in the format suitable for the `publish_config(cfg=None)` function.
+
+
+### read_data
+
+`read_data()` &ndash; updates all variable values and prepares the variables' state for publishing (with the `publish_data(data=None)` function). This method calls all the `binding` functions and saves the returned values as new variable values.
+
+**Returns:** A dictionary in the format suitable for the `publish_data(data=None)` function.
+
+
+### read_diag
+
+`read_diag()` &ndash; reads all the diagnostic variable values and prepares the data for publishing (with the `publish_diag(diag=None)` function).
+
+**Returns:** A dictionary in the format suitable for the `publish_diag(diag=None)` function.
+
+
+### publish_config
+
+`publish_config(cfg=None)` &ndash; publishes the variables' configuration to the Cloud4RPi server.
+
+**Parameters:**
+
+* `cfg` *(optional)* &ndash; the `read_config()` output. If not passed, `read_config()` is invoked internally. This is a list with the following structure:
+
+    `[{'name': name, 'type': type}, ...]`, where `name` and `type` corresponds to the same values in the `variables` parameter passed to the `declare(variables)` function.
+
+
+### publish_data
+
+`publish_data(data=None)` &ndash; publishes variable values to the Cloud4RPi server.
+
+**Parameters:**
+
+* `data` *(optional)* &ndash; the `read_data()` output. If not passed, `read_data()` is invoked internally. This is a dictionary with the following structure:
+
+    `{name: value, ...}`, where `name` corresponds to the variable name in the `variables` parameter passed to the `declare(variables)` function, and `value` is the variable value returned by `binding`.
+
+
+### publish_diag
+
+`publish_diag(diag=None)` &ndash; publishes diagnostic variable values to the Cloud4RPi server.
+
+**Parameters:**
+
+* `diag` *(optional)* &ndash; the `read_diag()` output. If not passed, `read_diag()` is invoked internally. This is a dictionary with the following structure:
+
+    `{name: value, ...}`, where `name` corresponds to the variable's name in the `diag` parameter passed to the `declare_diag(diag)` function, and `value` is the variable's value the `binding` returns.

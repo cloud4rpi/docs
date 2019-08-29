@@ -13,26 +13,26 @@ sudo apt update && sudo apt upgrade -y
 Install/update the required packages.
 
 ```sh
-sudo apt install git python python-pip -y
+sudo apt install git python3 python3-pip -y
 ```
 
 You can use alternative methods to [install pip](https://pip.pypa.io/en/stable/installing.html).
 
 !!! Note
-    The Cloud4RPi library is compatible with Python 2.7.9+ and Python 3.2+ versions.
+    The Cloud4RPi library is compatible with Python 3.2+ and Python 2.7.9+ versions.
 
 ## Getting the Cloud4RPi Client Library
 
-Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 2):
+Install the library using your preferred Python version. The following command installs and integrates Cloud4RPi with your OS's default Python interpreter (usually Python 3):
 
 ```sh
-sudo pip install cloud4rpi
+sudo pip3 install cloud4rpi
 ```
 
-If you are using Python 3, use the following command:
+If you are using Python 2, use the following command:
 
 ```sh
-sudo python3 -m pip install cloud4rpi
+sudo python2 -m pip install cloud4rpi
 ```
 
 !!! Note
@@ -41,7 +41,7 @@ sudo python3 -m pip install cloud4rpi
 If you get an error while using **pip**, try to update the **setuptools** and **pip** packages.
 
 ```sh
-sudo pip install --upgrade setuptools pip
+sudo pip3 install --upgrade setuptools pip
 ```
 
 ## Hacking Together some Code
@@ -61,10 +61,10 @@ Before running a sample ([control.py](https://github.com/cloud4rpi/cloud4rpi-chi
 
 ## Running
 
-Execute the script with the Python interpreter, for example:
+Execute the script with a Python interpreter, for example:
 
 ```sh
-sudo python control.py
+sudo python3 control.py
 ```
 
 !!! Note

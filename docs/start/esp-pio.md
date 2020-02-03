@@ -6,12 +6,12 @@ Follow the instructions below to connect your [ESP8266](https://en.wikipedia.org
 
 The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduino) is published in the [PlatformIO Registry](http://platformio.org/lib). Follow the instructions below to start a new Cloud4RPi-enabled project:
 
-1. Create a new PlatformIO project for your board as described in the PlatformIO documentation ([Visual Studio Code](http://docs.platformio.org/en/latest/ide/vscode.html#id3), [Atom](http://docs.platformio.org/en/latest/ide/atom.html#setting-up-the-project))
-2. Open your `platformio.ini` and add the following lines to the end:
+1.  Create a new PlatformIO project for your board as described in the PlatformIO documentation ([Visual Studio Code](http://docs.platformio.org/en/latest/ide/vscode.html#id3), [Atom](http://docs.platformio.org/en/latest/ide/atom.html#setting-up-the-project))
+2.  Open your `platformio.ini` and add the following lines to the end:
 
         lib_deps =
             cloud4rpi-esp-arduino
-        
+
         build_flags=
         ; Required for PubSub library
             -D MQTT_MAX_PACKET_SIZE=1024
@@ -19,10 +19,10 @@ The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduin
         ; Enables the verbose output to Serial
             -D CLOUD4RPI_DEBUG=1
 
-4. Save the `platformio.ini` file and open the `src\main.cpp` file.
-5. Copy-paste the [sample code](https://github.com/cloud4rpi/cloud4rpi-esp-arduino/blob/master/examples/control/control.ino).
-7. If the `LED_BUILTIN` constant is not defined in your board's library, change this constant to the LED's pin number (for example, `2`).
-7. Replace the `__SSID__` and `__PASSWORD__` strings with your Wi-Fi network data.
+3.  Save the `platformio.ini` file and open the `src\main.cpp` file.
+4.  Copy-paste the [sample code](https://github.com/cloud4rpi/cloud4rpi-esp-arduino/blob/master/examples/control/control.ino).
+5.  If the `LED_BUILTIN` constant is not defined in your board's library, change this constant to the LED's pin number (for example, `2`).
+6.  Replace the `__SSID__` and `__PASSWORD__` strings with your Wi-Fi network data.
 
 ## Connecting to Your Cloud4RPi Account
 
@@ -33,16 +33,15 @@ The [Cloud4RPi library](http://platformio.org/lib/show/2045/cloud4rpi-esp-arduin
 ## Running
 
 6. Hit the `Build` button and wait until the compilation is completed.
-8. Hit the `Upload` button.
+7. Hit the `Upload` button.
 8. If the upload fails, try to start the board in the flashing mode (connect the power supply with the GPIO0 pin connected to GND) and try uploading again.
 9. Once flashing is complete, open `Serial Monitor` to monitor the device's status.
-8. Notice that the device on the [Devices page](https://cloud4rpi.io/devices) went online and started sending data.
-9. Go to the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.
-10. Add a new **Number** widget and bind it to the `Uptime` variable.
-10. Add a new **Switch** widget and bind it to the `LED On` variable.
-11. Add a new **Text** widget and bind it to the `State` variable. Configure different colors for the **"IDLE"**, **"RING"** and **"BOOM!"** strings.
-12. Add a new **Slider** widget and bind it to the `DesiredTemp` variable, set its minimum value to 10 and maximum value to 30.
-13. Add a new **Gauge** widget and bind it to the `DesiredTemp` variable, set its minimum value to 10 and maximum value to 30.
+10. Notice that the device on the [Devices page](https://cloud4rpi.io/devices) went online and started sending data.
+11. Go to the [Control Panels](https://cloud4rpi.io/control-panels/) page and add a new control panel.
+12. Add a new **Switch** widget and bind it to the `LED On` variable.
+13. Add a new **Text** widget and bind it to the `State` variable. Configure different colors for the **"IDLE"**, **"RING"** and **"BOOM!"** strings.
+14. Add a new **Slider** widget and bind it to the `DesiredTemp` variable, set its minimum value to 10 and maximum value to 30.
+15. Add a new **Gauge** widget and bind it to the `DesiredTemp` variable, set its minimum value to 10 and maximum value to 30.
 
 ## Video
 

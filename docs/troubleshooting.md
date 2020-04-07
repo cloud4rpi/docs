@@ -57,6 +57,6 @@ To avoid this error, specify the absolute path to the header file in the `#inclu
 You can copy-paste the valid path to both libraries that appear in the error message. Add the `src\` subfolder between the library path and header file name.
 
 
-## A control panel widget displays an unbound variable error
+## A control panel widget displays an Unbound Variable error
 
-This happens if you change a variable's name on the device and send an updated config. if you change the variable's name back, the widget will successfully bind to the variable and retain its data.
+This means that a variable's name was changed on the device. If you revert to the old name, the widget will successfully bind to the variable and retain its data.

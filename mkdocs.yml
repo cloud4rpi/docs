@@ -23,6 +23,7 @@ nav:
     - MQTT Protocol: api/mqtt.md
     - HTTP Protocol: api/http.md
 - FAQ: faq.md
+- Troubleshooting: troubleshooting.md
 
 markdown_extensions:
   - admonition:

@@ -14,16 +14,16 @@
       
         <meta name="author" content="Cloud4RPi Team">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.0.1">
     
     
       
-        <title>MicroPython - Cloud4RPi Documentation</title>
+        <title>Troubleshooting - Cloud4RPi Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.c3000690.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.c3000690.min.css">
       
       
     
@@ -37,7 +37,7 @@
     
     
     
-      <link rel="stylesheet" href="../../res/extra.css">
+      <link rel="stylesheet" href="../res/extra.css">
     
     
       
@@ -54,7 +54,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#connecting-an-esp8266" class="md-skip">
+        <a href="#i-receive-installation-errors" class="md-skip">
           Skip to content
         </a>
       
@@ -65,7 +65,7 @@
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="Cloud4RPi Documentation" class="md-header-nav__button md-logo" aria-label="Cloud4RPi Documentation">
+    <a href=".." title="Cloud4RPi Documentation" class="md-header-nav__button md-logo" aria-label="Cloud4RPi Documentation">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
@@ -82,7 +82,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              MicroPython
+              Troubleshooting
             
           </span>
         </div>
@@ -152,7 +152,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Cloud4RPi Documentation" class="md-nav__button md-logo" aria-label="Cloud4RPi Documentation">
+    <a href=".." title="Cloud4RPi Documentation" class="md-nav__button md-logo" aria-label="Cloud4RPi Documentation">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
@@ -182,7 +182,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href=".." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -192,12 +192,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Getting Started
@@ -221,7 +219,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../rpi/" title="Raspberry Pi" class="md-nav__link">
+    <a href="../start/rpi/" title="Raspberry Pi" class="md-nav__link">
       Raspberry Pi
     </a>
   </li>
@@ -233,7 +231,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../chip/" title="C.H.I.P." class="md-nav__link">
+    <a href="../start/chip/" title="C.H.I.P." class="md-nav__link">
       C.H.I.P.
     </a>
   </li>
@@ -245,7 +243,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../o2/" title="Omega2" class="md-nav__link">
+    <a href="../start/o2/" title="Omega2" class="md-nav__link">
       Omega2
     </a>
   </li>
@@ -255,12 +253,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
     
     <label class="md-nav__link" for="nav-2-4">
       ESP8266/ESP32
@@ -282,81 +278,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        MicroPython
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="MicroPython" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../start/esp8266-upy/" title="MicroPython" class="md-nav__link">
       MicroPython
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-libraries-and-examples" class="md-nav__link">
-    Getting Libraries and Examples
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hacking-together-some-code" class="md-nav__link">
-    Hacking Together some Code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-led-button-examples-hardware" class="md-nav__link">
-    The LED &amp; Button Example's Hardware
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running" class="md-nav__link">
-    Running
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -366,7 +292,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../esp-pio/" title="PlatformIO" class="md-nav__link">
+    <a href="../start/esp-pio/" title="PlatformIO" class="md-nav__link">
       PlatformIO
     </a>
   </li>
@@ -378,7 +304,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../esp-ino/" title="Arduino" class="md-nav__link">
+    <a href="../start/esp-ino/" title="Arduino" class="md-nav__link">
       Arduino
     </a>
   </li>
@@ -400,7 +326,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../plans-and-pricing/" title="Plans and Pricing" class="md-nav__link">
+    <a href="../plans-and-pricing/" title="Plans and Pricing" class="md-nav__link">
       Plans and Pricing
     </a>
   </li>
@@ -437,7 +363,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../howto/rpi/" title="Raspberry Pi" class="md-nav__link">
+    <a href="../howto/rpi/" title="Raspberry Pi" class="md-nav__link">
       Raspberry Pi
     </a>
   </li>
@@ -449,7 +375,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../howto/chip/" title="C.H.I.P." class="md-nav__link">
+    <a href="../howto/chip/" title="C.H.I.P." class="md-nav__link">
       C.H.I.P.
     </a>
   </li>
@@ -461,7 +387,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../howto/o2/" title="Omega2" class="md-nav__link">
+    <a href="../howto/o2/" title="Omega2" class="md-nav__link">
       Omega2
     </a>
   </li>
@@ -503,7 +429,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../api/python/" title="Python Library" class="md-nav__link">
+    <a href="../api/python/" title="Python Library" class="md-nav__link">
       Python Library
     </a>
   </li>
@@ -515,7 +441,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../api/mqtt/" title="MQTT Protocol" class="md-nav__link">
+    <a href="../api/mqtt/" title="MQTT Protocol" class="md-nav__link">
       MQTT Protocol
     </a>
   </li>
@@ -527,7 +453,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../api/http/" title="HTTP Protocol" class="md-nav__link">
+    <a href="../api/http/" title="HTTP Protocol" class="md-nav__link">
       HTTP Protocol
     </a>
   </li>
@@ -544,7 +470,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../faq/" title="FAQ" class="md-nav__link">
+    <a href="../faq/" title="FAQ" class="md-nav__link">
       FAQ
     </a>
   </li>
@@ -554,11 +480,77 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../troubleshooting/" title="Troubleshooting" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Troubleshooting
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Troubleshooting" class="md-nav__link md-nav__link--active">
       Troubleshooting
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-receive-installation-errors" class="md-nav__link">
+    I receive installation errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-does-not-recognize-my-1-wire-device" class="md-nav__link">
+    Raspberry Pi does not recognize my 1-Wire device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-receive-an-insecure-platform-warning" class="md-nav__link">
+    I receive an "Insecure Platform" warning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-get-a-wifi-library-collision-in-the-arduino-ide" class="md-nav__link">
+    I get a WiFi library collision in the Arduino IDE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-control-panel-widget-displays-a-no-data-found-error" class="md-nav__link">
+    A control panel widget displays a "No data found" error
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -576,8 +568,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -588,36 +578,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
+  <a href="#i-receive-installation-errors" class="md-nav__link">
+    I receive installation errors
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-libraries-and-examples" class="md-nav__link">
-    Getting Libraries and Examples
+  <a href="#raspberry-pi-does-not-recognize-my-1-wire-device" class="md-nav__link">
+    Raspberry Pi does not recognize my 1-Wire device
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hacking-together-some-code" class="md-nav__link">
-    Hacking Together some Code
+  <a href="#i-receive-an-insecure-platform-warning" class="md-nav__link">
+    I receive an "Insecure Platform" warning
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-led-button-examples-hardware" class="md-nav__link">
-    The LED &amp; Button Example's Hardware
+  <a href="#i-get-a-wifi-library-collision-in-the-arduino-ide" class="md-nav__link">
+    I get a WiFi library collision in the Arduino IDE
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#running" class="md-nav__link">
-    Running
+  <a href="#a-control-panel-widget-displays-a-no-data-found-error" class="md-nav__link">
+    A control panel widget displays a "No data found" error
   </a>
   
 </li>
@@ -634,7 +624,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/cloud4rpi/docs/edit/master/docs/start/esp8266-upy.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/cloud4rpi/docs/edit/master/docs/troubleshooting.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>
                   </a>
                 
@@ -642,66 +632,50 @@
                   
                 
                 
-                <h1 id="connecting-an-esp8266">Connecting an ESP8266</h1>
-<p>Follow the instructions below to connect your device to the <a href="https://cloud4rpi.io">Cloud4RPi</a> control panel.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>Your ESP8266 module should have at least 1Mbyte of flash storage to install the full version of MicroPython.</p>
+                  <h1>Troubleshooting</h1>
+                
+                <h2 id="i-receive-installation-errors">I receive installation errors</h2>
+<p>You can get one of the following errors when you use the <code>sudo pip install cloud4rpi</code> command to install the Cloud4RPi client library:</p>
 <ol>
-<li>Flash the latest version of <a href="http://micropython.org/">MicroPython</a> using <a href="http://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/intro.html#intro">the official manual</a>.</li>
-<li>
-<p>Connect to your Wi-Fi network:</p>
-<pre><code>&gt;&gt;&gt; from network import WLAN
-&gt;&gt;&gt; STA = WLAN(0); STA.active(1)
-&gt;&gt;&gt; STA.connect('__SSID__', '__PASSWORD__')
-&gt;&gt;&gt; STA.ifconfig()  # Outputs the network configuration. If it is not valid, wait and re-execute
+<li>InstallationError: Command "python setup.py egg_info" failed with error code 1</li>
+<li>Error while finding spec for 'pip.__main__' (&lt;class 'ImportError'&gt;: cannot import name 'IncompleteRead'); 'pip' is a package and cannot be directly executed</li>
+</ol>
+<p>This happens because the <strong>setuptools</strong> and/or <strong>pip</strong> packages your Python interpreter uses are outdated. Update the packages with the following command:</p>
+<pre><code class="sh">sudo pip install --upgrade setuptools pip
 </code></pre>
-</li>
-<li>
-<p>Configure <a href="http://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/repl.html#webrepl-a-prompt-over-wifi">WebREPL</a> for easier file uploading.</p>
-<pre><code>&gt;&gt;&gt; import webrepl_setup
+
+<p>After updating, reinstall <strong>cloud4rpi</strong>:</p>
+<pre><code class="sh">sudo pip install cloud4rpi
 </code></pre>
-</li>
+
+<h2 id="raspberry-pi-does-not-recognize-my-1-wire-device">Raspberry Pi does not recognize my 1-Wire device</h2>
+<p>Follow the instructions below if you experience issues with the 1-Wire interface on Raspberry Pi.</p>
+<ol>
+<li>Run <code>sudo raspi-config</code> and make sure that the 1-Wire interface is enabled (<strong>Interfacing Options</strong> | <strong>1-Wire</strong> menu).</li>
+<li>Add the <code>dtoverlay=w1-gpio</code> string to your <code>/boot/config.txt</code> file (<code>echo dtoverlay=w1-gpio | sudo tee -a /boot/config.txt</code>).</li>
+<li>Reboot (<code>sudo reboot</code> command).</li>
 <li>
-<p>Connect to the ESP8266 via <strong>WebREPL</strong>.</p>
+<p>Double-check the wiring and your device's operational voltage. The 1-Wire <strong>DATA</strong> bus should be connected to <strong>GPIO4</strong> (Pin 7) and pulled-up to <strong>VCC</strong>.</p>
+<p><img alt="" src="/res/ds18b20.png" /></p>
 </li>
 </ol>
-<h2 id="getting-libraries-and-examples">Getting Libraries and Examples</h2>
-<p>Download the required source code files to your computer:</p>
-<ul>
-<li><a href="https://github.com/micropython/micropython-lib/blob/master/umqtt.simple/umqtt/simple.py">simple.py</a>: MQTT Library for MicroPython. Save this file as <strong>mqtt.py</strong> when downloading.</li>
-<li><a href="https://github.com/cloud4rpi/cloud4rpi-esp8266-micropython/blob/master/cloud4rpi.py">cloud4rpi.py</a>: Cloud4RPi client library for MicroPython.</li>
-<li><a href="https://github.com/cloud4rpi/cloud4rpi-esp8266-micropython/blob/master/main.py">main.py</a>: Sample code.</li>
-</ul>
-<h2 id="hacking-together-some-code">Hacking Together some Code</h2>
-<p>Open the <a href="https://github.com/cloud4rpi/cloud4rpi-esp8266-micropython/blob/master/main.py">main.py</a> file in a text editor (for instance, <a href="https://code.visualstudio.com/">Visual Studio Code</a>) and replace the following strings:</p>
-<ul>
-<li><code>__SSID__</code> with your Wi-Fi network name.</li>
-<li><code>__PWD__</code> with your Wi-Fi network password. If you have an open network, remove the <code>'__PWD__'</code> element without removing the trailing comma so that the <code>WIFI_SSID_PASSWORD</code> variable becomes a tuple with one element.</li>
-<li><code>__YOUR_DEVICE_TOKEN__</code> with the token displayed at the top of the device page on <a href="https://cloud4rpi.io/">cloud4rpi.io</a>. If you have no token yet, open the <a href="https://cloud4rpi.io/devices">Devices</a> page, create a device using the <strong>New Device</strong> button in the top right corner, and use its token.</li>
-</ul>
-<p>Save the file.</p>
-<h2 id="the-led-button-examples-hardware">The LED &amp; Button Example's Hardware</h2>
-<p>Connect the LED to <strong>GPIO12</strong> and a button to <strong>GPIO16</strong>. If you need to use other pins, change the corresponding variables in <strong>main.py</strong>.</p>
-<p><img alt="" src="https://github.com/cloud4rpi/cloud4rpi-esp8266-micropython/raw/master/hardware.png" /></p>
-<h2 id="running">Running</h2>
-<ol>
-<li>Upload three files (<strong>mqtt.py</strong>, <strong>cloud4rpi.py</strong> and <strong>main.py</strong>) to your ESP8266 via the <strong>WebREPL</strong>.</li>
-<li>
-<p>Reset the ESP8266. You can use the console for this:</p>
-<pre><code>&gt;&gt;&gt; import machine
-&gt;&gt;&gt; machine.reset()
+<h2 id="i-receive-an-insecure-platform-warning">I receive an "Insecure Platform" warning</h2>
+<p>The <code>InsecurePlatformWarning: A true SSLContext object is not available...</code> notification appears when you run Cloud4RPi on Python v2.7.9 and earlier. Use the following command to check the Python version:</p>
+<pre><code class="sh">python --version
 </code></pre>
-</li>
-<li>
-<p>Check that the <a href="https://cloud4rpi.io/devices">device</a> goes online and starts sending data.</p>
-</li>
-<li>Go to the <a href="https://cloud4rpi.io/control-panels/">Control Panels</a> page and add a new control panel.</li>
-<li>Add a new <strong>Switch</strong> widget and bind it to the <code>LED</code> variable.</li>
-<li>Add a new <strong>Text</strong> widget and bind it to the <code>Button</code> variable. Configure different colors for the "true" and "false" strings.</li>
-<li>Press the hardware button and notice the changes on the control panel.</li>
-<li>Use the <strong>LED</strong> switch on the control panel to light the hardware LED.</li>
-</ol>
-<p>Explore the code of the <a href="https://github.com/cloud4rpi/cloud4rpi-esp8266-micropython/blob/master/main.py">main.py</a> file and adapt it for your needs. Feel free to <a href="https://cloud4rpi.answerdesk.io/">share</a> your projects and ideas with us!</p>
+
+<p>You can use <a href="https://docs.python.org/2/using/index.html">one of the following approaches</a> to install the latest version:</p>
+<h2 id="i-get-a-wifi-library-collision-in-the-arduino-ide">I get a WiFi library collision in the Arduino IDE</h2>
+<p>The <code>Multiple libraries were found for "WiFi.h"</code> message can appear in Arduino IDE. This indicates the IDE has two libraries with the same name, and it does not know which one to use.</p>
+<p>To avoid this error, specify the absolute path to the header file in the <code>#include</code> directive, for example:</p>
+<pre><code class="c">#include &lt;C:\Users\user\Documents\ArduinoData\packages\esp32\hardware\esp32\1.0.2\libraries\WiFi\src\WiFi.h&gt;
+</code></pre>
+
+<p>You can copy-paste the valid path to both libraries that appear in the error message. Add the <code>src\</code> subfolder between the library path and header file name.</p>
+<h2 id="a-control-panel-widget-displays-a-no-data-found-error">A control panel widget displays a "No data found" error</h2>
+<p>This means that a variable's name was changed on the device. </p>
+<p><img alt="Unbound Variable" src="/res/troubleshooting-unbound-variable.png" /></p>
+<p>If you revert to the old name or assign the new name the widget, the widget will successfully bind to the variable and retain all its data.</p>
                 
               
               
@@ -720,7 +694,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../o2/" title="Omega2" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../faq/" title="FAQ" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
             </div>
@@ -729,25 +703,11 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Omega2
+                FAQ
               </div>
             </div>
           </a>
         
-        
-          <a href="../esp-pio/" title="PlatformIO" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                PlatformIO
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
-            </div>
-          </a>
         
       </nav>
     </div>
@@ -772,15 +732,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.f45d2d8d.min.js"></script>
-      <script src="../../assets/javascripts/bundle.74d0b805.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../assets/javascripts/vendor.f45d2d8d.min.js"></script>
+      <script src="../assets/javascripts/bundle.74d0b805.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "../..",
+          base: "..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.7f7c8775.min.js"
+            worker: "../assets/javascripts/worker/search.7f7c8775.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

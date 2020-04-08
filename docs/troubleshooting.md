@@ -57,6 +57,11 @@ To avoid this error, specify the absolute path to the header file in the `#inclu
 You can copy-paste the valid path to both libraries that appear in the error message. Add the `src\` subfolder between the library path and header file name.
 
 
-## A control panel widget displays an Unbound Variable error
+## A control panel widget displays a "No data found" error
 
-This means that a variable's name was changed on the device. If you revert to the old name, the widget will successfully bind to the variable and retain its data.
+This means that a variable's name was changed on the device. 
+
+![Unbound Variable](/res/troubleshooting-unbound-variable.png)
+
+If you revert to the old name or assign the new name the widget, the widget will successfully bind to the variable and retain all its data.
+

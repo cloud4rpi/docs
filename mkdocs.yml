@@ -24,6 +24,7 @@ nav:
     - HTTP Protocol: api/http.md
 - Client Libraries: client-libraries.md
 - FAQ: faq.md
+- Troubleshooting: troubleshooting.md
 
 markdown_extensions:
   - admonition:

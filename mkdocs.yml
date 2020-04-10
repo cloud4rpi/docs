@@ -22,6 +22,7 @@ nav:
     - Python Library: api/python.md
     - MQTT Protocol: api/mqtt.md
     - HTTP Protocol: api/http.md
+- Client Libraries: client-libraries.md
 - FAQ: faq.md
 - Troubleshooting: troubleshooting.md
 

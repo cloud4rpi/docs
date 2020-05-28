@@ -2,7 +2,7 @@
 
 ## The Free Tier
 
-You receive 5k free [packets](/faq/#what-are-packets) every month. This is enough to send data to the cloud every five minutes for a month. The table below compares different packet spending rates:
+You receive 5k free [packets](/faq/#what-are-packets) every month. This is enough to send data to the cloud every ten minutes for a month. The table below compares different packet spending rates:
 
 |                            | 1 packet per 10 minutes | 1 packet per 5 minutes | 1 packet per minute |
 | -------------------------- | ----------------------: | ---------------------: | ------------------: |

@@ -69,7 +69,7 @@ You can connect several 1-Wire devices to the bus without additional resistors.
 You can now monitor CPU and room temperature using these widgets.
 
 !!! Note
-    If you need to start your script automatically when the system loads, install the **control.py** script as a service using our [service_install.sh](https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/service_install.sh) script. Refer to the [Installing as a Service](/#installing-as-a-service) section for more details.
+    If you need to start your script automatically when the system loads, install the **control.py** script as a service using our [service_install.sh](https://github.com/cloud4rpi/cloud4rpi-chip-python/blob/master/service_install.sh) script. Refer to the [Installing as a Service](https://docs.cloud4rpi.io/start/chip/#installing-as-a-service) section for more details.
 
 
 
